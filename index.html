@@ -69,6 +69,13 @@
       .file-item a { text-decoration: none; color: var(--text-main); display: flex; align-items: center; gap: 12px; flex: 1; }
       .hf-badge { font-size: 0.75rem; padding: 2px 8px; border-radius: 6px; background: var(--hf-bg); color: var(--hf-text); border: 1px solid var(--hf-border); font-weight: 600; margin-left: auto; }
       .footer-stats { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; gap: 24px; color: var(--text-muted); font-size: 0.9rem; }
+      mark.text-match {
+        background: rgba(251, 191, 36, 0.4);
+        color: inherit;
+        border-radius: 4px;
+        padding: 0 2px;
+      }
+
       @media (max-width: 640px) {
         .container { margin: 20px auto; }
         .glass-card { padding: 24px; }
@@ -209,23 +216,60 @@
         return root;
       }
 
+      // --- 高亮辅助函数 ---
+      function highlightText(text, query) {
+        if (!query) return text;
+        try {
+          const regex = new RegExp(`(${query})`, "gi");
+          return text.replace(regex, '<mark class="text-match">$1</mark>');
+        } catch (e) {
+          return text;
+        }
+      }
+
       function renderNode(node, level = 0, forceShowAll = false) {
         let html = "";
         const lowerSearch = currentSearch.toLowerCase();
+
+        // 渲染文件夹
         Object.entries(node._folders).sort().forEach(([name, sub]) => {
           const isDirMatch = lowerSearch && name.toLowerCase().includes(lowerSearch);
-          const highlight = isDirMatch ? "highlight" : "";
+          const highlightClass = isDirMatch ? "highlight" : "";
           const showAllChildren = forceShowAll || isDirMatch;
-          html += `<div class="folder"><div class="folder-header ${highlight}" onclick="this.nextElementSibling.classList.toggle('collapsed'); this.querySelector('.toggle-icon').classList.toggle('open')"><span class="toggle-icon ${currentSearch || isDirMatch ? "open" : ""}">▶</span><span class="folder-icon">📁</span><span>${name}</span></div><div class="folder-children ${currentSearch || isDirMatch ? "" : "collapsed"}">${renderNode(sub, level + 1, showAllChildren)}</div></div>`;
+          const displayName = highlightText(name, currentSearch);
+
+          html += `
+            <div class="folder">
+              <div class="folder-header ${highlightClass}" onclick="this.nextElementSibling.classList.toggle('collapsed'); this.querySelector('.toggle-icon').classList.toggle('open')">
+                <span class="toggle-icon ${currentSearch || isDirMatch ? "open" : ""}">▶</span>
+                <span class="folder-icon">📁</span>
+                <span>${displayName}</span>
+              </div>
+              <div class="folder-children ${currentSearch || isDirMatch ? "" : "collapsed"}">
+                ${renderNode(sub, level + 1, showAllChildren)}
+              </div>
+            </div>`;
         });
+
+        // 渲染文件
         node._files.sort((a, b) => a.name.localeCompare(b.name)).forEach(f => {
           const isFileMatch = lowerSearch && f.name.toLowerCase().includes(lowerSearch);
           const highlightClass = isFileMatch ? "highlight" : "";
+          const displayName = highlightText(f.name, currentSearch);
+          
           const ext = f.name.split(".").pop().toLowerCase();
           const browserSupport = ["pdf", "jpg", "png", "gif", "svg", "webp", "jpeg", "mp4", "webm", "txt", "html", "md"];
           const pagesBase = `https://${username}.github.io/${repo}/`;
           let url = f.isHF ? f.url : (browserSupport.includes(ext) ? `${pagesBase}${f.path}` : `https://github.com/${username}/${repo}/blob/${branch}/${f.path}`);
-          html += `<div class="file-item ${highlightClass}"><a href="${url}" target="_blank" title="${f.isHF ? 'HuggingFace Storage' : 'GitHub Storage'}"><span class="file-icon">${getFileIcon(f.name)}</span><span>${f.name}</span>${f.isHF ? `<span class="hf-badge">${f.size_mb} MB</span>` : ""}</a></div>`;
+
+          html += `
+            <div class="file-item ${highlightClass}">
+              <a href="${url}" target="_blank" title="${f.isHF ? 'HuggingFace Storage' : 'GitHub Storage'}">
+                <span class="file-icon">${getFileIcon(f.name)}</span>
+                <span>${displayName}</span>
+                ${f.isHF ? `<span class="hf-badge">${f.size_mb} MB</span>` : ""}
+              </a>
+            </div>`;
         });
         return html;
       }
