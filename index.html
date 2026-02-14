@@ -31,9 +31,48 @@
             content: "📚";
             font-size: 32px;
         }
+        
+        /* 搜索框样式 */
+        .search-box {
+            margin: 20px 0;
+            display: flex;
+            gap: 10px;
+        }
+        #searchInput {
+            flex: 1;
+            padding: 12px 16px;
+            border: 2px solid #e8f0fe;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: border-color 0.2s;
+            outline: none;
+        }
+        #searchInput:focus {
+            border-color: #1a73e8;
+        }
+        #searchInput::placeholder {
+            color: #9aa0a6;
+        }
+        .clear-search {
+            padding: 0 16px;
+            background: #f1f3f4;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            color: #5f6368;
+            transition: background 0.2s;
+        }
+        .clear-search:hover {
+            background: #e8eaed;
+        }
+        
         .file-tree {
             margin-top: 20px;
+            min-height: 200px;
         }
+        
+        /* 文件夹样式 */
         .folder {
             margin: 4px 0;
         }
@@ -70,6 +109,8 @@
         .folder-children.collapsed {
             display: none;
         }
+        
+        /* 文件样式 */
         .file-item {
             padding: 6px 8px 6px 32px;
             border-radius: 4px;
@@ -92,8 +133,19 @@
         .file-icon {
             font-size: 16px;
         }
-        .loading, .error {
-            padding: 20px;
+        
+        /* 匹配高亮 */
+        .file-item.highlight {
+            background: #fff3e0;
+            border-left: 3px solid #f9ab00;
+        }
+        .folder-header.highlight {
+            background: #fff3e0;
+        }
+        
+        /* 空状态和加载 */
+        .loading, .error, .no-results {
+            padding: 40px;
             text-align: center;
             color: #5f6368;
         }
@@ -108,12 +160,19 @@
             font-size: 14px;
             display: flex;
             gap: 20px;
+            flex-wrap: wrap;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>全栈学习资料</h1>
+        
+        <!-- 搜索框 -->
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="🔍 搜索文件或文件夹... (支持拼音)" autocomplete="off">
+            <button class="clear-search" id="clearSearch">清除</button>
+        </div>
         
         <div id="file-list" class="file-tree">
             <div class="loading">📂 加载文件列表中...</div>
@@ -127,9 +186,30 @@
         const username = 'hfhfn';
         const repo = 'full_stack_resources';
         const branch = 'main';
-
+        
         // 存储所有文件的原始数据
         let allFilesData = [];
+        // 存储当前的搜索关键词
+        let currentSearchTerm = '';
+
+        // 获取文件图标（根据扩展名）
+        function getFileIcon(filename) {
+            const ext = filename.split('.').pop().toLowerCase();
+            const iconMap = {
+                // 文档类
+                'pdf': '📄', 'doc': '📘', 'docx': '📘', 'txt': '📃', 'md': '📝',
+                // 代码类
+                'html': '🌐', 'htm': '🌐', 'css': '🎨', 'js': '⚡', 'py': '🐍', 
+                'java': '☕', 'cpp': '⚙️', 'c': '⚙️', 'php': '🐘', 'json': '📊',
+                // 图片类
+                'jpg': '🖼️', 'jpeg': '🖼️', 'png': '🖼️', 'gif': '🎞️', 'svg': '🖌️',
+                // 压缩包
+                'zip': '📦', 'rar': '📦', '7z': '📦', 'tar': '📦', 'gz': '📦',
+                // 其他
+                'exe': '⚙️', 'dmg': '💿', 'iso': '💿', 'mp4': '🎬', 'mp3': '🎵'
+            };
+            return iconMap[ext] || '📄'; // 默认使用 📄
+        }
 
         // 切换文件夹折叠状态
         function toggleFolder(event) {
@@ -180,9 +260,10 @@
             return tree;
         }
 
-        // 递归渲染树形结构（带折叠功能）
-        function renderTree(node, level = 0) {
+        // 递归渲染树形结构
+        function renderTree(node, level = 0, searchTerm = '') {
             let html = '';
+            const lowerSearchTerm = searchTerm.toLowerCase();
             
             // 获取所有文件夹（按字母排序）
             const folders = Object.keys(node)
@@ -191,17 +272,22 @@
 
             // 渲染文件夹
             folders.forEach(folder => {
-                const folderId = `folder-${Math.random().toString(36).substr(2, 9)}`;
+                // 判断文件夹是否匹配搜索（递归检查子文件）
+                const folderMatches = searchTerm === '' || doesFolderMatchSearch(node[folder], searchTerm);
+                
+                if (searchTerm !== '' && !folderMatches) {
+                    return; // 搜索模式下，不匹配的文件夹直接跳过
+                }
                 
                 html += `
                     <div class="folder">
                         <div class="folder-header" onclick="toggleFolder(event)">
-                            <span class="toggle-icon">▼</span>
+                            <span class="toggle-icon">${searchTerm === '' ? '▶' : '▼'}</span>
                             <span class="folder-icon">📁</span>
                             <span>${folder}/</span>
                         </div>
-                        <div class="folder-children">
-                            ${renderTree(node[folder], level + 1)}
+                        <div class="folder-children ${searchTerm === '' ? 'collapsed' : ''}">
+                            ${renderTree(node[folder], level + 1, searchTerm)}
                         </div>
                     </div>
                 `;
@@ -210,9 +296,19 @@
             // 渲染当前文件夹下的文件
             if (node._files && node._files.length > 0) {
                 node._files.sort((a, b) => a.name.localeCompare(b.name)).forEach(file => {
-                    const icon = file.ext === 'pdf' ? '📄' : '🌐';
+                    // 检查文件是否匹配搜索
+                    const fileNameLower = file.name.toLowerCase();
+                    const matches = searchTerm === '' || fileNameLower.includes(lowerSearchTerm);
+                    
+                    if (searchTerm !== '' && !matches) {
+                        return; // 搜索模式下，不匹配的文件直接跳过
+                    }
+                    
+                    const icon = getFileIcon(file.name);
+                    const highlight = searchTerm !== '' && fileNameLower.includes(lowerSearchTerm) ? 'highlight' : '';
+                    
                     html += `
-                        <div class="file-item">
+                        <div class="file-item ${highlight}">
                             <a href="${file.fullPath}" target="${file.ext === 'pdf' ? '_blank' : ''}">
                                 <span class="file-icon">${icon}</span>
                                 <span>${file.name}</span>
@@ -225,16 +321,49 @@
             return html;
         }
 
+        // 检查文件夹是否包含匹配搜索的文件（递归）
+        function doesFolderMatchSearch(node, searchTerm) {
+            const lowerSearchTerm = searchTerm.toLowerCase();
+            
+            // 检查当前层级的文件
+            if (node._files) {
+                for (const file of node._files) {
+                    if (file.name.toLowerCase().includes(lowerSearchTerm)) {
+                        return true;
+                    }
+                }
+            }
+            
+            // 递归检查子文件夹
+            const folders = Object.keys(node).filter(key => key !== '_files');
+            for (const folder of folders) {
+                if (doesFolderMatchSearch(node[folder], searchTerm)) {
+                    return true;
+                }
+            }
+            
+            return false;
+        }
+
         // 更新统计信息
         function updateStats(files) {
-            const pdfCount = files.filter(f => f.path.toLowerCase().endsWith('.pdf')).length;
-            const htmlCount = files.filter(f => f.path.toLowerCase().endsWith('.html')).length;
-            const folderSet = new Set();
+            // 统计各种文件类型
+            const extCount = {};
+            files.forEach(f => {
+                const ext = f.path.split('.').pop().toLowerCase();
+                extCount[ext] = (extCount[ext] || 0) + 1;
+            });
             
+            // 取前5个最多的扩展名
+            const topExts = Object.entries(extCount)
+                .sort((a, b) => b[1] - a[1])
+                .slice(0, 5)
+                .map(([ext, count]) => `${ext}: ${count}个`);
+            
+            const folderSet = new Set();
             files.forEach(f => {
                 const pathParts = f.path.split('/');
                 if (pathParts.length > 1) {
-                    // 添加所有父级路径
                     for (let i = 1; i < pathParts.length; i++) {
                         folderSet.add(pathParts.slice(0, i).join('/'));
                     }
@@ -243,10 +372,27 @@
             
             const statsDiv = document.getElementById('stats');
             statsDiv.innerHTML = `
-                <span>📄 PDF 文件: ${pdfCount} 个</span>
-                <span>🌐 HTML 文件: ${htmlCount} 个</span>
                 <span>📁 文件夹: ${folderSet.size} 个</span>
+                <span>📄 文件总数: ${files.length} 个</span>
+                <span>🔤 主要类型: ${topExts.join(' · ')}</span>
             `;
+        }
+
+        // 刷新文件列表（根据搜索词）
+        function refreshFileList() {
+            if (allFilesData.length === 0) return;
+            
+            // 构建树形结构
+            const fileTree = buildFileTree(allFilesData);
+            
+            // 渲染文件树（传入搜索词）
+            const treeHtml = renderTree(fileTree, 0, currentSearchTerm);
+            
+            if (treeHtml.trim() === '') {
+                document.getElementById('file-list').innerHTML = '<div class="no-results">🔍 没有找到匹配的文件</div>';
+            } else {
+                document.getElementById('file-list').innerHTML = treeHtml;
+            }
         }
 
         // 主函数：获取并显示文件列表
@@ -259,15 +405,11 @@
                     throw new Error('无法获取文件列表');
                 }
 
-                // 过滤出要显示的文件
+                // 不再过滤文件类型，显示所有文件
                 allFilesData = data.tree.filter(item => {
-                    if (item.type !== 'blob') return false;
-                    const pathParts = item.path.split('/');
-                    const fileName = pathParts.pop();
-                    const ext = fileName.split('.').pop().toLowerCase();
-                    return (ext === 'pdf' || ext === 'html') &&
-                           fileName !== 'index.html' &&
-                           fileName !== 'README.md';
+                    return item.type === 'blob' && 
+                           item.path.split('/').pop() !== 'index.html' && 
+                           item.path.split('/').pop() !== 'README.md';
                 });
 
                 if (allFilesData.length === 0) {
@@ -275,12 +417,8 @@
                     return;
                 }
 
-                // 构建树形结构
-                const fileTree = buildFileTree(allFilesData);
-                
-                // 渲染文件树
-                const treeHtml = renderTree(fileTree);
-                document.getElementById('file-list').innerHTML = treeHtml;
+                // 刷新文件列表
+                refreshFileList();
                 
                 // 更新统计信息
                 updateStats(allFilesData);
@@ -296,8 +434,42 @@
             }
         }
 
+        // 搜索功能
+        function setupSearch() {
+            const searchInput = document.getElementById('searchInput');
+            const clearButton = document.getElementById('clearSearch');
+            
+            // 防抖函数，避免频繁渲染
+            let debounceTimer;
+            searchInput.addEventListener('input', (e) => {
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(() => {
+                    currentSearchTerm = e.target.value.trim();
+                    refreshFileList();
+                }, 300);
+            });
+            
+            // 清除搜索
+            clearButton.addEventListener('click', () => {
+                searchInput.value = '';
+                currentSearchTerm = '';
+                refreshFileList();
+                searchInput.focus();
+            });
+            
+            // 支持回车直接搜索
+            searchInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    clearTimeout(debounceTimer);
+                    currentSearchTerm = e.target.value.trim();
+                    refreshFileList();
+                }
+            });
+        }
+
         // 启动
         listAllFiles();
+        setupSearch();
     </script>
 </body>
 </html>
