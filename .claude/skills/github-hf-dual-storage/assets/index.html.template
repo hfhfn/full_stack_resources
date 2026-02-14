@@ -21,166 +21,83 @@
       }
       * { box-sizing: border-box; margin: 0; padding: 0; }
       body {
-        font-family: "Inter", -apple-system, sans-serif;
-        background-color: var(--bg-light); color: var(--text-main);
-        line-height: 1.6; transition: var(--transition);
-        background-image:
-          radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.05) 0px, transparent 50%),
-          radial-gradient(at 100% 0%, rgba(129, 140, 248, 0.05) 0px, transparent 50%);
-        min-height: 100vh; padding: 40px 20px;
+        font-family: "Inter", -apple-system, sans-serif; background-color: var(--bg-light); color: var(--text-main);
+        line-height: 1.6; transition: var(--transition); min-height: 100vh; padding: 40px 20px;
+        background-image: radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.05) 0px, transparent 50%), radial-gradient(at 100% 0%, rgba(129, 140, 248, 0.05) 0px, transparent 50%);
       }
       .container {
-        max-width: 1100px; margin: 0 auto; background: var(--card-bg); backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px); border: 1px solid var(--border); border-radius: 24px;
-        padding: 40px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        max-width: 1100px; margin: 0 auto; background: var(--card-bg); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--border); border-radius: 24px; padding: 40px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
       }
-      header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 20px; }
-      .header-left { display: flex; align-items: center; gap: 15px; }
+      header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
       h1 { font-family: "Outfit", sans-serif; font-size: 2.2rem; font-weight: 700; background: linear-gradient(135deg, var(--primary), #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-      .header-actions { display: flex; align-items: center; gap: 12px; }
       .icon-btn {
-        background: var(--border); border: none; width: 44px; height: 44px; border-radius: 12px;
-        cursor: pointer; display: flex; align-items: center; justify-content: center;
-        font-size: 1.2rem; color: var(--text-main); transition: var(--transition); text-decoration: none;
+        background: var(--border); border: none; width: 44px; height: 44px; border-radius: 12px; cursor: pointer;
+        display: flex; align-items: center; justify-content: center; font-size: 1.2rem; color: var(--text-main); transition: var(--transition); text-decoration: none;
       }
       .icon-btn:hover { background: var(--primary); color: white; transform: scale(1.05); }
-      .search-area { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; }
-      .search-wrapper { position: relative; display: flex; gap: 12px; }
-      #searchInput {
-        flex: 1; padding: 14px 20px; background: var(--bg-light); border: 2px solid var(--border);
-        border-radius: 16px; color: var(--text-main); font-size: 1rem; outline: none; transition: var(--transition);
-      }
-      #searchInput:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1); }
-      .btn { padding: 0 20px; border-radius: 12px; border: none; cursor: pointer; font-weight: 500; transition: var(--transition); display: flex; align-items: center; justify-content: center; }
-      .btn-clear { background: var(--border); color: var(--text-muted); }
-      .btn-clear:hover { background: #ef4444; color: white; }
-      .filter-tags { display: flex; gap: 10px; flex-wrap: wrap; }
-      .tag { padding: 6px 14px; background: var(--bg-light); border: 1px solid var(--border); border-radius: 100px; font-size: 0.85rem; cursor: pointer; transition: var(--transition); color: var(--text-muted); }
-      .tag.active { background: var(--primary); color: white; border-color: var(--primary); }
-      .tag:hover:not(.active) { border-color: var(--primary); color: var(--primary); }
-      .file-tree { border-top: 1px solid var(--border); padding-top: 20px; min-height: 300px; }
-      .loader { text-align: center; padding: 60px; color: var(--text-muted); }
-      .folder { margin: 2px 0; }
-      .folder-header { padding: 10px 12px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 10px; color: var(--text-main); font-weight: 600; transition: var(--transition); }
+      .search-wrapper { position: relative; display: flex; gap: 12px; margin-bottom: 20px; }
+      #searchInput { flex: 1; padding: 14px 20px; background: var(--bg-light); border: 2px solid var(--border); border-radius: 16px; color: var(--text-main); outline: none; transition: var(--transition); }
+      #searchInput:focus { border-color: var(--primary); }
+      .skeleton-tree { border-top: 1px solid var(--border); padding-top: 20px; }
+      .skeleton-item { height: 40px; background: linear-gradient(90deg, var(--border) 25%, var(--bg-light) 50%, var(--border) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite linear; border-radius: 10px; margin-bottom: 10px; }
+      @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+      .file-tree { border-top: 1px solid var(--border); padding-top: 20px; }
+      .folder-header { padding: 10px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 10px; font-weight: 600; }
       .folder-header:hover { background: rgba(79, 70, 229, 0.05); }
-      .toggle-icon { width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: var(--text-muted); transition: transform 0.2s; }
+      .toggle-icon { width: 20px; transition: transform 0.2s; text-align: center; }
       .toggle-icon.open { transform: rotate(90deg); }
-      .folder-icon { color: var(--folder); font-size: 1.2rem; }
-      .folder-children { margin-left: 28px; border-left: 1.5px solid var(--border); padding-left: 8px; transition: max-height 0.3s ease-out; }
+      .folder-children { margin-left: 28px; border-left: 1.5px solid var(--border); padding-left: 8px; }
       .folder-children.collapsed { display: none; }
-      .file-item { margin: 2px 0; padding: 8px 12px 8px 30px; border-radius: 8px; transition: var(--transition); display: flex; align-items: center; justify-content: space-between; }
+      .file-item { padding: 8px 12px; border-radius: 8px; transition: var(--transition); display: flex; align-items: center; justify-content: space-between; }
       .file-item:hover { background: rgba(79, 70, 229, 0.08); transform: translateX(4px); }
       .file-link { text-decoration: none; color: var(--text-main); display: flex; align-items: center; gap: 10px; flex: 1; }
-      .hf-badge { background: var(--hf-badge-bg); color: var(--hf-badge-text); padding: 2px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 700; border: 1px solid rgba(0, 0, 0, 0.05); }
-      .highlight { background: var(--highlight) !important; border-left: 3px solid var(--primary); }
-      mark.text-match { background: rgba(251, 191, 36, 0.4); color: inherit; border-radius: 4px; padding: 0 2px; }
-      .stats { margin-top: 40px; padding: 20px; background: var(--bg-light); border-radius: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; font-size: 0.9rem; color: var(--text-muted); }
-      .stat-card { display: flex; flex-direction: column; gap: 5px; }
-      .stat-value { font-weight: 700; color: var(--text-main); font-size: 1.1rem; }
-      .stat-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
-      @media (max-width: 640px) {
-        .container { padding: 20px; border-radius: 0; }
-        h1 { font-size: 1.8rem; }
-        .stats { grid-template-columns: 1fr; }
-      }
+      .hf-badge { background: var(--hf-badge-bg); color: var(--hf-badge-text); padding: 2px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 700; }
+      .gh-badge { background: #e0e7ff; color: #3730a3; padding: 2px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 700; }
     </style>
   </head>
   <body data-theme="light">
-    <div class="container fade-in">
+    <div class="container text-main">
       <header>
-        <div class="header-left"><h1>${GITHUB_REPO_NAME}</h1></div>
+        <h1>${GITHUB_REPO_NAME}</h1>
         <div class="header-actions">
-          <a href="https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME}" target="_blank" class="icon-btn" title="GitHub 仓库">
-            <svg height="22" width="22" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-          </a>
-          <button class="icon-btn" id="themeToggle" title="切换模式">🌓</button>
+            <a href="https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME}" target="_blank" class="icon-btn">
+                <svg height="22" width="22" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+            </a>
+            <button class="icon-btn" id="themeToggle">🌓</button>
         </div>
       </header>
-      <section class="search-area">
-        <div class="search-wrapper">
-          <input type="text" id="searchInput" placeholder="🔍 Search resources..." autocomplete="off" />
-          <button class="btn btn-clear" id="clearSearch">Clear</button>
+      <div class="search-wrapper">
+        <input type="text" id="searchInput" placeholder="🔍 Search resources..." autocomplete="off" />
+      </div>
+      <main id="file-list" class="file-tree">
+        <div class="skeleton-tree">
+          <div class="skeleton-item" style="width: 40%"></div>
+          <div class="skeleton-item"></div>
+          <div class="skeleton-item" style="width: 80%"></div>
         </div>
-        <div class="filter-tags" id="filterTags">
-          <span class="tag active" data-filter="all">All</span>
-          <span class="tag" data-filter="pdf">PDF</span>
-          <span class="tag" data-filter="code">Code</span>
-          <span class="tag" data-filter="archive">Archived</span>
-        </div>
-      </section>
-      <main id="file-list" class="file-tree"><div class="loader">🚀 Loading indexing...</div></main>
-      <footer id="stats" class="stats"></footer>
+      </main>
     </div>
     <script>
-      const username = "${GITHUB_USERNAME}"; const repo = "${GITHUB_REPO_NAME}"; const branch = "main";
-      const config = {
-        previewExts: ["pdf", "jpg", "jpeg", "png", "gif", "svg", "webp", "txt", "json", "html", "htm"],
-        codeExts: ["py", "java", "cpp", "c", "js", "go", "sh", "ipynb", "md", "bat", "yml", "yaml"],
-        archiveExts: ["zip", "rar", "7z", "tar", "gz", "bz2"]
-      };
-      let allFiles = []; let currentSearch = ""; let currentFilter = "all";
-      let currentTheme = localStorage.getItem("theme") || "light";
+      const username = "${GITHUB_USERNAME}"; const repo = "${GITHUB_REPO_NAME}";
+      const previewExts = ["pdf", "jpg", "jpeg", "png", "gif", "svg", "webp", "txt", "json", "html", "htm"];
+      let allFiles = []; let currentSearch = "";
 
-      function initTheme() {
-        document.body.setAttribute("data-theme", currentTheme);
-        document.getElementById("themeToggle").textContent = currentTheme === "light" ? "🌙" : "☀️";
-      }
-      function getFileIcon(n) {
-        const ext = n.split(".").pop().toLowerCase();
-        const icons = { pdf: "📕", zip: "📦", rar: "📦", "7z": "📦", py: "🐍", js: "⚡", html: "🌐", md: "📝", txt: "📄", ipynb: "📓", jpg: "🖼️", png: "🖼️", exe: "⚙️", mp4: "🎬" };
-        return icons[ext] || "📄";
-      }
-      function getFileType(f) {
-        const ext = f.name.split(".").pop().toLowerCase();
-        if (ext === "pdf") return "pdf";
-        if (config.codeExts.includes(ext)) return "code";
-        if (config.archiveExts.includes(ext)) return "archive";
-        return "other";
-      }
-      function highlightText(text, query) {
-        if (!query) return text;
-        try {
-          const regex = new RegExp(`(${query})`, "gi");
-          return text.replace(regex, '<mark class="text-match">$1</mark>');
-        } catch (e) { return text; }
-      }
       async function loadData() {
         try {
-          const ghUrl = `https://api.github.com/repos/${username}/${repo}/git/trees/${branch}?recursive=1`;
-          const ghRes = await fetch(ghUrl);
-          if (!ghRes.ok) throw new Error(`GitHub API HTTP ${ghRes.status}`);
-          const ghData = await ghRes.json();
-          let files = ghData.tree ? ghData.tree.filter(i => 
-              i.type === "blob" && !i.path.startsWith(".") && 
-              !["index.html", "README.md", "setup.bat", "setup.sh"].includes(i.path) && 
-              !i.path.match(/^(scripts|data|venv|env|node_modules|.git|.github)\//)
-            ).map(i => ({ name: i.path.split("/").pop(), path: i.path, isHF: false }))
-          : [];
-          try {
-            const maniRes = await fetch(`./data/file_manifest.json?t=${Date.now()}`);
-            if (maniRes.ok) {
-              const mani = await maniRes.json();
-              if (mani && mani.files) { mani.files.forEach(f => { if(!files.find(gf=>gf.path===f.path)) files.push({ ...f, isHF: true }); }); }
-            }
-          } catch (e) { console.warn("Manifest failed", e); }
-          allFiles = files; render();
-        } catch (e) { 
-          document.getElementById("file-list").innerHTML = `<div class="loader" style="color:#ef4444">❌ Load failed: ${e.message}<br/><small style="opacity:0.6">Attempted: ${username}/${repo}</small></div>`; 
-        }
+          const res = await fetch(`./data/file_manifest.json?t=${Date.now()}`);
+          if (!res.ok) throw new Error("Manifest failed");
+          const data = await res.json(); allFiles = data.files || []; render();
+        } catch (e) { document.getElementById("file-list").innerHTML = "Error loading files."; }
       }
+
       function render() {
-        const listContainer = document.getElementById("file-list");
-        const lowerSearch = currentSearch.toLowerCase();
-        const filtered = allFiles.filter(f => {
-          const matchSearch = f.name.toLowerCase().includes(lowerSearch) || f.path.toLowerCase().includes(lowerSearch);
-          const type = getFileType(f);
-          const matchFilter = currentFilter === "all" || type === currentFilter;
-          return matchSearch && matchFilter;
-        });
+        const query = currentSearch.toLowerCase();
+        const filtered = allFiles.filter(f => f.name.toLowerCase().includes(query) || f.path.toLowerCase().includes(query));
         const tree = buildTree(filtered);
-        listContainer.innerHTML = filtered.length ? renderNode(tree) : '<div class="loader">🔍 No matches found</div>';
-        renderStats(filtered);
+        document.getElementById("file-list").innerHTML = renderNode(tree);
       }
+
       function buildTree(files) {
         const root = { _files: [], _folders: {} };
         files.forEach(f => {
@@ -191,34 +108,29 @@
         });
         return root;
       }
-      function renderNode(node, level = 0, forceShowAll = false) {
-        let html = ""; const lowerSearch = currentSearch.toLowerCase();
+
+      function renderNode(node) {
+        let html = "";
         Object.entries(node._folders).sort().forEach(([name, sub]) => {
-          const isDirMatch = lowerSearch && name.toLowerCase().includes(lowerSearch);
-          const highlightClass = isDirMatch ? "highlight" : "";
-          const showAllChildren = forceShowAll || isDirMatch;
-          const displayName = highlightText(name, currentSearch);
-          html += `<div class="folder"><div class="folder-header ${highlightClass}" onclick="toggleFolder(this)"><span class="toggle-icon ${currentSearch || isDirMatch ? "open" : ""}">▶</span><span class="folder-icon">📁</span><span>${displayName}</span></div><div class="folder-children ${currentSearch || isDirMatch ? "" : "collapsed"}">${renderNode(sub, level + 1, showAllChildren)}</div></div>`;
+          html += `<div class="folder"><div class="folder-header" onclick="this.nextElementSibling.classList.toggle('collapsed'); this.querySelector('.toggle-icon').classList.toggle('open')"><span class="toggle-icon ${currentSearch ? 'open' : ''}">▶</span>📁 ${name}</div><div class="folder-children ${currentSearch ? '' : 'collapsed'}">${renderNode(sub)}</div></div>`;
         });
-        node._files.sort((a, b) => a.name.localeCompare(b.name)).forEach(f => {
-          const isFileMatch = lowerSearch && f.name.toLowerCase().includes(lowerSearch);
-          const highlightClass = isFileMatch ? "highlight" : "";
-          const displayName = highlightText(f.name, currentSearch);
+        node._files.sort((a,b) => a.name.localeCompare(b.name)).forEach(f => {
           const ext = f.name.split(".").pop().toLowerCase();
-          const pagesBase = `./`;
-          let url = f.isHF ? f.url : (config.previewExts.includes(ext) ? `${pagesBase}${f.path}` : `https://github.com/${username}/${repo}/blob/${branch}/${f.path}`);
-          html += `<div class="file-item ${highlightClass}"><a href="${url}" target="_blank" class="file-link"><span class="file-icon">${getFileIcon(f.name)}</span><span>${displayName}</span>${f.isHF ? `<span class="hf-badge">🤗 HF</span>` : ""}</a><div class="file-info">${f.size_mb ? `<span class="file-meta">${f.size_mb} MB</span>` : ""}</div></div>`;
+          let url = f.url;
+          if (!f.is_hf) {
+            url = previewExts.includes(ext) ? `./${f.path}` : `https://github.com/${username}/${repo}/blob/main/${f.path}`;
+          }
+          html += `<div class="file-item"><a href="${url}" target="_blank" class="file-link">📄 ${f.name} ${f.is_hf ? '<span class="hf-badge">🤗 HF</span>' : '<span class="gh-badge">📦 Git</span>'}</a></div>`;
         });
         return html;
       }
-      function toggleFolder(el) { el.querySelector(".toggle-icon").classList.toggle("open"); el.nextElementSibling.classList.toggle("collapsed"); }
-      function renderStats(filtered) {
-        const hf = filtered.filter(i => i.isHF);
-        const totalSize = hf.reduce((acc, cr) => acc + (cr.size_mb || 0), 0).toFixed(1);
-        const statsElem = document.getElementById("stats");
-        if (statsElem) { statsElem.innerHTML = `<div class="stat-card"><span class="stat-label">Total items</span><span class="stat-value">${filtered.length}</span></div><div class="stat-card"><span class="stat-label">HF Files</span><span class="stat-value">${hf.length}</span></div><div class="stat-card"><span class="stat-label">Total Size</span><span class="stat-value">${totalSize} MB</span></div>`; }
-      }
-      initTheme(); loadData();
+
+      document.getElementById("searchInput").oninput = (e) => { currentSearch = e.target.value; render(); };
+      document.getElementById("themeToggle").onclick = () => {
+        const t = document.body.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        document.body.setAttribute("data-theme", t);
+      };
+      loadData();
     </script>
   </body>
 </html>
