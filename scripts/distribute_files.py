@@ -261,29 +261,77 @@ def generate_manifest(large_files, small_files):
     manifest_dir.mkdir(exist_ok=True)
     manifest_path = manifest_dir / 'file_manifest.json'
     
-    # Check if manifest exists and try to preserve HuggingFace files that are no longer locally present
+    # Read current .gitignore to identify managed HuggingFace files
+    gitignore_path = PROJECT_ROOT / '.gitignore'
+    managed_hf_files = set()
+    
+    if gitignore_path.exists():
+        with open(gitignore_path, 'r', encoding='utf-8') as f:
+            in_auto_section = False
+            header = "# [Auto] Large files managed by HuggingFace\n"
+            for line in f:
+                if line == header:
+                    in_auto_section = True
+                    continue
+                if in_auto_section:
+                    if line.strip() == "":
+                        in_auto_section = False
+                        continue
+                    # This is a managed file rule
+                    managed_hf_files.add(line.rstrip())
+    
+    # Check if manifest exists and try to preserve HuggingFace files that are still managed
     old_hf_files = {}
     if manifest_path.exists():
         try:
             with open(manifest_path, 'r', encoding='utf-8') as f:
                 old_manifest = json.load(f)
             
-            # Collect all old HuggingFace files
+            # Collect old HuggingFace files that are STILL MANAGED in .gitignore
             for file_entry in old_manifest.get('files', []):
                 if file_entry.get('is_hf'):
-                    old_hf_files[file_entry['path']] = file_entry
+                    file_path = file_entry['path']
+                    # Only preserve if the file is still in .gitignore rules
+                    if file_path in managed_hf_files:
+                        old_hf_files[file_path] = file_entry
+                    else:
+                        logger.info(f"    Removing unmanaged HF file from manifest: {file_path}")
         except Exception as e:
             logger.debug(f"Could not read old manifest: {e}")
     
     # Get paths of newly scanned HuggingFace files
     new_hf_paths = {f.relative_to(PROJECT_ROOT).as_posix() for f in large_files}
     
-    # Add back HuggingFace files that were in the old manifest but not in the new scan
-    # (This handles files that are on HuggingFace but not present locally)
+    # Add back HuggingFace files that were in the old manifest and are still managed
     for old_path, old_entry in old_hf_files.items():
         if old_path not in new_hf_paths:
-            logger.info(f"    Preserving HF file: {old_path}")
+            logger.info(f"    Preserving managed HF file: {old_path}")
             manifest["files"].insert(0, old_entry)  # Insert at beginning to maintain order
+    
+    # Handle managed files that exist in .gitignore but not in local or old manifest
+    # (This can happen when user restores a .gitignore rule)
+    current_hf_paths = new_hf_paths | set(old_hf_files.keys())
+    for managed_file in managed_hf_files:
+        if managed_file not in current_hf_paths:
+            # This file is managed but not in manifest - try to get info from HuggingFace
+            logger.info(f"    Restoring managed HF file entry: {managed_file}")
+            try:
+                from huggingface_hub import HfApi
+                api = HfApi()
+                repo_info = api.repo_info(repo_id=HF_REPO_ID, repo_type="dataset")
+                # Create entry with placeholder info (actual size/mtime from HF would require more API calls)
+                quoted_rel = quote(managed_file)
+                manifest["files"].insert(0, {
+                    "name": os.path.basename(managed_file),
+                    "path": managed_file,
+                    "extension": os.path.splitext(managed_file)[1].lower().lstrip('.'),
+                    "size_mb": 0,  # Will be unknown until file is re-uploaded
+                    "url": f"https://huggingface.co/datasets/{HF_REPO_ID}/resolve/main/{quoted_rel}?download=true",
+                    "is_hf": True,
+                    "last_modified": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+                })
+            except Exception as e:
+                logger.debug(f"Could not restore HF file {managed_file}: {e}")
     
     # Check if manifest content would be the same (except updated_at)
     preserve_timestamp = False
