@@ -32,16 +32,17 @@ metadata:
 
 1. **分发脚本 (`scripts/distribute_files.py`)**: 写入逻辑同 v3.1，确保 `HF_REPO_ID` 正确。
 2. **初始化脚本 (`setup.bat` & `setup.sh`)**: 确保脚本包含对 `huggingface_hub` 的自动安装。
-3. **Web 界面 (`index.html`)**: 注入 GitHub 用户名和仓库名。
-4. **自动化流水线 (`.github/workflows/distribute-files.yml`)**: 注入项目特定变量，提供全自动分发能力。
-5. **标准文档 (`README.md`)**: 替换变量生成包含前置环境安装、Secrets 配置及使用指南的引导文件。
+3. **Web 界面 (`index.html`)**: 注入 GitHub 项目信息，支持自动过滤隐藏 `setup` 脚本。
+4. **自动化流水线 (`.github/workflows/distribute-files.yml`)**: 注入 Secrets 变量。该流水线充当“云端分发补丁”，处理 50MB-100MB 缓冲区文件并自动同步索引。
+5. **标准文档 (`README.md`)**: 包含完整的 GitHub Actions 设置指南与手动运行说明。
 
 ### Phase 3: 初始化执行与验证
 
-- 引导用户先运行 `pip install huggingface_hub` (或通过一键脚本自动完成)。
-- 引导用户运行一键配置脚本。
-- **关键**: 指导用户在 GitHub 仓库设置 `HF_TOKEN` 和 `HF_USERNAME` Secrets。
-- 引导开启 GitHub Pages 访问。
+- **一键配置**: 指导用户运行根目录的 `setup.bat` 完成初次本地分发与 Git 同步。
+- **云端授权**:
+  - 必须在 GitHub 仓库设置 `HF_TOKEN` (必须有 Write 权限)。
+  - **关键**: 确保 Workflow 具备 `contents: write` 权限 (v3.2 已在模板中默认修复)。
+- **线上发布**: 引导开启 GitHub Pages，并验证资源树是否正确渲染。
 
 ## 3. 最佳实践
 
