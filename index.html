@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <title>full_stack_resources - 资源导航</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- 引入现代字体 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,7 +24,6 @@
         --hf-border: #fcd34d;
         --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
       }
-
       [data-theme="dark"] {
         --primary: #818cf8;
         --primary-hover: #6366f1;
@@ -38,230 +36,44 @@
         --hf-text: #fbbf24;
         --hf-border: rgba(251, 191, 36, 0.3);
       }
-
-      * {
-        box-sizing: border-box;
-        transition: all 0.2s ease;
-      }
+      * { box-sizing: border-box; transition: all 0.2s ease; }
       body {
-        font-family:
-          "Inter",
-          system-ui,
-          -apple-system,
-          sans-serif;
-        margin: 0;
-        min-height: 100vh;
-        background: var(--bg-gradient);
-        color: var(--text-main);
-        line-height: 1.5;
+        font-family: "Inter", system-ui, -apple-system, sans-serif;
+        margin: 0; min-height: 100vh; background: var(--bg-gradient); color: var(--text-main); line-height: 1.5;
       }
-
-      .container {
-        max-width: 1100px;
-        margin: 40px auto;
-        padding: 0 20px;
-      }
-
-      .glass-card {
-        background: var(--card-bg);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border: 1px solid var(--border);
-        border-radius: 24px;
-        box-shadow: var(--glass-shadow);
-        padding: 40px;
-      }
-
-      header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        margin-bottom: 30px;
-      }
-
-      h1 {
-        font-family: "Outfit", sans-serif;
-        margin: 0;
-        font-size: 2.5rem;
-        background: linear-gradient(135deg, var(--primary) 0%, #a855f7 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      .highlight {
-        background: rgba(251, 191, 36, 0.2) !important;
-        border-radius: 8px;
-      }
-
-      /* 主题切换与导航 */
-      .header-actions {
-        display: flex;
-        align-items: center;
-        gap: 12px;
-      }
-      .btn-icon {
-        background: var(--card-bg);
-        border: 1px solid var(--border);
-        padding: 10px;
-        border-radius: 12px;
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        color: var(--text-main);
-        font-size: 1.2rem;
-      }
-      .btn-icon:hover {
-        background: var(--border);
-        transform: translateY(-2px);
-      }
-
-      /* 搜索与过滤 */
-      .search-section {
-        margin-bottom: 30px;
-      }
-      .search-box {
-        position: relative;
-        display: flex;
-        gap: 12px;
-      }
-      #searchInput {
-        flex: 1;
-        padding: 16px 24px;
-        border-radius: 16px;
-        border: 1px solid var(--border);
-        background: var(--card-bg);
-        color: var(--text-main);
-        font-size: 1.1rem;
-        outline: none;
-      }
-      #searchInput:focus {
-        border-color: var(--primary);
-        box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
-      }
-
-      .filter-tags {
-        display: flex;
-        gap: 8px;
-        margin-top: 16px;
-        flex-wrap: wrap;
-      }
-      .tag {
-        padding: 6px 16px;
-        border-radius: 99px;
-        background: var(--card-bg);
-        border: 1px solid var(--border);
-        font-size: 0.9rem;
-        cursor: pointer;
-        color: var(--text-muted);
-      }
-      .tag.active {
-        background: var(--primary);
-        color: white;
-        border-color: var(--primary);
-      }
-
-      /* 文件树样式 */
-      .file-tree {
-        min-height: 400px;
-      }
-      .folder {
-        margin: 8px 0;
-      }
-      .folder-header {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        padding: 10px 14px;
-        border-radius: 12px;
-        cursor: pointer;
-        font-weight: 600;
-        color: var(--primary);
-      }
-      .folder-header:hover {
-        background: rgba(79, 70, 229, 0.08);
-      }
-      .folder-icon {
-        font-size: 1.2rem;
-      }
-      .toggle-icon {
-        width: 20px;
-        text-align: center;
-        font-size: 0.8rem;
-        opacity: 0.7;
-      }
-      .toggle-icon.open {
-        transform: rotate(90deg);
-      }
-
-      .folder-children {
-        margin-left: 28px;
-        border-left: 1px solid var(--border);
-        padding-left: 12px;
-        overflow: hidden;
-      }
-      .folder-children.collapsed {
-        display: none;
-      }
-
-      .file-item {
-        display: flex;
-        align-items: center;
-        padding: 8px 14px;
-        border-radius: 10px;
-        margin: 4px 0;
-      }
-      .file-item:hover {
-        background: rgba(79, 70, 229, 0.05);
-        transform: translateX(4px);
-      }
-      .file-item a {
-        text-decoration: none;
-        color: var(--text-main);
-        display: flex;
-        align-items: center;
-        gap: 12px;
-        flex: 1;
-      }
-      .file-icon {
-        font-size: 1.2rem;
-      }
-
-      .hf-badge {
-        font-size: 0.75rem;
-        padding: 2px 8px;
-        border-radius: 6px;
-        background: var(--hf-bg);
-        color: var(--hf-text);
-        border: 1px solid var(--hf-border);
-        font-weight: 600;
-        margin-left: auto;
-      }
-
-      .footer-stats {
-        margin-top: 40px;
-        padding-top: 20px;
-        border-top: 1px solid var(--border);
-        display: flex;
-        gap: 24px;
-        color: var(--text-muted);
-        font-size: 0.9rem;
-      }
-
+      .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
+      .glass-card { background: var(--card-bg); backdrop-filter: blur(12px); border: 1px solid var(--border); border-radius: 24px; box-shadow: var(--glass-shadow); padding: 40px; }
+      header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+      h1 { font-family: "Outfit", sans-serif; margin: 0; font-size: 2.5rem; background: linear-gradient(135deg, var(--primary) 0%, #a855f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+      .header-actions { display: flex; align-items: center; gap: 12px; }
+      .btn-icon { background: var(--card-bg); border: 1px solid var(--border); padding: 10px; border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; text-decoration: none; color: var(--text-main); font-size: 1.2rem; }
+      .btn-icon:hover { background: var(--border); transform: translateY(-2px); }
+      .search-section { margin-bottom: 30px; }
+      .search-box { position: relative; display: flex; gap: 12px; }
+      #searchInput { flex: 1; padding: 16px 24px; border-radius: 16px; border: 1px solid var(--border); background: var(--card-bg); color: var(--text-main); font-size: 1.1rem; outline: none; }
+      #searchInput:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1); }
+      .filter-tags { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+      .tag { padding: 6px 16px; border-radius: 99px; background: var(--card-bg); border: 1px solid var(--border); font-size: 0.9rem; cursor: pointer; color: var(--text-muted); }
+      .tag.active { background: var(--primary); color: white; border-color: var(--primary); }
+      .file-tree { min-height: 400px; }
+      .folder { margin: 8px 0; }
+      .folder-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; cursor: pointer; font-weight: 600; color: var(--primary); }
+      .folder-header:hover { background: rgba(79, 70, 229, 0.08); }
+      .folder-icon { font-size: 1.2rem; }
+      .toggle-icon { width: 20px; text-align: center; font-size: 0.8rem; opacity: 0.7; }
+      .toggle-icon.open { transform: rotate(90deg); }
+      .folder-children { margin-left: 28px; border-left: 1px solid var(--border); padding-left: 12px; overflow: hidden; }
+      .folder-children.collapsed { display: none; }
+      .file-item { display: flex; align-items: center; padding: 8px 14px; border-radius: 10px; margin: 4px 0; }
+      .file-item:hover { background: rgba(79, 70, 229, 0.05); transform: translateX(4px); }
+      .file-item a { text-decoration: none; color: var(--text-main); display: flex; align-items: center; gap: 12px; flex: 1; }
+      .hf-badge { font-size: 0.75rem; padding: 2px 8px; border-radius: 6px; background: var(--hf-bg); color: var(--hf-text); border: 1px solid var(--hf-border); font-weight: 600; margin-left: auto; }
+      .footer-stats { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; gap: 24px; color: var(--text-muted); font-size: 0.9rem; }
       @media (max-width: 640px) {
-        .container {
-          margin: 20px auto;
-        }
-        .glass-card {
-          padding: 24px;
-        }
-        h1 {
-          font-size: 1.8rem;
-        }
-        .search-box {
-          flex-direction: column;
-        }
+        .container { margin: 20px auto; }
+        .glass-card { padding: 24px; }
+        h1 { font-size: 1.8rem; }
+        .search-box { flex-direction: column; }
       }
     </style>
   </head>
@@ -282,12 +94,7 @@
 
         <section class="search-section">
           <div class="search-box">
-            <input
-              type="text"
-              id="searchInput"
-              placeholder="搜索文件或目录..."
-              autocomplete="off"
-            />
+            <input type="text" id="searchInput" placeholder="搜索文件或目录..." autocomplete="off" />
           </div>
           <div class="filter-tags" id="filterTags">
             <button class="tag active" data-filter="all">全部</button>
@@ -298,9 +105,7 @@
         </section>
 
         <div id="file-list" class="file-tree">
-          <div style="text-align: center; padding: 40px; opacity: 0.6">
-            📂 正在初始化资源树...
-          </div>
+          <div style="text-align: center; padding: 40px; opacity: 0.6">📂 正在初始化资源树...</div>
         </div>
 
         <div class="footer-stats" id="stats"></div>
@@ -316,142 +121,87 @@
       let currentFilter = "all";
       let currentSearch = "";
 
-      // --- 图标映射 ---
       function getFileIcon(name) {
         const ext = name.split(".").pop().toLowerCase();
         if (["pdf"].includes(ext)) return "📕";
-        if (["zip", "rar", "7z", "gz"].includes(ext)) return "📦";
-        if (
-          [
-            "py",
-            "js",
-            "html",
-            "css",
-            "go",
-            "java",
-            "cpp",
-            "c",
-            "sh",
-            "bat",
-          ].includes(ext)
-        )
-          return "💻";
-        if (["jpg", "png", "gif", "svg", "webp"].includes(ext)) return "🖼️";
-        if (["mp4", "mkv", "avi"].includes(ext)) return "🎬";
-        if (["md", "txt"].includes(ext)) return "📝";
+        if (["zip", "rar", "7z", "gz", "tar"].includes(ext)) return "📦";
+        if (["py", "js", "html", "css", "go", "java", "cpp", "c", "sh", "bat", "yml", "yaml", "json"].includes(ext)) return "💻";
+        if (["jpg", "png", "gif", "svg", "webp", "jpeg"].includes(ext)) return "🖼️";
+        if (["mp4", "mkv", "avi", "mov", "webm"].includes(ext)) return "🎬";
+        if (["md", "txt", "log"].includes(ext)) return "📝";
         return "📄";
       }
 
-      // --- 主题切换 ---
       function initTheme() {
-        const saved =
-          localStorage.getItem("theme") ||
-          (window.matchMedia("(prefers-color-scheme: dark)").matches
-            ? "dark"
-            : "light");
+        const saved = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
         document.body.setAttribute("data-theme", saved);
-        document.getElementById("themeToggle").addEventListener("click", () => {
-          const current = document.body.getAttribute("data-theme");
-          const next = current === "light" ? "dark" : "light";
-          document.body.setAttribute("data-theme", next);
-          localStorage.setItem("theme", next);
-        });
+        const themeBtn = document.getElementById("themeToggle");
+        if (themeBtn) {
+          themeBtn.addEventListener("click", () => {
+            const current = document.body.getAttribute("data-theme");
+            const next = current === "light" ? "dark" : "light";
+            document.body.setAttribute("data-theme", next);
+            localStorage.setItem("theme", next);
+          });
+        }
       }
 
-      // --- 数据加载 ---
       async function loadData() {
         try {
-          // GitHub Tree API
           const ghUrl = `https://api.github.com/repos/${username}/${repo}/git/trees/${branch}?recursive=1`;
           const ghRes = await fetch(ghUrl);
-          const ghData =
-            ghRes.status === 200 ? await ghRes.json() : { tree: [] };
+          const ghData = ghRes.status === 200 ? await ghRes.json() : { tree: [] };
 
-          let files = ghData.tree
-            .filter(
-              (i) =>
-                i.type === "blob" &&
-                !i.path.startsWith(".") &&
-                !["index.html", "README.md", "setup.bat", "setup.sh"].includes(i.path) &&
-                !i.path.match(/^(scripts|data|venv|node_modules)\//),
-            )
-            .map((i) => ({
-              name: i.path.split("/").pop(),
-              path: i.path,
-              isHF: false,
-            }));
+          let files = ghData.tree ? ghData.tree.filter(i => i.type === "blob" && !i.path.startsWith(".") && !["index.html", "README.md", "setup.bat", "setup.sh"].includes(i.path) && !i.path.match(/^(scripts|data|venv|env|node_modules|.git|.github)\//))
+            .map(i => ({ name: i.path.split("/").pop(), path: i.path, isHF: false })) : [];
 
-          // HF Manifest
           try {
-            const maniRes = await fetch(
-              `./data/file_manifest.json?t=${Date.now()}`,
-            );
+            const maniRes = await fetch(`./data/file_manifest.json?t=${Date.now()}`);
             if (maniRes.ok) {
               const mani = await maniRes.json();
-              if (mani.files) {
-                mani.files.forEach((f) => {
-                  files.push({ ...f, isHF: true });
-                });
+              if (mani && Array.isArray(mani.files)) {
+                mani.files.forEach(f => { files.push({ ...f, isHF: true }); });
               }
             }
-          } catch (e) {
-            console.warn("Manifest load failed", e);
-          }
+          } catch (e) { console.warn("Manifest load failed", e); }
 
           allFiles = files;
           render();
           renderStats();
         } catch (e) {
-          document.getElementById("file-list").innerHTML =
-            `<div style="color:red; text-align:center;">❌ 加载失败: ${e.message}</div>`;
+          console.error("Data load failed:", e);
+          document.getElementById("file-list").innerHTML = `<div style="color:red; text-align:center; padding: 20px;">❌ 加载失败: ${e.message}</div>`;
         }
       }
 
-      // --- 过滤逻辑 ---
       function isMatch(file) {
         const lowerSearch = currentSearch.toLowerCase();
-        const matchSearch =
-          file.name.toLowerCase().includes(lowerSearch) ||
-          file.path.toLowerCase().includes(lowerSearch);
-
+        const matchSearch = file.name.toLowerCase().includes(lowerSearch) || file.path.toLowerCase().includes(lowerSearch);
         let matchFilter = true;
         const ext = file.name.split(".").pop().toLowerCase();
         if (currentFilter === "pdf") matchFilter = ext === "pdf";
-        else if (currentFilter === "code")
-          matchFilter = [
-            "py",
-            "js",
-            "html",
-            "css",
-            "sh",
-            "bat",
-            "java",
-            "cpp",
-          ].includes(ext);
-        else if (currentFilter === "archive")
-          matchFilter = ["zip", "rar", "7z", "gz"].includes(ext);
-
+        else if (currentFilter === "code") matchFilter = ["py", "js", "html", "css", "sh", "bat", "java", "cpp", "yml", "yaml", "json"].includes(ext);
+        else if (currentFilter === "archive") matchFilter = ["zip", "rar", "7z", "gz", "tar"].includes(ext);
         return matchSearch && matchFilter;
       }
 
-      // --- 渲染引擎 ---
       function render() {
         const filtered = allFiles.filter(isMatch);
         const tree = buildTree(filtered);
-        document.getElementById("file-list").innerHTML = filtered.length
-          ? renderNode(tree)
-          : '<div style="text-align:center; padding:40px; opacity:0.5;">🔍 未找到相关资源</div>';
+        const listContainer = document.getElementById("file-list");
+        if (listContainer) {
+          listContainer.innerHTML = filtered.length ? renderNode(tree) : '<div style="text-align:center; padding:40px; opacity:0.5;">🔍 未找到相关资源</div>';
+        }
       }
 
       function buildTree(files) {
         const root = { _files: [], _folders: {} };
-        files.forEach((f) => {
+        files.forEach(f => {
           const parts = f.path.split("/");
-          const fileName = parts.pop();
+          parts.pop();
           let current = root;
-          parts.forEach((p) => {
-            if (!current._folders[p])
-              current._folders[p] = { _files: [], _folders: {} };
+          parts.forEach(p => {
+            if (!current._folders[p]) current._folders[p] = { _files: [], _folders: {} };
             current = current._folders[p];
           });
           current._files.push(f);
@@ -462,91 +212,36 @@
       function renderNode(node, level = 0, forceShowAll = false) {
         let html = "";
         const lowerSearch = currentSearch.toLowerCase();
-
-        // 渲染文件夹
-        Object.entries(node._folders)
-          .sort()
-          .forEach(([name, sub]) => {
-            const isDirMatch =
-              lowerSearch && name.toLowerCase().includes(lowerSearch);
-            const highlight = isDirMatch ? "highlight" : "";
-            const showAllChildren = forceShowAll || isDirMatch;
-
-            html += `
-            <div class="folder">
-              <div class="folder-header ${highlight}" onclick="this.nextElementSibling.classList.toggle('collapsed'); this.querySelector('.toggle-icon').classList.toggle('open')">
-                <span class="toggle-icon ${currentSearch ? "open" : ""}">▶</span>
-                <span class="folder-icon">📁</span>
-                <span>${name}</span>
-              </div>
-              <div class="folder-children ${currentSearch ? "" : "collapsed"}">
-                ${renderNode(sub, level + 1, showAllChildren)}
-              </div>
-            </div>`;
-          });
-
-        node._files
-          .sort((a, b) => a.name.localeCompare(b.name))
-          .forEach((f) => {
-            const isFileMatch =
-              lowerSearch && f.name.toLowerCase().includes(lowerSearch);
-            const highlightClass = isFileMatch ? "highlight" : "";
-            
-            // 智能链接逻辑
-            let url = "";
-            const ext = f.name.split(".").pop().toLowerCase();
-            const browserSupport = ["pdf", "jpg", "png", "gif", "svg", "webp", "jpeg", "mp4", "webm", "txt", "html", "md"];
-            
-            if (f.isHF) {
-              url = f.url; // HF 已经是直连
-            } else {
-              if (browserSupport.includes(ext)) {
-                // 直接打开
-                url = `https://raw.githubusercontent.com/${username}/${repo}/${branch}/${f.path}`;
-              } else {
-                // GitHub Blob 视图
-                url = `https://github.com/${username}/${repo}/blob/${branch}/${f.path}`;
-              }
-            }
-
-            html += `
-            <div class="file-item ${highlightClass}">
-              <a href="${url}" target="_blank" title="${f.isHF ? '从 HuggingFace 加载' : '从 GitHub 加载'}">
-                <span class="file-icon">${getFileIcon(f.name)}</span>
-                <span>${f.name}</span>
-                ${f.isHF ? `<span class="hf-badge">${f.size_mb} MB</span>` : ""}
-              </a>
-            </div>`;
-          });
-
+        Object.entries(node._folders).sort().forEach(([name, sub]) => {
+          const isDirMatch = lowerSearch && name.toLowerCase().includes(lowerSearch);
+          const highlight = isDirMatch ? "highlight" : "";
+          const showAllChildren = forceShowAll || isDirMatch;
+          html += `<div class="folder"><div class="folder-header ${highlight}" onclick="this.nextElementSibling.classList.toggle('collapsed'); this.querySelector('.toggle-icon').classList.toggle('open')"><span class="toggle-icon ${currentSearch || isDirMatch ? "open" : ""}">▶</span><span class="folder-icon">📁</span><span>${name}</span></div><div class="folder-children ${currentSearch || isDirMatch ? "" : "collapsed"}">${renderNode(sub, level + 1, showAllChildren)}</div></div>`;
+        });
+        node._files.sort((a, b) => a.name.localeCompare(b.name)).forEach(f => {
+          const isFileMatch = lowerSearch && f.name.toLowerCase().includes(lowerSearch);
+          const highlightClass = isFileMatch ? "highlight" : "";
+          const ext = f.name.split(".").pop().toLowerCase();
+          const browserSupport = ["pdf", "jpg", "png", "gif", "svg", "webp", "jpeg", "mp4", "webm", "txt", "html", "md"];
+          let url = f.isHF ? f.url : (browserSupport.includes(ext) ? `https://raw.githubusercontent.com/${username}/${repo}/${branch}/${f.path}` : `https://github.com/${username}/${repo}/blob/${branch}/${f.path}`);
+          html += `<div class="file-item ${highlightClass}"><a href="${url}" target="_blank" title="${f.isHF ? 'HuggingFace Storage' : 'GitHub Storage'}"><span class="file-icon">${getFileIcon(f.name)}</span><span>${f.name}</span>${f.isHF ? `<span class="hf-badge">${f.size_mb} MB</span>` : ""}</a></div>`;
+        });
         return html;
       }
 
       function renderStats() {
-        const hf = allFiles.filter((i) => i.isHF);
-        const totalSize = hf
-          .reduce((acc, cr) => acc + (cr.size_mb || 0), 0)
-          .toFixed(1);
-        document.getElementById("stats").innerHTML = `
-          <span>📦 总计 ${allFiles.length} 项</span>
-          <span>🤗 HF 大文件 ${hf.length} 项 (${totalSize} MB)</span>
-        `;
+        const hf = allFiles.filter(i => i.isHF);
+        const totalSize = hf.reduce((acc, cr) => acc + (cr.size_mb || 0), 0).toFixed(1);
+        const statsElem = document.getElementById("stats");
+        if (statsElem) statsElem.innerHTML = `<span>📦 总计 ${allFiles.length} 项</span><span>🤗 HF 大文件 ${hf.length} 项 (${totalSize} MB)</span>`;
       }
 
-      // --- 事件监听 ---
       initTheme();
       loadData();
-
-      document.getElementById("searchInput").addEventListener("input", (e) => {
-        currentSearch = e.target.value;
-        render();
-      });
-
-      document.getElementById("filterTags").addEventListener("click", (e) => {
+      searchInput.addEventListener("input", (e) => { currentSearch = e.target.value; render(); });
+      filterTags.addEventListener("click", (e) => {
         if (e.target.classList.contains("tag")) {
-          document
-            .querySelectorAll(".tag")
-            .forEach((t) => t.classList.remove("active"));
+          document.querySelectorAll(".tag").forEach(t => t.classList.remove("active"));
           e.target.classList.add("active");
           currentFilter = e.target.dataset.filter;
           render();

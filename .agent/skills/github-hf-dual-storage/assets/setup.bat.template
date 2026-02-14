@@ -33,7 +33,6 @@ echo [3/7] HuggingFace Authentication
 python -c "from huggingface_hub import HfApi; HfApi().whoami()" >nul 2>&1
 if !errorlevel! neq 0 (
     echo   Note: Not logged in. Run 'huggingface-cli login' later.
-    echo.
 ) else (
     echo   OK: HuggingFace login detected
 )
@@ -43,14 +42,9 @@ echo.
 echo [4/7] Running Distribution Script...
 python scripts\distribute_files.py
 
-:: 5. Sync Remote
+:: 5. Commit Locally (Must commit before rebase)
 echo.
-echo [5/7] Syncing Remote Changes...
-git pull --rebase origin main
-
-:: 6. Auto Commit
-echo.
-echo [6/7] Preparing Git Commit...
+echo [5/7] Preparing Git Commit...
 git add .
 git diff --cached --quiet
 if !errorlevel! neq 0 (
@@ -62,6 +56,11 @@ if !errorlevel! neq 0 (
 ) else (
     echo   OK: No changes to commit
 )
+
+:: 6. Sync Remote (Resolves Rejected Push)
+echo.
+echo [6/7] Syncing Remote Changes (git pull --rebase)...
+git pull --rebase origin main
 
 :: 7. Push to GitHub
 echo.

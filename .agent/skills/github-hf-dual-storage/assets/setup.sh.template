@@ -7,7 +7,7 @@ echo ""
 # 1. Check Python
 echo "[1/7] Checking Python..."
 if ! command -v python3 &> /dev/null; then
-    echo "[ERROR] python3 not found. Please install Python 3.8+."
+    echo "[ERROR] python3 not found."
     exit 1
 fi
 
@@ -15,7 +15,6 @@ fi
 echo ""
 echo "[2/7] Checking Dependencies..."
 if ! python3 -c "import huggingface_hub" &> /dev/null; then
-    echo "  Installing huggingface_hub..."
     pip3 install -q "huggingface_hub>=0.17.0"
 else
     echo "  OK: huggingface_hub is installed"
@@ -27,7 +26,7 @@ echo "[3/7] HuggingFace Authentication"
 if python3 -c "from huggingface_hub import HfApi; HfApi().whoami()" &> /dev/null; then
     echo "  OK: HuggingFace login detected"
 else
-    echo "  Note: Not logged in. Run 'huggingface-cli login' later."
+    echo "  Note: Not logged in."
 fi
 
 # 4. Run Distribution
@@ -35,27 +34,27 @@ echo ""
 echo "[4/7] Running Distribution Script..."
 python3 scripts/distribute_files.py
 
-# 5. Sync Remote
+# 5. Commit Locally
 echo ""
-echo "[5/7] Syncing Remote Changes (git pull --rebase)..."
-git pull --rebase origin main
-
-# 6. Auto Commit
-echo ""
-echo "[6/7] Preparing Git Commit..."
+echo "[5/7] Preparing Git Commit..."
 git add .
 if ! git diff --cached --quiet; then
     read -p "  Enter commit message [Default: Auto update]: " commit_msg
     if [ -z "$commit_msg" ]; then
-        commit_msg="Auto update via setup.sh"
+        commit_msg="Auto update"
     fi
     git commit -m "$commit_msg"
-    echo "  OK: Changes committed"
+    echo "  OK: Committed locally"
 else
-    echo "  ✨ OK: No changes to commit"
+    echo "  OK: No changes to commit"
 fi
 
-# 7. Push to GitHub
+# 6. Sync Remote
+echo ""
+echo "[6/7] Syncing Remote Changes (git pull --rebase)..."
+git pull --rebase origin main
+
+# 7. Push
 echo ""
 echo "[7/7] Pushing to GitHub..."
 git push origin main
