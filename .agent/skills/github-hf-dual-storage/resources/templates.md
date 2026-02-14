@@ -90,6 +90,36 @@ def upload_to_hf(files):
         print(f"❌ Upload error: {str(e)}")
         return False
 
+def sync_hf_deletions(api, local_large_files):
+    """Sync deletion: If a file exists on HF but is deleted locally, remove from HF"""
+    print(f"\\n🗑️  Checking for sync deletions ({HF_REPO_ID})...")
+    try:
+        remote_files = api.list_repo_files(repo_id=HF_REPO_ID, repo_type="dataset")
+        local_rel_paths = {f.relative_to(PROJECT_ROOT).as_posix() for f in local_large_files}
+
+        to_delete = []
+        for remote_file in remote_files:
+            if remote_file in ['.gitattributes', 'README.md', '.gitignore']:
+                continue
+            if remote_file not in local_rel_paths:
+                to_delete.append(remote_file)
+
+        if to_delete:
+            print(f"   Found {len(to_delete)} redundant files, deleting from HF...")
+            for file_path in to_delete:
+                print(f"   ␡ Deleting: {file_path}")
+                api.delete_file(
+                    path_in_repo=file_path,
+                    repo_id=HF_REPO_ID,
+                    repo_type="dataset",
+                    commit_message=f"Sync delete: {os.path.basename(file_path)}"
+                )
+            print("   ✅ HF Sync deletion complete")
+        else:
+            print("   ✨ HF repo is up to date, no deletions needed")
+    except Exception as e:
+        print(f"   ⚠️ Sync deletion failed: {str(e)}")
+
 def update_gitignore_and_git(large_files):
     if not large_files: return
     print("\\n🛡️  Processing Git tracking & .gitignore...")

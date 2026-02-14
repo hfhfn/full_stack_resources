@@ -59,15 +59,20 @@ def scan_files():
             
     return large_files, small_files
 
-def upload_to_hf(files):
+def get_hf_api():
+    try:
+        from huggingface_hub import HfApi
+        return HfApi()
+    except ImportError:
+        print("❌ 错误: 未安装 huggingface_hub。请运行: pip install huggingface_hub")
+        sys.exit(1)
+
+def upload_to_hf(api, files):
     if not files:
         return
     
-    print(f"\\n🚀 正在上传 {len(files)} 个大文件到 HuggingFace ({HF_REPO_ID})...")
+    print(f"\n🚀 正在上传 {len(files)} 个大文件到 HuggingFace ({HF_REPO_ID})...")
     try:
-        from huggingface_hub import HfApi
-        api = HfApi()
-        
         # 验证登录状态
         user = api.whoami()
         print(f"   已登录用户: {user['name']}")
@@ -90,9 +95,43 @@ def upload_to_hf(files):
         sys.exit(1)
     except Exception as e:
         print(f"❌ 上传出错: {str(e)}")
-        # 即使上传失败，我们可能也想继续处理 gitignore，或者选择退出
-        # 这里选择继续，以免阻塞流程，但用户需要注意
         return False
+
+def sync_hf_deletions(api, local_large_files):
+    """同步删除：如果文件在 HF 上存在但本地已删除，则从 HF 移除"""
+    print(f"\n🗑️  正在检查同步删除 ({HF_REPO_ID})...")
+    try:
+        # 获取 HF 上的文件列表
+        remote_files = api.list_repo_files(repo_id=HF_REPO_ID, repo_type="dataset")
+        
+        # 本地当前的大文件路径（相对于项目根目录的 posix 路径）
+        local_rel_paths = {f.relative_to(PROJECT_ROOT).as_posix() for f in local_large_files}
+        
+        # 找出需要删除的文件：在 HF 上但在本地 RelPaths 中不存在
+        # 注意：排除一些特殊文件如 .gitattributes, README.md 等
+        to_delete = []
+        for remote_file in remote_files:
+            if remote_file in ['.gitattributes', 'README.md', '.gitignore']:
+                continue
+            if remote_file not in local_rel_paths:
+                to_delete.append(remote_file)
+        
+        if to_delete:
+            print(f"   发现 {len(to_delete)} 个冗余文件，准备从 HF 删除...")
+            for file_path in to_delete:
+                print(f"   ␡ 删除: {file_path}")
+                api.delete_file(
+                    path_in_repo=file_path,
+                    repo_id=HF_REPO_ID,
+                    repo_type="dataset",
+                    commit_message=f"Sync delete: {os.path.basename(file_path)}"
+                )
+            print("   ✅ HF 同步删除完成")
+        else:
+            print("   ✨ HF 仓库已是最新，无需删除")
+            
+    except Exception as e:
+        print(f"   ⚠️ 同步删除失败: {str(e)}")
 
 def update_gitignore_and_git(large_files):
     if not large_files:
@@ -156,23 +195,32 @@ def generate_manifest(large_files):
     print("✅ 清单生成完毕")
 
 def main():
-    # 1. 扫描
+    # 1. 扫描本地文件
     large, small = scan_files()
     print(f"   -> 发现 {len(large)} 个大文件, {len(small)} 个小文件")
     
-    # 2. 上传 HF
+    # 2. 获取 API 实例
+    api = get_hf_api()
+    
+    # 3. 同步删除 (HF 有但本地没有的文件)
+    # 我们根据扫描结果对比 HF
+    sync_hf_deletions(api, large)
+    
+    # 4. 上传新大文件
     if large:
-        upload_to_hf(large)
+        upload_to_hf(api, large)
         
-        # 3. 处理 Git (移除追踪 + 更新 ignore)
+        # 5. 处理 Git (移除追踪 + 更新 ignore)
         update_gitignore_and_git(large)
         
-        # 4. 生成清单
+        # 6. 生成清单
         generate_manifest(large)
     else:
         print("🎉 没有发现大于 50MB 的文件。")
+        # 即使没有大文件，也可能需要清理清单（如果之前有现在没了）
+        generate_manifest([])
 
-    print("\\n✅ 所有步骤完成！")
+    print("\n✅ 所有步骤完成！")
     print("👉 现在你可以放心地运行: git add . && git commit -m 'update' && git push")
 
 if __name__ == "__main__":
