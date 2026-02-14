@@ -612,7 +612,12 @@ fi
       }
 
       // 递归渲染树形结构
-      function renderTree(node, level = 0, searchTerm = "") {
+      function renderTree(
+        node,
+        level = 0,
+        searchTerm = "",
+        forceShowAll = false,
+      ) {
         let html = "";
         const lowerSearchTerm = searchTerm.toLowerCase();
 
@@ -629,11 +634,17 @@ fi
             .includes(lowerSearchTerm);
           const contentsMatch = doesFolderMatchSearch(node[folder], searchTerm);
           const folderMatches =
-            searchTerm === "" || isFolderNameMatch || contentsMatch;
+            searchTerm === "" ||
+            forceShowAll ||
+            isFolderNameMatch ||
+            contentsMatch;
 
           if (searchTerm !== "" && !folderMatches) {
             return; // 搜索模式下，不匹配的文件夹直接跳过
           }
+
+          // 如果当前文件夹匹配，则强制显示所有子项
+          const nextForceShowAll = forceShowAll || isFolderNameMatch;
 
           html += `
                     <div class="folder">
@@ -643,7 +654,7 @@ fi
                             <span>${folder}/</span>
                         </div>
                         <div class="folder-children ${searchTerm === "" ? "collapsed" : ""}">
-                            ${renderTree(node[folder], level + 1, searchTerm)}
+                            ${renderTree(node[folder], level + 1, searchTerm, nextForceShowAll)}
                         </div>
                     </div>
                 `;
@@ -657,7 +668,9 @@ fi
               // 检查文件是否匹配搜索
               const fileNameLower = file.name.toLowerCase();
               const matches =
-                searchTerm === "" || fileNameLower.includes(lowerSearchTerm);
+                searchTerm === "" ||
+                forceShowAll ||
+                fileNameLower.includes(lowerSearchTerm);
 
               if (searchTerm !== "" && !matches) {
                 return; // 搜索模式下，不匹配的文件直接跳过
@@ -672,7 +685,7 @@ fi
               // 链接处理优化：
               // 1. 大文件 -> HuggingFace 直链
               // 2. 可浏览器直接预览的文件 (PDF, 图片, TXT, JSON, HTML) -> 相对路径 (GitHub Pages 原生访问)
-              // 3. 代码和 Markdown -> GitHub Blob 页面 (带渲染预览)
+              // 3. 代码 and Markdown -> GitHub Blob 页面 (带渲染预览)
 
               let fileUrl;
               let title;
