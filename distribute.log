@@ -407,3 +407,56 @@
 2026-02-15 05:07:01,865 [INFO] [OK] Manifest generated with 97 total files
 2026-02-15 05:07:01,865 [INFO] 
 [OK] All steps complete in 2.5s! Ready for git push.
+2026-02-15 05:10:53,738 [INFO] Scanning files (Threshold: 50MB)...
+2026-02-15 05:10:53,882 [INFO] Stats: 0 large files, 96 small files
+2026-02-15 05:10:53,882 [INFO] Checking for redundant files on HuggingFace (hfhfn/full_stack_resources)...
+2026-02-15 05:10:56,284 [INFO] No redundant files found.
+2026-02-15 05:10:56,284 [INFO] Processing Git tracking & .gitignore...
+2026-02-15 05:10:56,284 [INFO] Updated .gitignore with 1 rules (new: 0, removed: 0)
+2026-02-15 05:10:56,286 [INFO] Generating full manifest (data/file_manifest.json)...
+2026-02-15 05:10:56,293 [INFO]     Preserving managed HF file: 《内容算法：把内容变成价值的效率系统》_闫泽华.pdf
+2026-02-15 05:10:56,294 [INFO]     (Timestamp preserved - no content changes)
+2026-02-15 05:10:56,296 [INFO] [OK] Manifest generated with 97 total files
+2026-02-15 05:10:56,296 [INFO] 
+[OK] All steps complete in 2.6s! Ready for git push.
+2026-02-15 05:11:32,215 [INFO] Scanning files (Threshold: 50MB)...
+2026-02-15 05:11:32,364 [INFO] Stats: 0 large files, 96 small files
+2026-02-15 05:11:32,364 [INFO] Checking for redundant files on HuggingFace (hfhfn/full_stack_resources)...
+2026-02-15 05:11:34,749 [INFO] No redundant files found.
+2026-02-15 05:11:34,749 [INFO] Processing Git tracking & .gitignore...
+2026-02-15 05:11:34,749 [INFO]     Removing rule for deleted local file: 《内容算法：把内容变成价值的效率系统》_闫泽华.pdf
+2026-02-15 05:11:34,749 [INFO]     Deleting from HuggingFace: 《内容算法：把内容变成价值的效率系统》_闫泽华.pdf
+2026-02-15 05:11:35,095 [WARNING] Could not delete 《内容算法：把内容变成价值的效率系统》_闫泽华.pdf from HF: 404 Client Error. (Request ID: Root=1-6990e506-1ccd2f75319ff9f77dc30628;2b6968d2-4942-4ffb-87ab-9e78c9c76a8d)
+
+Entry Not Found for url: https://huggingface.co/api/datasets/hfhfn/full_stack_resources/commit/main.
+A file with the name "*******************_***.pdf" does not exist
+A file with the name "《内容算法：把内容变成价值的效率系统》_闫泽华.pdf" does not exist
+2026-02-15 05:11:35,096 [INFO] Updated .gitignore with 0 rules (new: 0, removed: 1)
+2026-02-15 05:11:35,096 [INFO] Generating full manifest (data/file_manifest.json)...
+2026-02-15 05:11:35,103 [INFO]     Removing unmanaged HF file from manifest: 《内容算法：把内容变成价值的效率系统》_闫泽华.pdf
+2026-02-15 05:11:35,104 [INFO]     (HF files decreased: 1 → 0, updating timestamp)
+2026-02-15 05:11:35,106 [INFO] [OK] Manifest generated with 96 total files
+2026-02-15 05:11:35,106 [INFO] 
+[OK] All steps complete in 2.9s! Ready for git push.
+2026-02-15 05:11:43,760 [INFO] Scanning files (Threshold: 50MB)...
+2026-02-15 05:11:43,894 [INFO] Stats: 0 large files, 96 small files
+2026-02-15 05:11:43,895 [INFO] Checking for redundant files on HuggingFace (hfhfn/full_stack_resources)...
+2026-02-15 05:11:46,248 [INFO] No redundant files found.
+2026-02-15 05:11:46,248 [INFO] Processing Git tracking & .gitignore...
+2026-02-15 05:11:46,249 [INFO] Updated .gitignore with 0 rules (new: 0, removed: 0)
+2026-02-15 05:11:46,249 [INFO] Generating full manifest (data/file_manifest.json)...
+2026-02-15 05:11:46,257 [INFO]     (Timestamp preserved - no content changes)
+2026-02-15 05:11:46,260 [INFO] [OK] Manifest generated with 96 total files
+2026-02-15 05:11:46,260 [INFO] 
+[OK] All steps complete in 2.5s! Ready for git push.
+2026-02-15 05:13:54,847 [INFO] Scanning files (Threshold: 50MB)...
+2026-02-15 05:13:54,986 [INFO] Stats: 0 large files, 96 small files
+2026-02-15 05:13:54,986 [INFO] Checking for redundant files on HuggingFace (hfhfn/full_stack_resources)...
+2026-02-15 05:13:57,434 [INFO] No redundant files found.
+2026-02-15 05:13:57,434 [INFO] Processing Git tracking & .gitignore...
+2026-02-15 05:13:57,435 [INFO] Updated .gitignore with 0 rules (new: 0, removed: 0)
+2026-02-15 05:13:57,436 [INFO] Generating full manifest (data/file_manifest.json)...
+2026-02-15 05:13:57,444 [INFO]     (Timestamp preserved - no content changes)
+2026-02-15 05:13:57,446 [INFO] [OK] Manifest generated with 96 total files
+2026-02-15 05:13:57,446 [INFO] 
+[OK] All steps complete in 2.6s! Ready for git push.
