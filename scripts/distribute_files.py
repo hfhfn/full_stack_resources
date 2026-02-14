@@ -34,7 +34,7 @@ def run_git_cmd(args):
 def scan_files():
     large_files = []
     small_files = []
-    print(f"🔍 Scanning files (Threshold: {SIZE_THRESHOLD/1024/1024:.0f}MB)...")
+    print(f"[SCAN] Files (Threshold: {SIZE_THRESHOLD/1024/1024:.0f}MB)...")
 
     for path in PROJECT_ROOT.rglob('*'):
         if not path.is_file(): continue
@@ -54,7 +54,7 @@ def scan_files():
 
 def upload_to_hf(files):
     if not files: return
-    print(f"\n🚀 Uploading {len(files)} large files to HuggingFace ({HF_REPO_ID})...")
+    print(f"\n[UPLOAD] {len(files)} large files to HuggingFace ({HF_REPO_ID})...")
     try:
         from huggingface_hub import HfApi
         api = HfApi()
@@ -63,7 +63,7 @@ def upload_to_hf(files):
 
         for file_path in files:
             rel_path = file_path.relative_to(PROJECT_ROOT).as_posix()
-            print(f"   📤 Uploading: {rel_path} ({get_file_size(file_path)/1024/1024:.1f} MB)")
+            print(f"   > {rel_path} ({get_file_size(file_path)/1024/1024:.1f} MB)")
             api.upload_file(
                 path_or_fileobj=str(file_path),
                 path_in_repo=rel_path,
@@ -71,18 +71,18 @@ def upload_to_hf(files):
                 repo_type="dataset",
                 commit_message=f"Upload large file: {os.path.basename(rel_path)}"
             )
-        print("✅ Upload complete")
+        print("[OK] Upload complete")
         return True
     except ImportError:
         print("❌ Error: huggingface_hub not installed. Run: pip install huggingface_hub")
         sys.exit(1)
     except Exception as e:
-        print(f"❌ Upload error: {str(e)}")
+        print(f"[ERROR] Upload error: {str(e)}")
         return False
 
 def sync_hf_deletions(local_large_files):
     """Sync deletion: If a file exists on HF but is deleted locally, remove from HF"""
-    print(f"\n🧹 Checking for redundant files on HuggingFace ({HF_REPO_ID})...")
+    print(f"\n[SYNC] Checking for redundant files on HuggingFace ({HF_REPO_ID})...")
     try:
         from huggingface_hub import HfApi, list_repo_files
         api = HfApi()
@@ -98,22 +98,22 @@ def sync_hf_deletions(local_large_files):
         if to_delete:
             print(f"   Found {len(to_delete)} redundant files, deleting from HF...")
             for rf in to_delete:
-                print(f"   🗑️  Deleting: {rf}")
+                print(f"   - Deleting: {rf}")
                 api.delete_file(
                     path_in_repo=rf,
                     repo_id=HF_REPO_ID,
                     repo_type="dataset",
                     commit_message=f"Sync delete: {os.path.basename(rf)}"
                 )
-            print(f"✅ Sync deletion complete (Removed {len(to_delete)} files)")
+            print(f"[OK] Sync deletion complete (Removed {len(to_delete)} files)")
         else:
-            print("   ✨ Remote repo is up to date, no redundant files found.")
+            print("   No redundant files found.")
     except Exception as e:
-        print(f"⚠️ Sync deletion failed: {str(e)}")
+        print(f"[WARN] Sync deletion failed: {str(e)}")
 
 def update_gitignore_and_git(large_files):
     if not large_files: return
-    print("\n🛡️  Processing Git tracking & .gitignore...")
+    print("\n[GIT] Processing Git tracking & .gitignore...")
     gitignore_path = PROJECT_ROOT / '.gitignore'
 
     existing_content = []
@@ -147,10 +147,10 @@ def update_gitignore_and_git(large_files):
             f.write("\n" + header)
             for rule in sorted(new_rules):
                 f.write(f"{rule}\n")
-    print(f"   📝 Updated .gitignore with {len(new_rules)} rules")
+    print(f"   Updated .gitignore with {len(new_rules)} rules")
 
 def generate_manifest(large_files):
-    print("\n📋 Generating enhanced manifest (data/file_manifest.json)...")
+    print("\n[MANIFEST] Generating enhanced manifest (data/file_manifest.json)...")
     manifest = {
         "hf_repo_id": HF_REPO_ID,
         "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -175,11 +175,11 @@ def generate_manifest(large_files):
     manifest_dir.mkdir(exist_ok=True)
     with open(manifest_dir / 'file_manifest.json', 'w', encoding='utf-8') as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
-    print("✅ Manifest generated")
+    print("[OK] Manifest generated")
 
 def main():
     large, small = scan_files()
-    print(f"   -> Found {len(large)} large files, {len(small)} small files")
+    print(f"   Found {len(large)} large files, {len(small)} small files")
 
     if large:
         upload_to_hf(large)
@@ -187,11 +187,11 @@ def main():
         update_gitignore_and_git(large)
         generate_manifest(large)
     else:
-        print("🎉 No files > 50MB found.")
+        print("[OK] No files > 50MB found.")
         sync_hf_deletions([])
         generate_manifest([])
 
-    print("\n✅ All steps complete! Ready for git push.")
+    print("\n[OK] All steps complete! Ready for git push.")
 
 if __name__ == "__main__":
     main()

@@ -1,79 +1,92 @@
 @echo off
 setlocal enabledelayedexpansion
-:: 使用 65001 (UTF-8) 以支持中文字符显示
+:: UTF-8 support for Chinese characters
 chcp 65001 >nul
 
 echo ============================================
 echo   GitHub + HuggingFace Dual-Storage Setup
-echo   架构版本: v4.0 (拉取优先模式)
+echo   Architecture: v4.0 (Pull-First Optimized)
 echo ============================================
 echo.
 
-:: 1. 环境检查
-echo [1/7] 检查环境...
+:: 1. Check Python
+echo [1/7] Checking Python...
 python --version >nul 2>&1
 if !errorlevel! neq 0 (
-    echo [ERROR] 未找到 Python，请先安装 Python 3.8+
+    echo [ERROR] Python not found. Install Python 3.8+
     pause
     exit /b 1
 )
 
-:: 2. 检查依赖
+:: 2. Check Dependencies
 echo.
-echo [2/7] 检查依赖...
+echo [2/7] Checking Dependencies...
 python -c "import huggingface_hub" >nul 2>&1
 if !errorlevel! neq 0 (
-    echo   正在安装 huggingface_hub...
+    echo   Installing huggingface_hub...
     pip install -q "huggingface_hub>=0.17.0"
 ) else (
-    echo   OK: huggingface_hub 已安装
+    echo   OK: huggingface_hub installed
 )
 
-:: 3. 同步远程 (在所有本地操作之前进行)
-:: 这样可以确保后续的 distribute_files.py 基于最新的远程清单运行
+:: 3. Clean unstaged changes before pull (FIX: Prevent "unstaged changes" error)
 echo.
-echo [3/7] 同步远程更改 (防止清单冲突)...
+echo [3/7] Preparing Git (cleanup unstaged changes)...
+git diff --quiet >nul 2>&1
+if !errorlevel! neq 0 (
+    echo   Stashing local changes...
+    git stash
+)
+
+:: 4. Sync Remote with Rebase
+echo.
+echo [4/7] Syncing Remote (git pull --rebase)...
 git pull --rebase origin main
 if !errorlevel! neq 0 (
     echo.
-    echo [ERROR] 同步失败。如果存在冲突，请手动解决或运行: git rebase --abort
+    echo [ERROR] Sync failed. Resolve conflicts: git rebase --abort
+    echo   Or restore stash: git stash pop
     pause
     exit /b 1
+) else (
+    echo   OK: Synced with remote
 )
 
-:: 4. 运行分发引擎
+:: 5. Run Distribution Engine
 echo.
-echo [4/7] 运行分发引擎 [扫描大文件并更新清单]...
+echo [5/7] Running Distribution Script...
 python scripts\distribute_files.py
+if !errorlevel! neq 0 (
+    echo [WARNING] Distribution script had errors. Check output above.
+)
 
-:: 5. 准备本地提交
+:: 6. Local Commit
 echo.
-echo [5/7] 准备本地提交...
+echo [6/7] Preparing Commit...
 git add .
 git diff --cached --quiet
 if !errorlevel! neq 0 (
-    echo   检测到变更...
-    set /p commit_msg="  请输入提交信息 [默认: Auto update]: "
+    echo   Changes detected.
+    set /p commit_msg="  Enter message (default: Auto update): "
     if "!commit_msg!"=="" set commit_msg=Auto update
     git commit -m "!commit_msg!"
-    echo   OK: 已完成本地提交
+    echo   OK: Committed locally
 ) else (
-    echo   OK: 无需提交，没有变更
+    echo   OK: No changes to commit
 )
 
-:: 6. 推送至 GitHub
+:: 7. Push to GitHub
 echo.
-echo [6/7] 推送到 GitHub...
+echo [7/7] Pushing to GitHub...
 git push origin main
 if !errorlevel! neq 0 (
-    echo.
-    echo [WARNING] 推送失败。可能是短时间内的并发推送，请重试或手动运行: git push origin main
+    echo [WARNING] Push failed. Retry manually: git push origin main
 ) else (
-    echo   OK: 推送完成！
+    echo   OK: Push successful
 )
 
 echo.
 echo ============================================
-echo   全部配置完成！
+echo   Setup Complete!
 echo ============================================
 pause
