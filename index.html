@@ -517,7 +517,7 @@
         try {
           console.log("Loading files from GitHub API and manifest...");
 
-          // 并行获取 GitHub 文件列表和 manifest
+          // 并行获取 GitHub API 和 manifest
           const [gitRes, manifestRes] = await Promise.all([
             fetch(
               `https://api.github.com/repos/${username}/${repo}/git/trees/${branch}?recursive=1`
@@ -527,44 +527,36 @@
 
           let files = [];
 
-          // 从 GitHub API 获取 GitHub 上的文件
-          if (gitRes && gitRes.ok) {
-            const gitData = await gitRes.json();
-            const gitFiles = gitData.tree
-              .filter(
-                (i) =>
-                  i.type === "blob" &&
-                  !i.path.match(/^(\.github|scripts|data|\.git|\.idea|\.serena|index\.html|README\.md|setup\.|distribute\.log|\.gitignore)/)
-              )
-              .map((i) => ({
-                path: i.path,
-                name: i.path.split("/").pop(),
-                is_hf: false,
-                size_mb: 0
-              }));
-            files.push(...gitFiles);
-            console.log(`✅ GitHub API: ${gitFiles.length} files`);
-          }
-
-          // 从 manifest 获取 HF 大文件信息
+          // 优先从 manifest 获取（包含所有文件的完整信息）
           if (manifestRes && manifestRes.ok) {
             const manifest = await manifestRes.json();
-            const hfFiles = manifest.files.filter(f => f.is_hf);
-            files.push(...hfFiles);
-            console.log(`✅ Manifest: ${hfFiles.length} HF files`);
+            // 加载 manifest 中的所有文件
+            files = manifest.files || [];
+            console.log(`✅ Manifest: ${files.length} files loaded`);
           }
 
-          // 去重（防止同一文件在两个列表中出现）
-          const fileMap = new Map();
-          files.forEach(f => {
-            const key = f.path;
-            if (!fileMap.has(key) || f.is_hf) {
-              fileMap.set(key, f);
+          // 如果没有 manifest 或为空，从 GitHub API 获取
+          if (!files || files.length === 0) {
+            if (gitRes && gitRes.ok) {
+              const gitData = await gitRes.json();
+              files = gitData.tree
+                .filter(
+                  (i) =>
+                    i.type === "blob" &&
+                    !i.path.match(/^(\.github|scripts|data|\.git|\.idea|\.serena|index\.html|README\.md|setup\.|distribute\.log|\.gitignore)/)
+                )
+                .map((i) => ({
+                  path: i.path,
+                  name: i.path.split("/").pop(),
+                  is_hf: false,
+                  size_mb: 0
+                }));
+              console.log(`✅ GitHub API fallback: ${files.length} files`);
             }
-          });
+          }
 
-          allFiles = Array.from(fileMap.values());
-          console.log(`✅ Total files: ${allFiles.length} (after dedup)`);
+          allFiles = files;
+          console.log(`✅ Total: ${allFiles.length} files`);
           console.log(`   HF: ${allFiles.filter(f => f.is_hf).length}, GitHub: ${allFiles.filter(f => !f.is_hf).length}`);
 
           render();
