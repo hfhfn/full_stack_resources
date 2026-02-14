@@ -2,7 +2,7 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <title>📚 全栈学习资料库</title>
+    <title>📚 全栈学习资料</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -42,18 +42,12 @@
         -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       }
       .header-actions { display: flex; align-items: center; gap: 12px; }
-      .nav-btn {
-        background: var(--border); text-decoration: none; color: var(--text-main);
-        height: 44px; padding: 0 16px; border-radius: 12px; font-weight: 500;
-        display: flex; align-items: center; gap: 8px; transition: var(--transition);
-      }
-      .nav-btn:hover { background: var(--primary); color: white; transform: scale(1.05); }
-      .theme-toggle {
+      .icon-btn {
         background: var(--border); border: none; width: 44px; height: 44px; border-radius: 12px;
         cursor: pointer; display: flex; align-items: center; justify-content: center;
-        font-size: 1.2rem; transition: var(--transition);
+        font-size: 1.2rem; color: var(--text-main); transition: var(--transition); text-decoration: none;
       }
-      .theme-toggle:hover { background: var(--primary); color: white; }
+      .icon-btn:hover { background: var(--primary); color: white; transform: scale(1.05); }
 
       .search-area { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; }
       .search-wrapper { position: relative; display: flex; gap: 12px; }
@@ -71,7 +65,7 @@
       .tag:hover:not(.active) { border-color: var(--primary); color: var(--primary); }
 
       .file-tree { border-top: 1px solid var(--border); padding-top: 20px; min-height: 300px; }
-      .loader { text-align: center; padding: 40px; color: var(--text-muted); font-size: 1.1rem; }
+      .loader { text-align: center; padding: 60px; color: var(--text-muted); font-size: 1rem; line-height: 1.8; }
       .folder { margin: 2px 0; }
       .folder-header { padding: 10px 12px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 10px; color: var(--text-main); font-weight: 600; transition: var(--transition); }
       .folder-header:hover { background: rgba(79, 70, 229, 0.05); }
@@ -103,20 +97,19 @@
     <div class="container fade-in">
       <header>
         <div class="header-left">
-          <h1>全栈学习资料库</h1>
+          <h1>全栈学习资料</h1>
         </div>
         <div class="header-actions">
-          <a href="https://github.com/hfhfn/full_stack_resources" target="_blank" class="nav-btn">
-            <svg height="20" width="20" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-            <span>GitHub 入口</span>
+          <a href="https://github.com/hfhfn/full_stack_resources" target="_blank" class="icon-btn" title="查看 GitHub 仓库">
+            <svg height="22" width="22" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
           </a>
-          <button class="theme-toggle" id="themeToggle" title="切换显示模式">🌓</button>
+          <button class="icon-btn" id="themeToggle" title="切换显示模式">🌓</button>
         </div>
       </header>
 
       <section class="search-area">
         <div class="search-wrapper">
-          <input type="text" id="searchInput" placeholder="🔍 搜搜你想找的资料... (支持模糊匹配)" autocomplete="off" />
+          <input type="text" id="searchInput" placeholder="🔍 搜搜你想找的资料..." autocomplete="off" />
           <button class="btn btn-clear" id="clearSearch">清空</button>
         </div>
         <div class="filter-tags" id="filterTags">
@@ -128,7 +121,7 @@
       </section>
 
       <main id="file-list" class="file-tree">
-        <div class="loader">🚀 正在全力加载索引...</div>
+        <div class="loader">🚀 正在全力加载索引...<br/><small style="opacity:0.6">正在尝试获取 GitHub 仓库及 HF 存储清单</small></div>
       </main>
 
       <footer id="stats" class="stats"></footer>
@@ -180,7 +173,8 @@
           // GitHub API Fetch
           const ghUrl = `https://api.github.com/repos/${username}/${repo}/git/trees/${branch}?recursive=1`;
           const ghRes = await fetch(ghUrl);
-          const ghData = ghRes.ok ? await ghRes.json() : { tree: [] };
+          if (!ghRes.ok) throw new Error(`GitHub API HTTP ${ghRes.status} (可能被限速或仓库名错误)`);
+          const ghData = await ghRes.json();
           
           let files = ghData.tree ? ghData.tree.filter(i => 
               i.type === "blob" && !i.path.startsWith(".") && 
@@ -196,19 +190,25 @@
               const mani = await maniRes.json();
               if (mani && mani.files) { 
                 mani.files.forEach(f => { 
-                  // 避免重复显示
                   if (!files.find(gf => gf.path === f.path)) {
                     files.push({ ...f, isHF: true }); 
                   }
                 }); 
               }
             }
-          } catch (e) { console.warn("Manifest failed", e); }
+          } catch (e) { console.warn("Manifest failed or not existed", e); }
           
           allFiles = files;
           render();
         } catch (e) { 
-          document.getElementById("file-list").innerHTML = `<div class="loader" style="color:#ef4444">❌ 数据加载异常: ${e.message}</div>`;
+          document.getElementById("file-list").innerHTML = `
+            <div class="loader" style="color:#ef4444">
+              ❌ 数据加载异常<br/>
+              <span style="font-size:0.85rem; opacity:0.8;">${e.message}</span><br/>
+              <span style="font-size:0.75rem; opacity:0.6; display:block; margin-top:10px;">
+                尝试拉取的仓库: ${username}/${repo} (${branch} 分支)
+              </span>
+            </div>`;
         }
       }
 
@@ -298,8 +298,8 @@
         if (statsElem) {
           statsElem.innerHTML = `
             <div class="stat-card"><span class="stat-label">总资源数</span><span class="stat-value">${filtered.length}</span></div>
-            <div class="stat-card"><span class="stat-label">大文件</span><span class="stat-value">${hf.length}</span></div>
-            <div class="stat-card"><span class="stat-label">HF 总体积</span><span class="stat-value">${totalSize} MB</span></div>`;
+            <div class="stat-card"><span class="stat-label">HF 存储</span><span class="stat-value">${hf.length}</span></div>
+            <div class="stat-card"><span class="stat-label">存储体积</span><span class="stat-value">${totalSize} MB</span></div>`;
         }
       }
 
