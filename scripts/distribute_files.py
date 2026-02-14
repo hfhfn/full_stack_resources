@@ -152,31 +152,61 @@ def update_gitignore_and_git(large_files):
     logger.info("Processing Git tracking & .gitignore...")
     gitignore_path = PROJECT_ROOT / '.gitignore'
     
+    # Read existing content
     lines = []
     if gitignore_path.exists():
         with open(gitignore_path, 'r', encoding='utf-8') as f:
             lines = f.readlines()
 
+    # Remove old auto-generated section
     header = "# [Auto] Large files managed by HuggingFace\n"
     new_content = []
     skip = False
-    for line in lines:
-        if line == header: skip = True; continue
-        if skip and line.strip() == "": skip = False; continue
-        if not skip: new_content.append(line)
-
+    
+    for i, line in enumerate(lines):
+        if line == header:
+            skip = True
+            continue
+        # Skip the section until we hit a non-empty line that doesn't look like a file rule
+        # But we need to be careful: stop skipping at the next section or end of file
+        if skip:
+            # If it's an empty line, we might be at the end of the section
+            if line.strip() == "":
+                skip = False
+                # Don't add empty lines between sections, we'll handle spacing below
+                continue
+            else:
+                # Still in the auto section, skip
+                continue
+        
+        # Add line if not skipping
+        new_content.append(line)
+    
+    # Remove trailing empty lines before auto section
+    while new_content and new_content[-1].strip() == "":
+        new_content.pop()
+    
+    # Prepare new rules
     new_rules = []
     for f in large_files:
         rel = f.relative_to(PROJECT_ROOT).as_posix()
         new_rules.append(rel)
         run_git_cmd(['rm', '--cached', str(f)])
 
+    # Write updated gitignore
     with open(gitignore_path, 'w', encoding='utf-8') as f:
+        # Write existing content
         f.writelines(new_content)
+        
+        # Add separator and auto section if there are large files
         if new_rules:
-            if new_content and not new_content[-1].endswith('\n'): f.write('\n')
+            # Ensure blank line before auto section
+            if new_content and new_content[-1].strip() != "":
+                f.write("\n")
             f.write("\n" + header)
-            for rule in sorted(new_rules): f.write(f"{rule}\n")
+            for rule in sorted(new_rules):
+                f.write(f"{rule}\n")
+    
     logger.info(f"Updated .gitignore with {len(new_rules)} rules")
 
 def generate_manifest(large_files, small_files):
@@ -215,9 +245,41 @@ def generate_manifest(large_files, small_files):
 
     manifest_dir = PROJECT_ROOT / 'data'
     manifest_dir.mkdir(exist_ok=True)
-    with open(manifest_dir / 'file_manifest.json', 'w', encoding='utf-8') as f:
+    manifest_path = manifest_dir / 'file_manifest.json'
+    
+    # Check if manifest exists and content is the same (except updated_at)
+    preserve_timestamp = False
+    if manifest_path.exists():
+        try:
+            with open(manifest_path, 'r', encoding='utf-8') as f:
+                old_manifest = json.load(f)
+            
+            # Compare file lists (without considering updated_at)
+            old_files = old_manifest.get('files', [])
+            new_files = manifest['files']
+            
+            if len(old_files) == len(new_files):
+                # Compare file entries (without comparing updated_at)
+                all_same = True
+                for old_file, new_file in zip(old_files, new_files):
+                    # Compare all fields except updated_at is not in individual files
+                    if old_file != new_file:
+                        all_same = False
+                        break
+                
+                if all_same:
+                    # Preserve the old timestamp if content hasn't changed
+                    preserve_timestamp = True
+                    manifest['updated_at'] = old_manifest['updated_at']
+        except Exception as e:
+            logger.debug(f"Could not compare manifests: {e}")
+    
+    with open(manifest_path, 'w', encoding='utf-8') as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
+    
     logger.info(f"[OK] Manifest generated with {len(manifest['files'])} total files")
+    if preserve_timestamp:
+        logger.info(f"    (Timestamp preserved - no content changes)")
 
 def main():
     start_time = time.time()
