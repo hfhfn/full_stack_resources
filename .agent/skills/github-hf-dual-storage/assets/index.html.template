@@ -35,18 +35,21 @@
         padding: 40px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
       }
       header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 20px; }
-      h1 {
-        font-family: "Outfit", sans-serif; font-size: 2.2rem; font-weight: 700;
-        background: linear-gradient(135deg, var(--primary), #ec4899);
-        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        display: flex; align-items: center; gap: 15px;
+      .header-left { display: flex; align-items: center; gap: 15px; }
+      h1 { font-family: "Outfit", sans-serif; font-size: 2.2rem; font-weight: 700; background: linear-gradient(135deg, var(--primary), #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+      .header-actions { display: flex; align-items: center; gap: 12px; }
+      .nav-btn {
+        background: var(--border); text-decoration: none; color: var(--text-main);
+        height: 44px; padding: 0 16px; border-radius: 12px; font-weight: 500;
+        display: flex; align-items: center; gap: 8px; transition: var(--transition);
       }
+      .nav-btn:hover { background: var(--primary); color: white; transform: scale(1.05); }
       .theme-toggle {
         background: var(--border); border: none; width: 44px; height: 44px; border-radius: 12px;
         cursor: pointer; display: flex; align-items: center; justify-content: center;
         font-size: 1.2rem; transition: var(--transition);
       }
-      .theme-toggle:hover { transform: scale(1.05); background: var(--primary); color: white; }
+      .theme-toggle:hover { background: var(--primary); color: white; }
       .search-area { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; }
       .search-wrapper { position: relative; display: flex; gap: 12px; }
       #searchInput {
@@ -62,6 +65,7 @@
       .tag.active { background: var(--primary); color: white; border-color: var(--primary); }
       .tag:hover:not(.active) { border-color: var(--primary); color: var(--primary); }
       .file-tree { border-top: 1px solid var(--border); padding-top: 20px; min-height: 300px; }
+      .loader { text-align: center; padding: 40px; color: var(--text-muted); }
       .folder { margin: 2px 0; }
       .folder-header { padding: 10px 12px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 10px; color: var(--text-main); font-weight: 600; transition: var(--transition); }
       .folder-header:hover { background: rgba(79, 70, 229, 0.05); }
@@ -73,7 +77,6 @@
       .file-item { margin: 2px 0; padding: 8px 12px 8px 30px; border-radius: 8px; transition: var(--transition); display: flex; align-items: center; justify-content: space-between; }
       .file-item:hover { background: rgba(79, 70, 229, 0.08); transform: translateX(4px); }
       .file-link { text-decoration: none; color: var(--text-main); display: flex; align-items: center; gap: 10px; flex: 1; }
-      .file-icon { font-size: 1.1rem; }
       .hf-badge { background: var(--hf-badge-bg); color: var(--hf-badge-text); padding: 2px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 700; border: 1px solid rgba(0, 0, 0, 0.05); }
       .highlight { background: var(--highlight) !important; border-left: 3px solid var(--primary); }
       mark.text-match { background: rgba(251, 191, 36, 0.4); color: inherit; border-radius: 4px; padding: 0 2px; }
@@ -81,7 +84,6 @@
       .stat-card { display: flex; flex-direction: column; gap: 5px; }
       .stat-value { font-weight: 700; color: var(--text-main); font-size: 1.1rem; }
       .stat-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
-      .loader { text-align: center; padding: 40px; color: var(--text-muted); }
       @media (max-width: 640px) {
         .container { padding: 20px; border-radius: 0; }
         h1 { font-size: 1.8rem; }
@@ -92,37 +94,37 @@
   <body data-theme="light">
     <div class="container fade-in">
       <header>
-        <h1>${GITHUB_REPO_NAME}</h1>
-        <button class="theme-toggle" id="themeToggle" title="切换显示模式">🌓</button>
+        <div class="header-left"><h1>${GITHUB_REPO_NAME}</h1></div>
+        <div class="header-actions">
+          <a href="https://github.com/${GITHUB_USERNAME}/${GITHUB_REPO_NAME}" target="_blank" class="nav-btn">
+            <svg height="20" width="20" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+            <span>GitHub</span>
+          </a>
+          <button class="theme-toggle" id="themeToggle" title="切换模式">🌓</button>
+        </div>
       </header>
       <section class="search-area">
         <div class="search-wrapper">
-          <input type="text" id="searchInput" placeholder="🔍 搜搜你想找的资料..." autocomplete="off" />
-          <button class="btn btn-clear" id="clearSearch">清空</button>
+          <input type="text" id="searchInput" placeholder="🔍 Search resources..." autocomplete="off" />
+          <button class="btn btn-clear" id="clearSearch">Clear</button>
         </div>
         <div class="filter-tags" id="filterTags">
-          <span class="tag active" data-filter="all">全部</span>
-          <span class="tag" data-filter="pdf">PDF 文档</span>
-          <span class="tag" data-filter="code">项目代码</span>
-          <span class="tag" data-filter="archive">压缩包</span>
+          <span class="tag active" data-filter="all">All</span>
+          <span class="tag" data-filter="pdf">PDF</span>
+          <span class="tag" data-filter="code">Code</span>
+          <span class="tag" data-filter="archive">Archived</span>
         </div>
       </section>
-      <main id="file-list" class="file-tree">
-        <div class="loader">🚀 正在加载文件索引...</div>
-      </main>
+      <main id="file-list" class="file-tree"><div class="loader">🚀 Loading resources...</div></main>
       <footer id="stats" class="stats"></footer>
     </div>
     <script>
-      const username = "${GITHUB_USERNAME}";
-      const repo = "${GITHUB_REPO_NAME}";
-      const branch = "main";
-      
+      const username = "${GITHUB_USERNAME}"; const repo = "${GITHUB_REPO_NAME}"; const branch = "main";
       const config = {
         previewExts: ["pdf", "jpg", "jpeg", "png", "gif", "svg", "webp", "txt", "json", "html", "htm"],
         codeExts: ["py", "java", "cpp", "c", "js", "go", "sh", "ipynb", "md", "bat", "yml", "yaml"],
         archiveExts: ["zip", "rar", "7z", "tar", "gz", "bz2"]
       };
-
       let allFiles = []; let currentSearch = ""; let currentFilter = "all";
       let currentTheme = localStorage.getItem("theme") || "light";
 
@@ -130,13 +132,11 @@
         document.body.setAttribute("data-theme", currentTheme);
         document.getElementById("themeToggle").textContent = currentTheme === "light" ? "🌙" : "☀️";
       }
-
       function getFileIcon(n) {
         const ext = n.split(".").pop().toLowerCase();
         const icons = { pdf: "📕", zip: "📦", rar: "📦", "7z": "📦", py: "🐍", js: "⚡", html: "🌐", md: "📝", txt: "📄", ipynb: "📓", jpg: "🖼️", png: "🖼️", exe: "⚙️", mp4: "🎬" };
         return icons[ext] || "📄";
       }
-
       function getFileType(f) {
         const ext = f.name.split(".").pop().toLowerCase();
         if (ext === "pdf") return "pdf";
@@ -144,7 +144,6 @@
         if (config.archiveExts.includes(ext)) return "archive";
         return "other";
       }
-
       function highlightText(text, query) {
         if (!query) return text;
         try {
@@ -152,34 +151,27 @@
           return text.replace(regex, '<mark class="text-match">$1</mark>');
         } catch (e) { return text; }
       }
-
       async function loadData() {
         try {
           const ghUrl = `https://api.github.com/repos/${username}/${repo}/git/trees/${branch}?recursive=1`;
           const ghRes = await fetch(ghUrl);
-          const ghData = ghRes.status === 200 ? await ghRes.json() : { tree: [] };
-          
+          const ghData = ghRes.ok ? await ghRes.json() : { tree: [] };
           let files = ghData.tree ? ghData.tree.filter(i => 
               i.type === "blob" && !i.path.startsWith(".") && 
               !["index.html", "README.md", "setup.bat", "setup.sh"].includes(i.path) && 
               !i.path.match(/^(scripts|data|venv|env|node_modules|.git|.github)\//)
             ).map(i => ({ name: i.path.split("/").pop(), path: i.path, isHF: false }))
           : [];
-
           try {
             const maniRes = await fetch(`./data/file_manifest.json?t=${Date.now()}`);
             if (maniRes.ok) {
               const mani = await maniRes.json();
-              if (mani && mani.files) { mani.files.forEach(f => { files.push({ ...f, isHF: true }); }); }
+              if (mani && mani.files) { mani.files.forEach(f => { if(!files.find(gf=>gf.path===f.path)) files.push({ ...f, isHF: true }); }); }
             }
           } catch (e) { console.warn("Manifest failed", e); }
-          
           allFiles = files; render();
-        } catch (e) { 
-          document.getElementById("file-list").innerHTML = `<div class="loader" style="color:#ef4444">❌ Load failed: ${e.message}</div>`;
-        }
+        } catch (e) { document.getElementById("file-list").innerHTML = `<div class="loader" style="color:#ef4444">❌ Load failed: ${e.message}</div>`; }
       }
-
       function render() {
         const listContainer = document.getElementById("file-list");
         const lowerSearch = currentSearch.toLowerCase();
@@ -193,7 +185,6 @@
         listContainer.innerHTML = filtered.length ? renderNode(tree) : '<div class="loader">🔍 No matches found</div>';
         renderStats(filtered);
       }
-
       function buildTree(files) {
         const root = { _files: [], _folders: {} };
         files.forEach(f => {
@@ -204,7 +195,6 @@
         });
         return root;
       }
-
       function renderNode(node, level = 0, forceShowAll = false) {
         let html = ""; const lowerSearch = currentSearch.toLowerCase();
         Object.entries(node._folders).sort().forEach(([name, sub]) => {
@@ -212,17 +202,7 @@
           const highlightClass = isDirMatch ? "highlight" : "";
           const showAllChildren = forceShowAll || isDirMatch;
           const displayName = highlightText(name, currentSearch);
-          html += `
-            <div class="folder">
-              <div class="folder-header ${highlightClass}" onclick="toggleFolder(this)">
-                <span class="toggle-icon ${currentSearch || isDirMatch ? "open" : ""}">▶</span>
-                <span class="folder-icon">📁</span>
-                <span>${displayName}</span>
-              </div>
-              <div class="folder-children ${currentSearch || isDirMatch ? "" : "collapsed"}">
-                ${renderNode(sub, level + 1, showAllChildren)}
-              </div>
-            </div>`;
+          html += `<div class="folder"><div class="folder-header ${highlightClass}" onclick="toggleFolder(this)"><span class="toggle-icon ${currentSearch || isDirMatch ? "open" : ""}">▶</span><span class="folder-icon">📁</span><span>${displayName}</span></div><div class="folder-children ${currentSearch || isDirMatch ? "" : "collapsed"}">${renderNode(sub, level + 1, showAllChildren)}</div></div>`;
         });
         node._files.sort((a, b) => a.name.localeCompare(b.name)).forEach(f => {
           const isFileMatch = lowerSearch && f.name.toLowerCase().includes(lowerSearch);
@@ -231,49 +211,21 @@
           const ext = f.name.split(".").pop().toLowerCase();
           const pagesBase = `./`;
           let url = f.isHF ? f.url : (config.previewExts.includes(ext) ? `${pagesBase}${f.path}` : `https://github.com/${username}/${repo}/blob/${branch}/${f.path}`);
-          html += `
-            <div class="file-item ${highlightClass}">
-              <a href="${url}" target="_blank" class="file-link">
-                <span class="file-icon">${getFileIcon(f.name)}</span>
-                <span>${displayName}</span>
-                ${f.isHF ? `<span class="hf-badge">🤗 HF</span>` : ""}
-              </a>
-              <div class="file-info">${f.size_mb ? `<span class="file-meta">${f.size_mb} MB</span>` : ""}</div>
-            </div>`;
+          html += `<div class="file-item ${highlightClass}"><a href="${url}" target="_blank" class="file-link"><span class="file-icon">${getFileIcon(f.name)}</span><span>${displayName}</span>${f.isHF ? `<span class="hf-badge">🤗 HF</span>` : ""}</a><div class="file-info">${f.size_mb ? `<span class="file-meta">${f.size_mb} MB</span>` : ""}</div></div>`;
         });
         return html;
       }
-
-      function toggleFolder(el) {
-        el.querySelector(".toggle-icon").classList.toggle("open");
-        el.nextElementSibling.classList.toggle("collapsed");
-      }
-
+      function toggleFolder(el) { el.querySelector(".toggle-icon").classList.toggle("open"); el.nextElementSibling.classList.toggle("collapsed"); }
       function renderStats(filtered) {
         const hf = filtered.filter(i => i.isHF);
         const totalSize = hf.reduce((acc, cr) => acc + (cr.size_mb || 0), 0).toFixed(1);
         const statsElem = document.getElementById("stats");
-        if (statsElem) {
-          statsElem.innerHTML = `
-            <div class="stat-card"><span class="stat-label">Total items</span><span class="stat-value">${filtered.length}</span></div>
-            <div class="stat-card"><span class="stat-label">HF Files</span><span class="stat-value">${hf.length}</span></div>
-            <div class="stat-card"><span class="stat-label">Total Size (HF)</span><span class="stat-value">${totalSize} MB</span></div>`;
-        }
+        if (statsElem) { statsElem.innerHTML = `<div class="stat-card"><span class="stat-label">Total items</span><span class="stat-value">${filtered.length}</span></div><div class="stat-card"><span class="stat-label">HF Files</span><span class="stat-value">${hf.length}</span></div><div class="stat-card"><span class="stat-label">Total Size (HF)</span><span class="stat-value">${totalSize} MB</span></div>`; }
       }
-
-      document.getElementById("themeToggle").addEventListener("click", () => {
-        currentTheme = currentTheme === "light" ? "dark" : "light";
-        localStorage.setItem("theme", currentTheme); initTheme();
-      });
+      document.getElementById("themeToggle").addEventListener("click", () => { currentTheme = currentTheme === "light" ? "dark" : "light"; localStorage.setItem("theme", currentTheme); initTheme(); });
       document.getElementById("searchInput").addEventListener("input", (e) => { currentSearch = e.target.value.trim(); render(); });
       document.getElementById("clearSearch").addEventListener("click", () => { document.getElementById("searchInput").value = ""; currentSearch = ""; render(); });
-      document.getElementById("filterTags").addEventListener("click", (e) => {
-        if (e.target.classList.contains("tag")) {
-          document.querySelectorAll(".tag").forEach(t => t.classList.remove("active"));
-          e.target.classList.add("active");
-          currentFilter = e.target.dataset.filter; render();
-        }
-      });
+      document.getElementById("filterTags").addEventListener("click", (e) => { if (e.target.classList.contains("tag")) { document.querySelectorAll(".tag").forEach(t => t.classList.remove("active")); e.target.classList.add("active"); currentFilter = e.target.dataset.filter; render(); } });
       initTheme(); loadData();
     </script>
   </body>
