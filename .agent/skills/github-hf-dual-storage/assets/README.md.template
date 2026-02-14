@@ -48,25 +48,66 @@ cd ${GITHUB_REPO_NAME}
 
 ---
 
-## 🔄 文件更新说明
+## 🛠️ 项目结构
 
-1. **添加文件**: 直接将资料放入仓库目录（支持嵌套文件夹）。
-2. **推送变更**:
-   ```bash
-   git add .
-   git commit -m "Add new resources"
-   git push origin main
-   ```
-3. **自动分发**: GitHub Actions 将自动识别大文件并迁移至 HuggingFace，同时刷新网页清单。
+- `scripts/distribute_files.py`: 核心分发引擎 v3.1（支持重试机制、增强日志、智能时间戳保留及全量清单生成）。
+- `setup.bat` / `setup.sh`: 跨平台一键环境搭建脚本（v4.1 完整工作流）。
+- `data/file_manifest.json`: 自动生成的文件元数据清单（前端加载数据源，免除 GitHub API 限速干扰）。
+- `index.html`: 高端毛玻璃风格的资源导航前端（支持骨架屏展示）。
+- `.github/workflows/`: 自动化分发流水线配置（v4.1 只负责 HF 同步，不提交更新）。
 
 ---
 
-## 🛠️ 项目结构
+## 🔄 文件更新说明
 
-- `scripts/distribute_files.py`: 核心分发引擎（支持同步删除逻辑）。
-- `data/file_manifest.json`: 自动生成的文件元数据清单。
-- `index.html`: 高端毛玻璃风格的资源导航前端。
-- `.github/workflows/`: 自动化分发流水线配置。
+### 添加大文件
+
+1. **将文件放入仓库目录** (>50MB 文件将自动转移至 HuggingFace)
+2. **运行同步脚本** (Windows):
+   ```batch
+   setup.bat
+   ```
+   或 (Linux/macOS):
+   ```bash
+   bash setup.sh
+   ```
+3. **确认推送**: 脚本会提示确认，自动上传至 HuggingFace 并推送到 GitHub
+4. **结果**:
+   - ✅ 大文件在 HuggingFace 存储
+   - ✅ `.gitignore` 自动添加规则
+   - ✅ `data/file_manifest.json` 自动更新
+   - ✅ Pages 页面显示该文件
+
+### 删除大文件
+
+**重要**: 删除大文件无需手动编辑 `.gitignore`，脚本会自动处理所有操作。
+
+**完整操作步骤** (极简化):
+
+1. **本地删除文件**:
+   ```bash
+   rm your_large_file.bin
+   ```
+
+2. **运行同步脚本** (仅需此步):
+   ```batch
+   setup.bat
+   ```
+   脚本会自动：
+   - ✅ 检测本地已删除的文件
+   - ✅ 从 `.gitignore` 移除对应规则
+   - ✅ 从 HuggingFace 删除该文件
+   - ✅ 从 `manifest.json` 移除该文件条目
+   - ✅ 提交和推送到 GitHub
+
+3. **验证成功**:
+   - GitHub Actions 运行完毕（查看 Actions 标签）
+   - Pages 页面刷新后，该文件消失
+
+**关键点**:
+- ❌ ~~不要手动编辑 `.gitignore`~~ (脚本全自动处理)
+- ✅ 只需运行 `setup.bat` 或 `setup.sh`
+- ⏳ GitHub Actions 同步需要 1-2 分钟
 
 ---
 
