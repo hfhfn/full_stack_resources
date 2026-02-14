@@ -1,8 +1,8 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <title>full_stack_resources - 资源导航</title>
+    <title>${GITHUB_REPO_NAME} - 资源导航</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- 引入现代字体 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -257,7 +257,7 @@
     <div class="container">
       <div class="glass-card">
         <header>
-          <h1>full_stack_resources</h1>
+          <h1>${GITHUB_REPO_NAME}</h1>
           <button class="theme-toggle" id="themeToggle" title="切换主题">
             <span id="themeIcon">🌓</span>
           </button>
@@ -281,7 +281,7 @@
         </section>
 
         <div id="file-list" class="file-tree">
-          <div style="text-align: center; padding: 40px; opacity: 0.6">
+          <div style="text-align: center; padding: 40px; opacity: 0.6;">
             📂 正在初始化资源树...
           </div>
         </div>
@@ -291,8 +291,8 @@
     </div>
 
     <script>
-      const username = "hfhfn";
-      const repo = "full_stack_resources";
+      const username = "${GITHUB_USERNAME}";
+      const repo = "${GITHUB_REPO_NAME}";
       const branch = "main";
 
       let allFiles = [];

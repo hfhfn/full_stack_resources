@@ -2,7 +2,7 @@
 """
 Dual-Storage Distribution Script v3.0
 - Scans project for large files (>50MB).
-- Uploads large files to HuggingFace (hfhfn/full_stack_resources).
+- Uploads large files to HuggingFace (${HF_USERNAME}/${HF_REPO_NAME}).
 - Sync Deletion: Cleans up redundant files on HF that are deleted locally.
 - Enhances manifest with metadata (extension, last modified).
 - Syncs .gitignore and removes large files from Git index.
@@ -16,7 +16,7 @@ from datetime import datetime
 
 # --- Configuration ---
 SIZE_THRESHOLD = 50 * 1024 * 1024  # 50MB
-HF_REPO_ID = "hfhfn/full_stack_resources"
+HF_REPO_ID = "${HF_USERNAME}/${HF_REPO_NAME}"  # Agent: Replace this!
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 # Exclude directories
