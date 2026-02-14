@@ -856,9 +856,9 @@ fi
       // 主函数：获取并显示文件列表
       async function listAllFiles() {
         try {
-          // 1. 获取 GitHub 上的文件列表 (Git Tree API)
+          // 1. Get file list from GitHub (Git Tree API) - Add timestamp to avoid cache
           const response = await fetch(
-            `https://api.github.com/repos/${username}/${repo}/git/trees/${branch}?recursive=1`,
+            `https://api.github.com/repos/${username}/${repo}/git/trees/${branch}?recursive=1&t=${new Date().getTime()}`,
           );
 
           if (!response.ok) {
