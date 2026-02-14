@@ -598,21 +598,25 @@
             const isPreviewable = config.previewExts.includes(ext);
 
             // 链接和下载逻辑
-            // HF 文件：直接下载链接
-            // GitHub 可预览文件（PDF/图片）：在新标签打开查看
+            // HF 文件（大文件）：HF 下载链接 + download 属性
+            // GitHub 可预览文件（PDF/图片）：GitHub Pages 相对路径（在浏览器中预览）
             // GitHub 不可预览文件（代码）：跳转 GitHub Blob 视图
-            let finalUrl = f.url;
+            let finalUrl = "";
             let target = "_blank";
             let downloadAttr = "";
 
-            if (!f.is_hf && !isPreviewable) {
-              // 源代码跳转 GitHub Blob 视图
-              finalUrl = `https://github.com/${username}/${repo}/blob/${branch}/${f.path}`;
-            }
-
-            // HF 文件总是下载
             if (f.is_hf) {
+              // 大文件在 HuggingFace - 使用 HF 下载链接
+              finalUrl = f.url;
               downloadAttr = 'download';
+            } else if (isPreviewable) {
+              // 小文件在 GitHub 且可预览 - 使用 GitHub Pages 相对路径
+              finalUrl = `./${f.path}`;
+              target = "_blank";
+            } else {
+              // 代码文件 - 跳转 GitHub Blob 视图
+              finalUrl = `https://github.com/${username}/${repo}/blob/${branch}/${f.path}`;
+              target = "_blank";
             }
 
             html += `
