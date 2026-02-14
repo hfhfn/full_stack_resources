@@ -2,155 +2,218 @@
 <html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
-    <title>full_stack_resources - 资源导航</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>📚 资源资料导航库</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@500;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <style>
       :root {
         --primary: #4f46e5;
         --primary-hover: #4338ca;
-        --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        --bg-light: #f8fafc;
         --card-bg: rgba(255, 255, 255, 0.8);
         --text-main: #1e293b;
         --text-muted: #64748b;
         --border: #e2e8f0;
-        --hf-bg: #fef3c7;
-        --hf-text: #92400e;
-        --hf-border: #fcd34d;
-        --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07);
+        --folder: #e36209;
+        --hf-badge-bg: #fef3c7;
+        --hf-badge-text: #92400e;
+        --highlight: rgba(249, 171, 0, 0.1);
+        --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
+
       [data-theme="dark"] {
         --primary: #818cf8;
-        --primary-hover: #6366f1;
-        --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+        --primary-hover: #a5b4fc;
+        --bg-light: #0f172a;
         --card-bg: rgba(30, 41, 59, 0.7);
         --text-main: #f1f5f9;
         --text-muted: #94a3b8;
         --border: #334155;
-        --hf-bg: rgba(251, 191, 36, 0.15);
-        --hf-text: #fbbf24;
-        --hf-border: rgba(251, 191, 36, 0.3);
-      }
-      * { box-sizing: border-box; transition: all 0.2s ease; }
-      body {
-        font-family: "Inter", system-ui, -apple-system, sans-serif;
-        margin: 0; min-height: 100vh; background: var(--bg-gradient); color: var(--text-main); line-height: 1.5;
-      }
-      .container { max-width: 1100px; margin: 40px auto; padding: 0 20px; }
-      .glass-card { background: var(--card-bg); backdrop-filter: blur(12px); border: 1px solid var(--border); border-radius: 24px; box-shadow: var(--glass-shadow); padding: 40px; }
-      header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
-      h1 { font-family: "Outfit", sans-serif; margin: 0; font-size: 2.5rem; background: linear-gradient(135deg, var(--primary) 0%, #a855f7 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-      .header-actions { display: flex; align-items: center; gap: 12px; }
-      .btn-icon { background: var(--card-bg); border: 1px solid var(--border); padding: 10px; border-radius: 12px; cursor: pointer; display: flex; align-items: center; justify-content: center; text-decoration: none; color: var(--text-main); font-size: 1.2rem; }
-      .btn-icon:hover { background: var(--border); transform: translateY(-2px); }
-      .search-section { margin-bottom: 30px; }
-      .search-box { position: relative; display: flex; gap: 12px; }
-      #searchInput { flex: 1; padding: 16px 24px; border-radius: 16px; border: 1px solid var(--border); background: var(--card-bg); color: var(--text-main); font-size: 1.1rem; outline: none; }
-      #searchInput:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1); }
-      .filter-tags { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
-      .tag { padding: 6px 16px; border-radius: 99px; background: var(--card-bg); border: 1px solid var(--border); font-size: 0.9rem; cursor: pointer; color: var(--text-muted); }
-      .tag.active { background: var(--primary); color: white; border-color: var(--primary); }
-      .file-tree { min-height: 400px; }
-      .folder { margin: 8px 0; }
-      .folder-header { display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 12px; cursor: pointer; font-weight: 600; color: var(--primary); }
-      .folder-header:hover { background: rgba(79, 70, 229, 0.08); }
-      .folder-icon { font-size: 1.2rem; }
-      .toggle-icon { width: 20px; text-align: center; font-size: 0.8rem; opacity: 0.7; }
-      .toggle-icon.open { transform: rotate(90deg); }
-      .folder-children { margin-left: 28px; border-left: 1px solid var(--border); padding-left: 12px; overflow: hidden; }
-      .folder-children.collapsed { display: none; }
-      .file-item { display: flex; align-items: center; padding: 8px 14px; border-radius: 10px; margin: 4px 0; }
-      .file-item:hover { background: rgba(79, 70, 229, 0.05); transform: translateX(4px); }
-      .file-item a { text-decoration: none; color: var(--text-main); display: flex; align-items: center; gap: 12px; flex: 1; }
-      .hf-badge { font-size: 0.75rem; padding: 2px 8px; border-radius: 6px; background: var(--hf-bg); color: var(--hf-text); border: 1px solid var(--hf-border); font-weight: 600; margin-left: auto; }
-      .footer-stats { margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border); display: flex; gap: 24px; color: var(--text-muted); font-size: 0.9rem; }
-      mark.text-match {
-        background: rgba(251, 191, 36, 0.4);
-        color: inherit;
-        border-radius: 4px;
-        padding: 0 2px;
+        --folder: #fb923c;
+        --hf-badge-bg: #451a03;
+        --hf-badge-text: #fbbf24;
+        --highlight: rgba(249, 171, 0, 0.2);
       }
 
+      * { box-sizing: border-box; margin: 0; padding: 0; }
+      body {
+        font-family: "Inter", -apple-system, sans-serif;
+        background-color: var(--bg-light);
+        color: var(--text-main);
+        line-height: 1.6;
+        transition: var(--transition);
+        background-image:
+          radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.05) 0px, transparent 50%),
+          radial-gradient(at 100% 0%, rgba(129, 140, 248, 0.05) 0px, transparent 50%);
+        min-height: 100vh;
+        padding: 40px 20px;
+      }
+
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        background: var(--card-bg);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        padding: 40px;
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+      }
+
+      header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 20px; }
+      h1 {
+        font-family: "Outfit", sans-serif;
+        font-size: 2.2rem;
+        font-weight: 700;
+        background: linear-gradient(135deg, var(--primary), #ec4899);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .theme-toggle {
+        background: var(--border);
+        border: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        cursor: pointer;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 1.2rem;
+        transition: var(--transition);
+      }
+      .theme-toggle:hover { transform: scale(1.05); background: var(--primary); color: white; }
+
+      .search-area { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; }
+      .search-wrapper { position: relative; display: flex; gap: 12px; }
+      #searchInput {
+        flex: 1;
+        padding: 14px 20px;
+        background: var(--bg-light);
+        border: 2px solid var(--border);
+        border-radius: 16px;
+        color: var(--text-main);
+        font-size: 1rem;
+        outline: none;
+        transition: var(--transition);
+      }
+      #searchInput:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1); }
+
+      .btn { padding: 0 20px; border-radius: 12px; border: none; cursor: pointer; font-weight: 500; transition: var(--transition); display: flex; align-items: center; justify-content: center; }
+      .btn-clear { background: var(--border); color: var(--text-muted); }
+      .btn-clear:hover { background: #ef4444; color: white; }
+
+      .filter-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+      .tag { padding: 6px 14px; background: var(--bg-light); border: 1px solid var(--border); border-radius: 100px; font-size: 0.85rem; cursor: pointer; transition: var(--transition); color: var(--text-muted); }
+      .tag.active { background: var(--primary); color: white; border-color: var(--primary); }
+      .tag:hover:not(.active) { border-color: var(--primary); color: var(--primary); }
+
+      .file-tree { border-top: 1px solid var(--border); padding-top: 20px; min-height: 300px; }
+      .folder { margin: 2px 0; }
+      .folder-header { padding: 10px 12px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 10px; color: var(--text-main); font-weight: 600; transition: var(--transition); }
+      .folder-header:hover { background: rgba(79, 70, 229, 0.05); }
+      .toggle-icon { width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: var(--text-muted); transition: transform 0.2s; }
+      .toggle-icon.open { transform: rotate(90deg); }
+      .folder-icon { color: var(--folder); font-size: 1.2rem; }
+      .folder-children { margin-left: 28px; border-left: 1.5px solid var(--border); padding-left: 8px; transition: max-height 0.3s ease-out; }
+      .folder-children.collapsed { display: none; }
+
+      .file-item { margin: 2px 0; padding: 8px 12px 8px 30px; border-radius: 8px; transition: var(--transition); display: flex; align-items: center; justify-content: space-between; }
+      .file-item:hover { background: rgba(79, 70, 229, 0.08); transform: translateX(4px); }
+      .file-link { text-decoration: none; color: var(--text-main); display: flex; align-items: center; gap: 10px; flex: 1; }
+      .file-icon { font-size: 1.1rem; }
+      .hf-badge { background: var(--hf-badge-bg); color: var(--hf-badge-text); padding: 2px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 700; border: 1px solid rgba(0, 0, 0, 0.05); }
+      .highlight { background: var(--highlight) !important; border-left: 3px solid var(--primary); }
+
+      mark.text-match { background: rgba(251, 191, 36, 0.4); color: inherit; border-radius: 4px; padding: 0 2px; }
+
+      .stats { margin-top: 40px; padding: 20px; background: var(--bg-light); border-radius: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; font-size: 0.9rem; color: var(--text-muted); }
+      .stat-card { display: flex; flex-direction: column; gap: 5px; }
+      .stat-value { font-weight: 700; color: var(--text-main); font-size: 1.1rem; }
+      .stat-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+
+      .loader { text-align: center; padding: 40px; color: var(--text-muted); }
+
       @media (max-width: 640px) {
-        .container { margin: 20px auto; }
-        .glass-card { padding: 24px; }
+        .container { padding: 20px; border-radius: 0; }
         h1 { font-size: 1.8rem; }
-        .search-box { flex-direction: column; }
+        .stats { grid-template-columns: 1fr; }
       }
     </style>
   </head>
   <body data-theme="light">
-    <div class="container">
-      <div class="glass-card">
-        <header>
-          <h1>full_stack_resources</h1>
-          <div class="header-actions">
-            <a href="https://github.com/hfhfn/full_stack_resources" class="btn-icon" title="在 GitHub 查看" target="_blank">
-              <svg height="24" viewBox="0 0 16 16" width="24" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
-            </a>
-            <button class="theme-toggle btn-icon" id="themeToggle" title="切换主题">
-              <span id="themeIcon">🌓</span>
-            </button>
-          </div>
-        </header>
+    <div class="container fade-in">
+      <header>
+        <h1>项目资源导航库</h1>
+        <button class="theme-toggle" id="themeToggle" title="切换显示模式">🌓</button>
+      </header>
 
-        <section class="search-section">
-          <div class="search-box">
-            <input type="text" id="searchInput" placeholder="搜索文件或目录..." autocomplete="off" />
-          </div>
-          <div class="filter-tags" id="filterTags">
-            <button class="tag active" data-filter="all">全部</button>
-            <button class="tag" data-filter="pdf">PDF 文档</button>
-            <button class="tag" data-filter="code">代码源码</button>
-            <button class="tag" data-filter="archive">压缩包</button>
-          </div>
-        </section>
-
-        <div id="file-list" class="file-tree">
-          <div style="text-align: center; padding: 40px; opacity: 0.6">📂 正在初始化资源树...</div>
+      <section class="search-area">
+        <div class="search-wrapper">
+          <input type="text" id="searchInput" placeholder="🔍 搜搜你想找的资料... (支持文件名或路径)" autocomplete="off" />
+          <button class="btn btn-clear" id="clearSearch">清空</button>
         </div>
+        <div class="filter-tags" id="filterTags">
+          <span class="tag active" data-filter="all">全部</span>
+          <span class="tag" data-filter="pdf">PDF 文档</span>
+          <span class="tag" data-filter="code">项目代码</span>
+          <span class="tag" data-filter="archive">压缩包</span>
+        </div>
+      </section>
 
-        <div class="footer-stats" id="stats"></div>
-      </div>
+      <main id="file-list" class="file-tree">
+        <div class="loader">� 正在加载文件索引...</div>
+      </main>
+
+      <footer id="stats" class="stats"></footer>
     </div>
 
     <script>
       const username = "hfhfn";
       const repo = "full_stack_resources";
       const branch = "main";
+      
+      const config = {
+        previewExts: ["pdf", "jpg", "jpeg", "png", "gif", "svg", "webp", "txt", "json", "html", "htm"],
+        codeExts: ["py", "java", "cpp", "c", "js", "go", "sh", "ipynb", "md", "bat", "yml", "yaml"],
+        archiveExts: ["zip", "rar", "7z", "tar", "gz", "bz2"]
+      };
 
       let allFiles = [];
-      let currentFilter = "all";
       let currentSearch = "";
-
-      function getFileIcon(name) {
-        const ext = name.split(".").pop().toLowerCase();
-        if (["pdf"].includes(ext)) return "📕";
-        if (["zip", "rar", "7z", "gz", "tar"].includes(ext)) return "📦";
-        if (["py", "js", "html", "css", "go", "java", "cpp", "c", "sh", "bat", "yml", "yaml", "json"].includes(ext)) return "💻";
-        if (["jpg", "png", "gif", "svg", "webp", "jpeg"].includes(ext)) return "🖼️";
-        if (["mp4", "mkv", "avi", "mov", "webm"].includes(ext)) return "🎬";
-        if (["md", "txt", "log"].includes(ext)) return "📝";
-        return "📄";
-      }
+      let currentFilter = "all";
+      let currentTheme = localStorage.getItem("theme") || "light";
 
       function initTheme() {
-        const saved = localStorage.getItem("theme") || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
-        document.body.setAttribute("data-theme", saved);
-        const themeBtn = document.getElementById("themeToggle");
-        if (themeBtn) {
-          themeBtn.addEventListener("click", () => {
-            const current = document.body.getAttribute("data-theme");
-            const next = current === "light" ? "dark" : "light";
-            document.body.setAttribute("data-theme", next);
-            localStorage.setItem("theme", next);
-          });
-        }
+        document.body.setAttribute("data-theme", currentTheme);
+        document.getElementById("themeToggle").textContent = currentTheme === "light" ? "🌙" : "☀️";
+      }
+
+      function getFileIcon(n) {
+        const ext = n.split(".").pop().toLowerCase();
+        const icons = { pdf: "📕", zip: "📦", rar: "📦", "7z": "📦", py: "🐍", js: "⚡", html: "🌐", md: "📝", txt: "📄", ipynb: "📓", jpg: "🖼️", png: "🖼️", exe: "⚙️", mp4: "🎬" };
+        return icons[ext] || "📄";
+      }
+
+      function getFileType(f) {
+        const ext = f.name.split(".").pop().toLowerCase();
+        if (ext === "pdf") return "pdf";
+        if (config.codeExts.includes(ext)) return "code";
+        if (config.archiveExts.includes(ext)) return "archive";
+        return "other";
+      }
+
+      function highlightText(text, query) {
+        if (!query) return text;
+        try {
+          const regex = new RegExp(`(${query})`, "gi");
+          return text.replace(regex, '<mark class="text-match">$1</mark>');
+        } catch (e) { return text; }
       }
 
       async function loadData() {
@@ -158,80 +221,59 @@
           const ghUrl = `https://api.github.com/repos/${username}/${repo}/git/trees/${branch}?recursive=1`;
           const ghRes = await fetch(ghUrl);
           const ghData = ghRes.status === 200 ? await ghRes.json() : { tree: [] };
-
-          let files = ghData.tree ? ghData.tree.filter(i => i.type === "blob" && !i.path.startsWith(".") && !["index.html", "README.md", "setup.bat", "setup.sh"].includes(i.path) && !i.path.match(/^(scripts|data|venv|env|node_modules|.git|.github)\//))
-            .map(i => ({ name: i.path.split("/").pop(), path: i.path, isHF: false })) : [];
+          
+          let files = ghData.tree ? ghData.tree.filter(i => 
+              i.type === "blob" && !i.path.startsWith(".") && 
+              !["index.html", "README.md", "setup.bat", "setup.sh"].includes(i.path) && 
+              !i.path.match(/^(scripts|data|venv|env|node_modules|.git|.github)\//)
+            ).map(i => ({ name: i.path.split("/").pop(), path: i.path, isHF: false }))
+          : [];
 
           try {
             const maniRes = await fetch(`./data/file_manifest.json?t=${Date.now()}`);
             if (maniRes.ok) {
               const mani = await maniRes.json();
-              if (mani && Array.isArray(mani.files)) {
-                mani.files.forEach(f => { files.push({ ...f, isHF: true }); });
-              }
+              if (mani && mani.files) { mani.files.forEach(f => { files.push({ ...f, isHF: true }); }); }
             }
-          } catch (e) { console.warn("Manifest load failed", e); }
-
+          } catch (e) { console.warn("Manifest failed", e); }
+          
           allFiles = files;
           render();
-          renderStats();
-        } catch (e) {
-          console.error("Data load failed:", e);
-          document.getElementById("file-list").innerHTML = `<div style="color:red; text-align:center; padding: 20px;">❌ 加载失败: ${e.message}</div>`;
+        } catch (e) { 
+          document.getElementById("file-list").innerHTML = `<div class="loader" style="color:#ef4444">❌ 加载失败: ${e.message}</div>`;
         }
-      }
-
-      function isMatch(file) {
-        const lowerSearch = currentSearch.toLowerCase();
-        const matchSearch = file.name.toLowerCase().includes(lowerSearch) || file.path.toLowerCase().includes(lowerSearch);
-        let matchFilter = true;
-        const ext = file.name.split(".").pop().toLowerCase();
-        if (currentFilter === "pdf") matchFilter = ext === "pdf";
-        else if (currentFilter === "code") matchFilter = ["py", "js", "html", "css", "sh", "bat", "java", "cpp", "yml", "yaml", "json"].includes(ext);
-        else if (currentFilter === "archive") matchFilter = ["zip", "rar", "7z", "gz", "tar"].includes(ext);
-        return matchSearch && matchFilter;
       }
 
       function render() {
-        const filtered = allFiles.filter(isMatch);
-        const tree = buildTree(filtered);
         const listContainer = document.getElementById("file-list");
-        if (listContainer) {
-          listContainer.innerHTML = filtered.length ? renderNode(tree) : '<div style="text-align:center; padding:40px; opacity:0.5;">🔍 未找到相关资源</div>';
-        }
+        const lowerSearch = currentSearch.toLowerCase();
+        const filtered = allFiles.filter(f => {
+          const matchSearch = f.name.toLowerCase().includes(lowerSearch) || f.path.toLowerCase().includes(lowerSearch);
+          const type = getFileType(f);
+          const matchFilter = currentFilter === "all" || type === currentFilter;
+          return matchSearch && matchFilter;
+        });
+
+        const tree = buildTree(filtered);
+        listContainer.innerHTML = filtered.length ? renderNode(tree) : '<div class="loader">🔍 没找到相关资源，换个词试试？</div>';
+        renderStats(filtered);
       }
 
       function buildTree(files) {
         const root = { _files: [], _folders: {} };
         files.forEach(f => {
-          const parts = f.path.split("/");
-          parts.pop();
+          const parts = f.path.split("/"); parts.pop();
           let current = root;
-          parts.forEach(p => {
-            if (!current._folders[p]) current._folders[p] = { _files: [], _folders: {} };
-            current = current._folders[p];
-          });
+          parts.forEach(p => { if (!current._folders[p]) current._folders[p] = { _files: [], _folders: {} }; current = current._folders[p]; });
           current._files.push(f);
         });
         return root;
-      }
-
-      // --- 高亮辅助函数 ---
-      function highlightText(text, query) {
-        if (!query) return text;
-        try {
-          const regex = new RegExp(`(${query})`, "gi");
-          return text.replace(regex, '<mark class="text-match">$1</mark>');
-        } catch (e) {
-          return text;
-        }
       }
 
       function renderNode(node, level = 0, forceShowAll = false) {
         let html = "";
         const lowerSearch = currentSearch.toLowerCase();
 
-        // 渲染文件夹
         Object.entries(node._folders).sort().forEach(([name, sub]) => {
           const isDirMatch = lowerSearch && name.toLowerCase().includes(lowerSearch);
           const highlightClass = isDirMatch ? "highlight" : "";
@@ -240,7 +282,7 @@
 
           html += `
             <div class="folder">
-              <div class="folder-header ${highlightClass}" onclick="this.nextElementSibling.classList.toggle('collapsed'); this.querySelector('.toggle-icon').classList.toggle('open')">
+              <div class="folder-header ${highlightClass}" onclick="toggleFolder(this)">
                 <span class="toggle-icon ${currentSearch || isDirMatch ? "open" : ""}">▶</span>
                 <span class="folder-icon">📁</span>
                 <span>${displayName}</span>
@@ -251,40 +293,58 @@
             </div>`;
         });
 
-        // 渲染文件
         node._files.sort((a, b) => a.name.localeCompare(b.name)).forEach(f => {
           const isFileMatch = lowerSearch && f.name.toLowerCase().includes(lowerSearch);
           const highlightClass = isFileMatch ? "highlight" : "";
           const displayName = highlightText(f.name, currentSearch);
           
           const ext = f.name.split(".").pop().toLowerCase();
-          const browserSupport = ["pdf", "jpg", "png", "gif", "svg", "webp", "jpeg", "mp4", "webm", "txt", "html", "md"];
-          const pagesBase = `https://${username}.github.io/${repo}/`;
-          let url = f.isHF ? f.url : (browserSupport.includes(ext) ? `${pagesBase}${f.path}` : `https://github.com/${username}/${repo}/blob/${branch}/${f.path}`);
+          const pagesBase = `./`; // 相对路径在 GH Pages 下最稳健
+          let url = f.isHF ? f.url : (config.previewExts.includes(ext) ? `${pagesBase}${f.path}` : `https://github.com/${username}/${repo}/blob/${branch}/${f.path}`);
 
           html += `
             <div class="file-item ${highlightClass}">
-              <a href="${url}" target="_blank" title="${f.isHF ? 'HuggingFace Storage' : 'GitHub Storage'}">
+              <a href="${url}" target="_blank" class="file-link">
                 <span class="file-icon">${getFileIcon(f.name)}</span>
                 <span>${displayName}</span>
-                ${f.isHF ? `<span class="hf-badge">${f.size_mb} MB</span>` : ""}
+                ${f.isHF ? `<span class="hf-badge">🤗 HF</span>` : ""}
               </a>
+              <div class="file-info">
+                ${f.size_mb ? `<span class="file-meta">${f.size_mb} MB</span>` : ""}
+              </div>
             </div>`;
         });
         return html;
       }
 
-      function renderStats() {
-        const hf = allFiles.filter(i => i.isHF);
-        const totalSize = hf.reduce((acc, cr) => acc + (cr.size_mb || 0), 0).toFixed(1);
-        const statsElem = document.getElementById("stats");
-        if (statsElem) statsElem.innerHTML = `<span>📦 总计 ${allFiles.length} 项</span><span>🤗 HF 大文件 ${hf.length} 项 (${totalSize} MB)</span>`;
+      function toggleFolder(el) {
+        el.querySelector(".toggle-icon").classList.toggle("open");
+        el.nextElementSibling.classList.toggle("collapsed");
       }
 
-      initTheme();
-      loadData();
-      searchInput.addEventListener("input", (e) => { currentSearch = e.target.value; render(); });
-      filterTags.addEventListener("click", (e) => {
+      function renderStats(filtered) {
+        const hf = filtered.filter(i => i.isHF);
+        const totalSize = hf.reduce((acc, cr) => acc + (cr.size_mb || 0), 0).toFixed(1);
+        const statsElem = document.getElementById("stats");
+        if (statsElem) {
+          statsElem.innerHTML = `
+            <div class="stat-card"><span class="stat-label">总资源数</span><span class="stat-value">${filtered.length} 个</span></div>
+            <div class="stat-card"><span class="stat-label">HF 大文件</span><span class="stat-value">${hf.length} 个</span></div>
+            <div class="stat-card"><span class="stat-label">HF 存储总体积</span><span class="stat-value">${totalSize} MB</span></div>`;
+        }
+      }
+
+      // Event Listeners
+      document.getElementById("themeToggle").addEventListener("click", () => {
+        currentTheme = currentTheme === "light" ? "dark" : "light";
+        localStorage.setItem("theme", currentTheme);
+        initTheme();
+      });
+
+      document.getElementById("searchInput").addEventListener("input", (e) => { currentSearch = e.target.value.trim(); render(); });
+      document.getElementById("clearSearch").addEventListener("click", () => { document.getElementById("searchInput").value = ""; currentSearch = ""; render(); });
+
+      document.getElementById("filterTags").addEventListener("click", (e) => {
         if (e.target.classList.contains("tag")) {
           document.querySelectorAll(".tag").forEach(t => t.classList.remove("active"));
           e.target.classList.add("active");
@@ -292,6 +352,9 @@
           render();
         }
       });
+
+      initTheme();
+      loadData();
     </script>
   </body>
 </html>
