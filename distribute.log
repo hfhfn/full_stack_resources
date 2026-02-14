@@ -232,3 +232,17 @@
 2026-02-15 03:04:44,912 [INFO] [OK] Manifest generated with 96 total files
 2026-02-15 03:04:44,912 [INFO] 
 [OK] All steps complete in 3.4s! Ready for git push.
+2026-02-15 03:07:02,953 [INFO] Scanning files (Threshold: 50MB)...
+2026-02-15 03:07:03,094 [INFO] Stats: 1 large files, 96 small files
+2026-02-15 03:07:03,094 [INFO] Uploading 1 files to HuggingFace (hfhfn/full_stack_resources)...
+2026-02-15 03:07:05,381 [INFO] Logged in as: hfhfn
+2026-02-15 03:07:05,381 [INFO]    > Uploading: 《内容算法：把内容变成价值的效率系统》_闫泽华.pdf (127.2 MB)
+2026-02-15 03:07:06,617 [INFO] [OK] HF Upload complete
+2026-02-15 03:07:06,618 [INFO] Checking for redundant files on HuggingFace (hfhfn/full_stack_resources)...
+2026-02-15 03:07:06,981 [INFO] No redundant files found.
+2026-02-15 03:07:06,982 [INFO] Processing Git tracking & .gitignore...
+2026-02-15 03:07:07,034 [INFO] Updated .gitignore with 1 rules
+2026-02-15 03:07:07,035 [INFO] Generating full manifest (data/file_manifest.json)...
+2026-02-15 03:07:07,042 [INFO] [OK] Manifest generated with 97 total files
+2026-02-15 03:07:07,043 [INFO] 
+[OK] All steps complete in 4.1s! Ready for git push.
