@@ -30,7 +30,7 @@ HF_REPO_ID = "${HF_USERNAME}/${HF_REPO_NAME}"  # Agent: Replace this!
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 # Exclude directories
-EXCLUDE_DIRS = {'.git', '.idea', '.vscode', 'venv', 'node_modules', '__pycache__', '.serena'}
+EXCLUDE_DIRS = {'.git', '.idea', '.vscode', 'venv', 'node_modules', '__pycache__', '.serena', '.github'}
 
 def get_file_size(path):
     return path.stat().st_size
@@ -64,7 +64,7 @@ def scan_files():
 
 def upload_to_hf(files):
     if not files: return
-    print(f"🚀 Uploading {len(files)} large files to HuggingFace ({HF_REPO_ID})...")
+    print(f"\\n🚀 Uploading {len(files)} large files to HuggingFace ({HF_REPO_ID})...")
     try:
         from huggingface_hub import HfApi
         api = HfApi()
@@ -92,7 +92,7 @@ def upload_to_hf(files):
 
 def update_gitignore_and_git(large_files):
     if not large_files: return
-    print("\n🛡️  Processing Git tracking & .gitignore...")
+    print("\\n🛡️  Processing Git tracking & .gitignore...")
     gitignore_path = PROJECT_ROOT / '.gitignore'
     existing_rules = set()
     if gitignore_path.exists():
@@ -109,13 +109,13 @@ def update_gitignore_and_git(large_files):
 
     if new_rules:
         with open(gitignore_path, 'a', encoding='utf-8') as f:
-            f.write("\n# [Auto] Large files managed by HuggingFace\n")
+            f.write("\\n# [Auto] Large files managed by HuggingFace\\n")
             for rule in new_rules:
-                f.write(f"{rule}\n")
+                f.write(f"{rule}\\n")
         print(f"   📝 Added {len(new_rules)} rules to .gitignore")
 
 def generate_manifest(large_files):
-    print("\n📋 Generating file manifest (data/file_manifest.json)...")
+    print("\\n📋 Generating file manifest (data/file_manifest.json)...")
     manifest = {"hf_repo_id": HF_REPO_ID, "files": []}
 
     for file_path in large_files:
@@ -146,7 +146,7 @@ def main():
     else:
         print("🎉 No files > 50MB found.")
 
-    print("\n✅ All steps complete! Ready for git push.")
+    print("\\n✅ All steps complete! Ready for git push.")
 
 if __name__ == "__main__":
     main()
@@ -160,17 +160,67 @@ if __name__ == "__main__":
 
 ```batch
 @echo off
+REM Setup Script: Checks env + installs deps + first run (Windows)
+setlocal enabledelayedexpansion
 chcp 65001 >nul
-echo [1/6] Installing dependencies...
-pip install huggingface_hub
-echo [2/6] Running distribution script...
-python scripts/distribute_files.py
-echo [3/6] Adding files to Git...
+
+echo.
+echo ============================================
+echo   Auto-Distribution Setup
+echo ============================================
+echo.
+
+REM --- 1. Python Check ---
+echo [1/5] Checking Python...
+python --version >nul 2>&1
+if errorlevel 1 (
+    echo [ERROR] Python not found.
+    pause
+    exit /b 1
+)
+
+REM --- 2. Dependencies ---
+echo.
+echo [2/5] Installing huggingface_hub...
+pip install -q huggingface_hub
+
+REM --- 3. HF Auth ---
+echo.
+echo [3/5] HuggingFace Authentication
+if defined HF_TOKEN goto :skip_hf_auth
+python -c "from huggingface_hub import HfApi; HfApi().whoami()" >nul 2>&1
+if not errorlevel 1 goto :skip_hf_auth
+
+echo   HF Auth not found.
+echo   a) Login now
+echo   b) Skip (No upload)
+set /p hf_choice="  Select [a/b]: "
+if /i "%hf_choice%"=="a" (
+    huggingface-cli login
+) else (
+    echo   Skipping auth.
+)
+
+:skip_hf_auth
+
+REM --- 4. Run Script ---
+echo.
+echo [4/5] Running distribution...
+cd /d "%~dp0.."
+python scripts\distribute_files.py
+
+REM --- 5. Initial Commit ---
+echo.
+echo [5/5] Committing to Git...
 git add .
-echo [4/6] Committing...
-git commit -m "Auto: Update files (Dual-Storage)"
-echo [5/6] Pushing to GitHub...
-git push origin main
+git diff --cached --quiet
+if errorlevel 1 (
+    git commit -m "Auto: Initial setup"
+    git push origin main
+) else (
+    echo   No changes to commit.
+)
+
 pause
 ```
 
@@ -179,19 +229,61 @@ pause
 **Usage:**
 
 - Save to `scripts/setup.sh`.
+- Run `chmod +x scripts/setup.sh`.
 
 ```bash
 #!/bin/bash
-echo "[1/6] Installing dependencies..."
-pip install huggingface_hub
-echo "[2/6] Running distribution script..."
+# Setup Script (Linux/macOS)
+
+echo ""
+echo "============================================"
+echo "  Auto-Distribution Setup"
+echo "============================================"
+echo ""
+
+# --- 1. Python Check ---
+echo "[1/5] Checking Python..."
+if ! command -v python3 &> /dev/null; then
+    echo "[ERROR] python3 not found."
+    exit 1
+fi
+
+# --- 2. Install Deps ---
+echo ""
+echo "[2/5] Installing huggingface_hub..."
+pip3 install -q huggingface_hub
+
+# --- 3. HF Auth ---
+echo ""
+echo "[3/5] HuggingFace Auth"
+if python3 -c "from huggingface_hub import HfApi; HfApi().whoami()" &> /dev/null; then
+    echo "  Logged in."
+else
+    echo "  Not logged in."
+    read -p "  Login now? (y/n) [n]: " login_choice
+    if [[ "$login_choice" == "y" || "$login_choice" == "Y" ]]; then
+        huggingface-cli login
+    else
+        echo "  Skipping login."
+    fi
+fi
+
+# --- 4. Run Script ---
+echo ""
+echo "[4/5] Running distribution..."
+cd "$(dirname "$0")/.."
 python3 scripts/distribute_files.py
-echo "[3/6] Adding files to Git..."
+
+# --- 5. Push ---
+echo ""
+echo "[5/5] Pushing to GitHub..."
 git add .
-echo "[4/6] Committing..."
-git commit -m "Auto: Update files (Dual-Storage)"
-echo "[5/6] Pushing to GitHub..."
-git push origin main
+if ! git diff --cached --quiet; then
+    git commit -m "Auto: Initial setup"
+    git push origin main
+else
+    echo "  No changes to push."
+fi
 ```
 
 ## 4. Web Interface (`index.html`)
@@ -203,169 +295,141 @@ git push origin main
 
 ```html
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>${GITHUB_REPO_NAME} - Files</title>
+    <title>${GITHUB_REPO_NAME} File Browser</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
       body {
         font-family:
-          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
-          Arial, sans-serif;
-        max-width: 900px;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #f8fafc;
-        color: #334155;
+          system-ui,
+          -apple-system,
+          sans-serif;
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 20px;
+        background: #f8f9fa;
+      }
+      .container {
+        background: white;
+        border-radius: 12px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        padding: 30px;
       }
       h1 {
-        color: #1e293b;
-        border-bottom: 2px solid #e2e8f0;
-        padding-bottom: 10px;
-      }
-      .file-item {
+        color: #1a73e8;
+        border-bottom: 2px solid #e8f0fe;
+        padding-bottom: 15px;
+        margin-top: 0;
         display: flex;
         align-items: center;
-        padding: 10px 15px;
-        border-bottom: 1px solid #e2e8f0;
-        background: white;
+        gap: 10px;
+      }
+      .search-box {
+        margin: 20px 0;
+        display: flex;
+        gap: 10px;
+      }
+      #searchInput {
+        flex: 1;
+        padding: 12px 16px;
+        border: 2px solid #e8f0fe;
+        border-radius: 8px;
+        font-size: 16px;
+        outline: none;
+      }
+      #searchInput:focus {
+        border-color: #1a73e8;
+      }
+      .folder-header {
+        padding: 6px 8px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        color: #e36209;
+        font-weight: 500;
+      }
+      .folder-header:hover {
+        background: #f1f8ff;
+      }
+      .folder-children {
+        margin-left: 24px;
+        border-left: 1px dashed #dadce0;
+      }
+      .folder-children.collapsed {
+        display: none;
+      }
+      .file-item {
+        padding: 6px 8px;
         transition: background 0.2s;
       }
       .file-item:hover {
-        background-color: #f1f5f9;
+        background: #f1f8ff;
       }
       .file-item a {
         text-decoration: none;
-        color: #2563eb;
-        font-weight: 500;
+        color: #1a73e8;
         display: flex;
         align-items: center;
-        width: 100%;
-      }
-      .file-icon {
-        margin-right: 10px;
-        font-size: 1.2em;
+        gap: 8px;
       }
       .hf-badge {
-        margin-left: auto;
         font-size: 11px;
-        background-color: #fef3c7;
+        background: #fef3c7;
         color: #92400e;
-        padding: 2px 8px;
-        border-radius: 12px;
-        font-weight: bold;
+        padding: 2px 6px;
+        border-radius: 3px;
         border: 1px solid #fcd34d;
-      }
-      .folder {
-        margin-top: 5px;
-      }
-      .folder-header {
-        font-weight: bold;
-        padding: 8px 12px;
-        cursor: pointer;
-        background-color: #e2e8f0;
-        border-radius: 6px;
-        display: flex;
-        align-items: center;
-        color: #475569;
-      }
-      .folder-header:hover {
-        background-color: #cbd5e1;
-      }
-      .folder-children {
-        margin-left: 20px;
-        border-left: 2px solid #e2e8f0;
-      }
-      .loading,
-      .error,
-      .no-results {
-        text-align: center;
-        padding: 40px;
-        color: #64748b;
-      }
-      .error {
-        color: #ef4444;
       }
     </style>
   </head>
   <body>
-    <h1>📂 ${GITHUB_REPO_NAME} Files</h1>
-    <div id="file-list"></div>
+    <div class="container">
+      <h1>${GITHUB_REPO_NAME}</h1>
+      <div class="search-box">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search files..."
+          autocomplete="off"
+        />
+      </div>
+      <div id="file-list">Loading...</div>
+    </div>
 
     <script>
-      // --- CONFIGURATION ---
-      const username = "${GITHUB_USERNAME}"; // Agent: Replace!
-      const repo = "${GITHUB_REPO_NAME}"; // Agent: Replace!
+      const username = "${GITHUB_USERNAME}";
+      const repo = "${GITHUB_REPO_NAME}";
       const branch = "main";
-
       let allFilesData = [];
 
-      function buildFileTree(files) {
-        const tree = {};
-        files.forEach((file) => {
-          const parts = file.path.split("/");
-          let current = tree;
-          const fileName = parts.pop();
-          parts.forEach((dir) => {
-            if (!current[dir]) current[dir] = {};
-            current = current[dir];
-          });
-          if (!current._files) current._files = [];
-          current._files.push({
-            name: fileName,
-            fullPath: file.path,
-            ext: fileName.split(".").pop().toLowerCase(),
-            isHF: file.isHF,
-            hfInfo: file.hfInfo,
-          });
-        });
-        return tree;
+      function toggleFolder(e) {
+        const children = e.currentTarget.nextElementSibling;
+        children.classList.toggle("collapsed");
+        e.stopPropagation();
       }
 
       function renderTree(node) {
         let html = "";
-        // Render Folders
         Object.keys(node)
           .filter((k) => k !== "_files")
           .sort()
           .forEach((folder) => {
-            html += `<div class="folder"><div class="folder-header">📁 ${folder}/</div><div class="folder-children">${renderTree(node[folder])}</div></div>`;
+            html += `<div class="folder"><div class="folder-header" onclick="toggleFolder(event)">📁 ${folder}/</div><div class="folder-children collapsed">${renderTree(node[folder])}</div></div>`;
           });
-        // Render Files
         if (node._files) {
           node._files
             .sort((a, b) => a.name.localeCompare(b.name))
-            .forEach((file) => {
-              let url,
-                title,
-                badge = "";
-              const previewExts = [
-                "pdf",
-                "jpg",
-                "jpeg",
-                "png",
-                "gif",
-                "svg",
-                "txt",
-                "json",
-                "html",
-                "htm",
-                "xml",
-              ];
-
-              if (file.isHF) {
-                url = file.hfInfo.url;
-                title = `HuggingFace Download (${file.hfInfo.size_mb}MB)`;
-                badge = '<span class="hf-badge">🤗 HF</span>';
-              } else if (previewExts.includes(file.ext)) {
-                url = file.fullPath; // Direct preview relative path
-                title = "Direct View/Download";
-              } else {
-                url = `https://github.com/${username}/${repo}/blob/${branch}/${file.fullPath}`; // Blob view
-                title = "View Source on GitHub";
-              }
-              html += `<div class="file-item"><a href="${url}" target="_blank"><span class="file-icon">📄</span><span>${file.name}</span>${badge}</a></div>`;
+            .forEach((f) => {
+              let url = f.isHF
+                ? f.hfInfo.url
+                : ["pdf", "jpg", "png", "txt", "md", "json"].includes(f.ext)
+                  ? f.fullPath
+                  : `https://github.com/${username}/${repo}/blob/${branch}/${f.fullPath}`;
+              let badge = f.isHF ? '<span class="hf-badge">🤗 HF</span>' : "";
+              html += `<div class="file-item"><a href="${url}" target="_blank">📄 ${f.name} ${badge}</a></div>`;
             });
         }
         return html;
@@ -373,62 +437,79 @@ git push origin main
 
       async function init() {
         try {
-          document.getElementById("file-list").innerHTML =
-            '<div class="loading">Loading files...</div>';
-
-          // 1. Fetch GitHub Tree
-          const ghRes = await fetch(
+          const res = await fetch(
             `https://api.github.com/repos/${username}/${repo}/git/trees/${branch}?recursive=1`,
           );
-          const ghData = ghRes.ok ? await ghRes.json() : { tree: [] };
+          const data = await res.json();
+          allFilesData = data.tree
+            .filter(
+              (i) =>
+                i.type === "blob" &&
+                !i.path.startsWith(".git") &&
+                !i.path.startsWith("data/"),
+            )
+            .map((f) => ({
+              path: f.path,
+              name: f.path.split("/").pop(),
+              ext: f.path.split(".").pop().toLowerCase(),
+              isHF: false,
+            }));
 
-          // Filter files (exclude .git, scripts, data)
-          const gitFiles = (ghData.tree || []).filter(
-            (i) =>
-              i.type === "blob" &&
-              !i.path.startsWith(".git") &&
-              !i.path.startsWith("scripts/") &&
-              !i.path.startsWith("data/"),
-          );
-
-          allFilesData = gitFiles.map((f) => ({
-            path: f.path,
-            name: f.path.split("/").pop(),
-            isHF: false,
-          }));
-
-          // 2. Fetch HF Manifest
           try {
             const hfRes = await fetch(
-              "./data/file_manifest.json?t=" + Date.now(),
+              `./data/file_manifest.json?t=${Date.now()}`,
             );
             if (hfRes.ok) {
               const hfData = await hfRes.json();
-              hfData.files.forEach((f) => {
+              hfData.files.forEach((hf) =>
                 allFilesData.push({
-                  path: f.path,
-                  name: f.name,
+                  path: hf.path,
+                  name: hf.name,
+                  ext: hf.path.split(".").pop().toLowerCase(),
                   isHF: true,
-                  hfInfo: f,
-                });
-              });
+                  hfInfo: hf,
+                }),
+              );
             }
-          } catch (e) {
-            console.warn("Manifest loading failed", e);
-          }
+          } catch (e) {}
 
-          // Render
-          if (allFilesData.length === 0) {
-            document.getElementById("file-list").innerHTML =
-              '<div class="no-results">No files found.</div>';
-          } else {
-            document.getElementById("file-list").innerHTML = renderTree(
-              buildFileTree(allFilesData),
-            );
-          }
+          // Build Layout
+          const tree = {};
+          allFilesData.forEach((f) => {
+            let parts = f.path.split("/");
+            let curr = tree;
+            let name = parts.pop();
+            parts.forEach((d) => {
+              if (!curr[d]) curr[d] = {};
+              curr = curr[d];
+            });
+            if (!curr._files) curr._files = [];
+            curr._files.push(f);
+          });
+
+          document.getElementById("file-list").innerHTML = renderTree(tree);
+
+          // Search
+          document
+            .getElementById("searchInput")
+            .addEventListener("input", (e) => {
+              const val = e.target.value.toLowerCase();
+              if (!val)
+                return (document.getElementById("file-list").innerHTML =
+                  renderTree(tree));
+              let html = "";
+              allFilesData
+                .filter((f) => f.name.toLowerCase().includes(val))
+                .forEach((f) => {
+                  let url = f.isHF ? f.hfInfo.url : f.fullPath;
+                  html += `<div class="file-item"><a href="${url}" target="_blank">📄 ${f.name}</a></div>`;
+                });
+              document.getElementById("file-list").innerHTML =
+                html || "No results";
+            });
         } catch (e) {
           document.getElementById("file-list").innerHTML =
-            `<div class="error">Error loading files: ${e.message}</div>`;
+            "Error: " + e.message;
         }
       }
       init();
