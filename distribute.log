@@ -38,3 +38,13 @@
 2026-02-15 00:36:07,586 [INFO] [OK] Manifest generated with 99 total files
 2026-02-15 00:36:07,586 [INFO] 
 [OK] All steps complete in 2.0s! Ready for git push.
+2026-02-15 00:47:36,695 [INFO] Scanning files (Threshold: 50MB)...
+2026-02-15 00:47:36,818 [INFO] Stats: 0 large files, 96 small files
+2026-02-15 00:47:36,819 [INFO] Checking for redundant files on HuggingFace (hfhfn/full_stack_resources)...
+2026-02-15 00:47:39,175 [INFO] No redundant files found.
+2026-02-15 00:47:39,175 [INFO] Processing Git tracking & .gitignore...
+2026-02-15 00:47:39,177 [INFO] Updated .gitignore with 0 rules
+2026-02-15 00:47:39,177 [INFO] Generating full manifest (data/file_manifest.json)...
+2026-02-15 00:47:39,184 [INFO] [OK] Manifest generated with 96 total files
+2026-02-15 00:47:39,184 [INFO] 
+[OK] All steps complete in 2.5s! Ready for git push.

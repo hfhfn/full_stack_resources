@@ -75,10 +75,13 @@ def scan_files():
     for path in PROJECT_ROOT.rglob('*'):
         if not path.is_file(): continue
         parts = path.relative_to(PROJECT_ROOT).parts
-        if any(p.startswith('.') and p not in ['.gitignore', '.gitattributes'] for p in parts): continue
-        if any(ex in parts for ex in EXCLUDE_DIRS): continue
-        if path.name in ['index.html', 'README.md', 'setup.bat', 'setup.sh', 'distribute.log']: continue
-        if 'data/file_manifest.json' in str(path): continue
+        
+        # 严格过滤逻辑
+        if any(p.startswith('.') for p in parts): continue # 隐藏文件/文件夹
+        if any(ex in parts for ex in EXCLUDE_DIRS): continue # 排除目录
+        if 'scripts' in parts: continue # 明确排除 scripts 文件夹
+        if 'data' in parts: continue # 排除清单存储目录
+        if path.name in ['index.html', 'README.md', 'setup.bat', 'setup.sh', 'distribute.log', '.gitignore', '.gitattributes']: continue
 
         try:
             info = get_file_info(path)
