@@ -224,8 +224,14 @@ def update_gitignore_and_git(large_files, hf_files_to_delete):
                 logger.info(f"    Deleting from HuggingFace: {rule}")
                 api.delete_file(path_in_repo=rule, repo_id=HF_REPO_ID, repo_type="dataset",
                                commit_message=f"Auto delete: {os.path.basename(rule)}")
+                logger.info(f"    [OK] Deleted from HuggingFace: {rule}")
             except Exception as e:
-                logger.warning(f"Could not delete {rule} from HF: {e}")
+                error_str = str(e)
+                # 404 means file doesn't exist on HF - that's fine, it's already gone
+                if "404" in error_str or "not exist" in error_str.lower():
+                    logger.info(f"    [OK] File already deleted from HuggingFace: {rule}")
+                else:
+                    logger.warning(f"    [WARNING] Could not delete {rule} from HF: {e}")
     
     # Merge rules: keep existing rules that still have local files, add new rules
     all_rules = (existing_auto_rules - rules_to_remove) | new_rules
