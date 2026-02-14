@@ -109,9 +109,9 @@ def update_gitignore_and_git(large_files):
 
     if new_rules:
         with open(gitignore_path, 'a', encoding='utf-8') as f:
-            f.write("\\n# [Auto] Large files managed by HuggingFace\\n")
+            f.write("\n# [Auto] Large files managed by HuggingFace\n")
             for rule in new_rules:
-                f.write(f"{rule}\\n")
+                f.write(f"{rule}\n")
         print(f"   📝 Added {len(new_rules)} rules to .gitignore")
 
 def generate_manifest(large_files):
