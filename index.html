@@ -223,7 +223,8 @@
           const highlightClass = isFileMatch ? "highlight" : "";
           const ext = f.name.split(".").pop().toLowerCase();
           const browserSupport = ["pdf", "jpg", "png", "gif", "svg", "webp", "jpeg", "mp4", "webm", "txt", "html", "md"];
-          let url = f.isHF ? f.url : (browserSupport.includes(ext) ? `https://raw.githubusercontent.com/${username}/${repo}/${branch}/${f.path}` : `https://github.com/${username}/${repo}/blob/${branch}/${f.path}`);
+          const pagesBase = `https://${username}.github.io/${repo}/`;
+          let url = f.isHF ? f.url : (browserSupport.includes(ext) ? `${pagesBase}${f.path}` : `https://github.com/${username}/${repo}/blob/${branch}/${f.path}`);
           html += `<div class="file-item ${highlightClass}"><a href="${url}" target="_blank" title="${f.isHF ? 'HuggingFace Storage' : 'GitHub Storage'}"><span class="file-icon">${getFileIcon(f.name)}</span><span>${f.name}</span>${f.isHF ? `<span class="hf-badge">${f.size_mb} MB</span>` : ""}</a></div>`;
         });
         return html;
