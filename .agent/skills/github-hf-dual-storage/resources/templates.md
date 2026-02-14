@@ -303,9 +303,8 @@ fi
     <style>
       body {
         font-family:
-          system-ui,
-          -apple-system,
-          sans-serif;
+          -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+          Arial, sans-serif;
         max-width: 1000px;
         margin: 40px auto;
         padding: 0 20px;
@@ -326,6 +325,12 @@ fi
         align-items: center;
         gap: 10px;
       }
+      h1:before {
+        content: "📚";
+        font-size: 32px;
+      }
+
+      /* 搜索框样式 */
       .search-box {
         margin: 20px 0;
         display: flex;
@@ -337,33 +342,78 @@ fi
         border: 2px solid #e8f0fe;
         border-radius: 8px;
         font-size: 16px;
+        transition: border-color 0.2s;
         outline: none;
       }
       #searchInput:focus {
         border-color: #1a73e8;
       }
+      #searchInput::placeholder {
+        color: #9aa0a6;
+      }
+      .clear-search {
+        padding: 0 16px;
+        background: #f1f3f4;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        color: #5f6368;
+        transition: background 0.2s;
+      }
+      .clear-search:hover {
+        background: #e8eaed;
+      }
+
+      .file-tree {
+        margin-top: 20px;
+        min-height: 200px;
+      }
+
+      /* 文件夹样式 */
+      .folder {
+        margin: 4px 0;
+      }
       .folder-header {
         padding: 6px 8px;
+        border-radius: 4px;
         cursor: pointer;
+        user-select: none;
         display: flex;
         align-items: center;
         gap: 6px;
         color: #e36209;
         font-weight: 500;
+        transition: background 0.2s;
       }
       .folder-header:hover {
         background: #f1f8ff;
       }
+      .folder-header .toggle-icon {
+        display: inline-block;
+        width: 16px;
+        text-align: center;
+        font-size: 12px;
+        color: #5f6368;
+      }
+      .folder-header .folder-icon {
+        font-size: 18px;
+      }
       .folder-children {
         margin-left: 24px;
+        padding-left: 8px;
         border-left: 1px dashed #dadce0;
       }
       .folder-children.collapsed {
         display: none;
       }
+
+      /* 文件样式 */
       .file-item {
-        padding: 6px 8px;
+        padding: 6px 8px 6px 32px;
+        border-radius: 4px;
         transition: background 0.2s;
+        position: relative;
       }
       .file-item:hover {
         background: #f1f8ff;
@@ -371,148 +421,524 @@ fi
       .file-item a {
         text-decoration: none;
         color: #1a73e8;
-        display: flex;
+        display: inline-flex;
         align-items: center;
         gap: 8px;
       }
+      .file-item a:hover {
+        text-decoration: underline;
+      }
+      .file-icon {
+        font-size: 16px;
+      }
       .hf-badge {
+        display: inline-block;
+        margin-left: 6px;
         font-size: 11px;
         background: #fef3c7;
         color: #92400e;
         padding: 2px 6px;
         border-radius: 3px;
+        font-weight: 500;
         border: 1px solid #fcd34d;
+      }
+
+      /* 匹配高亮 */
+      .file-item.highlight {
+        background: #fff3e0;
+        border-left: 3px solid #f9ab00;
+      }
+      .folder-header.highlight {
+        background: #fff3e0;
+      }
+
+      /* 空状态和加载 */
+      .loading,
+      .error,
+      .no-results {
+        padding: 40px;
+        text-align: center;
+        color: #5f6368;
+      }
+      .error {
+        color: #d93025;
+      }
+      .stats {
+        margin-top: 20px;
+        padding-top: 15px;
+        border-top: 1px solid #e8f0fe;
+        color: #5f6368;
+        font-size: 14px;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
       }
     </style>
   </head>
   <body>
     <div class="container">
       <h1>${GITHUB_REPO_NAME}</h1>
+
+      <!-- 搜索框 -->
       <div class="search-box">
         <input
           type="text"
           id="searchInput"
-          placeholder="Search files..."
+          placeholder="🔍 搜索文件或文件夹... (支持拼音)"
           autocomplete="off"
         />
+        <button class="clear-search" id="clearSearch">清除</button>
       </div>
-      <div id="file-list">Loading...</div>
+
+      <div id="file-list" class="file-tree">
+        <div class="loading">📂 加载文件列表中...</div>
+      </div>
+
+      <div id="stats" class="stats"></div>
     </div>
 
     <script>
+      // 配置信息
       const username = "${GITHUB_USERNAME}";
       const repo = "${GITHUB_REPO_NAME}";
       const branch = "main";
-      let allFilesData = [];
 
-      function toggleFolder(e) {
-        const children = e.currentTarget.nextElementSibling;
-        children.classList.toggle("collapsed");
-        e.stopPropagation();
+      // 存储所有文件的原始数据
+      let allFilesData = [];
+      // 存储当前的搜索关键词
+      let currentSearchTerm = "";
+      // 存储 HuggingFace 大文件映射
+      let hfFileMap = {};
+
+      // 获取文件图标（根据扩展名）
+      function getFileIcon(filename) {
+        const ext = filename.split(".").pop().toLowerCase();
+        const iconMap = {
+          // 文档类
+          pdf: "📄",
+          doc: "📘",
+          docx: "📘",
+          txt: "📃",
+          md: "📝",
+          // 代码类
+          html: "🌐",
+          htm: "🌐",
+          css: "🎨",
+          js: "⚡",
+          py: "🐍",
+          java: "☕",
+          cpp: "⚙️",
+          c: "⚙️",
+          php: "🐘",
+          json: "📊",
+          // 图片类
+          jpg: "🖼️",
+          jpeg: "🖼️",
+          png: "🖼️",
+          gif: "🎞️",
+          svg: "🖌️",
+          // 压缩包
+          zip: "📦",
+          rar: "📦",
+          "7z": "📦",
+          tar: "📦",
+          gz: "📦",
+          // 其他
+          exe: "⚙️",
+          dmg: "💿",
+          iso: "💿",
+          mp4: "🎬",
+          mp3: "🎵",
+        };
+        return iconMap[ext] || "📄"; // 默认使用 📄
       }
 
-      function renderTree(node) {
-        let html = "";
-        Object.keys(node)
-          .filter((k) => k !== "_files")
-          .sort()
-          .forEach((folder) => {
-            html += `<div class="folder"><div class="folder-header" onclick="toggleFolder(event)">📁 ${folder}/</div><div class="folder-children collapsed">${renderTree(node[folder])}</div></div>`;
+      // 切换文件夹折叠状态
+      function toggleFolder(event) {
+        const header = event.currentTarget;
+        const children = header.nextElementSibling;
+        const toggleIcon = header.querySelector(".toggle-icon");
+
+        if (children && children.classList.contains("folder-children")) {
+          if (children.classList.contains("collapsed")) {
+            children.classList.remove("collapsed");
+            toggleIcon.textContent = "▼";
+          } else {
+            children.classList.add("collapsed");
+            toggleIcon.textContent = "▶";
+          }
+        }
+        event.stopPropagation();
+      }
+
+      // 递归构建树形结构
+      function buildFileTree(files) {
+        const tree = {};
+
+        files.forEach((file) => {
+          const pathParts = file.path.split("/");
+          let currentLevel = tree;
+          const fileName = pathParts.pop(); // 文件名是路径最后一部分
+
+          // 遍历路径中的每一级目录
+          pathParts.forEach((folder) => {
+            if (!currentLevel[folder]) {
+              currentLevel[folder] = {};
+            }
+            currentLevel = currentLevel[folder];
           });
-        if (node._files) {
+
+          // 在最终层级存放文件名和它的完整路径
+          if (!currentLevel._files) {
+            currentLevel._files = [];
+          }
+          currentLevel._files.push({
+            name: fileName,
+            fullPath: file.path, // 完整路径
+            ext: fileName.split(".").pop().toLowerCase(),
+            isHF: file.isHF, // 标记是否是大文件
+            hfInfo: file.hfInfo, // 大文件信息
+          });
+        });
+
+        return tree;
+      }
+
+      // 递归渲染树形结构
+      function renderTree(node, level = 0, searchTerm = "") {
+        let html = "";
+        const lowerSearchTerm = searchTerm.toLowerCase();
+
+        // 获取所有文件夹（按字母排序）
+        const folders = Object.keys(node)
+          .filter((key) => key !== "_files")
+          .sort((a, b) => a.localeCompare(b));
+
+        // 渲染文件夹
+        folders.forEach((folder) => {
+          // 判断文件夹是否匹配搜索（递归检查子文件）
+          const isFolderNameMatch = folder
+            .toLowerCase()
+            .includes(lowerSearchTerm);
+          const contentsMatch = doesFolderMatchSearch(node[folder], searchTerm);
+          const folderMatches =
+            searchTerm === "" || isFolderNameMatch || contentsMatch;
+
+          if (searchTerm !== "" && !folderMatches) {
+            return; // 搜索模式下，不匹配的文件夹直接跳过
+          }
+
+          html += `
+                    <div class="folder">
+                        <div class="folder-header ${isFolderNameMatch && searchTerm !== "" ? "highlight" : ""}" onclick="toggleFolder(event)">
+                            <span class="toggle-icon">${searchTerm === "" ? "▶" : "▼"}</span>
+                            <span class="folder-icon">📁</span>
+                            <span>${folder}/</span>
+                        </div>
+                        <div class="folder-children ${searchTerm === "" ? "collapsed" : ""}">
+                            ${renderTree(node[folder], level + 1, searchTerm)}
+                        </div>
+                    </div>
+                `;
+        });
+
+        // 渲染当前文件夹下的文件
+        if (node._files && node._files.length > 0) {
           node._files
             .sort((a, b) => a.name.localeCompare(b.name))
-            .forEach((f) => {
-              let url = f.isHF
-                ? f.hfInfo.url
-                : ["pdf", "jpg", "png", "txt", "md", "json"].includes(f.ext)
-                  ? f.fullPath
-                  : `https://github.com/${username}/${repo}/blob/${branch}/${f.fullPath}`;
-              let badge = f.isHF ? '<span class="hf-badge">🤗 HF</span>' : "";
-              html += `<div class="file-item"><a href="${url}" target="_blank">📄 ${f.name} ${badge}</a></div>`;
+            .forEach((file) => {
+              // 检查文件是否匹配搜索
+              const fileNameLower = file.name.toLowerCase();
+              const matches =
+                searchTerm === "" || fileNameLower.includes(lowerSearchTerm);
+
+              if (searchTerm !== "" && !matches) {
+                return; // 搜索模式下，不匹配的文件直接跳过
+              }
+
+              const icon = getFileIcon(file.name);
+              const highlight =
+                searchTerm !== "" && fileNameLower.includes(lowerSearchTerm)
+                  ? "highlight"
+                  : "";
+
+              // 链接处理优化：
+              // 1. 大文件 -> HuggingFace 直链
+              // 2. 可浏览器直接预览的文件 (PDF, 图片, TXT, JSON, HTML) -> 相对路径 (GitHub Pages 原生访问)
+              // 3. 代码和 Markdown -> GitHub Blob 页面 (带渲染预览)
+
+              let fileUrl;
+              let title;
+              let hfBadge = "";
+
+              // 定义可以直接在浏览器预览的扩展名
+              const previewExts = [
+                "pdf",
+                "jpg",
+                "jpeg",
+                "png",
+                "gif",
+                "svg",
+                "txt",
+                "json",
+                "html",
+                "htm",
+                "xml",
+              ];
+
+              if (file.isHF) {
+                fileUrl = file.hfInfo.url;
+                title = `来自 HuggingFace (${file.hfInfo.size_mb}MB)`;
+                hfBadge = '<span class="hf-badge">🤗 HF</span>';
+              } else {
+                if (previewExts.includes(file.ext)) {
+                  // 可直接预览：使用相对路径（在 GitHub Pages 上直接打开）
+                  // 注意：相对路径不需要 '/blob/'，直接访问文件
+                  // 这里我们构造 GitHub Raw 链接或者相对链接。相对链接体验最好。
+                  fileUrl = file.fullPath;
+                  title = "直接预览/下载";
+                } else {
+                  // 代码 / Markdown：跳转到 GitHub Blob 页面查看渲染效果
+                  fileUrl = `https://github.com/${username}/${repo}/blob/${branch}/${file.fullPath}`;
+                  title = "在 GitHub 上查看源码/渲染";
+                }
+              }
+
+              html += `
+                        <div class="file-item ${highlight}">
+                            <a href="${fileUrl}" target="_blank" title="${title}">
+                                <span class="file-icon">${icon}</span>
+                                <span>${file.name}</span>
+                                ${hfBadge}
+                            </a>
+                        </div>
+                    `;
             });
         }
+
         return html;
       }
 
-      async function init() {
-        try {
-          const res = await fetch(
-            `https://api.github.com/repos/${username}/${repo}/git/trees/${branch}?recursive=1`,
-          );
-          const data = await res.json();
-          allFilesData = data.tree
-            .filter(
-              (i) =>
-                i.type === "blob" &&
-                !i.path.startsWith(".git") &&
-                !i.path.startsWith("data/"),
-            )
-            .map((f) => ({
-              path: f.path,
-              name: f.path.split("/").pop(),
-              ext: f.path.split(".").pop().toLowerCase(),
-              isHF: false,
-            }));
+      // 检查文件夹是否包含匹配搜索的文件（递归）
+      function doesFolderMatchSearch(node, searchTerm) {
+        const lowerSearchTerm = searchTerm.toLowerCase();
 
-          try {
-            const hfRes = await fetch(
-              `./data/file_manifest.json?t=${Date.now()}`,
-            );
-            if (hfRes.ok) {
-              const hfData = await hfRes.json();
-              hfData.files.forEach((hf) =>
-                allFilesData.push({
-                  path: hf.path,
-                  name: hf.name,
-                  ext: hf.path.split(".").pop().toLowerCase(),
-                  isHF: true,
-                  hfInfo: hf,
-                }),
-              );
+        // 检查当前层级的文件
+        if (node._files) {
+          for (const file of node._files) {
+            if (file.name.toLowerCase().includes(lowerSearchTerm)) {
+              return true;
             }
-          } catch (e) {}
+          }
+        }
 
-          // Build Layout
-          const tree = {};
-          allFilesData.forEach((f) => {
-            let parts = f.path.split("/");
-            let curr = tree;
-            let name = parts.pop();
-            parts.forEach((d) => {
-              if (!curr[d]) curr[d] = {};
-              curr = curr[d];
-            });
-            if (!curr._files) curr._files = [];
-            curr._files.push(f);
-          });
+        // 递归检查子文件夹
+        const folders = Object.keys(node).filter((key) => key !== "_files");
+        for (const folder of folders) {
+          if (folder.toLowerCase().includes(lowerSearchTerm)) {
+            return true;
+          }
+          if (doesFolderMatchSearch(node[folder], searchTerm)) {
+            return true;
+          }
+        }
 
-          document.getElementById("file-list").innerHTML = renderTree(tree);
+        return false;
+      }
 
-          // Search
-          document
-            .getElementById("searchInput")
-            .addEventListener("input", (e) => {
-              const val = e.target.value.toLowerCase();
-              if (!val)
-                return (document.getElementById("file-list").innerHTML =
-                  renderTree(tree));
-              let html = "";
-              allFilesData
-                .filter((f) => f.name.toLowerCase().includes(val))
-                .forEach((f) => {
-                  let url = f.isHF ? f.hfInfo.url : f.fullPath;
-                  html += `<div class="file-item"><a href="${url}" target="_blank">📄 ${f.name}</a></div>`;
-                });
-              document.getElementById("file-list").innerHTML =
-                html || "No results";
-            });
-        } catch (e) {
+      // 更新统计信息
+      function updateStats(files) {
+        // 统计各种文件类型
+        const extCount = {};
+        files.forEach((f) => {
+          // 如果 path 不包含 . 可能会有问题，加个保护
+          const parts = f.path.split(".");
+          if (parts.length > 1) {
+            const ext = parts.pop().toLowerCase();
+            extCount[ext] = (extCount[ext] || 0) + 1;
+          }
+        });
+
+        // 取前5个最多的扩展名
+        const topExts = Object.entries(extCount)
+          .sort((a, b) => b[1] - a[1])
+          .slice(0, 5)
+          .map(([ext, count]) => `${ext}: ${count}个`);
+
+        const folderSet = new Set();
+        files.forEach((f) => {
+          const pathParts = f.path.split("/");
+          if (pathParts.length > 1) {
+            for (let i = 1; i < pathParts.length; i++) {
+              folderSet.add(pathParts.slice(0, i).join("/"));
+            }
+          }
+        });
+
+        const statsDiv = document.getElementById("stats");
+        const hfCount = files.filter((f) => f.isHF).length;
+
+        statsDiv.innerHTML = `
+                <span>📁 文件夹: ${folderSet.size} 个</span>
+                <span>📄 文件总数: ${files.length} 个 (含 ${hfCount} 个大文件)</span>
+                <span>🔤 主要类型: ${topExts.join(" · ")}</span>
+            `;
+      }
+
+      // 刷新文件列表（根据搜索词）
+      function refreshFileList() {
+        if (allFilesData.length === 0) return;
+
+        // 构建树形结构
+        const fileTree = buildFileTree(allFilesData);
+
+        // 渲染文件树（传入搜索词）
+        const treeHtml = renderTree(fileTree, 0, currentSearchTerm);
+
+        if (treeHtml.trim() === "") {
           document.getElementById("file-list").innerHTML =
-            "Error: " + e.message;
+            '<div class="no-results">🔍 没有找到匹配的文件</div>';
+        } else {
+          document.getElementById("file-list").innerHTML = treeHtml;
         }
       }
-      init();
+
+      // 主函数：获取并显示文件列表
+      async function listAllFiles() {
+        try {
+          // 1. 获取 GitHub 上的文件列表 (Git Tree API)
+          const response = await fetch(
+            `https://api.github.com/repos/${username}/${repo}/git/trees/${branch}?recursive=1`,
+          );
+
+          if (!response.ok) {
+            if (response.status === 404) throw new Error("仓库或分支未找到");
+            if (response.status === 403)
+              throw new Error("API 访问受限（请稍后再试）");
+            throw new Error(`GitHub API Error: ${response.status}`);
+          }
+
+          const data = await response.json();
+          if (!data.tree) {
+            throw new Error("无法获取 Git 文件树");
+          }
+
+          // 过滤 Git 文件
+          // 保留所有文件，除了 .github, scripts, data 和 index.html/README.md (可选)
+          // 这里我们过滤掉 .github 和 .git 相关的配置，以及 scripts 和 data 目录
+          // 但保留 README.md 方便查看
+          let gitFiles = data.tree.filter((item) => {
+            return (
+              item.type === "blob" &&
+              !item.path.startsWith(".github/") &&
+              !item.path.startsWith("scripts/") &&
+              !item.path.startsWith("data/") && // 隐藏 data 目录
+              !item.path.startsWith(".git") &&
+              item.path !== "index.html"
+            ); // 隐藏 index.html 本身
+          });
+
+          // 转换为统一格式
+          allFilesData = gitFiles.map((f) => ({
+            path: f.path,
+            name: f.path.split("/").pop(),
+            isHF: false,
+          }));
+
+          // 2. 加载 HuggingFace 文件清单 (大文件)
+          try {
+            // 添加时间戳防止缓存
+            const manifestResponse = await fetch(
+              `./data/file_manifest.json?t=${new Date().getTime()}`,
+            );
+            if (manifestResponse.ok) {
+              const manifest = await manifestResponse.json();
+              console.log(`✅ 已加载 ${manifest.files.length} 个大文件清单`);
+
+              // 将大文件合并到 allFilesData 中！
+              // 关键修复：之前只做了映射，没把文件加回去
+              manifest.files.forEach((hfFile) => {
+                allFilesData.push({
+                  path: hfFile.path, // 保持原始路径 (如 "path/to/large.pdf")
+                  name: hfFile.name,
+                  isHF: true,
+                  hfInfo: {
+                    size_mb: hfFile.size_mb,
+                    url: hfFile.url,
+                  },
+                });
+              });
+            }
+          } catch (e) {
+            console.warn(
+              "⚠️ 未能加载大文件清单 (data/file_manifest.json)，仅显示 GitHub 文件。",
+              e,
+            );
+          }
+
+          if (allFilesData.length === 0) {
+            document.getElementById("file-list").innerHTML =
+              '<div class="loading">📂 暂无文件</div>';
+            return;
+          }
+
+          // 刷新文件列表
+          refreshFileList();
+
+          // 更新统计信息
+          updateStats(allFilesData);
+        } catch (error) {
+          document.getElementById("file-list").innerHTML = `
+                    <div class="error">
+                        ❌ 加载失败: ${error.message}<br>
+                        <div style="font-size: 14px; margin-top: 10px;">
+                            可能原因：<br>
+                            1. GitHub Pages 尚未部署完成（请稍等几分钟）<br>
+                            2. 仓库使用了私有模式<br>
+                            3. API 速率限制
+                        </div>
+                    </div>
+                `;
+          console.error(error);
+        }
+      }
+
+      // 搜索功能
+      function setupSearch() {
+        const searchInput = document.getElementById("searchInput");
+        const clearButton = document.getElementById("clearSearch");
+
+        // 防抖函数，避免频繁渲染
+        let debounceTimer;
+        searchInput.addEventListener("input", (e) => {
+          clearTimeout(debounceTimer);
+          debounceTimer = setTimeout(() => {
+            currentSearchTerm = e.target.value.trim();
+            refreshFileList();
+          }, 300);
+        });
+
+        // 清除搜索
+        clearButton.addEventListener("click", () => {
+          searchInput.value = "";
+          currentSearchTerm = "";
+          refreshFileList();
+          searchInput.focus();
+        });
+
+        // 支持回车直接搜索
+        searchInput.addEventListener("keypress", (e) => {
+          if (e.key === "Enter") {
+            clearTimeout(debounceTimer);
+            currentSearchTerm = e.target.value.trim();
+            refreshFileList();
+          }
+        });
+      }
+
+      // 启动
+      listAllFiles();
+      setupSearch();
     </script>
   </body>
 </html>

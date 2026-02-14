@@ -321,9 +321,12 @@
         // 渲染文件夹
         folders.forEach((folder) => {
           // 判断文件夹是否匹配搜索（递归检查子文件）
+          const isFolderNameMatch = folder
+            .toLowerCase()
+            .includes(lowerSearchTerm);
+          const contentsMatch = doesFolderMatchSearch(node[folder], searchTerm);
           const folderMatches =
-            searchTerm === "" ||
-            doesFolderMatchSearch(node[folder], searchTerm);
+            searchTerm === "" || isFolderNameMatch || contentsMatch;
 
           if (searchTerm !== "" && !folderMatches) {
             return; // 搜索模式下，不匹配的文件夹直接跳过
@@ -331,7 +334,7 @@
 
           html += `
                     <div class="folder">
-                        <div class="folder-header" onclick="toggleFolder(event)">
+                        <div class="folder-header ${isFolderNameMatch && searchTerm !== "" ? "highlight" : ""}" onclick="toggleFolder(event)">
                             <span class="toggle-icon">${searchTerm === "" ? "▶" : "▼"}</span>
                             <span class="folder-icon">📁</span>
                             <span>${folder}/</span>
@@ -436,6 +439,9 @@
         // 递归检查子文件夹
         const folders = Object.keys(node).filter((key) => key !== "_files");
         for (const folder of folders) {
+          if (folder.toLowerCase().includes(lowerSearchTerm)) {
+            return true;
+          }
           if (doesFolderMatchSearch(node[folder], searchTerm)) {
             return true;
           }
