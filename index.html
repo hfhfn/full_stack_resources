@@ -515,12 +515,17 @@
 
       async function loadData() {
         try {
+          console.log("Loading manifest...");
           const res = await fetch(`./data/file_manifest.json?t=${Date.now()}`);
-          if (!res.ok) throw new Error("无法加载资源清单");
+          if (!res.ok) throw new Error(`HTTP ${res.status}: 无法加载资源清单`);
           const data = await res.json();
           allFiles = data.files || [];
+          console.log(`✅ Manifest loaded: ${allFiles.length} files`);
+          console.log(`HF files: ${allFiles.filter(f => f.is_hf).length}`);
+          console.log(`GitHub files: ${allFiles.filter(f => !f.is_hf).length}`);
           render();
         } catch (e) {
+          console.error("Manifest load error:", e);
           document.getElementById("file-list").innerHTML =
             `<div class="loader" style="color:#ef4444">❌ 加载异常: ${e.message}</div>`;
         }
@@ -609,14 +614,17 @@
               // 大文件在 HuggingFace - 使用 HF 下载链接
               finalUrl = f.url;
               downloadAttr = 'download';
+              console.log(`[HF] ${f.name}: ${finalUrl.substring(0, 60)}...`);
             } else if (isPreviewable) {
               // 小文件在 GitHub 且可预览 - 使用 GitHub Pages 相对路径
               finalUrl = `./${f.path}`;
               target = "_blank";
+              console.log(`[Preview] ${f.name}: ${finalUrl}`);
             } else {
               // 代码文件 - 跳转 GitHub Blob 视图
               finalUrl = `https://github.com/${username}/${repo}/blob/${branch}/${f.path}`;
               target = "_blank";
+              console.log(`[Code] ${f.name}: GitHub Blob`);
             }
 
             html += `
