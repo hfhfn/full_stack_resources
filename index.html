@@ -515,17 +515,61 @@
 
       async function loadData() {
         try {
-          console.log("Loading manifest...");
-          const res = await fetch(`./data/file_manifest.json?t=${Date.now()}`);
-          if (!res.ok) throw new Error(`HTTP ${res.status}: 无法加载资源清单`);
-          const data = await res.json();
-          allFiles = data.files || [];
-          console.log(`✅ Manifest loaded: ${allFiles.length} files`);
-          console.log(`HF files: ${allFiles.filter(f => f.is_hf).length}`);
-          console.log(`GitHub files: ${allFiles.filter(f => !f.is_hf).length}`);
+          console.log("Loading files from GitHub API and manifest...");
+
+          // 并行获取 GitHub 文件列表和 manifest
+          const [gitRes, manifestRes] = await Promise.all([
+            fetch(
+              `https://api.github.com/repos/${username}/${repo}/git/trees/${branch}?recursive=1`
+            ).catch(() => null),
+            fetch(`./data/file_manifest.json?t=${Date.now()}`).catch(() => null)
+          ]);
+
+          let files = [];
+
+          // 从 GitHub API 获取 GitHub 上的文件
+          if (gitRes && gitRes.ok) {
+            const gitData = await gitRes.json();
+            const gitFiles = gitData.tree
+              .filter(
+                (i) =>
+                  i.type === "blob" &&
+                  !i.path.match(/^(\.github|scripts|data|\.git|\.idea|\.serena|index\.html|README\.md|setup\.|distribute\.log|\.gitignore)/)
+              )
+              .map((i) => ({
+                path: i.path,
+                name: i.path.split("/").pop(),
+                is_hf: false,
+                size_mb: 0
+              }));
+            files.push(...gitFiles);
+            console.log(`✅ GitHub API: ${gitFiles.length} files`);
+          }
+
+          // 从 manifest 获取 HF 大文件信息
+          if (manifestRes && manifestRes.ok) {
+            const manifest = await manifestRes.json();
+            const hfFiles = manifest.files.filter(f => f.is_hf);
+            files.push(...hfFiles);
+            console.log(`✅ Manifest: ${hfFiles.length} HF files`);
+          }
+
+          // 去重（防止同一文件在两个列表中出现）
+          const fileMap = new Map();
+          files.forEach(f => {
+            const key = f.path;
+            if (!fileMap.has(key) || f.is_hf) {
+              fileMap.set(key, f);
+            }
+          });
+
+          allFiles = Array.from(fileMap.values());
+          console.log(`✅ Total files: ${allFiles.length} (after dedup)`);
+          console.log(`   HF: ${allFiles.filter(f => f.is_hf).length}, GitHub: ${allFiles.filter(f => !f.is_hf).length}`);
+
           render();
         } catch (e) {
-          console.error("Manifest load error:", e);
+          console.error("Load error:", e);
           document.getElementById("file-list").innerHTML =
             `<div class="loader" style="color:#ef4444">❌ 加载异常: ${e.message}</div>`;
         }
@@ -602,35 +646,25 @@
             const ext = f.name.split(".").pop().toLowerCase();
             const isPreviewable = config.previewExts.includes(ext);
 
-            // 链接和下载逻辑
-            // HF 大文件：直接使用 manifest 中的 HF 下载链接
-            // GitHub 可预览文件（PDF/图片）：直接使用 manifest 中的 raw.githubusercontent.com 链接（浏览器可预览）
-            // GitHub 不可预览文件（代码）：跳转 GitHub Blob 视图
+            // URL 处理逻辑
             let finalUrl = "";
-            let target = "_blank";
             let downloadAttr = "";
 
             if (f.is_hf) {
-              // 大文件在 HuggingFace - 使用 manifest 中的 HF 下载链接
+              // HF 大文件：使用 manifest 中的 HF 下载链接
               finalUrl = f.url;
               downloadAttr = 'download';
-              console.log(`[HF] ${f.name}: ${finalUrl.substring(0, 60)}...`);
             } else if (isPreviewable) {
-              // 小文件在 GitHub 且可预览 - 直接使用 manifest 中的 raw.githubusercontent.com 链接
-              // raw.githubusercontent.com 能在浏览器中正确预览 PDF/图片
-              finalUrl = f.url;
-              target = "_blank";
-              console.log(`[Preview] ${f.name}: ${finalUrl.substring(0, 60)}...`);
+              // GitHub 可预览文件（PDF/图片）：直接使用相对路径
+              finalUrl = `./${f.path}`;
             } else {
-              // 代码文件 - 跳转 GitHub Blob 视图
+              // GitHub 代码文件：跳转 GitHub Blob 视图
               finalUrl = `https://github.com/${username}/${repo}/blob/${branch}/${f.path}`;
-              target = "_blank";
-              console.log(`[Code] ${f.name}: GitHub Blob`);
             }
 
             html += `
             <div class="file-item ${highlightClass}">
-              <a href="${finalUrl}" target="${target}" class="file-link" ${downloadAttr}>
+              <a href="${finalUrl}" target="_blank" class="file-link" ${downloadAttr}>
                 <span class="file-icon">${getFileIcon(f.name)}</span>
                 <span>${displayName}</span>
                 ${f.is_hf ? `<span class="hf-badge">🤗 HF</span>` : `<span class="gh-badge">📦 Git</span>`}
