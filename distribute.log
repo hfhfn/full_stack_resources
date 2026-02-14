@@ -474,3 +474,24 @@ A file with the name "《内容算法：把内容变成价值的效率系统》_
 2026-02-15 05:15:27,504 [INFO] [OK] Manifest generated with 97 total files
 2026-02-15 05:15:27,504 [INFO] 
 [OK] All steps complete in 4.5s! Ready for git push.
+2026-02-15 05:16:59,271 [INFO] Scanning files (Threshold: 50MB)...
+2026-02-15 05:16:59,414 [INFO] Stats: 0 large files, 96 small files
+2026-02-15 05:16:59,414 [INFO] Checking for redundant files on HuggingFace (hfhfn/full_stack_resources)...
+2026-02-15 05:17:01,835 [INFO] Found 1 redundant files. Deleting...
+2026-02-15 05:17:01,836 [INFO]    - Deleting: 《内容算法：把内容变成价值的效率系统》_闫泽华.pdf
+2026-02-15 05:17:02,578 [INFO] [OK] Sync deletion complete (Removed 1 files)
+2026-02-15 05:17:02,578 [INFO] Processing Git tracking & .gitignore...
+2026-02-15 05:17:02,579 [INFO]     Removing rule for deleted local file: 《内容算法：把内容变成价值的效率系统》_闫泽华.pdf
+2026-02-15 05:17:02,579 [INFO]     Deleting from HuggingFace: 《内容算法：把内容变成价值的效率系统》_闫泽华.pdf
+2026-02-15 05:17:02,987 [WARNING] Could not delete 《内容算法：把内容变成价值的效率系统》_闫泽华.pdf from HF: 404 Client Error. (Request ID: Root=1-6990e64e-46019082148faa56348abb7e;7e7fee72-f2e5-4efb-9e5e-041968c71a1f)
+
+Entry Not Found for url: https://huggingface.co/api/datasets/hfhfn/full_stack_resources/commit/main.
+A file with the name "*******************_***.pdf" does not exist
+A file with the name "《内容算法：把内容变成价值的效率系统》_闫泽华.pdf" does not exist
+2026-02-15 05:17:02,988 [INFO] Updated .gitignore with 0 rules (new: 0, removed: 1)
+2026-02-15 05:17:02,988 [INFO] Generating full manifest (data/file_manifest.json)...
+2026-02-15 05:17:02,996 [INFO]     Removing unmanaged HF file from manifest: 《内容算法：把内容变成价值的效率系统》_闫泽华.pdf
+2026-02-15 05:17:02,997 [INFO]     (HF files decreased: 1 → 0, updating timestamp)
+2026-02-15 05:17:03,000 [INFO] [OK] Manifest generated with 96 total files
+2026-02-15 05:17:03,000 [INFO] 
+[OK] All steps complete in 3.7s! Ready for git push.
