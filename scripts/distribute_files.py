@@ -129,6 +129,7 @@ def upload_to_hf(files):
 
 def sync_hf_deletions(local_large_files):
     logger.info(f"Checking for redundant files on HuggingFace ({HF_REPO_ID})...")
+    deleted_files = []
     try:
         from huggingface_hub import HfApi, list_repo_files
         api = HfApi()
@@ -142,13 +143,16 @@ def sync_hf_deletions(local_large_files):
             for rf in to_delete:
                 logger.info(f"   - Deleting: {rf}")
                 api.delete_file(path_in_repo=rf, repo_id=HF_REPO_ID, repo_type="dataset", commit_message=f"Sync delete: {os.path.basename(rf)}")
+                deleted_files.append(Path(rf))
             logger.info(f"[OK] Sync deletion complete (Removed {len(to_delete)} files)")
         else:
             logger.info("No redundant files found.")
     except Exception as e:
         logger.warning(f"Sync deletion failed: {str(e)}")
+    
+    return deleted_files
 
-def update_gitignore_and_git(large_files):
+def update_gitignore_and_git(large_files, hf_files_to_delete):
     logger.info("Processing Git tracking & .gitignore...")
     gitignore_path = PROJECT_ROOT / '.gitignore'
     
@@ -203,9 +207,25 @@ def update_gitignore_and_git(large_files):
         new_rules.add(rel)
         run_git_cmd(['rm', '--cached', str(f)])
 
-    # Merge existing rules (to keep rules for files managed on HuggingFace even if not present locally)
-    # and new rules
-    all_rules = existing_auto_rules | new_rules
+    # Check which existing rules should be kept
+    # A rule should be removed ONLY if:
+    # 1. Its file doesn't exist locally (has been deleted)
+    # 2. AND it's a redundant file on HuggingFace (will be cleaned up later)
+    # We don't auto-remove files that might legitimately not be present locally
+    # (they might be on HF for other users to access)
+    rules_to_remove = set()
+
+    # We'll remove rules only for files that sync_hf_deletions marked as redundant
+    hf_files_to_delete_set = {f.relative_to(PROJECT_ROOT).as_posix() for f in hf_files_to_delete}
+
+    for rule in existing_auto_rules:
+        if rule in hf_files_to_delete_set:
+            rules_to_remove.add(rule)
+            logger.info(f"    Removing rule for deleted HF file: {rule}")
+    
+    # Merge existing rules (keep those that still exist or are newly scanned)
+    all_rules = existing_auto_rules - rules_to_remove
+    all_rules |= new_rules
 
     # Write updated gitignore
     with open(gitignore_path, 'w', encoding='utf-8') as f:
@@ -221,7 +241,8 @@ def update_gitignore_and_git(large_files):
             for rule in sorted(all_rules):
                 f.write(f"{rule}\n")
     
-    logger.info(f"Updated .gitignore with {len(all_rules)} rules (new: {len(new_rules)}, preserved: {len(existing_auto_rules - new_rules)})")
+    removed_count = len(rules_to_remove)
+    logger.info(f"Updated .gitignore with {len(all_rules)} rules (new: {len(new_rules)}, removed: {removed_count})")
 
 def generate_manifest(large_files, small_files):
     logger.info("Generating full manifest (data/file_manifest.json)...")
@@ -390,8 +411,8 @@ def main():
         logger.info(f"Stats: {len(large)} large files, {len(small)} small files")
 
         upload_to_hf(large)
-        sync_hf_deletions(large)
-        update_gitignore_and_git(large)
+        deleted_files = sync_hf_deletions(large)
+        update_gitignore_and_git(large, deleted_files)
         generate_manifest(large, small)
 
         elapsed = time.time() - start_time
