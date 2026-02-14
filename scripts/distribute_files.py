@@ -337,29 +337,44 @@ def generate_manifest(large_files, small_files):
                 logger.debug(f"Could not restore HF file {managed_file}: {e}")
     
     # Check if manifest content would be the same (except updated_at)
+    # BUT: if .gitignore rules changed (especially decreased), always update timestamp
     preserve_timestamp = False
     if manifest_path.exists():
         try:
             with open(manifest_path, 'r', encoding='utf-8') as f:
                 old_manifest = json.load(f)
-            
-            # Compare file lists (without considering updated_at)
-            old_files = old_manifest.get('files', [])
-            new_files = manifest['files']
-            
-            if len(old_files) == len(new_files):
-                # Compare file entries - must be in same order and identical
-                all_same = True
-                for old_file, new_file in zip(old_files, new_files):
-                    if old_file != new_file:
-                        all_same = False
-                        break
-                
-                if all_same:
-                    # Preserve the old timestamp if content hasn't changed
-                    preserve_timestamp = True
-                    manifest['updated_at'] = old_manifest['updated_at']
-                    logger.info(f"    (Timestamp preserved - no content changes)")
+
+            # Get old .gitignore rules
+            old_gitignore_path = PROJECT_ROOT / '.gitignore'
+            old_managed_hf_files = set()
+
+            # We can't actually get the old .gitignore easily, but we can check
+            # if the number of managed files changed significantly
+            old_hf_count = len([f for f in old_manifest.get('files', []) if f.get('is_hf')])
+            new_hf_count = len([f for f in manifest['files'] if f.get('is_hf')])
+
+            # If HF file count decreased, it means user deleted rules - always update timestamp
+            if new_hf_count < old_hf_count:
+                logger.info(f"    (HF files decreased: {old_hf_count} → {new_hf_count}, updating timestamp)")
+                preserve_timestamp = False
+            else:
+                # Only preserve timestamp if everything matches exactly
+                old_files = old_manifest.get('files', [])
+                new_files = manifest['files']
+
+                if len(old_files) == len(new_files):
+                    # Compare file entries - must be in same order and identical
+                    all_same = True
+                    for old_file, new_file in zip(old_files, new_files):
+                        if old_file != new_file:
+                            all_same = False
+                            break
+
+                    if all_same:
+                        # Preserve the old timestamp if content hasn't changed
+                        preserve_timestamp = True
+                        manifest['updated_at'] = old_manifest['updated_at']
+                        logger.info(f"    (Timestamp preserved - no content changes)")
         except Exception as e:
             logger.debug(f"Could not compare manifests: {e}")
     
