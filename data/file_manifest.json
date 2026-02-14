@@ -1,5 +1,897 @@
 {
   "hf_repo_id": "hfhfn/full_stack_resources",
-  "updated_at": "2026-02-14 23:57:58",
-  "files": []
+  "updated_at": "2026-02-15 00:18:39",
+  "files": [
+    {
+      "name": ".gitignore",
+      "path": ".gitignore",
+      "extension": "",
+      "size_mb": 0.0,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/.gitignore",
+      "is_hf": false,
+      "last_modified": "2026-02-15 00:18:39"
+    },
+    {
+      "name": "file_manifest.json",
+      "path": "data/file_manifest.json",
+      "extension": "json",
+      "size_mb": 0.05,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/data/file_manifest.json",
+      "is_hf": false,
+      "last_modified": "2026-02-15 00:16:31"
+    },
+    {
+      "name": "distribute_files.py",
+      "path": "scripts/distribute_files.py",
+      "extension": "py",
+      "size_mb": 0.01,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/scripts/distribute_files.py",
+      "is_hf": false,
+      "last_modified": "2026-02-15 00:14:25"
+    },
+    {
+      "name": "开篇词｜用好A_B测试，你得这么学.html",
+      "path": "AB测试从0到1/01-开篇词 (1讲)/开篇词｜用好A_B测试，你得这么学.html",
+      "extension": "html",
+      "size_mb": 8.39,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/01-开篇词 (1讲)/开篇词｜用好A_B测试，你得这么学.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:40"
+    },
+    {
+      "name": "开篇词｜用好A_B测试，你得这么学.pdf",
+      "path": "AB测试从0到1/01-开篇词 (1讲)/开篇词｜用好A_B测试，你得这么学.pdf",
+      "extension": "pdf",
+      "size_mb": 5.24,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/01-开篇词 (1讲)/开篇词｜用好A_B测试，你得这么学.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:39"
+    },
+    {
+      "name": "01 _ 统计基础（上）：系统掌握指标的统计属性.html",
+      "path": "AB测试从0到1/02-统计篇：AB测试的前提与理论基础 (2讲)/01 _ 统计基础（上）：系统掌握指标的统计属性.html",
+      "extension": "html",
+      "size_mb": 5.37,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/02-统计篇：AB测试的前提与理论基础 (2讲)/01 _ 统计基础（上）：系统掌握指标的统计属性.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:40"
+    },
+    {
+      "name": "01 _ 统计基础（上）：系统掌握指标的统计属性.pdf",
+      "path": "AB测试从0到1/02-统计篇：AB测试的前提与理论基础 (2讲)/01 _ 统计基础（上）：系统掌握指标的统计属性.pdf",
+      "extension": "pdf",
+      "size_mb": 3.01,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/02-统计篇：AB测试的前提与理论基础 (2讲)/01 _ 统计基础（上）：系统掌握指标的统计属性.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:39"
+    },
+    {
+      "name": "02丨统计基础（下）：深入理解AB测试中的假设检验.html",
+      "path": "AB测试从0到1/02-统计篇：AB测试的前提与理论基础 (2讲)/02丨统计基础（下）：深入理解AB测试中的假设检验.html",
+      "extension": "html",
+      "size_mb": 5.12,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/02-统计篇：AB测试的前提与理论基础 (2讲)/02丨统计基础（下）：深入理解AB测试中的假设检验.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:39"
+    },
+    {
+      "name": "02丨统计基础（下）：深入理解AB测试中的假设检验.pdf",
+      "path": "AB测试从0到1/02-统计篇：AB测试的前提与理论基础 (2讲)/02丨统计基础（下）：深入理解AB测试中的假设检验.pdf",
+      "extension": "pdf",
+      "size_mb": 2.92,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/02-统计篇：AB测试的前提与理论基础 (2讲)/02丨统计基础（下）：深入理解AB测试中的假设检验.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:39"
+    },
+    {
+      "name": "03丨确定目标和假设：好的目标和假设是什么？.html",
+      "path": "AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/03丨确定目标和假设：好的目标和假设是什么？.html",
+      "extension": "html",
+      "size_mb": 6.74,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/03丨确定目标和假设：好的目标和假设是什么？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:41"
+    },
+    {
+      "name": "03丨确定目标和假设：好的目标和假设是什么？.pdf",
+      "path": "AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/03丨确定目标和假设：好的目标和假设是什么？.pdf",
+      "extension": "pdf",
+      "size_mb": 3.28,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/03丨确定目标和假设：好的目标和假设是什么？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:41"
+    },
+    {
+      "name": "04丨确定指标：指标这么多，到底如何来选择？.html",
+      "path": "AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/04丨确定指标：指标这么多，到底如何来选择？.html",
+      "extension": "html",
+      "size_mb": 3.72,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/04丨确定指标：指标这么多，到底如何来选择？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:40"
+    },
+    {
+      "name": "04丨确定指标：指标这么多，到底如何来选择？.pdf",
+      "path": "AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/04丨确定指标：指标这么多，到底如何来选择？.pdf",
+      "extension": "pdf",
+      "size_mb": 1.91,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/04丨确定指标：指标这么多，到底如何来选择？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:41"
+    },
+    {
+      "name": "05丨选取实验单位：什么样的实验单位是合适的？.html",
+      "path": "AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/05丨选取实验单位：什么样的实验单位是合适的？.html",
+      "extension": "html",
+      "size_mb": 2.67,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/05丨选取实验单位：什么样的实验单位是合适的？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:41"
+    },
+    {
+      "name": "05丨选取实验单位：什么样的实验单位是合适的？.pdf",
+      "path": "AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/05丨选取实验单位：什么样的实验单位是合适的？.pdf",
+      "extension": "pdf",
+      "size_mb": 1.23,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/05丨选取实验单位：什么样的实验单位是合适的？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:42"
+    },
+    {
+      "name": "06丨选择实验样本量：样本量越多越好吗？.html",
+      "path": "AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/06丨选择实验样本量：样本量越多越好吗？.html",
+      "extension": "html",
+      "size_mb": 4.66,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/06丨选择实验样本量：样本量越多越好吗？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:43"
+    },
+    {
+      "name": "06丨选择实验样本量：样本量越多越好吗？.pdf",
+      "path": "AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/06丨选择实验样本量：样本量越多越好吗？.pdf",
+      "extension": "pdf",
+      "size_mb": 2.6,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/06丨选择实验样本量：样本量越多越好吗？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:42"
+    },
+    {
+      "name": "07丨 分析测试结果：你得到的测试结果真的靠谱吗？.html",
+      "path": "AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/07丨 分析测试结果：你得到的测试结果真的靠谱吗？.html",
+      "extension": "html",
+      "size_mb": 3.56,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/07丨 分析测试结果：你得到的测试结果真的靠谱吗？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:42"
+    },
+    {
+      "name": "07丨 分析测试结果：你得到的测试结果真的靠谱吗？.pdf",
+      "path": "AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/07丨 分析测试结果：你得到的测试结果真的靠谱吗？.pdf",
+      "extension": "pdf",
+      "size_mb": 1.97,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/07丨 分析测试结果：你得到的测试结果真的靠谱吗？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:42"
+    },
+    {
+      "name": "08丨案例串讲：从0开始，搭建一个规范的AB测试框架.html",
+      "path": "AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/08丨案例串讲：从0开始，搭建一个规范的AB测试框架.html",
+      "extension": "html",
+      "size_mb": 7.28,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/08丨案例串讲：从0开始，搭建一个规范的AB测试框架.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:44"
+    },
+    {
+      "name": "08丨案例串讲：从0开始，搭建一个规范的AB测试框架.pdf",
+      "path": "AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/08丨案例串讲：从0开始，搭建一个规范的AB测试框架.pdf",
+      "extension": "pdf",
+      "size_mb": 4.64,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/08丨案例串讲：从0开始，搭建一个规范的AB测试框架.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:44"
+    },
+    {
+      "name": "导读丨科学、规范的AB测试流程，是什么样的？.html",
+      "path": "AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/导读丨科学、规范的AB测试流程，是什么样的？.html",
+      "extension": "html",
+      "size_mb": 2.37,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/导读丨科学、规范的AB测试流程，是什么样的？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:44"
+    },
+    {
+      "name": "导读丨科学、规范的AB测试流程，是什么样的？.pdf",
+      "path": "AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/导读丨科学、规范的AB测试流程，是什么样的？.pdf",
+      "extension": "pdf",
+      "size_mb": 1.23,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/03-基础篇：从0到1，带你建立规范的AB测试流程 (7讲)/导读丨科学、规范的AB测试流程，是什么样的？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:44"
+    },
+    {
+      "name": "09丨测试结果不显著，要怎么改善？.html",
+      "path": "AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/09丨测试结果不显著，要怎么改善？.html",
+      "extension": "html",
+      "size_mb": 4.4,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/09丨测试结果不显著，要怎么改善？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:45"
+    },
+    {
+      "name": "09丨测试结果不显著，要怎么改善？.pdf",
+      "path": "AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/09丨测试结果不显著，要怎么改善？.pdf",
+      "extension": "pdf",
+      "size_mb": 2.39,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/09丨测试结果不显著，要怎么改善？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:45"
+    },
+    {
+      "name": "10丨常见误区及解决方法（上）：多重检验问题和学习效应.html",
+      "path": "AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/10丨常见误区及解决方法（上）：多重检验问题和学习效应.html",
+      "extension": "html",
+      "size_mb": 5.63,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/10丨常见误区及解决方法（上）：多重检验问题和学习效应.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:46"
+    },
+    {
+      "name": "10丨常见误区及解决方法（上）：多重检验问题和学习效应.pdf",
+      "path": "AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/10丨常见误区及解决方法（上）：多重检验问题和学习效应.pdf",
+      "extension": "pdf",
+      "size_mb": 3.68,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/10丨常见误区及解决方法（上）：多重检验问题和学习效应.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:46"
+    },
+    {
+      "name": "11丨常见误区及解决方法（下）：辛普森悖论和实验组对照组的独立性.html",
+      "path": "AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/11丨常见误区及解决方法（下）：辛普森悖论和实验组对照组的独立性.html",
+      "extension": "html",
+      "size_mb": 3.19,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/11丨常见误区及解决方法（下）：辛普森悖论和实验组对照组的独立性.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:46"
+    },
+    {
+      "name": "11丨常见误区及解决方法（下）：辛普森悖论和实验组对照组的独立性.pdf",
+      "path": "AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/11丨常见误区及解决方法（下）：辛普森悖论和实验组对照组的独立性.pdf",
+      "extension": "pdf",
+      "size_mb": 1.85,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/11丨常见误区及解决方法（下）：辛普森悖论和实验组对照组的独立性.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:46"
+    },
+    {
+      "name": "12丨什么情况下不适合做AB测试？.html",
+      "path": "AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/12丨什么情况下不适合做AB测试？.html",
+      "extension": "html",
+      "size_mb": 5.22,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/12丨什么情况下不适合做AB测试？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:47"
+    },
+    {
+      "name": "12丨什么情况下不适合做AB测试？.pdf",
+      "path": "AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/12丨什么情况下不适合做AB测试？.pdf",
+      "extension": "pdf",
+      "size_mb": 3.13,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/12丨什么情况下不适合做AB测试？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:48"
+    },
+    {
+      "name": "13丨融会贯通：AB测试面试必知必会（上）.html",
+      "path": "AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/13丨融会贯通：AB测试面试必知必会（上）.html",
+      "extension": "html",
+      "size_mb": 4.47,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/13丨融会贯通：AB测试面试必知必会（上）.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:48"
+    },
+    {
+      "name": "13丨融会贯通：AB测试面试必知必会（上）.pdf",
+      "path": "AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/13丨融会贯通：AB测试面试必知必会（上）.pdf",
+      "extension": "pdf",
+      "size_mb": 2.73,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/13丨融会贯通：AB测试面试必知必会（上）.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:47"
+    },
+    {
+      "name": "14丨举一反三：AB测试面试必知必会（下）.html",
+      "path": "AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/14丨举一反三：AB测试面试必知必会（下）.html",
+      "extension": "html",
+      "size_mb": 2.44,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/14丨举一反三：AB测试面试必知必会（下）.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:47"
+    },
+    {
+      "name": "14丨举一反三：AB测试面试必知必会（下）.pdf",
+      "path": "AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/14丨举一反三：AB测试面试必知必会（下）.pdf",
+      "extension": "pdf",
+      "size_mb": 1.18,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/14丨举一反三：AB测试面试必知必会（下）.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:48"
+    },
+    {
+      "name": "15丨用RShiny，教你制作一个样本量计算器.html",
+      "path": "AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/15丨用RShiny，教你制作一个样本量计算器.html",
+      "extension": "html",
+      "size_mb": 9.15,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/15丨用RShiny，教你制作一个样本量计算器.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:50"
+    },
+    {
+      "name": "15丨用RShiny，教你制作一个样本量计算器.pdf",
+      "path": "AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/15丨用RShiny，教你制作一个样本量计算器.pdf",
+      "extension": "pdf",
+      "size_mb": 5.38,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/04-进阶篇：怎么在AB测试的实践中避坑 (7讲)/15丨用RShiny，教你制作一个样本量计算器.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:50"
+    },
+    {
+      "name": "16丨结束语丨实践是检验真理的唯一标准.html",
+      "path": "AB测试从0到1/05-结束语 (3讲)/16丨结束语丨实践是检验真理的唯一标准.html",
+      "extension": "html",
+      "size_mb": 2.87,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/05-结束语 (3讲)/16丨结束语丨实践是检验真理的唯一标准.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:49"
+    },
+    {
+      "name": "16丨结束语丨实践是检验真理的唯一标准.pdf",
+      "path": "AB测试从0到1/05-结束语 (3讲)/16丨结束语丨实践是检验真理的唯一标准.pdf",
+      "extension": "pdf",
+      "size_mb": 1.4,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/05-结束语 (3讲)/16丨结束语丨实践是检验真理的唯一标准.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:49"
+    },
+    {
+      "name": "17丨结课测试题丨这些AB测试的知识你都掌握了吗？.html",
+      "path": "AB测试从0到1/05-结束语 (3讲)/17丨结课测试题丨这些AB测试的知识你都掌握了吗？.html",
+      "extension": "html",
+      "size_mb": 1.97,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/05-结束语 (3讲)/17丨结课测试题丨这些AB测试的知识你都掌握了吗？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:49"
+    },
+    {
+      "name": "17丨结课测试题丨这些AB测试的知识你都掌握了吗？.pdf",
+      "path": "AB测试从0到1/05-结束语 (3讲)/17丨结课测试题丨这些AB测试的知识你都掌握了吗？.pdf",
+      "extension": "pdf",
+      "size_mb": 0.92,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/05-结束语 (3讲)/17丨结课测试题丨这些AB测试的知识你都掌握了吗？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:49"
+    },
+    {
+      "name": "18丨加餐丨试验意识改变决策模式，推动业务增长.html",
+      "path": "AB测试从0到1/05-结束语 (3讲)/18丨加餐丨试验意识改变决策模式，推动业务增长.html",
+      "extension": "html",
+      "size_mb": 3.19,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/05-结束语 (3讲)/18丨加餐丨试验意识改变决策模式，推动业务增长.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:50"
+    },
+    {
+      "name": "18丨加餐丨试验意识改变决策模式，推动业务增长.pdf",
+      "path": "AB测试从0到1/05-结束语 (3讲)/18丨加餐丨试验意识改变决策模式，推动业务增长.pdf",
+      "extension": "pdf",
+      "size_mb": 2.33,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/AB测试从0到1/05-结束语 (3讲)/18丨加餐丨试验意识改变决策模式，推动业务增长.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:51"
+    },
+    {
+      "name": "开篇词丨你好，产品经理！你的未来价值壁垒在哪儿？.html",
+      "path": "成为AI产品经理/01-开篇词 (1讲)/开篇词丨你好，产品经理！你的未来价值壁垒在哪儿？.html",
+      "extension": "html",
+      "size_mb": 6.35,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/01-开篇词 (1讲)/开篇词丨你好，产品经理！你的未来价值壁垒在哪儿？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:17"
+    },
+    {
+      "name": "开篇词丨你好，产品经理！你的未来价值壁垒在哪儿？.pdf",
+      "path": "成为AI产品经理/01-开篇词 (1讲)/开篇词丨你好，产品经理！你的未来价值壁垒在哪儿？.pdf",
+      "extension": "pdf",
+      "size_mb": 4.72,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/01-开篇词 (1讲)/开篇词丨你好，产品经理！你的未来价值壁垒在哪儿？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:16"
+    },
+    {
+      "name": "01丨行业视角：产品经理眼中的人工智能.html",
+      "path": "成为AI产品经理/02-知己知彼，AI和AI产品经理 (4讲)/01丨行业视角：产品经理眼中的人工智能.html",
+      "extension": "html",
+      "size_mb": 2.62,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/02-知己知彼，AI和AI产品经理 (4讲)/01丨行业视角：产品经理眼中的人工智能.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:15"
+    },
+    {
+      "name": "01丨行业视角：产品经理眼中的人工智能.pdf",
+      "path": "成为AI产品经理/02-知己知彼，AI和AI产品经理 (4讲)/01丨行业视角：产品经理眼中的人工智能.pdf",
+      "extension": "pdf",
+      "size_mb": 1.99,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/02-知己知彼，AI和AI产品经理 (4讲)/01丨行业视角：产品经理眼中的人工智能.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:14"
+    },
+    {
+      "name": "02丨个人视角：成为AI产品经理，要先搞定这两个问题.html",
+      "path": "成为AI产品经理/02-知己知彼，AI和AI产品经理 (4讲)/02丨个人视角：成为AI产品经理，要先搞定这两个问题.html",
+      "extension": "html",
+      "size_mb": 3.8,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/02-知己知彼，AI和AI产品经理 (4讲)/02丨个人视角：成为AI产品经理，要先搞定这两个问题.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:14"
+    },
+    {
+      "name": "02丨个人视角：成为AI产品经理，要先搞定这两个问题.pdf",
+      "path": "成为AI产品经理/02-知己知彼，AI和AI产品经理 (4讲)/02丨个人视角：成为AI产品经理，要先搞定这两个问题.pdf",
+      "extension": "pdf",
+      "size_mb": 2.63,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/02-知己知彼，AI和AI产品经理 (4讲)/02丨个人视角：成为AI产品经理，要先搞定这两个问题.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:14"
+    },
+    {
+      "name": "03丨技术视角：AI产品经理需要懂的技术全景图.html",
+      "path": "成为AI产品经理/02-知己知彼，AI和AI产品经理 (4讲)/03丨技术视角：AI产品经理需要懂的技术全景图.html",
+      "extension": "html",
+      "size_mb": 14.19,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/02-知己知彼，AI和AI产品经理 (4讲)/03丨技术视角：AI产品经理需要懂的技术全景图.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:18"
+    },
+    {
+      "name": "03丨技术视角：AI产品经理需要懂的技术全景图.pdf",
+      "path": "成为AI产品经理/02-知己知彼，AI和AI产品经理 (4讲)/03丨技术视角：AI产品经理需要懂的技术全景图.pdf",
+      "extension": "pdf",
+      "size_mb": 10.32,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/02-知己知彼，AI和AI产品经理 (4讲)/03丨技术视角：AI产品经理需要懂的技术全景图.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:17"
+    },
+    {
+      "name": "04丨过来人讲：成为AI产品经理的两条路径.html",
+      "path": "成为AI产品经理/02-知己知彼，AI和AI产品经理 (4讲)/04丨过来人讲：成为AI产品经理的两条路径.html",
+      "extension": "html",
+      "size_mb": 1.55,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/02-知己知彼，AI和AI产品经理 (4讲)/04丨过来人讲：成为AI产品经理的两条路径.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:15"
+    },
+    {
+      "name": "04丨过来人讲：成为AI产品经理的两条路径.pdf",
+      "path": "成为AI产品经理/02-知己知彼，AI和AI产品经理 (4讲)/04丨过来人讲：成为AI产品经理的两条路径.pdf",
+      "extension": "pdf",
+      "size_mb": 0.8,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/02-知己知彼，AI和AI产品经理 (4讲)/04丨过来人讲：成为AI产品经理的两条路径.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:17"
+    },
+    {
+      "name": "05丨通过一个 AI 产品的落地，掌握产品经理工作全流程.html",
+      "path": "成为AI产品经理/03-项目管控能力篇 (3讲)/05丨通过一个 AI 产品的落地，掌握产品经理工作全流程.html",
+      "extension": "html",
+      "size_mb": 2.21,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/03-项目管控能力篇 (3讲)/05丨通过一个 AI 产品的落地，掌握产品经理工作全流程.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:17"
+    },
+    {
+      "name": "05丨通过一个 AI 产品的落地，掌握产品经理工作全流程.pdf",
+      "path": "成为AI产品经理/03-项目管控能力篇 (3讲)/05丨通过一个 AI 产品的落地，掌握产品经理工作全流程.pdf",
+      "extension": "pdf",
+      "size_mb": 1.62,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/03-项目管控能力篇 (3讲)/05丨通过一个 AI 产品的落地，掌握产品经理工作全流程.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:17"
+    },
+    {
+      "name": "06丨AI 模型的构建过程是怎样的？（上）.html",
+      "path": "成为AI产品经理/03-项目管控能力篇 (3讲)/06丨AI 模型的构建过程是怎样的？（上）.html",
+      "extension": "html",
+      "size_mb": 5.34,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/03-项目管控能力篇 (3讲)/06丨AI 模型的构建过程是怎样的？（上）.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:18"
+    },
+    {
+      "name": "06丨AI 模型的构建过程是怎样的？（上）.pdf",
+      "path": "成为AI产品经理/03-项目管控能力篇 (3讲)/06丨AI 模型的构建过程是怎样的？（上）.pdf",
+      "extension": "pdf",
+      "size_mb": 3.93,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/03-项目管控能力篇 (3讲)/06丨AI 模型的构建过程是怎样的？（上）.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:18"
+    },
+    {
+      "name": "07丨AI模型的构建过程是怎样的（下）.html",
+      "path": "成为AI产品经理/03-项目管控能力篇 (3讲)/07丨AI模型的构建过程是怎样的（下）.html",
+      "extension": "html",
+      "size_mb": 3.18,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/03-项目管控能力篇 (3讲)/07丨AI模型的构建过程是怎样的（下）.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:18"
+    },
+    {
+      "name": "07丨AI模型的构建过程是怎样的（下）.pdf",
+      "path": "成为AI产品经理/03-项目管控能力篇 (3讲)/07丨AI模型的构建过程是怎样的（下）.pdf",
+      "extension": "pdf",
+      "size_mb": 2.26,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/03-项目管控能力篇 (3讲)/07丨AI模型的构建过程是怎样的（下）.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:19"
+    },
+    {
+      "name": "08丨算法全景图：AI产品经理必须要懂的算法有哪些？.html",
+      "path": "成为AI产品经理/04-算法技术能力篇 (11讲)/08丨算法全景图：AI产品经理必须要懂的算法有哪些？.html",
+      "extension": "html",
+      "size_mb": 8.63,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/04-算法技术能力篇 (11讲)/08丨算法全景图：AI产品经理必须要懂的算法有哪些？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:20"
+    },
+    {
+      "name": "08丨算法全景图：AI产品经理必须要懂的算法有哪些？.pdf",
+      "path": "成为AI产品经理/04-算法技术能力篇 (11讲)/08丨算法全景图：AI产品经理必须要懂的算法有哪些？.pdf",
+      "extension": "pdf",
+      "size_mb": 6.15,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/04-算法技术能力篇 (11讲)/08丨算法全景图：AI产品经理必须要懂的算法有哪些？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:20"
+    },
+    {
+      "name": "09丨K近邻算法：机器学习入门必学算法.html",
+      "path": "成为AI产品经理/04-算法技术能力篇 (11讲)/09丨K近邻算法：机器学习入门必学算法.html",
+      "extension": "html",
+      "size_mb": 2.49,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/04-算法技术能力篇 (11讲)/09丨K近邻算法：机器学习入门必学算法.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:20"
+    },
+    {
+      "name": "09丨K近邻算法：机器学习入门必学算法.pdf",
+      "path": "成为AI产品经理/04-算法技术能力篇 (11讲)/09丨K近邻算法：机器学习入门必学算法.pdf",
+      "extension": "pdf",
+      "size_mb": 1.58,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/04-算法技术能力篇 (11讲)/09丨K近邻算法：机器学习入门必学算法.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:20"
+    },
+    {
+      "name": "10丨线性回归：教你预测，投放多少广告带来的收益最大.html",
+      "path": "成为AI产品经理/04-算法技术能力篇 (11讲)/10丨线性回归：教你预测，投放多少广告带来的收益最大.html",
+      "extension": "html",
+      "size_mb": 2.56,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/04-算法技术能力篇 (11讲)/10丨线性回归：教你预测，投放多少广告带来的收益最大.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:20"
+    },
+    {
+      "name": "10丨线性回归：教你预测，投放多少广告带来的收益最大.pdf",
+      "path": "成为AI产品经理/04-算法技术能力篇 (11讲)/10丨线性回归：教你预测，投放多少广告带来的收益最大.pdf",
+      "extension": "pdf",
+      "size_mb": 1.61,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/04-算法技术能力篇 (11讲)/10丨线性回归：教你预测，投放多少广告带来的收益最大.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:21"
+    },
+    {
+      "name": "11丨逻辑回归：如何预测用户是否会购买商品？.html",
+      "path": "成为AI产品经理/04-算法技术能力篇 (11讲)/11丨逻辑回归：如何预测用户是否会购买商品？.html",
+      "extension": "html",
+      "size_mb": 5.27,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/04-算法技术能力篇 (11讲)/11丨逻辑回归：如何预测用户是否会购买商品？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:21"
+    },
+    {
+      "name": "11丨逻辑回归：如何预测用户是否会购买商品？.pdf",
+      "path": "成为AI产品经理/04-算法技术能力篇 (11讲)/11丨逻辑回归：如何预测用户是否会购买商品？.pdf",
+      "extension": "pdf",
+      "size_mb": 3.43,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/04-算法技术能力篇 (11讲)/11丨逻辑回归：如何预测用户是否会购买商品？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:22"
+    },
+    {
+      "name": "12丨朴素贝叶斯：让AI告诉你，航班延误险该不该买？.html",
+      "path": "成为AI产品经理/04-算法技术能力篇 (11讲)/12丨朴素贝叶斯：让AI告诉你，航班延误险该不该买？.html",
+      "extension": "html",
+      "size_mb": 3.43,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/04-算法技术能力篇 (11讲)/12丨朴素贝叶斯：让AI告诉你，航班延误险该不该买？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:22"
+    },
+    {
+      "name": "12丨朴素贝叶斯：让AI告诉你，航班延误险该不该买？.pdf",
+      "path": "成为AI产品经理/04-算法技术能力篇 (11讲)/12丨朴素贝叶斯：让AI告诉你，航班延误险该不该买？.pdf",
+      "extension": "pdf",
+      "size_mb": 2.05,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/04-算法技术能力篇 (11讲)/12丨朴素贝叶斯：让AI告诉你，航班延误险该不该买？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:22"
+    },
+    {
+      "name": "13丨决策树与随机森林：如何预测用户会不会违约？.html",
+      "path": "成为AI产品经理/04-算法技术能力篇 (11讲)/13丨决策树与随机森林：如何预测用户会不会违约？.html",
+      "extension": "html",
+      "size_mb": 8.31,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/04-算法技术能力篇 (11讲)/13丨决策树与随机森林：如何预测用户会不会违约？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:23"
+    },
+    {
+      "name": "13丨决策树与随机森林：如何预测用户会不会违约？.pdf",
+      "path": "成为AI产品经理/04-算法技术能力篇 (11讲)/13丨决策树与随机森林：如何预测用户会不会违约？.pdf",
+      "extension": "pdf",
+      "size_mb": 5.7,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/04-算法技术能力篇 (11讲)/13丨决策树与随机森林：如何预测用户会不会违约？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:23"
+    },
+    {
+      "name": "14丨支持向量机：怎么预测股票市场的涨与跌？.html",
+      "path": "成为AI产品经理/04-算法技术能力篇 (11讲)/14丨支持向量机：怎么预测股票市场的涨与跌？.html",
+      "extension": "html",
+      "size_mb": 4.55,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/04-算法技术能力篇 (11讲)/14丨支持向量机：怎么预测股票市场的涨与跌？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:23"
+    },
+    {
+      "name": "14丨支持向量机：怎么预测股票市场的涨与跌？.pdf",
+      "path": "成为AI产品经理/04-算法技术能力篇 (11讲)/14丨支持向量机：怎么预测股票市场的涨与跌？.pdf",
+      "extension": "pdf",
+      "size_mb": 2.75,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/04-算法技术能力篇 (11讲)/14丨支持向量机：怎么预测股票市场的涨与跌？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:22"
+    },
+    {
+      "name": "15丨K-means 聚类算法：如何挖掘高价值用户？.html",
+      "path": "成为AI产品经理/04-算法技术能力篇 (11讲)/15丨K-means 聚类算法：如何挖掘高价值用户？.html",
+      "extension": "html",
+      "size_mb": 4.54,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/04-算法技术能力篇 (11讲)/15丨K-means 聚类算法：如何挖掘高价值用户？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:23"
+    },
+    {
+      "name": "15丨K-means 聚类算法：如何挖掘高价值用户？.pdf",
+      "path": "成为AI产品经理/04-算法技术能力篇 (11讲)/15丨K-means 聚类算法：如何挖掘高价值用户？.pdf",
+      "extension": "pdf",
+      "size_mb": 2.47,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/04-算法技术能力篇 (11讲)/15丨K-means 聚类算法：如何挖掘高价值用户？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:24"
+    },
+    {
+      "name": "16丨深度学习：当今最火的机器学习技术，你一定要知道.html",
+      "path": "成为AI产品经理/04-算法技术能力篇 (11讲)/16丨深度学习：当今最火的机器学习技术，你一定要知道.html",
+      "extension": "html",
+      "size_mb": 12.86,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/04-算法技术能力篇 (11讲)/16丨深度学习：当今最火的机器学习技术，你一定要知道.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:26"
+    },
+    {
+      "name": "16丨深度学习：当今最火的机器学习技术，你一定要知道.pdf",
+      "path": "成为AI产品经理/04-算法技术能力篇 (11讲)/16丨深度学习：当今最火的机器学习技术，你一定要知道.pdf",
+      "extension": "pdf",
+      "size_mb": 8.98,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/04-算法技术能力篇 (11讲)/16丨深度学习：当今最火的机器学习技术，你一定要知道.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:26"
+    },
+    {
+      "name": "期中周测试题 ，你做对了吗？.html",
+      "path": "成为AI产品经理/04-算法技术能力篇 (11讲)/期中周测试题 ，你做对了吗？.html",
+      "extension": "html",
+      "size_mb": 3.73,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/04-算法技术能力篇 (11讲)/期中周测试题 ，你做对了吗？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:25"
+    },
+    {
+      "name": "期中周测试题 ，你做对了吗？.pdf",
+      "path": "成为AI产品经理/04-算法技术能力篇 (11讲)/期中周测试题 ，你做对了吗？.pdf",
+      "extension": "pdf",
+      "size_mb": 2.13,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/04-算法技术能力篇 (11讲)/期中周测试题 ，你做对了吗？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:24"
+    },
+    {
+      "name": "期中答疑丨AI产品经理热门问题答疑合集.html",
+      "path": "成为AI产品经理/04-算法技术能力篇 (11讲)/期中答疑丨AI产品经理热门问题答疑合集.html",
+      "extension": "html",
+      "size_mb": 3.55,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/04-算法技术能力篇 (11讲)/期中答疑丨AI产品经理热门问题答疑合集.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:25"
+    },
+    {
+      "name": "期中答疑丨AI产品经理热门问题答疑合集.pdf",
+      "path": "成为AI产品经理/04-算法技术能力篇 (11讲)/期中答疑丨AI产品经理热门问题答疑合集.pdf",
+      "extension": "pdf",
+      "size_mb": 1.56,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/04-算法技术能力篇 (11讲)/期中答疑丨AI产品经理热门问题答疑合集.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:24"
+    },
+    {
+      "name": "17丨模型评估：从一个失控的项目看优秀的产品经理如何评估AI模型？.html",
+      "path": "成为AI产品经理/05-模型评估能力篇 (7讲)/17丨模型评估：从一个失控的项目看优秀的产品经理如何评估AI模型？.html",
+      "extension": "html",
+      "size_mb": 7.58,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/05-模型评估能力篇 (7讲)/17丨模型评估：从一个失控的项目看优秀的产品经理如何评估AI模型？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:26"
+    },
+    {
+      "name": "17丨模型评估：从一个失控的项目看优秀的产品经理如何评估AI模型？.pdf",
+      "path": "成为AI产品经理/05-模型评估能力篇 (7讲)/17丨模型评估：从一个失控的项目看优秀的产品经理如何评估AI模型？.pdf",
+      "extension": "pdf",
+      "size_mb": 5.01,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/05-模型评估能力篇 (7讲)/17丨模型评估：从一个失控的项目看优秀的产品经理如何评估AI模型？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:26"
+    },
+    {
+      "name": "18丨核心技能：产品经理评估模型需要关注哪些指标？.html",
+      "path": "成为AI产品经理/05-模型评估能力篇 (7讲)/18丨核心技能：产品经理评估模型需要关注哪些指标？.html",
+      "extension": "html",
+      "size_mb": 2.28,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/05-模型评估能力篇 (7讲)/18丨核心技能：产品经理评估模型需要关注哪些指标？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:26"
+    },
+    {
+      "name": "18丨核心技能：产品经理评估模型需要关注哪些指标？.pdf",
+      "path": "成为AI产品经理/05-模型评估能力篇 (7讲)/18丨核心技能：产品经理评估模型需要关注哪些指标？.pdf",
+      "extension": "pdf",
+      "size_mb": 1.74,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/05-模型评估能力篇 (7讲)/18丨核心技能：产品经理评估模型需要关注哪些指标？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:26"
+    },
+    {
+      "name": "19丨模型性能评估（一）：从信用评分产品看什么是混淆矩阵？.html",
+      "path": "成为AI产品经理/05-模型评估能力篇 (7讲)/19丨模型性能评估（一）：从信用评分产品看什么是混淆矩阵？.html",
+      "extension": "html",
+      "size_mb": 5.5,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/05-模型评估能力篇 (7讲)/19丨模型性能评估（一）：从信用评分产品看什么是混淆矩阵？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:27"
+    },
+    {
+      "name": "19丨模型性能评估（一）：从信用评分产品看什么是混淆矩阵？.pdf",
+      "path": "成为AI产品经理/05-模型评估能力篇 (7讲)/19丨模型性能评估（一）：从信用评分产品看什么是混淆矩阵？.pdf",
+      "extension": "pdf",
+      "size_mb": 4.01,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/05-模型评估能力篇 (7讲)/19丨模型性能评估（一）：从信用评分产品看什么是混淆矩阵？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:28"
+    },
+    {
+      "name": "20丨模型性能评估（二）：从信用评分产品看什么是KS、AUC？.html",
+      "path": "成为AI产品经理/05-模型评估能力篇 (7讲)/20丨模型性能评估（二）：从信用评分产品看什么是KS、AUC？.html",
+      "extension": "html",
+      "size_mb": 4.83,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/05-模型评估能力篇 (7讲)/20丨模型性能评估（二）：从信用评分产品看什么是KS、AUC？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:27"
+    },
+    {
+      "name": "20丨模型性能评估（二）：从信用评分产品看什么是KS、AUC？.pdf",
+      "path": "成为AI产品经理/05-模型评估能力篇 (7讲)/20丨模型性能评估（二）：从信用评分产品看什么是KS、AUC？.pdf",
+      "extension": "pdf",
+      "size_mb": 3.45,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/05-模型评估能力篇 (7讲)/20丨模型性能评估（二）：从信用评分产品看什么是KS、AUC？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:28"
+    },
+    {
+      "name": "21丨模型性能评估（三）：从股价预测产品看回归算法常用的评估指标.html",
+      "path": "成为AI产品经理/05-模型评估能力篇 (7讲)/21丨模型性能评估（三）：从股价预测产品看回归算法常用的评估指标.html",
+      "extension": "html",
+      "size_mb": 2.49,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/05-模型评估能力篇 (7讲)/21丨模型性能评估（三）：从股价预测产品看回归算法常用的评估指标.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:27"
+    },
+    {
+      "name": "21丨模型性能评估（三）：从股价预测产品看回归算法常用的评估指标.pdf",
+      "path": "成为AI产品经理/05-模型评估能力篇 (7讲)/21丨模型性能评估（三）：从股价预测产品看回归算法常用的评估指标.pdf",
+      "extension": "pdf",
+      "size_mb": 1.7,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/05-模型评估能力篇 (7讲)/21丨模型性能评估（三）：从股价预测产品看回归算法常用的评估指标.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:27"
+    },
+    {
+      "name": "22丨模型稳定性评估：如何用PSI来评估信用评分产品的稳定性？.html",
+      "path": "成为AI产品经理/05-模型评估能力篇 (7讲)/22丨模型稳定性评估：如何用PSI来评估信用评分产品的稳定性？.html",
+      "extension": "html",
+      "size_mb": 6.86,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/05-模型评估能力篇 (7讲)/22丨模型稳定性评估：如何用PSI来评估信用评分产品的稳定性？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:29"
+    },
+    {
+      "name": "22丨模型稳定性评估：如何用PSI来评估信用评分产品的稳定性？.pdf",
+      "path": "成为AI产品经理/05-模型评估能力篇 (7讲)/22丨模型稳定性评估：如何用PSI来评估信用评分产品的稳定性？.pdf",
+      "extension": "pdf",
+      "size_mb": 4.92,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/05-模型评估能力篇 (7讲)/22丨模型稳定性评估：如何用PSI来评估信用评分产品的稳定性？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:29"
+    },
+    {
+      "name": "23丨模型监控：产品经理如何建设算法模型监控指标体系？.html",
+      "path": "成为AI产品经理/05-模型评估能力篇 (7讲)/23丨模型监控：产品经理如何建设算法模型监控指标体系？.html",
+      "extension": "html",
+      "size_mb": 2.88,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/05-模型评估能力篇 (7讲)/23丨模型监控：产品经理如何建设算法模型监控指标体系？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:29"
+    },
+    {
+      "name": "23丨模型监控：产品经理如何建设算法模型监控指标体系？.pdf",
+      "path": "成为AI产品经理/05-模型评估能力篇 (7讲)/23丨模型监控：产品经理如何建设算法模型监控指标体系？.pdf",
+      "extension": "pdf",
+      "size_mb": 1.96,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/05-模型评估能力篇 (7讲)/23丨模型监控：产品经理如何建设算法模型监控指标体系？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:29"
+    },
+    {
+      "name": "春节加餐1丨用户增长模型：怎么利用AI技术判断新渠道性价比？.html",
+      "path": "成为AI产品经理/06-春节策划周 (2讲)/春节加餐1丨用户增长模型：怎么利用AI技术判断新渠道性价比？.html",
+      "extension": "html",
+      "size_mb": 3.03,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/06-春节策划周 (2讲)/春节加餐1丨用户增长模型：怎么利用AI技术判断新渠道性价比？.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:29"
+    },
+    {
+      "name": "春节加餐1丨用户增长模型：怎么利用AI技术判断新渠道性价比？.pdf",
+      "path": "成为AI产品经理/06-春节策划周 (2讲)/春节加餐1丨用户增长模型：怎么利用AI技术判断新渠道性价比？.pdf",
+      "extension": "pdf",
+      "size_mb": 2.04,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/06-春节策划周 (2讲)/春节加餐1丨用户增长模型：怎么利用AI技术判断新渠道性价比？.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:29"
+    },
+    {
+      "name": "春节加餐2丨一次答疑，带你回顾模型评估的所有基础概念.html",
+      "path": "成为AI产品经理/06-春节策划周 (2讲)/春节加餐2丨一次答疑，带你回顾模型评估的所有基础概念.html",
+      "extension": "html",
+      "size_mb": 8.41,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/06-春节策划周 (2讲)/春节加餐2丨一次答疑，带你回顾模型评估的所有基础概念.html",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:30"
+    },
+    {
+      "name": "春节加餐2丨一次答疑，带你回顾模型评估的所有基础概念.pdf",
+      "path": "成为AI产品经理/06-春节策划周 (2讲)/春节加餐2丨一次答疑，带你回顾模型评估的所有基础概念.pdf",
+      "extension": "pdf",
+      "size_mb": 11.53,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/成为AI产品经理/06-春节策划周 (2讲)/春节加餐2丨一次答疑，带你回顾模型评估的所有基础概念.pdf",
+      "is_hf": false,
+      "last_modified": "2026-02-14 09:32:31"
+    }
+  ]
 }

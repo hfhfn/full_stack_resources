@@ -4,7 +4,7 @@ chcp 65001 >nul
 
 echo ============================================
 echo   ${GITHUB_REPO_NAME} - Setup
-echo   Architecture: v4.0 (Pull-First)
+echo   Architecture: v4.1 (Autostash Optimized)
 echo ============================================
 echo.
 
@@ -12,7 +12,7 @@ echo.
 echo [1/7] Checking Python...
 python --version >nul 2>&1
 if !errorlevel! neq 0 (
-    echo [ERROR] Python not found. Please install Python 3.8+
+    echo [ERROR] Python not found. Install Python 3.8+
     pause
     exit /b 1
 )
@@ -28,34 +28,38 @@ if !errorlevel! neq 0 (
     echo   OK: huggingface_hub is installed
 )
 
-:: 3. Sync Remote (PREVENT CONFLICTS)
-:: We pull first to ensure we have the latest manifest before distribute_files.py runs
+:: 3. Sync Remote (Architecture v4.1: Autostash mode)
 echo.
-echo [3/7] Syncing Remote Changes (git pull --rebase)...
-git pull --rebase origin main
+echo [3/7] Syncing Remote (git pull --rebase --autostash)...
+git pull --rebase --autostash origin main
 if !errorlevel! neq 0 (
     echo.
-    echo [ERROR] Sync failed. Resolve conflicts or run 'git rebase --abort'
+    echo [ERROR] Sync failed. Resolve conflicts manually: git rebase --abort
     pause
     exit /b 1
+) else (
+    echo   OK: Synced successfully
 )
 
 :: 4. Run Distribution
 echo.
 echo [4/7] Running Distribution Script...
 python scripts\distribute_files.py
+if !errorlevel! neq 0 (
+    echo [WARNING] Distribution had errors.
+)
 
 :: 5. Local Commit
 echo.
-echo [5/7] Preparing Git Commit...
+echo [5/7] Preparing Commit...
 git add .
 git diff --cached --quiet
 if !errorlevel! neq 0 (
     echo   Changes detected.
-    set /p commit_msg="  Enter commit message [Default: Auto update]: "
+    set /p commit_msg="  Enter message (default: Auto update): "
     if "!commit_msg!"=="" set commit_msg=Auto update
     git commit -m "!commit_msg!"
-    echo   OK: Committed locally.
+    echo   OK: Committed locally
 ) else (
     echo   OK: No changes to commit
 )
@@ -65,14 +69,13 @@ echo.
 echo [6/7] Pushing to GitHub...
 git push origin main
 if !errorlevel! neq 0 (
-    echo.
-    echo [WARNING] Push failed. Please try running 'git push origin main' manually.
+    echo [WARNING] Push failed. Retry: git push origin main
 ) else (
-    echo   OK: Push successful!
+    echo   OK: Push successful
 )
 
 echo.
 echo ============================================
-echo   All Done!
+echo   Setup Complete!
 echo ============================================
 pause

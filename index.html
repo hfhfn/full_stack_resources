@@ -64,6 +64,11 @@
       .tag.active { background: var(--primary); color: white; border-color: var(--primary); }
       .tag:hover:not(.active) { border-color: var(--primary); color: var(--primary); }
 
+      /* Skeleton Styles */
+      .skeleton-tree { border-top: 1px solid var(--border); padding-top: 20px; }
+      .skeleton-item { height: 40px; background: linear-gradient(90deg, var(--border) 25%, var(--bg-light) 50%, var(--border) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite linear; border-radius: 10px; margin-bottom: 10px; width: 100%; }
+      @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+
       .file-tree { border-top: 1px solid var(--border); padding-top: 20px; min-height: 300px; }
       .loader { text-align: center; padding: 60px; color: var(--text-muted); font-size: 1rem; line-height: 1.8; }
       .folder { margin: 2px 0; }
@@ -78,6 +83,7 @@
       .file-item:hover { background: rgba(79, 70, 229, 0.08); transform: translateX(4px); }
       .file-link { text-decoration: none; color: var(--text-main); display: flex; align-items: center; gap: 10px; flex: 1; }
       .hf-badge { background: var(--hf-badge-bg); color: var(--hf-badge-text); padding: 2px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 700; border: 1px solid rgba(0, 0, 0, 0.05); }
+      .gh-badge { background: #e0e7ff; color: #3730a3; padding: 2px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 700; border: 1px solid rgba(0, 0, 0, 0.05); }
       .highlight { background: var(--highlight) !important; border-left: 3px solid var(--primary); }
       mark.text-match { background: rgba(251, 191, 36, 0.4); color: inherit; border-radius: 4px; padding: 0 2px; }
 
@@ -121,19 +127,20 @@
       </section>
 
       <main id="file-list" class="file-tree">
-        <div class="loader">🚀 正在全力加载索引...<br/><small style="opacity:0.6">正在尝试获取 GitHub 仓库及 HF 存储清单</small></div>
+        <div class="skeleton-tree">
+          <div class="skeleton-item" style="width: 40%"></div>
+          <div class="skeleton-item"></div>
+          <div class="skeleton-item" style="width: 80%"></div>
+          <div class="skeleton-item" style="width: 60%"></div>
+          <div class="skeleton-item"></div>
+        </div>
       </main>
 
       <footer id="stats" class="stats"></footer>
     </div>
 
     <script>
-      const username = "hfhfn";
-      const repo = "full_stack_resources";
-      const branch = "main";
-      
       const config = {
-        previewExts: ["pdf", "jpg", "jpeg", "png", "gif", "svg", "webp", "txt", "json", "html", "htm"],
         codeExts: ["py", "java", "cpp", "c", "js", "go", "sh", "ipynb", "md", "bat", "yml", "yaml", "cmd"],
         archiveExts: ["zip", "rar", "7z", "tar", "gz", "bz2"]
       };
@@ -153,7 +160,7 @@
       }
 
       function getFileType(f) {
-        const ext = f.name.split(".").pop().toLowerCase();
+        const ext = f.extension || f.name.split(".").pop().toLowerCase();
         if (ext === "pdf") return "pdf";
         if (config.codeExts.includes(ext)) return "code";
         if (config.archiveExts.includes(ext)) return "archive";
@@ -170,44 +177,17 @@
 
       async function loadData() {
         try {
-          // GitHub API Fetch
-          const ghUrl = `https://api.github.com/repos/${username}/${repo}/git/trees/${branch}?recursive=1`;
-          const ghRes = await fetch(ghUrl);
-          if (!ghRes.ok) throw new Error(`GitHub API HTTP ${ghRes.status} (可能被限速或仓库名错误)`);
-          const ghData = await ghRes.json();
-          
-          let files = ghData.tree ? ghData.tree.filter(i => 
-              i.type === "blob" && !i.path.startsWith(".") && 
-              !["index.html", "README.md", "setup.bat", "setup.sh"].includes(i.path) && 
-              !i.path.match(/^(scripts|data|venv|env|node_modules|.git|.github)\//)
-            ).map(i => ({ name: i.path.split("/").pop(), path: i.path, isHF: false }))
-          : [];
-
-          // HuggingFace Manifest Fetch
-          try {
-            const maniRes = await fetch(`./data/file_manifest.json?t=${Date.now()}`);
-            if (maniRes.ok) {
-              const mani = await maniRes.json();
-              if (mani && mani.files) { 
-                mani.files.forEach(f => { 
-                  if (!files.find(gf => gf.path === f.path)) {
-                    files.push({ ...f, isHF: true }); 
-                  }
-                }); 
-              }
-            }
-          } catch (e) { console.warn("Manifest failed or not existed", e); }
-          
-          allFiles = files;
+          // Robust Local Manifest Fetch
+          const res = await fetch(`./data/file_manifest.json?t=${Date.now()}`);
+          if (!res.ok) throw new Error("无法加载本地资源清单，请确保 GitHub Pages 路径正确。");
+          const data = await res.json();
+          allFiles = data.files || [];
           render();
         } catch (e) { 
           document.getElementById("file-list").innerHTML = `
             <div class="loader" style="color:#ef4444">
-              ❌ 数据加载异常<br/>
-              <span style="font-size:0.85rem; opacity:0.8;">${e.message}</span><br/>
-              <span style="font-size:0.75rem; opacity:0.6; display:block; margin-top:10px;">
-                尝试拉取的仓库: ${username}/${repo} (${branch} 分支)
-              </span>
+              ❌ 加载异常<br/>
+              <span style="font-size:0.85rem; opacity:0.8;">${e.message}</span>
             </div>`;
         }
       }
@@ -248,7 +228,6 @@
         Object.entries(node._folders).sort().forEach(([name, sub]) => {
           const isDirMatch = lowerSearch && name.toLowerCase().includes(lowerSearch);
           const highlightClass = isDirMatch ? "highlight" : "";
-          const showAllChildren = forceShowAll || isDirMatch;
           const displayName = highlightText(name, currentSearch);
 
           html += `
@@ -259,7 +238,7 @@
                 <span>${displayName}</span>
               </div>
               <div class="folder-children ${currentSearch || isDirMatch ? "" : "collapsed"}">
-                ${renderNode(sub, level + 1, showAllChildren)}
+                ${renderNode(sub, level + 1, !!(currentSearch || isDirMatch))}
               </div>
             </div>`;
         });
@@ -269,18 +248,14 @@
           const highlightClass = isFileMatch ? "highlight" : "";
           const displayName = highlightText(f.name, currentSearch);
           
-          const ext = f.name.split(".").pop().toLowerCase();
-          const pagesBase = `./`; 
-          let url = f.isHF ? f.url : (config.previewExts.includes(ext) ? `${pagesBase}${f.path}` : `https://github.com/${username}/${repo}/blob/${branch}/${f.path}`);
-
           html += `
             <div class="file-item ${highlightClass}">
-              <a href="${url}" target="_blank" class="file-link">
+              <a href="${f.url}" target="_blank" class="file-link">
                 <span class="file-icon">${getFileIcon(f.name)}</span>
                 <span>${displayName}</span>
-                ${f.isHF ? `<span class="hf-badge">🤗 HF</span>` : ""}
+                ${f.is_hf ? `<span class="hf-badge">🤗 HF</span>` : `<span class="gh-badge">📦 Git</span>`}
               </a>
-              <div class="file-info">${f.size_mb ? `<span class="file-meta">${f.size_mb} MB</span>` : ""}</div>
+              <div class="file-info">${f.size_mb ? `<span class="file-meta" style="font-size:0.75rem; color:var(--text-muted)">${f.size_mb} MB</span>` : ""}</div>
             </div>`;
         });
         return html;
@@ -292,14 +267,14 @@
       }
 
       function renderStats(filtered) {
-        const hf = filtered.filter(i => i.isHF);
-        const totalSize = hf.reduce((acc, cr) => acc + (cr.size_mb || 0), 0).toFixed(1);
+        const hfCount = filtered.filter(i => i.is_hf).length;
+        const totalSize = filtered.reduce((acc, cr) => acc + (cr.size_mb || 0), 0).toFixed(1);
         const statsElem = document.getElementById("stats");
         if (statsElem) {
           statsElem.innerHTML = `
             <div class="stat-card"><span class="stat-label">总资源数</span><span class="stat-value">${filtered.length}</span></div>
-            <div class="stat-card"><span class="stat-label">HF 存储</span><span class="stat-value">${hf.length}</span></div>
-            <div class="stat-card"><span class="stat-label">存储体积</span><span class="stat-value">${totalSize} MB</span></div>`;
+            <div class="stat-card"><span class="stat-label">HF 存储</span><span class="stat-value">${hfCount}</span></div>
+            <div class="stat-card"><span class="stat-label">总文件体积</span><span class="stat-value">${totalSize} MB</span></div>`;
         }
       }
 

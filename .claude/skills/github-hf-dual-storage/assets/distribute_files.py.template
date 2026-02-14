@@ -150,7 +150,7 @@ def update_gitignore_and_git(large_files):
     print(f"   📝 Updated .gitignore with {len(new_rules)} rules")
 
 def generate_manifest(large_files):
-    print("\n📋 Generating enhanced manifest (data/file_manifest.json)...")
+    print("\n📋 Generating HuggingFace manifest (data/file_manifest.json)...")
     manifest = {
         "hf_repo_id": HF_REPO_ID,
         "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
@@ -177,19 +177,40 @@ def generate_manifest(large_files):
         json.dump(manifest, f, ensure_ascii=False, indent=2)
     print("✅ Manifest generated")
 
+def generate_github_index(small_files):
+    print("\n📦 Generating GitHub local index (data/github_files.json)...")
+    index_data = {
+        "updated_at": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
+        "files": []
+    }
+    for file_path in small_files:
+        rel_path = file_path.relative_to(PROJECT_ROOT).as_posix()
+        if rel_path in ["index.html", "setup.bat", "setup.sh", ".gitignore", ".gitattributes"] or \
+           rel_path.startswith(("scripts/", "data/")):
+            continue
+        index_data["files"].append({
+            "name": file_path.name,
+            "path": rel_path,
+            "isHF": False
+        })
+    manifest_dir = PROJECT_ROOT / 'data'
+    manifest_dir.mkdir(exist_ok=True)
+    with open(manifest_dir / 'github_files.json', 'w', encoding='utf-8') as f:
+        json.dump(index_data, f, ensure_ascii=False, indent=2)
+    print(f"✅ Local index generated ({len(index_data['files'])} files)")
+
 def main():
     large, small = scan_files()
     print(f"   -> Found {len(large)} large files, {len(small)} small files")
 
-    if large:
-        upload_to_hf(large)
-        sync_hf_deletions(large)
-        update_gitignore_and_git(large)
-        generate_manifest(large)
-    else:
-        print("🎉 No files > 50MB found.")
-        sync_hf_deletions([])
-        generate_manifest([])
+    # 核心分发逻辑
+    upload_to_hf(large)
+    sync_hf_deletions(large)
+    update_gitignore_and_git(large)
+    
+    # 始终生成两个索引，确保 index.html 逻辑一致
+    generate_manifest(large)
+    generate_github_index(small)
 
     print("\n✅ All steps complete! Ready for git push.")
 

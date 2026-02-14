@@ -65,10 +65,10 @@ cd full_stack_resources
 
 ## 🛠️ 项目结构
 
-- `scripts/distribute_files.py`: 核心分发引擎 v3.0（支持同步删除与元数据提取）。
+- `scripts/distribute_files.py`: 核心分发引擎 v3.1（支持重试机制、增强日志及全量清单生成）。
 - `setup.bat` / `setup.sh`: 跨平台一键环境搭建脚本。
-- `data/file_manifest.json`: 自动生成的文件元数据清单。
-- `index.html`: 高端毛玻璃风格的资源导航前端。
+- `data/file_manifest.json`: 自动生成的文件元数据清单（前端加载数据源，免除 GitHub API 限速干扰）。
+- `index.html`: 高端毛玻璃风格的资源导航前端（支持骨架屏展示）。
 - `.github/workflows/`: 自动化分发流水线配置。
 
 ---
