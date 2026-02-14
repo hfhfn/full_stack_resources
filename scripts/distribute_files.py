@@ -154,60 +154,74 @@ def update_gitignore_and_git(large_files):
     
     # Read existing content
     lines = []
+    existing_auto_rules = set()
+    
     if gitignore_path.exists():
         with open(gitignore_path, 'r', encoding='utf-8') as f:
             lines = f.readlines()
 
-    # Remove old auto-generated section
+    # Extract existing auto-generated rules (before we remove the section)
     header = "# [Auto] Large files managed by HuggingFace\n"
+    in_auto_section = False
+    
+    for line in lines:
+        if line == header:
+            in_auto_section = True
+            continue
+        if in_auto_section:
+            if line.strip() == "":
+                in_auto_section = False
+                continue
+            # This is an existing rule
+            existing_auto_rules.add(line.rstrip())
+
+    # Remove old auto-generated section
     new_content = []
     skip = False
     
-    for i, line in enumerate(lines):
+    for line in lines:
         if line == header:
             skip = True
             continue
-        # Skip the section until we hit a non-empty line that doesn't look like a file rule
-        # But we need to be careful: stop skipping at the next section or end of file
         if skip:
-            # If it's an empty line, we might be at the end of the section
             if line.strip() == "":
                 skip = False
-                # Don't add empty lines between sections, we'll handle spacing below
                 continue
             else:
-                # Still in the auto section, skip
                 continue
         
-        # Add line if not skipping
         new_content.append(line)
     
     # Remove trailing empty lines before auto section
     while new_content and new_content[-1].strip() == "":
         new_content.pop()
     
-    # Prepare new rules
-    new_rules = []
+    # Prepare new rules from currently scanned large files
+    new_rules = set()
     for f in large_files:
         rel = f.relative_to(PROJECT_ROOT).as_posix()
-        new_rules.append(rel)
+        new_rules.add(rel)
         run_git_cmd(['rm', '--cached', str(f)])
+
+    # Merge existing rules (to keep rules for files managed on HuggingFace even if not present locally)
+    # and new rules
+    all_rules = existing_auto_rules | new_rules
 
     # Write updated gitignore
     with open(gitignore_path, 'w', encoding='utf-8') as f:
         # Write existing content
         f.writelines(new_content)
         
-        # Add separator and auto section if there are large files
-        if new_rules:
+        # Add separator and auto section if there are any rules
+        if all_rules:
             # Ensure blank line before auto section
             if new_content and new_content[-1].strip() != "":
                 f.write("\n")
             f.write("\n" + header)
-            for rule in sorted(new_rules):
+            for rule in sorted(all_rules):
                 f.write(f"{rule}\n")
     
-    logger.info(f"Updated .gitignore with {len(new_rules)} rules")
+    logger.info(f"Updated .gitignore with {len(all_rules)} rules (new: {len(new_rules)}, preserved: {len(existing_auto_rules - new_rules)})")
 
 def generate_manifest(large_files, small_files):
     logger.info("Generating full manifest (data/file_manifest.json)...")
@@ -247,7 +261,31 @@ def generate_manifest(large_files, small_files):
     manifest_dir.mkdir(exist_ok=True)
     manifest_path = manifest_dir / 'file_manifest.json'
     
-    # Check if manifest exists and content is the same (except updated_at)
+    # Check if manifest exists and try to preserve HuggingFace files that are no longer locally present
+    old_hf_files = {}
+    if manifest_path.exists():
+        try:
+            with open(manifest_path, 'r', encoding='utf-8') as f:
+                old_manifest = json.load(f)
+            
+            # Collect all old HuggingFace files
+            for file_entry in old_manifest.get('files', []):
+                if file_entry.get('is_hf'):
+                    old_hf_files[file_entry['path']] = file_entry
+        except Exception as e:
+            logger.debug(f"Could not read old manifest: {e}")
+    
+    # Get paths of newly scanned HuggingFace files
+    new_hf_paths = {f.relative_to(PROJECT_ROOT).as_posix() for f in large_files}
+    
+    # Add back HuggingFace files that were in the old manifest but not in the new scan
+    # (This handles files that are on HuggingFace but not present locally)
+    for old_path, old_entry in old_hf_files.items():
+        if old_path not in new_hf_paths:
+            logger.info(f"    Preserving HF file: {old_path}")
+            manifest["files"].insert(0, old_entry)  # Insert at beginning to maintain order
+    
+    # Check if manifest content would be the same (except updated_at)
     preserve_timestamp = False
     if manifest_path.exists():
         try:
@@ -259,10 +297,9 @@ def generate_manifest(large_files, small_files):
             new_files = manifest['files']
             
             if len(old_files) == len(new_files):
-                # Compare file entries (without comparing updated_at)
+                # Compare file entries
                 all_same = True
                 for old_file, new_file in zip(old_files, new_files):
-                    # Compare all fields except updated_at is not in individual files
                     if old_file != new_file:
                         all_same = False
                         break
