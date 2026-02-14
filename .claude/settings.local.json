@@ -8,7 +8,9 @@
       "Bash(git pull:*)",
       "Bash(git checkout:*)",
       "Bash(git fetch:*)",
-      "mcp__serena__find_symbol"
+      "mcp__serena__find_symbol",
+      "mcp__serena__find_file",
+      "mcp__serena__write_memory"
     ]
   }
 }
