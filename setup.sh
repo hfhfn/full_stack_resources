@@ -40,15 +40,19 @@ echo ""
 echo "[5/7] 同步远程更改 (防止 Push 冲突)..."
 git pull --rebase origin main
 
-# 6. 自动 Git 提交
+# 6. Auto Commit
 echo ""
-echo "[6/7] 准备 Git 提交..."
+echo "[6/7] Preparing Git Commit..."
 git add .
 if ! git diff --cached --quiet; then
-    git commit -m "Auto update via setup.sh"
-    echo "  OK: 已完成本地提交"
+    read -p "  Enter commit message [Default: Auto update]: " commit_msg
+    if [ -z "$commit_msg" ]; then
+        commit_msg="Auto update via setup.sh"
+    fi
+    git commit -m "$commit_msg"
+    echo "  OK: Changes committed"
 else
-    echo "  ✨ 无需提交，没有变更"
+    echo "  ✨ OK: No changes to commit"
 fi
 
 # 7. 推送到 GitHub

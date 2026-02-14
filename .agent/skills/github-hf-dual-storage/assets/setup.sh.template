@@ -45,7 +45,11 @@ echo ""
 echo "[6/7] Preparing Git Commit..."
 git add .
 if ! git diff --cached --quiet; then
-    git commit -m "Auto update via setup.sh"
+    read -p "  Enter commit message [Default: Auto update]: " commit_msg
+    if [ -z "$commit_msg" ]; then
+        commit_msg="Auto update via setup.sh"
+    fi
+    git commit -m "$commit_msg"
     echo "  OK: Changes committed"
 else
     echo "  ✨ OK: No changes to commit"

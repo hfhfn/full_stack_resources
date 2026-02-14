@@ -50,16 +50,19 @@ echo.
 echo [5/7] 同步远程更改...
 git pull --rebase origin main
 
-:: 6. 自动 Git 提交
+:: 6. Auto Commit
 echo.
-echo [6/7] 准备 Git 提交...
+echo [6/7] Preparing Git Commit...
 git add .
 git diff --cached --quiet
 if !errorlevel! neq 0 (
-    echo   检测到变更，正在执行本地提交...
-    git commit -m "Auto update via setup.bat"
+    echo   Changes detected.
+    set /p commit_msg="  Enter commit message [Default: Auto update]: "
+    if "!commit_msg!"=="" set commit_msg=Auto update
+    git commit -m "!commit_msg!"
+    echo   OK: Committed locally.
 ) else (
-    echo   OK: 无需提交，没有变更
+    echo   OK: No changes to commit
 )
 
 :: 7. 推送到 GitHub

@@ -54,8 +54,11 @@ echo [6/7] Preparing Git Commit...
 git add .
 git diff --cached --quiet
 if !errorlevel! neq 0 (
-    echo   Changes detected. Committing locally...
-    git commit -m "Auto update via setup.bat"
+    echo   Changes detected.
+    set /p commit_msg="  Enter commit message [Default: Auto update]: "
+    if "!commit_msg!"=="" set commit_msg=Auto update
+    git commit -m "!commit_msg!"
+    echo   OK: Committed locally.
 ) else (
     echo   OK: No changes to commit
 )

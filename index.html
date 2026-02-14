@@ -485,20 +485,33 @@
             </div>`;
           });
 
-        // 渲染文件
         node._files
           .sort((a, b) => a.name.localeCompare(b.name))
           .forEach((f) => {
             const isFileMatch =
               lowerSearch && f.name.toLowerCase().includes(lowerSearch);
             const highlightClass = isFileMatch ? "highlight" : "";
-            const url = f.isHF
-              ? f.url
-              : `https://github.com/${username}/${repo}/blob/${branch}/${f.path}`;
+            
+            // 智能链接逻辑
+            let url = "";
+            const ext = f.name.split(".").pop().toLowerCase();
+            const browserSupport = ["pdf", "jpg", "png", "gif", "svg", "webp", "jpeg", "mp4", "webm", "txt", "html", "md"];
+            
+            if (f.isHF) {
+              url = f.url; // HF 已经是直连
+            } else {
+              if (browserSupport.includes(ext)) {
+                // 直接打开
+                url = `https://raw.githubusercontent.com/${username}/${repo}/${branch}/${f.path}`;
+              } else {
+                // GitHub Blob 视图
+                url = `https://github.com/${username}/${repo}/blob/${branch}/${f.path}`;
+              }
+            }
 
             html += `
             <div class="file-item ${highlightClass}">
-              <a href="${url}" target="_blank">
+              <a href="${url}" target="_blank" title="${f.isHF ? '从 HuggingFace 加载' : '从 GitHub 加载'}">
                 <span class="file-icon">${getFileIcon(f.name)}</span>
                 <span>${f.name}</span>
                 ${f.isHF ? `<span class="hf-badge">${f.size_mb} MB</span>` : ""}
