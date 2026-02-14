@@ -595,23 +595,29 @@
             const displayName = highlightText(f.name, currentSearch);
 
             const ext = f.name.split(".").pop().toLowerCase();
+            const isPreviewable = config.previewExts.includes(ext);
 
-            // 判断链接逻辑：可预览文件(PDF/图片)直接打开，不可预览(代码)去GitHub Blob
+            // 链接和下载逻辑
+            // HF 文件：直接下载链接
+            // GitHub 可预览文件（PDF/图片）：在新标签打开查看
+            // GitHub 不可预览文件（代码）：跳转 GitHub Blob 视图
             let finalUrl = f.url;
-            if (!f.is_hf) {
-              const isPreviewable = config.previewExts.includes(ext);
-              if (isPreviewable) {
-                // GitHub Pages 直接预览路径 (相对于根目录)
-                finalUrl = `./${f.path}`;
-              } else {
-                // 源代码跳转 GitHub Blob 视图
-                finalUrl = `https://github.com/${username}/${repo}/blob/${branch}/${f.path}`;
-              }
+            let target = "_blank";
+            let downloadAttr = "";
+
+            if (!f.is_hf && !isPreviewable) {
+              // 源代码跳转 GitHub Blob 视图
+              finalUrl = `https://github.com/${username}/${repo}/blob/${branch}/${f.path}`;
+            }
+
+            // HF 文件总是下载
+            if (f.is_hf) {
+              downloadAttr = 'download';
             }
 
             html += `
             <div class="file-item ${highlightClass}">
-              <a href="${finalUrl}" target="_blank" class="file-link" ${f.is_hf ? "download" : ""}>
+              <a href="${finalUrl}" target="${target}" class="file-link" ${downloadAttr}>
                 <span class="file-icon">${getFileIcon(f.name)}</span>
                 <span>${displayName}</span>
                 ${f.is_hf ? `<span class="hf-badge">🤗 HF</span>` : `<span class="gh-badge">📦 Git</span>`}
