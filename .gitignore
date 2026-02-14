@@ -1,0 +1,19 @@
+# Logs
+distribute.log
+*.log
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+venv/
+.env
+
+# IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Project specific
+# data/file_manifest.json 必须推送，它是前端导航页的数据源
