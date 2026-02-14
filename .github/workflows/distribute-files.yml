@@ -6,9 +6,7 @@ on:
       - main
     paths-ignore:
       - "README.md"
-      - ".gitignore"
       - "index.html"
-      - "data/file_manifest.json"
 
 jobs:
   distribute:

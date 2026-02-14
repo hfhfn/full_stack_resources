@@ -233,6 +233,7 @@ def generate_manifest(large_files, small_files):
 
     # Helper to add file to manifest
     def add_to_manifest(file_list, is_hf):
+        entries = []
         for f in file_list:
             rel = f.relative_to(PROJECT_ROOT).as_posix()
             # URL encode the path for robustness with Chinese characters
@@ -244,7 +245,7 @@ def generate_manifest(large_files, small_files):
             else:
                 url = f"https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/{quoted_rel}"
             
-            manifest["files"].append({
+            entries.append({
                 "name": f.name,
                 "path": rel,
                 "extension": f.suffix.lower().lstrip('.'),
@@ -253,9 +254,13 @@ def generate_manifest(large_files, small_files):
                 "is_hf": is_hf,
                 "last_modified": datetime.fromtimestamp(info["mtime"]).strftime("%Y-%m-%d %H:%M:%S")
             })
+        
+        # Sort by path for consistent ordering
+        return sorted(entries, key=lambda x: x["path"])
 
-    add_to_manifest(large_files, True)
-    add_to_manifest(small_files, False)
+    # Add HF files first, then small files, both sorted
+    manifest["files"].extend(add_to_manifest(large_files, True))
+    manifest["files"].extend(add_to_manifest(small_files, False))
 
     manifest_dir = PROJECT_ROOT / 'data'
     manifest_dir.mkdir(exist_ok=True)
@@ -306,26 +311,24 @@ def generate_manifest(large_files, small_files):
     for old_path, old_entry in old_hf_files.items():
         if old_path not in new_hf_paths:
             logger.info(f"    Preserving managed HF file: {old_path}")
-            manifest["files"].insert(0, old_entry)  # Insert at beginning to maintain order
+            manifest["files"].insert(0, old_entry)
     
     # Handle managed files that exist in .gitignore but not in local or old manifest
-    # (This can happen when user restores a .gitignore rule)
-    current_hf_paths = new_hf_paths | set(old_hf_files.keys())
     for managed_file in managed_hf_files:
-        if managed_file not in current_hf_paths:
+        if managed_file not in new_hf_paths and managed_file not in old_hf_files:
             # This file is managed but not in manifest - try to get info from HuggingFace
             logger.info(f"    Restoring managed HF file entry: {managed_file}")
             try:
                 from huggingface_hub import HfApi
                 api = HfApi()
                 repo_info = api.repo_info(repo_id=HF_REPO_ID, repo_type="dataset")
-                # Create entry with placeholder info (actual size/mtime from HF would require more API calls)
+                # Create entry with placeholder info
                 quoted_rel = quote(managed_file)
                 manifest["files"].insert(0, {
                     "name": os.path.basename(managed_file),
                     "path": managed_file,
                     "extension": os.path.splitext(managed_file)[1].lower().lstrip('.'),
-                    "size_mb": 0,  # Will be unknown until file is re-uploaded
+                    "size_mb": 0,
                     "url": f"https://huggingface.co/datasets/{HF_REPO_ID}/resolve/main/{quoted_rel}?download=true",
                     "is_hf": True,
                     "last_modified": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -345,7 +348,7 @@ def generate_manifest(large_files, small_files):
             new_files = manifest['files']
             
             if len(old_files) == len(new_files):
-                # Compare file entries
+                # Compare file entries - must be in same order and identical
                 all_same = True
                 for old_file, new_file in zip(old_files, new_files):
                     if old_file != new_file:
@@ -356,6 +359,7 @@ def generate_manifest(large_files, small_files):
                     # Preserve the old timestamp if content hasn't changed
                     preserve_timestamp = True
                     manifest['updated_at'] = old_manifest['updated_at']
+                    logger.info(f"    (Timestamp preserved - no content changes)")
         except Exception as e:
             logger.debug(f"Could not compare manifests: {e}")
     
@@ -363,8 +367,6 @@ def generate_manifest(large_files, small_files):
         json.dump(manifest, f, ensure_ascii=False, indent=2)
     
     logger.info(f"[OK] Manifest generated with {len(manifest['files'])} total files")
-    if preserve_timestamp:
-        logger.info(f"    (Timestamp preserved - no content changes)")
 
 def main():
     start_time = time.time()
