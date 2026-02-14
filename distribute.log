@@ -160,3 +160,33 @@
 2026-02-15 02:15:25,195 [INFO] [OK] Manifest generated with 97 total files
 2026-02-15 02:15:25,195 [INFO] 
 [OK] All steps complete in 2.9s! Ready for git push.
+2026-02-15 02:21:27,682 [INFO] Scanning files (Threshold: 50MB)...
+2026-02-15 02:21:27,817 [INFO] Stats: 1 large files, 96 small files
+2026-02-15 02:21:27,817 [INFO] Uploading 1 files to HuggingFace (hfhfn/full_stack_resources)...
+2026-02-15 02:21:30,142 [INFO] Logged in as: hfhfn
+2026-02-15 02:21:30,142 [INFO]    > Uploading: 《内容算法：把内容变成价值的效率系统》_闫泽华.pdf (127.2 MB)
+2026-02-15 02:21:30,819 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 02:21:31,129 [INFO] [OK] HF Upload complete
+2026-02-15 02:21:31,129 [INFO] Checking for redundant files on HuggingFace (hfhfn/full_stack_resources)...
+2026-02-15 02:21:31,414 [INFO] No redundant files found.
+2026-02-15 02:21:31,415 [INFO] Processing Git tracking & .gitignore...
+2026-02-15 02:21:31,450 [INFO] Updated .gitignore with 1 rules
+2026-02-15 02:21:31,450 [INFO] Generating full manifest (data/file_manifest.json)...
+2026-02-15 02:21:31,457 [INFO] [OK] Manifest generated with 97 total files
+2026-02-15 02:21:31,457 [INFO] 
+[OK] All steps complete in 3.8s! Ready for git push.
+2026-02-15 02:31:15,565 [INFO] Scanning files (Threshold: 50MB)...
+2026-02-15 02:31:15,701 [INFO] Stats: 1 large files, 96 small files
+2026-02-15 02:31:15,702 [INFO] Uploading 1 files to HuggingFace (hfhfn/full_stack_resources)...
+2026-02-15 02:31:17,227 [INFO] Logged in as: hfhfn
+2026-02-15 02:31:17,227 [INFO]    > Uploading: 《内容算法：把内容变成价值的效率系统》_闫泽华.pdf (127.2 MB)
+2026-02-15 02:31:17,907 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 02:31:18,220 [INFO] [OK] HF Upload complete
+2026-02-15 02:31:18,220 [INFO] Checking for redundant files on HuggingFace (hfhfn/full_stack_resources)...
+2026-02-15 02:31:18,508 [INFO] No redundant files found.
+2026-02-15 02:31:18,508 [INFO] Processing Git tracking & .gitignore...
+2026-02-15 02:31:18,557 [INFO] Updated .gitignore with 1 rules
+2026-02-15 02:31:18,557 [INFO] Generating full manifest (data/file_manifest.json)...
+2026-02-15 02:31:18,564 [INFO] [OK] Manifest generated with 97 total files
+2026-02-15 02:31:18,565 [INFO] 
+[OK] All steps complete in 3.0s! Ready for git push.
