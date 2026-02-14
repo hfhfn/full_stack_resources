@@ -215,7 +215,10 @@ echo [5/5] Committing to Git...
 git add .
 git diff --cached --quiet
 if errorlevel 1 (
-    git commit -m "Auto: Initial setup"
+    echo.
+    set /p commit_msg="Enter commit message (default: Auto update): "
+    if "!commit_msg!"=="" set commit_msg=Auto update
+    git commit -m "!commit_msg!"
     git push origin main
 ) else (
     echo   No changes to commit.
@@ -279,7 +282,11 @@ echo ""
 echo "[5/5] Pushing to GitHub..."
 git add .
 if ! git diff --cached --quiet; then
-    git commit -m "Auto: Initial setup"
+    read -p "  Enter commit message (default: Auto update): " commit_msg
+    if [ -z "$commit_msg" ]; then
+        commit_msg="Auto update"
+    fi
+    git commit -m "$commit_msg"
     git push origin main
 else
     echo "  No changes to push."
