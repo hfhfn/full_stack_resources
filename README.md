@@ -72,54 +72,44 @@ cd full_stack_resources
 
 ### 删除大文件
 
-**重要**: 删除大文件需要主动推送才能在 Pages 页面同步显示，否则会出现"404 Not Found"。
+**重要**: 删除大文件无需手动编辑 `.gitignore`，脚本会自动处理所有操作。
 
-**完整操作步骤**:
+**完整操作步骤** (极简化):
 
 1. **本地删除文件**:
    ```bash
    rm your_large_file.bin
    ```
 
-2. **编辑 .gitignore，移除该文件规则**:
-   - 打开 `.gitignore`
-   - 找到 `# [Auto] Large files managed by HuggingFace` 部分
-   - 删除对应的文件行
-
-   示例：如果要删除 `《内容算法：把内容变成价值的效率系统》_闫泽华.pdf`
-   ```
-   # [Auto] Large files managed by HuggingFace
-   # 删除这一行：《内容算法：把内容变成价值的效率系统》_闫泽华.pdf
-   ```
-
-3. **运行同步脚本** (必须):
+2. **运行同步脚本** (仅需此步):
    ```batch
    setup.bat
    ```
-   脚本会：
-   - 检测 `.gitignore` 变化
-   - 自动从 HuggingFace 删除该文件
-   - 自动从 `manifest.json` 删除该文件条目
-   - **自动提交和推送到 GitHub** ⭐️
+   脚本会自动：
+   - ✅ 检测本地已删除的文件
+   - ✅ 从 `.gitignore` 移除对应规则
+   - ✅ 从 HuggingFace 删除该文件
+   - ✅ 从 `manifest.json` 移除该文件条目
+   - ✅ 提交和推送到 GitHub
 
-4. **验证成功**:
+3. **验证成功**:
    - GitHub Actions 运行完毕（查看 Actions 标签）
    - Pages 页面刷新后，该文件消失
 
 **关键点**:
-- ❌ 不要直接运行 `python scripts/distribute_files.py`（不会推送更新）
-- ✅ 必须用 `setup.bat` 或 `setup.sh`（会自动提交和推送）
+- ❌ ~~不要手动编辑 `.gitignore`~~ (脚本全自动处理)
+- ✅ 只需运行 `setup.bat` 或 `setup.sh`
 - ⏳ GitHub Actions 同步需要 1-2 分钟
 
 ---
 
 ## 🛠️ 项目结构
 
-- `scripts/distribute_files.py`: 核心分发引擎 v3.1（支持重试机制、增强日志及全量清单生成）。
-- `setup.bat` / `setup.sh`: 跨平台一键环境搭建脚本。
+- `scripts/distribute_files.py`: 核心分发引擎 v3.1（支持重试机制、增强日志、智能时间戳保留及全量清单生成）。
+- `setup.bat` / `setup.sh`: 跨平台一键环境搭建脚本（v4.1 完整工作流）。
 - `data/file_manifest.json`: 自动生成的文件元数据清单（前端加载数据源，免除 GitHub API 限速干扰）。
 - `index.html`: 高端毛玻璃风格的资源导航前端（支持骨架屏展示）。
-- `.github/workflows/`: 自动化分发流水线配置。
+- `.github/workflows/`: 自动化分发流水线配置（v4.1 只负责 HF 同步，不提交更新）。
 
 ---
 
