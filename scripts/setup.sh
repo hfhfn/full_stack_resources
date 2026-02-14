@@ -49,7 +49,12 @@ echo ""
 echo "[5/5] 提交并推送到 GitHub..."
 git add .
 if ! git diff --cached --quiet; then
-    git commit -m "Auto: Initial setup and file distribution"
+    echo -n "  请输入提交信息 (直接回车使用默认: Auto update): "
+    read commit_msg
+    if [ -z "$commit_msg" ]; then
+        commit_msg="Auto update"
+    fi
+    git commit -m "$commit_msg"
     echo "  已提交更改。"
 else
     echo "  没有需要提交的更改。"

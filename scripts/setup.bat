@@ -76,7 +76,10 @@ echo [5/5] 提交配置到 Git...
 git add .
 git diff --cached --quiet
 if errorlevel 1 (
-    git commit -m "Auto: Initial setup and file distribution"
+    echo.
+    set /p commit_msg="请输入提交信息 (默认: Auto update): "
+    if "!commit_msg!"=="" set commit_msg=Auto update
+    git commit -m "!commit_msg!"
     echo   OK: 已提交所有更改
 ) else (
     echo   无需提交，没有变更。
