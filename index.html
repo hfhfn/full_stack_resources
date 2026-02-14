@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>📁 文件浏览</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 0 20px;
+            background: #f8f9fa;
+        }
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+        h1 {
+            color: #1a73e8;
+            border-bottom: 2px solid #e8f0fe;
+            padding-bottom: 15px;
+            margin-top: 0;
+        }
+        .file-list {
+            list-style: none;
+            padding: 0;
+        }
+        .file-item {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e9ecef;
+            transition: background 0.2s;
+            border-radius: 6px;
+        }
+        .file-item:hover {
+            background: #f1f8ff;
+        }
+        a {
+            text-decoration: none;
+            color: #1a73e8;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .pdf-icon { font-size: 20px; }
+        .html-icon { font-size: 20px; }
+        .path {
+            color: #5f6368;
+            font-size: 13px;
+            margin-left: 30px;
+            font-family: monospace;
+        }
+        .folder-section {
+            margin-top: 25px;
+        }
+        .folder-title {
+            color: #202124;
+            font-size: 18px;
+            margin: 20px 0 10px 0;
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📁 文件浏览</h1>
+        
+        <div id="file-list">
+            <p style="color: #666;">加载中...</p>
+        </div>
+    </div>
+
+    <script>
+        // 请修改下面的用户名和仓库名
+        const username = 'hfhfn';
+        const repo = 'full_stack_resources';
+        const branch = 'main';
+
+        async function listAllFiles() {
+            try {
+                // 调用 GitHub API 获取所有文件
+                const response = await fetch(`https://api.github.com/repos/${username}/${repo}/git/trees/${branch}?recursive=1`);
+                const data = await response.json();
+                
+                if (!data.tree) {
+                    throw new Error('无法获取文件列表');
+                }
+
+                // 过滤出 PDF 和 HTML 文件（排除 index.html 和 README.md）
+                const files = data.tree.filter(item => {
+                    if (item.type !== 'blob') return false; // 只显示文件
+                    const name = item.path.split('/').pop();
+                    const ext = name.split('.').pop().toLowerCase();
+                    return (ext === 'pdf' || ext === 'html') && 
+                           name !== 'index.html' && 
+                           name !== 'README.md';
+                });
+
+                if (files.length === 0) {
+                    document.getElementById('file-list').innerHTML = '<p style="color: #666;">📂 暂无文件</p>';
+                    return;
+                }
+
+                // 分别整理 PDF 和 HTML 文件
+                const pdfFiles = files.filter(f => f.path.toLowerCase().endsWith('.pdf'));
+                const htmlFiles = files.filter(f => f.path.toLowerCase().endsWith('.html'));
+
+                let html = '';
+
+                // PDF 文件列表
+                if (pdfFiles.length > 0) {
+                    html += '<div class="folder-section">';
+                    html += '<div class="folder-title">📄 PDF 文档</div>';
+                    html += '<ul class="file-list">';
+                    pdfFiles.sort().forEach(file => {
+                        html += `<li class="file-item">
+                            <a href="${file.path}" target="_blank">
+                                <span class="pdf-icon">📄</span>
+                                <span>${file.path}</span>
+                            </a>
+                        </li>`;
+                    });
+                    html += '</ul></div>';
+                }
+
+                // HTML 文件列表
+                if (htmlFiles.length > 0) {
+                    html += '<div class="folder-section">';
+                    html += '<div class="folder-title">🌐 HTML 页面</div>';
+                    html += '<ul class="file-list">';
+                    htmlFiles.sort().forEach(file => {
+                        html += `<li class="file-item">
+                            <a href="${file.path}">
+                                <span class="html-icon">🌐</span>
+                                <span>${file.path}</span>
+                            </a>
+                        </li>`;
+                    });
+                    html += '</ul></div>';
+                }
+
+                document.getElementById('file-list').innerHTML = html;
+
+            } catch (error) {
+                document.getElementById('file-list').innerHTML = `
+                    <p style="color: #d93025;">❌ 加载失败: ${error.message}</p>
+                    <p style="color: #666; font-size: 14px;">如果持续失败，可能是 GitHub API 限制，稍等几分钟再刷新。</p>
+                `;
+                console.error(error);
+            }
+        }
+
+        listAllFiles();
+    </script>
+</body>
+</html>
