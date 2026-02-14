@@ -515,7 +515,7 @@
 
       async function loadData() {
         try {
-          console.log("Loading files from GitHub API and manifest...");
+          console.log("🔄 Loading files...");
 
           // 并行获取 GitHub API 和 manifest
           const [gitRes, manifestRes] = await Promise.all([
@@ -532,7 +532,17 @@
             const manifest = await manifestRes.json();
             // 加载 manifest 中的所有文件
             files = manifest.files || [];
-            console.log(`✅ Manifest: ${files.length} files loaded`);
+            console.log(`✅ Manifest loaded: ${files.length} total files`);
+
+            // 详细调试：显示所有 HF 文件
+            const hfFiles = files.filter(f => f.is_hf);
+            console.log(`✅ HF files: ${hfFiles.length}`, hfFiles);
+
+            // 详细调试：显示根目录文件
+            const rootFiles = files.filter(f => !f.path.includes('/'));
+            console.log(`✅ Root files: ${rootFiles.length}`, rootFiles);
+          } else {
+            console.error("❌ Manifest loading failed");
           }
 
           // 如果没有 manifest 或为空，从 GitHub API 获取
@@ -556,12 +566,13 @@
           }
 
           allFiles = files;
-          console.log(`✅ Total: ${allFiles.length} files`);
-          console.log(`   HF: ${allFiles.filter(f => f.is_hf).length}, GitHub: ${allFiles.filter(f => !f.is_hf).length}`);
+          console.log(`✨ Final allFiles: ${allFiles.length} files`);
+          console.log(`   - HF: ${allFiles.filter(f => f.is_hf).length}`);
+          console.log(`   - GitHub: ${allFiles.filter(f => !f.is_hf).length}`);
 
           render();
         } catch (e) {
-          console.error("Load error:", e);
+          console.error("❌ Load error:", e);
           document.getElementById("file-list").innerHTML =
             `<div class="loader" style="color:#ef4444">❌ 加载异常: ${e.message}</div>`;
         }
@@ -578,6 +589,19 @@
           const matchFilter = currentFilter === "all" || type === currentFilter;
           return matchSearch && matchFilter;
         });
+
+        console.log(`📊 render() called:`);
+        console.log(`   - search: "${currentSearch}" (${lowerSearch})`);
+        console.log(`   - filter: "${currentFilter}"`);
+        console.log(`   - allFiles: ${allFiles.length}`);
+        console.log(`   - filtered: ${filtered.length}`);
+
+        // 如果有 HF 文件但被过滤掉了，打印警告
+        const hfInAll = allFiles.filter(f => f.is_hf);
+        const hfInFiltered = filtered.filter(f => f.is_hf);
+        if (hfInAll.length > 0 && hfInFiltered.length === 0) {
+          console.warn(`⚠️  HF 文件被过滤掉了!`, hfInAll);
+        }
 
         const tree = buildTree(filtered);
         listContainer.innerHTML = filtered.length
@@ -599,6 +623,11 @@
           });
           current._files.push(f);
         });
+
+        console.log(`🌳 buildTree result:`);
+        console.log(`   - root._files: ${root._files.length}`, root._files.map(f => f.name));
+        console.log(`   - root._folders: ${Object.keys(root._folders).length}`);
+
         return root;
       }
 
