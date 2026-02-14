@@ -1,16 +1,7 @@
 {
   "hf_repo_id": "hfhfn/full_stack_resources",
-  "updated_at": "2026-02-15 05:07:01",
+  "updated_at": "2026-02-15 05:11:35",
   "files": [
-    {
-      "name": "《内容算法：把内容变成价值的效率系统》_闫泽华.pdf",
-      "path": "《内容算法：把内容变成价值的效率系统》_闫泽华.pdf",
-      "extension": "pdf",
-      "size_mb": 127.22,
-      "url": "https://huggingface.co/datasets/hfhfn/full_stack_resources/resolve/main/%E3%80%8A%E5%86%85%E5%AE%B9%E7%AE%97%E6%B3%95%EF%BC%9A%E6%8A%8A%E5%86%85%E5%AE%B9%E5%8F%98%E6%88%90%E4%BB%B7%E5%80%BC%E7%9A%84%E6%95%88%E7%8E%87%E7%B3%BB%E7%BB%9F%E3%80%8B_%E9%97%AB%E6%B3%BD%E5%8D%8E.pdf?download=true",
-      "is_hf": true,
-      "last_modified": "2026-02-14 09:44:49"
-    },
     {
       "name": "开篇词｜用好A_B测试，你得这么学.html",
       "path": "AB测试从0到1/01-开篇词 (1讲)/开篇词｜用好A_B测试，你得这么学.html",

@@ -164,7 +164,7 @@ def update_gitignore_and_git(large_files, hf_files_to_delete):
         with open(gitignore_path, 'r', encoding='utf-8') as f:
             lines = f.readlines()
 
-    # Extract existing auto-generated rules (before we remove the section)
+    # Extract existing auto-generated rules
     header = "# [Auto] Large files managed by HuggingFace\n"
     in_auto_section = False
     
@@ -176,7 +176,6 @@ def update_gitignore_and_git(large_files, hf_files_to_delete):
             if line.strip() == "":
                 in_auto_section = False
                 continue
-            # This is an existing rule
             existing_auto_rules.add(line.rstrip())
 
     # Remove old auto-generated section
@@ -196,7 +195,7 @@ def update_gitignore_and_git(large_files, hf_files_to_delete):
         
         new_content.append(line)
     
-    # Remove trailing empty lines before auto section
+    # Remove trailing empty lines
     while new_content and new_content[-1].strip() == "":
         new_content.pop()
     
@@ -207,25 +206,29 @@ def update_gitignore_and_git(large_files, hf_files_to_delete):
         new_rules.add(rel)
         run_git_cmd(['rm', '--cached', str(f)])
 
-    # Check which existing rules should be kept
-    # A rule should be removed ONLY if:
-    # 1. Its file doesn't exist locally (has been deleted)
-    # 2. AND it's a redundant file on HuggingFace (will be cleaned up later)
-    # We don't auto-remove files that might legitimately not be present locally
-    # (they might be on HF for other users to access)
+    # Check which rules to remove
+    # Rules should be removed if the local file doesn't exist
     rules_to_remove = set()
-
-    # We'll remove rules only for files that sync_hf_deletions marked as redundant
-    hf_files_to_delete_set = {f.relative_to(PROJECT_ROOT).as_posix() for f in hf_files_to_delete}
-
-    for rule in existing_auto_rules:
-        if rule in hf_files_to_delete_set:
-            rules_to_remove.add(rule)
-            logger.info(f"    Removing rule for deleted HF file: {rule}")
     
-    # Merge existing rules (keep those that still exist or are newly scanned)
-    all_rules = existing_auto_rules - rules_to_remove
-    all_rules |= new_rules
+    for rule in existing_auto_rules:
+        file_path = PROJECT_ROOT / rule
+        # If the file doesn't exist locally, remove the rule
+        if not file_path.exists():
+            rules_to_remove.add(rule)
+            logger.info(f"    Removing rule for deleted local file: {rule}")
+            
+            # Also delete from HuggingFace
+            try:
+                from huggingface_hub import HfApi
+                api = HfApi()
+                logger.info(f"    Deleting from HuggingFace: {rule}")
+                api.delete_file(path_in_repo=rule, repo_id=HF_REPO_ID, repo_type="dataset",
+                               commit_message=f"Auto delete: {os.path.basename(rule)}")
+            except Exception as e:
+                logger.warning(f"Could not delete {rule} from HF: {e}")
+    
+    # Merge rules: keep existing rules that still have local files, add new rules
+    all_rules = (existing_auto_rules - rules_to_remove) | new_rules
 
     # Write updated gitignore
     with open(gitignore_path, 'w', encoding='utf-8') as f:
