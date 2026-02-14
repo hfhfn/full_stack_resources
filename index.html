@@ -140,7 +140,12 @@
     </div>
 
     <script>
+      const username = "hfhfn";
+      const repo = "full_stack_resources";
+      const branch = "main";
+
       const config = {
+        previewExts: ["pdf", "jpg", "jpeg", "png", "gif", "svg", "webp", "txt", "json", "html", "htm"],
         codeExts: ["py", "java", "cpp", "c", "js", "go", "sh", "ipynb", "md", "bat", "yml", "yaml", "cmd"],
         archiveExts: ["zip", "rar", "7z", "tar", "gz", "bz2"]
       };
@@ -177,18 +182,13 @@
 
       async function loadData() {
         try {
-          // Robust Local Manifest Fetch
           const res = await fetch(`./data/file_manifest.json?t=${Date.now()}`);
-          if (!res.ok) throw new Error("无法加载本地资源清单，请确保 GitHub Pages 路径正确。");
+          if (!res.ok) throw new Error("无法加载资源清单");
           const data = await res.json();
           allFiles = data.files || [];
           render();
         } catch (e) { 
-          document.getElementById("file-list").innerHTML = `
-            <div class="loader" style="color:#ef4444">
-              ❌ 加载异常<br/>
-              <span style="font-size:0.85rem; opacity:0.8;">${e.message}</span>
-            </div>`;
+          document.getElementById("file-list").innerHTML = `<div class="loader" style="color:#ef4444">❌ 加载异常: ${e.message}</div>`;
         }
       }
 
@@ -248,9 +248,24 @@
           const highlightClass = isFileMatch ? "highlight" : "";
           const displayName = highlightText(f.name, currentSearch);
           
+          const ext = f.name.split(".").pop().toLowerCase();
+          
+          // 判断链接逻辑：可预览文件(PDF/图片)直接打开，不可预览(代码)去GitHub Blob
+          let finalUrl = f.url;
+          if (!f.is_hf) {
+            const isPreviewable = config.previewExts.includes(ext);
+            if (isPreviewable) {
+              // GitHub Pages 直接预览路径 (相对于根目录)
+              finalUrl = `./${f.path}`;
+            } else {
+              // 源代码跳转 GitHub Blob 视图
+              finalUrl = `https://github.com/${username}/${repo}/blob/${branch}/${f.path}`;
+            }
+          }
+
           html += `
             <div class="file-item ${highlightClass}">
-              <a href="${f.url}" target="_blank" class="file-link">
+              <a href="${finalUrl}" target="_blank" class="file-link">
                 <span class="file-icon">${getFileIcon(f.name)}</span>
                 <span>${displayName}</span>
                 ${f.is_hf ? `<span class="hf-badge">🤗 HF</span>` : `<span class="gh-badge">📦 Git</span>`}
