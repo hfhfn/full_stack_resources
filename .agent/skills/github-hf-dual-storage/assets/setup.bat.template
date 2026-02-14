@@ -4,7 +4,7 @@ chcp 65001 >nul
 
 echo ============================================
 echo   ${GITHUB_REPO_NAME} - Setup
-echo   Architecture: v4.0 (Pull-First Optimized)
+echo   Architecture: v4.1 (Autostash Optimized)
 echo ============================================
 echo.
 
@@ -25,38 +25,33 @@ if !errorlevel! neq 0 (
     echo   Installing huggingface_hub...
     pip install -q "huggingface_hub>=0.17.0"
 ) else (
-    echo   OK: huggingface_hub installed
+    echo   OK: huggingface_hub is installed
 )
 
-:: 3. Clean unstaged changes before pull
+:: 3. Sync Remote (Architecture v4.1: Autostash mode)
 echo.
-echo [3/7] Preparing Git (cleanup unstaged)...
-git diff --quiet >nul 2>&1
+echo [3/7] Syncing Remote (git pull --rebase --autostash)...
+git pull --rebase --autostash origin main
 if !errorlevel! neq 0 (
-    echo   Stashing local changes...
-    git stash
-)
-
-:: 4. Sync Remote
-echo.
-echo [4/7] Syncing Remote (git pull --rebase)...
-git pull --rebase origin main
-if !errorlevel! neq 0 (
-    echo [ERROR] Sync failed. Run: git rebase --abort
+    echo.
+    echo [ERROR] Sync failed. Resolve conflicts manually: git rebase --abort
     pause
     exit /b 1
 ) else (
-    echo   OK: Synced with remote
+    echo   OK: Synced successfully
 )
 
-:: 5. Run Distribution
+:: 4. Run Distribution
 echo.
-echo [5/7] Running Distribution Script...
+echo [4/7] Running Distribution Script...
 python scripts\distribute_files.py
+if !errorlevel! neq 0 (
+    echo [WARNING] Distribution had errors.
+)
 
-:: 6. Local Commit
+:: 5. Local Commit
 echo.
-echo [6/7] Preparing Commit...
+echo [5/7] Preparing Commit...
 git add .
 git diff --cached --quiet
 if !errorlevel! neq 0 (
@@ -64,14 +59,14 @@ if !errorlevel! neq 0 (
     set /p commit_msg="  Enter message (default: Auto update): "
     if "!commit_msg!"=="" set commit_msg=Auto update
     git commit -m "!commit_msg!"
-    echo   OK: Committed
+    echo   OK: Committed locally
 ) else (
-    echo   OK: No changes
+    echo   OK: No changes to commit
 )
 
-:: 7. Push
+:: 6. Push to GitHub
 echo.
-echo [7/7] Pushing to GitHub...
+echo [6/7] Pushing to GitHub...
 git push origin main
 if !errorlevel! neq 0 (
     echo [WARNING] Push failed. Retry: git push origin main

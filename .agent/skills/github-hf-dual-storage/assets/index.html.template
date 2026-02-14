@@ -140,7 +140,14 @@
           const ghUrl = `https://api.github.com/repos/${username}/${repo}/git/trees/${branch}?recursive=1`;
           const ghRes = await fetch(ghUrl);
           const ghData = ghRes.status === 200 ? await ghRes.json() : { tree: [] };
-          let files = ghData.tree ? ghData.tree.filter(i => i.type === "blob" && !i.path.startsWith(".") && !["index.html", "README.md", "setup.bat", "setup.sh"].includes(i.path) && !i.path.match(/^(scripts|data|venv|env|node_modules|.git|.github)\//)).map(i => ({ name: i.path.split("/").pop(), path: i.path, isHF: false })) : [];
+          let files = ghData.tree
+            ? ghData.tree.filter(i => 
+                i.type === "blob" && 
+                !i.path.startsWith(".") && 
+                !["index.html", "README.md", "setup.bat", "setup.sh"].includes(i.path) && 
+                !i.path.match(/^(scripts|data|venv|env|node_modules|.git|.github)\//)
+              ).map(i => ({ name: i.path.split("/").pop(), path: i.path, isHF: false }))
+            : [];
           try {
             const maniRes = await fetch(`./data/file_manifest.json?t=${Date.now()}`);
             if (maniRes.ok) {

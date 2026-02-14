@@ -22,24 +22,15 @@ else
     echo "   OK: huggingface_hub installed"
 fi
 
-# 3. Clean unstaged changes before pull (FIX: Prevent "unstaged changes" error)
+# 3. Sync Remote (Architecture v4.1: Autostash mode)
 echo ""
-echo "[3/7] Preparing Git (cleanup unstaged changes)..."
-if ! git diff --quiet 2>/dev/null; then
-    echo "   Stashing local changes..."
-    git stash
-fi
-
-# 4. Sync Remote with Rebase
-echo ""
-echo "[4/7] Syncing Remote (git pull --rebase)..."
-git pull --rebase origin main
+echo "[3/7] Syncing Remote (git pull --rebase --autostash)..."
+git pull --rebase --autostash origin main
 if [ $? -ne 0 ]; then
-    echo "[ERROR] Sync failed. Resolve conflicts: git rebase --abort"
-    echo "   Or restore stash: git stash pop"
+    echo "[ERROR] Sync failed. Resolve conflicts manually: git rebase --abort"
     exit 1
 else
-    echo "   OK: Synced with remote"
+    echo "   OK: Local and remote synced successfully"
 fi
 
 # 5. Run Distribution Engine
