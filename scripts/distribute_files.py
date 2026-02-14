@@ -13,6 +13,7 @@ import json
 import logging
 import time
 import subprocess
+from urllib.parse import quote
 from pathlib import Path
 from datetime import datetime
 from functools import wraps
@@ -190,9 +191,14 @@ def generate_manifest(large_files, small_files):
     def add_to_manifest(file_list, is_hf):
         for f in file_list:
             rel = f.relative_to(PROJECT_ROOT).as_posix()
+            # URL encode the path for robustness with Chinese characters
+            quoted_rel = quote(rel)
             info = get_file_info(f)
-            # Use raw.githubusercontent for small files to avoid API limits
-            url = f"https://huggingface.co/datasets/{HF_REPO_ID}/resolve/main/{rel}" if is_hf else f"https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/{rel}"
+            
+            if is_hf:
+                url = f"https://huggingface.co/datasets/{HF_REPO_ID}/resolve/main/{quoted_rel}?download=true"
+            else:
+                url = f"https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/{quoted_rel}"
             
             manifest["files"].append({
                 "name": f.name,

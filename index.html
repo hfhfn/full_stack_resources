@@ -6,96 +6,366 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <style>
       :root {
-        --primary: #4f46e5; --primary-hover: #4338ca; --bg-light: #f8fafc; --card-bg: rgba(255, 255, 255, 0.8);
-        --text-main: #1e293b; --text-muted: #64748b; --border: #e2e8f0; --folder: #e36209;
-        --hf-badge-bg: #fef3c7; --hf-badge-text: #92400e; --highlight: rgba(249, 171, 0, 0.1);
+        --primary: #4f46e5;
+        --primary-hover: #4338ca;
+        --bg-light: #f8fafc;
+        --card-bg: rgba(255, 255, 255, 0.8);
+        --text-main: #1e293b;
+        --text-muted: #64748b;
+        --border: #e2e8f0;
+        --folder: #e36209;
+        --hf-badge-bg: #fef3c7;
+        --hf-badge-text: #92400e;
+        --highlight: rgba(249, 171, 0, 0.1);
         --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
       }
       [data-theme="dark"] {
-        --primary: #818cf8; --primary-hover: #a5b4fc; --bg-light: #0f172a; --card-bg: rgba(30, 41, 59, 0.7);
-        --text-main: #f1f5f9; --text-muted: #94a3b8; --border: #334155; --folder: #fb923c;
-        --hf-badge-bg: #451a03; --hf-badge-text: #fbbf24; --highlight: rgba(249, 171, 0, 0.2);
+        --primary: #818cf8;
+        --primary-hover: #a5b4fc;
+        --bg-light: #0f172a;
+        --card-bg: rgba(30, 41, 59, 0.7);
+        --text-main: #f1f5f9;
+        --text-muted: #94a3b8;
+        --border: #334155;
+        --folder: #fb923c;
+        --hf-badge-bg: #451a03;
+        --hf-badge-text: #fbbf24;
+        --highlight: rgba(249, 171, 0, 0.2);
       }
-      * { box-sizing: border-box; margin: 0; padding: 0; }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
       body {
-        font-family: "Inter", -apple-system, sans-serif;
-        background-color: var(--bg-light); color: var(--text-main);
-        line-height: 1.6; transition: var(--transition);
+        font-family:
+          "Inter",
+          -apple-system,
+          sans-serif;
+        background-color: var(--bg-light);
+        color: var(--text-main);
+        line-height: 1.6;
+        transition: var(--transition);
         background-image:
-          radial-gradient(at 0% 0%, rgba(79, 70, 229, 0.05) 0px, transparent 50%),
-          radial-gradient(at 100% 0%, rgba(129, 140, 248, 0.05) 0px, transparent 50%);
-        min-height: 100vh; padding: 40px 20px;
+          radial-gradient(
+            at 0% 0%,
+            rgba(79, 70, 229, 0.05) 0px,
+            transparent 50%
+          ),
+          radial-gradient(
+            at 100% 0%,
+            rgba(129, 140, 248, 0.05) 0px,
+            transparent 50%
+          );
+        min-height: 100vh;
+        padding: 40px 20px;
       }
       .container {
-        max-width: 1100px; margin: 0 auto; background: var(--card-bg); backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px); border: 1px solid var(--border); border-radius: 24px;
-        padding: 40px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        max-width: 1100px;
+        margin: 0 auto;
+        background: var(--card-bg);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        padding: 40px;
+        box-shadow:
+          0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04);
       }
-      header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 20px; }
-      .header-left { display: flex; align-items: center; gap: 15px; }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .header-left {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
       h1 {
-        font-family: "Outfit", sans-serif; font-size: 2.2rem; font-weight: 700;
+        font-family: "Outfit", sans-serif;
+        font-size: 2.2rem;
+        font-weight: 700;
         background: linear-gradient(135deg, var(--primary), #ec4899);
-        -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
-      .header-actions { display: flex; align-items: center; gap: 12px; }
+      .header-actions {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
       .icon-btn {
-        background: var(--border); border: none; width: 44px; height: 44px; border-radius: 12px;
-        cursor: pointer; display: flex; align-items: center; justify-content: center;
-        font-size: 1.2rem; color: var(--text-main); transition: var(--transition); text-decoration: none;
+        background: var(--border);
+        border: none;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.2rem;
+        color: var(--text-main);
+        transition: var(--transition);
+        text-decoration: none;
       }
-      .icon-btn:hover { background: var(--primary); color: white; transform: scale(1.05); }
+      .icon-btn:hover {
+        background: var(--primary);
+        color: white;
+        transform: scale(1.05);
+      }
 
-      .search-area { display: flex; flex-direction: column; gap: 15px; margin-bottom: 30px; }
-      .search-wrapper { position: relative; display: flex; gap: 12px; }
-      #searchInput {
-        flex: 1; padding: 14px 20px; background: var(--bg-light); border: 2px solid var(--border);
-        border-radius: 16px; color: var(--text-main); font-size: 1rem; outline: none; transition: var(--transition);
+      .search-area {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        margin-bottom: 30px;
       }
-      #searchInput:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1); }
-      .btn { padding: 0 20px; border-radius: 12px; border: none; cursor: pointer; font-weight: 500; transition: var(--transition); display: flex; align-items: center; justify-content: center; }
-      .btn-clear { background: var(--border); color: var(--text-muted); }
-      .btn-clear:hover { background: #ef4444; color: white; }
-      .filter-tags { display: flex; gap: 10px; flex-wrap: wrap; }
-      .tag { padding: 6px 14px; background: var(--bg-light); border: 1px solid var(--border); border-radius: 100px; font-size: 0.85rem; cursor: pointer; transition: var(--transition); color: var(--text-muted); }
-      .tag.active { background: var(--primary); color: white; border-color: var(--primary); }
-      .tag:hover:not(.active) { border-color: var(--primary); color: var(--primary); }
+      .search-wrapper {
+        position: relative;
+        display: flex;
+        gap: 12px;
+      }
+      #searchInput {
+        flex: 1;
+        padding: 14px 20px;
+        background: var(--bg-light);
+        border: 2px solid var(--border);
+        border-radius: 16px;
+        color: var(--text-main);
+        font-size: 1rem;
+        outline: none;
+        transition: var(--transition);
+      }
+      #searchInput:focus {
+        border-color: var(--primary);
+        box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+      }
+      .btn {
+        padding: 0 20px;
+        border-radius: 12px;
+        border: none;
+        cursor: pointer;
+        font-weight: 500;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .btn-clear {
+        background: var(--border);
+        color: var(--text-muted);
+      }
+      .btn-clear:hover {
+        background: #ef4444;
+        color: white;
+      }
+      .filter-tags {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+      }
+      .tag {
+        padding: 6px 14px;
+        background: var(--bg-light);
+        border: 1px solid var(--border);
+        border-radius: 100px;
+        font-size: 0.85rem;
+        cursor: pointer;
+        transition: var(--transition);
+        color: var(--text-muted);
+      }
+      .tag.active {
+        background: var(--primary);
+        color: white;
+        border-color: var(--primary);
+      }
+      .tag:hover:not(.active) {
+        border-color: var(--primary);
+        color: var(--primary);
+      }
 
       /* Skeleton Styles */
-      .skeleton-tree { border-top: 1px solid var(--border); padding-top: 20px; }
-      .skeleton-item { height: 40px; background: linear-gradient(90deg, var(--border) 25%, var(--bg-light) 50%, var(--border) 75%); background-size: 200% 100%; animation: shimmer 1.5s infinite linear; border-radius: 10px; margin-bottom: 10px; width: 100%; }
-      @keyframes shimmer { 0% { background-position: -200% 0; } 100% { background-position: 200% 0; } }
+      .skeleton-tree {
+        border-top: 1px solid var(--border);
+        padding-top: 20px;
+      }
+      .skeleton-item {
+        height: 40px;
+        background: linear-gradient(
+          90deg,
+          var(--border) 25%,
+          var(--bg-light) 50%,
+          var(--border) 75%
+        );
+        background-size: 200% 100%;
+        animation: shimmer 1.5s infinite linear;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        width: 100%;
+      }
+      @keyframes shimmer {
+        0% {
+          background-position: -200% 0;
+        }
+        100% {
+          background-position: 200% 0;
+        }
+      }
 
-      .file-tree { border-top: 1px solid var(--border); padding-top: 20px; min-height: 300px; }
-      .loader { text-align: center; padding: 60px; color: var(--text-muted); font-size: 1rem; line-height: 1.8; }
-      .folder { margin: 2px 0; }
-      .folder-header { padding: 10px 12px; border-radius: 10px; cursor: pointer; display: flex; align-items: center; gap: 10px; color: var(--text-main); font-weight: 600; transition: var(--transition); }
-      .folder-header:hover { background: rgba(79, 70, 229, 0.05); }
-      .toggle-icon { width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: var(--text-muted); transition: transform 0.2s; }
-      .toggle-icon.open { transform: rotate(90deg); }
-      .folder-icon { color: var(--folder); font-size: 1.2rem; }
-      .folder-children { margin-left: 28px; border-left: 1.5px solid var(--border); padding-left: 8px; }
-      .folder-children.collapsed { display: none; }
-      .file-item { margin: 2px 0; padding: 8px 12px 8px 30px; border-radius: 8px; transition: var(--transition); display: flex; align-items: center; justify-content: space-between; }
-      .file-item:hover { background: rgba(79, 70, 229, 0.08); transform: translateX(4px); }
-      .file-link { text-decoration: none; color: var(--text-main); display: flex; align-items: center; gap: 10px; flex: 1; }
-      .hf-badge { background: var(--hf-badge-bg); color: var(--hf-badge-text); padding: 2px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 700; border: 1px solid rgba(0, 0, 0, 0.05); }
-      .gh-badge { background: #e0e7ff; color: #3730a3; padding: 2px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 700; border: 1px solid rgba(0, 0, 0, 0.05); }
-      .highlight { background: var(--highlight) !important; border-left: 3px solid var(--primary); }
-      mark.text-match { background: rgba(251, 191, 36, 0.4); color: inherit; border-radius: 4px; padding: 0 2px; }
+      .file-tree {
+        border-top: 1px solid var(--border);
+        padding-top: 20px;
+        min-height: 300px;
+      }
+      .loader {
+        text-align: center;
+        padding: 60px;
+        color: var(--text-muted);
+        font-size: 1rem;
+        line-height: 1.8;
+      }
+      .folder {
+        margin: 2px 0;
+      }
+      .folder-header {
+        padding: 10px 12px;
+        border-radius: 10px;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--text-main);
+        font-weight: 600;
+        transition: var(--transition);
+      }
+      .folder-header:hover {
+        background: rgba(79, 70, 229, 0.05);
+      }
+      .toggle-icon {
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+        color: var(--text-muted);
+        transition: transform 0.2s;
+      }
+      .toggle-icon.open {
+        transform: rotate(90deg);
+      }
+      .folder-icon {
+        color: var(--folder);
+        font-size: 1.2rem;
+      }
+      .folder-children {
+        margin-left: 28px;
+        border-left: 1.5px solid var(--border);
+        padding-left: 8px;
+      }
+      .folder-children.collapsed {
+        display: none;
+      }
+      .file-item {
+        margin: 2px 0;
+        padding: 8px 12px 8px 30px;
+        border-radius: 8px;
+        transition: var(--transition);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .file-item:hover {
+        background: rgba(79, 70, 229, 0.08);
+        transform: translateX(4px);
+      }
+      .file-link {
+        text-decoration: none;
+        color: var(--text-main);
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex: 1;
+      }
+      .hf-badge {
+        background: var(--hf-badge-bg);
+        color: var(--hf-badge-text);
+        padding: 2px 8px;
+        border-radius: 6px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .gh-badge {
+        background: #e0e7ff;
+        color: #3730a3;
+        padding: 2px 8px;
+        border-radius: 6px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+      .highlight {
+        background: var(--highlight) !important;
+        border-left: 3px solid var(--primary);
+      }
+      mark.text-match {
+        background: rgba(251, 191, 36, 0.4);
+        color: inherit;
+        border-radius: 4px;
+        padding: 0 2px;
+      }
 
-      .stats { margin-top: 40px; padding: 20px; background: var(--bg-light); border-radius: 16px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; font-size: 0.9rem; color: var(--text-muted); }
-      .stat-card { display: flex; flex-direction: column; gap: 5px; }
-      .stat-value { font-weight: 700; color: var(--text-main); font-size: 1.1rem; }
-      .stat-label { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; }
+      .stats {
+        margin-top: 40px;
+        padding: 20px;
+        background: var(--bg-light);
+        border-radius: 16px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        font-size: 0.9rem;
+        color: var(--text-muted);
+      }
+      .stat-card {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+      }
+      .stat-value {
+        font-weight: 700;
+        color: var(--text-main);
+        font-size: 1.1rem;
+      }
+      .stat-label {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
 
       @media (max-width: 640px) {
-        .container { padding: 20px; border-radius: 0; }
-        h1 { font-size: 1.6rem; }
-        .stats { grid-template-columns: 1fr; }
+        .container {
+          padding: 20px;
+          border-radius: 0;
+        }
+        h1 {
+          font-size: 1.6rem;
+        }
+        .stats {
+          grid-template-columns: 1fr;
+        }
       }
     </style>
   </head>
@@ -106,16 +376,33 @@
           <h1>全栈学习资料</h1>
         </div>
         <div class="header-actions">
-          <a href="https://github.com/hfhfn/full_stack_resources" target="_blank" class="icon-btn" title="查看 GitHub 仓库">
-            <svg height="22" width="22" viewBox="0 0 16 16"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path></svg>
+          <a
+            href="https://github.com/hfhfn/full_stack_resources"
+            target="_blank"
+            class="icon-btn"
+            title="查看 GitHub 仓库"
+          >
+            <svg height="22" width="22" viewBox="0 0 16 16">
+              <path
+                fill="currentColor"
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"
+              ></path>
+            </svg>
           </a>
-          <button class="icon-btn" id="themeToggle" title="切换显示模式">🌓</button>
+          <button class="icon-btn" id="themeToggle" title="切换显示模式">
+            🌓
+          </button>
         </div>
       </header>
 
       <section class="search-area">
         <div class="search-wrapper">
-          <input type="text" id="searchInput" placeholder="🔍 搜搜你想找的资料..." autocomplete="off" />
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="🔍 搜搜你想找的资料..."
+            autocomplete="off"
+          />
           <button class="btn btn-clear" id="clearSearch">清空</button>
         </div>
         <div class="filter-tags" id="filterTags">
@@ -145,22 +432,66 @@
       const branch = "main";
 
       const config = {
-        previewExts: ["pdf", "jpg", "jpeg", "png", "gif", "svg", "webp", "txt", "json", "html", "htm"],
-        codeExts: ["py", "java", "cpp", "c", "js", "go", "sh", "ipynb", "md", "bat", "yml", "yaml", "cmd"],
-        archiveExts: ["zip", "rar", "7z", "tar", "gz", "bz2"]
+        previewExts: [
+          "pdf",
+          "jpg",
+          "jpeg",
+          "png",
+          "gif",
+          "svg",
+          "webp",
+          "txt",
+          "json",
+          "html",
+          "htm",
+        ],
+        codeExts: [
+          "py",
+          "java",
+          "cpp",
+          "c",
+          "js",
+          "go",
+          "sh",
+          "ipynb",
+          "md",
+          "bat",
+          "yml",
+          "yaml",
+          "cmd",
+        ],
+        archiveExts: ["zip", "rar", "7z", "tar", "gz", "bz2"],
       };
 
-      let allFiles = []; let currentSearch = ""; let currentFilter = "all";
+      let allFiles = [];
+      let currentSearch = "";
+      let currentFilter = "all";
       let currentTheme = localStorage.getItem("theme") || "light";
 
       function initTheme() {
         document.body.setAttribute("data-theme", currentTheme);
-        document.getElementById("themeToggle").textContent = currentTheme === "light" ? "🌙" : "☀️";
+        document.getElementById("themeToggle").textContent =
+          currentTheme === "light" ? "🌙" : "☀️";
       }
 
       function getFileIcon(n) {
         const ext = n.split(".").pop().toLowerCase();
-        const icons = { pdf: "📕", zip: "📦", rar: "📦", "7z": "📦", py: "🐍", js: "⚡", html: "🌐", md: "📝", txt: "📄", ipynb: "📓", jpg: "🖼️", png: "🖼️", exe: "⚙️", mp4: "🎬" };
+        const icons = {
+          pdf: "📕",
+          zip: "📦",
+          rar: "📦",
+          "7z": "📦",
+          py: "🐍",
+          js: "⚡",
+          html: "🌐",
+          md: "📝",
+          txt: "📄",
+          ipynb: "📓",
+          jpg: "🖼️",
+          png: "🖼️",
+          exe: "⚙️",
+          mp4: "🎬",
+        };
         return icons[ext] || "📄";
       }
 
@@ -177,7 +508,9 @@
         try {
           const regex = new RegExp(`(${query})`, "gi");
           return text.replace(regex, '<mark class="text-match">$1</mark>');
-        } catch (e) { return text; }
+        } catch (e) {
+          return text;
+        }
       }
 
       async function loadData() {
@@ -187,34 +520,41 @@
           const data = await res.json();
           allFiles = data.files || [];
           render();
-        } catch (e) { 
-          document.getElementById("file-list").innerHTML = `<div class="loader" style="color:#ef4444">❌ 加载异常: ${e.message}</div>`;
+        } catch (e) {
+          document.getElementById("file-list").innerHTML =
+            `<div class="loader" style="color:#ef4444">❌ 加载异常: ${e.message}</div>`;
         }
       }
 
       function render() {
         const listContainer = document.getElementById("file-list");
         const lowerSearch = currentSearch.toLowerCase();
-        const filtered = allFiles.filter(f => {
-          const matchSearch = f.name.toLowerCase().includes(lowerSearch) || f.path.toLowerCase().includes(lowerSearch);
+        const filtered = allFiles.filter((f) => {
+          const matchSearch =
+            f.name.toLowerCase().includes(lowerSearch) ||
+            f.path.toLowerCase().includes(lowerSearch);
           const type = getFileType(f);
           const matchFilter = currentFilter === "all" || type === currentFilter;
           return matchSearch && matchFilter;
         });
 
         const tree = buildTree(filtered);
-        listContainer.innerHTML = filtered.length ? renderNode(tree) : '<div class="loader">🔍 暂无匹配项</div>';
+        listContainer.innerHTML = filtered.length
+          ? renderNode(tree)
+          : '<div class="loader">🔍 暂无匹配项</div>';
         renderStats(filtered);
       }
 
       function buildTree(files) {
         const root = { _files: [], _folders: {} };
-        files.forEach(f => {
-          const parts = f.path.split("/"); parts.pop();
+        files.forEach((f) => {
+          const parts = f.path.split("/");
+          parts.pop();
           let current = root;
-          parts.forEach(p => { 
-            if (!current._folders[p]) current._folders[p] = { _files: [], _folders: {} }; 
-            current = current._folders[p]; 
+          parts.forEach((p) => {
+            if (!current._folders[p])
+              current._folders[p] = { _files: [], _folders: {} };
+            current = current._folders[p];
           });
           current._files.push(f);
         });
@@ -225,12 +565,15 @@
         let html = "";
         const lowerSearch = currentSearch.toLowerCase();
 
-        Object.entries(node._folders).sort().forEach(([name, sub]) => {
-          const isDirMatch = lowerSearch && name.toLowerCase().includes(lowerSearch);
-          const highlightClass = isDirMatch ? "highlight" : "";
-          const displayName = highlightText(name, currentSearch);
+        Object.entries(node._folders)
+          .sort()
+          .forEach(([name, sub]) => {
+            const isDirMatch =
+              lowerSearch && name.toLowerCase().includes(lowerSearch);
+            const highlightClass = isDirMatch ? "highlight" : "";
+            const displayName = highlightText(name, currentSearch);
 
-          html += `
+            html += `
             <div class="folder">
               <div class="folder-header ${highlightClass}" onclick="toggleFolder(this)">
                 <span class="toggle-icon ${currentSearch || isDirMatch ? "open" : ""}">▶</span>
@@ -241,38 +584,41 @@
                 ${renderNode(sub, level + 1, !!(currentSearch || isDirMatch))}
               </div>
             </div>`;
-        });
+          });
 
-        node._files.sort((a, b) => a.name.localeCompare(b.name)).forEach(f => {
-          const isFileMatch = lowerSearch && f.name.toLowerCase().includes(lowerSearch);
-          const highlightClass = isFileMatch ? "highlight" : "";
-          const displayName = highlightText(f.name, currentSearch);
-          
-          const ext = f.name.split(".").pop().toLowerCase();
-          
-          // 判断链接逻辑：可预览文件(PDF/图片)直接打开，不可预览(代码)去GitHub Blob
-          let finalUrl = f.url;
-          if (!f.is_hf) {
-            const isPreviewable = config.previewExts.includes(ext);
-            if (isPreviewable) {
-              // GitHub Pages 直接预览路径 (相对于根目录)
-              finalUrl = `./${f.path}`;
-            } else {
-              // 源代码跳转 GitHub Blob 视图
-              finalUrl = `https://github.com/${username}/${repo}/blob/${branch}/${f.path}`;
+        node._files
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .forEach((f) => {
+            const isFileMatch =
+              lowerSearch && f.name.toLowerCase().includes(lowerSearch);
+            const highlightClass = isFileMatch ? "highlight" : "";
+            const displayName = highlightText(f.name, currentSearch);
+
+            const ext = f.name.split(".").pop().toLowerCase();
+
+            // 判断链接逻辑：可预览文件(PDF/图片)直接打开，不可预览(代码)去GitHub Blob
+            let finalUrl = f.url;
+            if (!f.is_hf) {
+              const isPreviewable = config.previewExts.includes(ext);
+              if (isPreviewable) {
+                // GitHub Pages 直接预览路径 (相对于根目录)
+                finalUrl = `./${f.path}`;
+              } else {
+                // 源代码跳转 GitHub Blob 视图
+                finalUrl = `https://github.com/${username}/${repo}/blob/${branch}/${f.path}`;
+              }
             }
-          }
 
-          html += `
+            html += `
             <div class="file-item ${highlightClass}">
-              <a href="${finalUrl}" target="_blank" class="file-link">
+              <a href="${finalUrl}" target="_blank" class="file-link" ${f.is_hf ? "download" : ""}>
                 <span class="file-icon">${getFileIcon(f.name)}</span>
                 <span>${displayName}</span>
                 ${f.is_hf ? `<span class="hf-badge">🤗 HF</span>` : `<span class="gh-badge">📦 Git</span>`}
               </a>
               <div class="file-info">${f.size_mb ? `<span class="file-meta" style="font-size:0.75rem; color:var(--text-muted)">${f.size_mb} MB</span>` : ""}</div>
             </div>`;
-        });
+          });
         return html;
       }
 
@@ -282,8 +628,10 @@
       }
 
       function renderStats(filtered) {
-        const hfCount = filtered.filter(i => i.is_hf).length;
-        const totalSize = filtered.reduce((acc, cr) => acc + (cr.size_mb || 0), 0).toFixed(1);
+        const hfCount = filtered.filter((i) => i.is_hf).length;
+        const totalSize = filtered
+          .reduce((acc, cr) => acc + (cr.size_mb || 0), 0)
+          .toFixed(1);
         const statsElem = document.getElementById("stats");
         if (statsElem) {
           statsElem.innerHTML = `
@@ -295,19 +643,31 @@
 
       document.getElementById("themeToggle").addEventListener("click", () => {
         currentTheme = currentTheme === "light" ? "dark" : "light";
-        localStorage.setItem("theme", currentTheme); initTheme();
+        localStorage.setItem("theme", currentTheme);
+        initTheme();
       });
-      document.getElementById("searchInput").addEventListener("input", (e) => { currentSearch = e.target.value.trim(); render(); });
-      document.getElementById("clearSearch").addEventListener("click", () => { document.getElementById("searchInput").value = ""; currentSearch = ""; render(); });
+      document.getElementById("searchInput").addEventListener("input", (e) => {
+        currentSearch = e.target.value.trim();
+        render();
+      });
+      document.getElementById("clearSearch").addEventListener("click", () => {
+        document.getElementById("searchInput").value = "";
+        currentSearch = "";
+        render();
+      });
       document.getElementById("filterTags").addEventListener("click", (e) => {
         if (e.target.classList.contains("tag")) {
-          document.querySelectorAll(".tag").forEach(t => t.classList.remove("active"));
+          document
+            .querySelectorAll(".tag")
+            .forEach((t) => t.classList.remove("active"));
           e.target.classList.add("active");
-          currentFilter = e.target.dataset.filter; render();
+          currentFilter = e.target.dataset.filter;
+          render();
         }
       });
 
-      initTheme(); loadData();
+      initTheme();
+      loadData();
     </script>
   </body>
 </html>
