@@ -52,14 +52,64 @@ cd full_stack_resources
 
 ## 🔄 文件更新说明
 
-1. **添加文件**: 直接将资料放入仓库目录（支持嵌套文件夹）。
-2. **推送变更**:
-   ```bash
-   git add .
-   git commit -m "Add new resources"
-   git push origin main
+### 添加大文件
+
+1. **将文件放入仓库目录** (>50MB 文件将自动转移至 HuggingFace)
+2. **运行同步脚本** (Windows):
+   ```batch
+   setup.bat
    ```
-3. **自动分发**: GitHub Actions 将自动识别大文件并迁移至 HuggingFace，同时刷新网页清单。
+   或 (Linux/macOS):
+   ```bash
+   bash setup.sh
+   ```
+3. **确认推送**: 脚本会提示确认，自动上传至 HuggingFace 并推送到 GitHub
+4. **结果**:
+   - ✅ 大文件在 HuggingFace 存储
+   - ✅ `.gitignore` 自动添加规则
+   - ✅ `data/file_manifest.json` 自动更新
+   - ✅ Pages 页面显示该文件
+
+### 删除大文件
+
+**重要**: 删除大文件需要主动推送才能在 Pages 页面同步显示，否则会出现"404 Not Found"。
+
+**完整操作步骤**:
+
+1. **本地删除文件**:
+   ```bash
+   rm your_large_file.bin
+   ```
+
+2. **编辑 .gitignore，移除该文件规则**:
+   - 打开 `.gitignore`
+   - 找到 `# [Auto] Large files managed by HuggingFace` 部分
+   - 删除对应的文件行
+
+   示例：如果要删除 `《内容算法：把内容变成价值的效率系统》_闫泽华.pdf`
+   ```
+   # [Auto] Large files managed by HuggingFace
+   # 删除这一行：《内容算法：把内容变成价值的效率系统》_闫泽华.pdf
+   ```
+
+3. **运行同步脚本** (必须):
+   ```batch
+   setup.bat
+   ```
+   脚本会：
+   - 检测 `.gitignore` 变化
+   - 自动从 HuggingFace 删除该文件
+   - 自动从 `manifest.json` 删除该文件条目
+   - **自动提交和推送到 GitHub** ⭐️
+
+4. **验证成功**:
+   - GitHub Actions 运行完毕（查看 Actions 标签）
+   - Pages 页面刷新后，该文件消失
+
+**关键点**:
+- ❌ 不要直接运行 `python scripts/distribute_files.py`（不会推送更新）
+- ✅ 必须用 `setup.bat` 或 `setup.sh`（会自动提交和推送）
+- ⏳ GitHub Actions 同步需要 1-2 分钟
 
 ---
 
