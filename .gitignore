@@ -15,5 +15,8 @@ venv/
 *.swp
 *.swo
 
+# Windows reserved names (git add fails on these)
+nul
+
 # Project specific
 # data/file_manifest.json 必须推送，它是前端导航页的数据源
