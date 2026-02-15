@@ -117,8 +117,9 @@ Both: `padding: 2px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 700
 - Default: `background: var(--bg-light); border: 1px solid var(--border); color: var(--text-muted)`
 - Active: `background: var(--primary); color: white; border-color: var(--primary)`
 - Hover (inactive): `border-color: var(--primary); color: var(--primary)`
-- Required tags (in order): `全部` | `PDF 文档` | `项目源码` | `压缩包`
-- Data attributes: `data-filter="all"` | `"pdf"` | `"code"` | `"archive"`
+- Required tags (in order): `全部` | `PDF 文档` | `项目源码` | `压缩包` | `HF 大文件`
+- Data attributes: `data-filter="all"` | `"pdf"` | `"code"` | `"archive"` | `"hf"`
+- HF filter matches `file.isHF === true` (not by extension, but by storage source)
 
 ### File Tree
 - Folder header: `font-weight: 600`, toggle icon `▶` rotates 90deg when open

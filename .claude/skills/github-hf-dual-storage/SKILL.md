@@ -68,7 +68,7 @@ Non-negotiable UI requirements:
 - H1 gradient text (`--primary` → `#ec4899`), `font-size: 2.5rem`
 - 3 header icon buttons: GitHub, HuggingFace 🤗, theme toggle (`gap: 8px`)
 - Visible "清空" clear button (NOT hidden toggle); clear must focus input after clearing
-- Filter tag pills: 全部 / PDF 文档 / 项目源码 / 压缩包
+- Filter tag pills: 全部 / PDF 文档 / 项目源码 / 压缩包 / HF 大文件
 - File-type icons (📕📦🐍⚡🌐📝📄📓🖼️🎬📊)
 - Dual badges: `🤗 HF` (amber) and `📦 Git` (indigo)
 - Stats footer grid: 文件总数 / GitHub 文件 / HuggingFace 大文件 / 资料总体积 (exactly 4 cards)
