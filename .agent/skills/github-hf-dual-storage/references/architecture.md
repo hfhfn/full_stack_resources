@@ -168,3 +168,25 @@ Result: Atomic operation, consistent state
 - **Sync Deletion**: O(hf_files) where hf_files = files on HuggingFace
 - **Manifest Generation**: O(n) with sorting overhead
 - **Total Run Time**: Typically 30-60s for typical repos (varies by file size and network)
+
+## 8. Best Practices
+
+- **鉴权**: 优先使用 `HF_TOKEN` 环境变量；本地开发可通过 `huggingface-cli login` 交互登录。
+- **删除文件**: 删除本地文件后直接运行 `setup.bat`/`setup.sh`，脚本自动处理 `.gitignore` 清理、HF 远程删除和 manifest 更新，无需手动编辑。
+- **定期清理**: 利用 GitHub Actions `schedule` 触发器 (每周日 0:00 UTC) 自动同步删除，节省 HuggingFace 存储空间。
+- **文档维护**: 始终提供清晰的 `README.md` 以便协同开发者理解分发逻辑与 Secret 配置。
+
+## 9. Version Changelog (Detailed)
+
+### v4.1: 智能 .gitignore 删除 + 时间戳保留 (2026-02-15)
+
+| 特性 | v3.2 (旧) | v4.1 (新) |
+|------|-----------|-----------|
+| `.gitignore` 规则清理 | 用户需手动编辑，删除已删除文件的规则 | 脚本检测本地文件是否存在，自动移除不存在文件的规则 |
+| GitHub Actions 控制权 | 自动提交/推送 manifest，导致覆盖用户更新 | 仅运行同步逻辑，不提交任何更改，用户本地完全掌控 |
+| 时间戳管理 | 每次运行都更新时间戳，导致无必要的 diff | 仅当文件内容或数量变化时更新时间戳 |
+| HF 404 处理 | 删除已不存在的文件时报错 | 404 视为成功 (文件已删除 = 预期状态) |
+| Manifest 范围 | 仅含大文件 | 全量文件 (大+小)，带 `is_hf` 字段区分 |
+| URL 编码 | 不处理中文路径 | `urllib.parse.quote` 编码，支持中文路径 |
+| 日志系统 | `print()` | `logging` 模块，文件+控制台双输出 |
+| 重试机制 | 无 | `retry()` 装饰器，3 次重试，指数退避 |

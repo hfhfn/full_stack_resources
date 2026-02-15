@@ -25,8 +25,8 @@ cd ${GITHUB_REPO_NAME}
 ```
 
 **一键配置：**
-- **Windows**: 双击或运行 `scripts\setup.bat`
-- **Linux/macOS**: 运行 `bash scripts/setup.sh`
+- **Windows**: 双击或运行 `setup.bat`
+- **Linux/macOS**: 运行 `bash setup.sh`
 
 > 该脚本将引导您完成 HuggingFace 认证、大文件首次分发及 Git 自动关联。
 
