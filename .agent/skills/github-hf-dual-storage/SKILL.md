@@ -65,17 +65,22 @@ index.html, **always read** [`references/ui-spec.md`](references/ui-spec.md) fir
 
 Non-negotiable UI requirements:
 - Glassmorphism container with `backdrop-filter: blur(12px)`
-- H1 gradient text (`--primary` → `#ec4899`)
-- 3 header icon buttons: GitHub, HuggingFace 🤗, theme toggle
-- Visible "清空" clear button (NOT hidden toggle)
+- H1 gradient text (`--primary` → `#ec4899`), `font-size: 2.5rem`
+- 3 header icon buttons: GitHub, HuggingFace 🤗, theme toggle (`gap: 8px`)
+- Visible "清空" clear button (NOT hidden toggle); clear must focus input after clearing
 - Filter tag pills: 全部 / PDF 文档 / 项目源码 / 压缩包
 - File-type icons (📕📦🐍⚡🌐📝📄📓🖼️🎬📊)
 - Dual badges: `🤗 HF` (amber) and `📦 Git` (indigo)
-- Stats footer grid: 文件总数 / GitHub 文件 / HuggingFace 大文件 / 资料总体积
+- Stats footer grid: 文件总数 / GitHub 文件 / HuggingFace 大文件 / 资料总体积 (exactly 4 cards)
 - Theme persistence via `localStorage`
-- Search highlighting with yellow accent bar
+- Skeleton shimmer loading animation (NOT plain text loader): 5 animated bars with `@keyframes shimmer`
+- Search text highlighting: `highlightText()` with regex escaping → `<mark class="text-match">` on folder names and file names
+- Search row-level highlighting with yellow accent bar (`var(--highlight)` + `border-left: 3px solid var(--primary)`)
+- GitHub API fallback: parallel fetch manifest + GitHub Trees API; use API only when manifest fails/empty
+- HF file links must include `download` attribute
+- Folder display names must end with trailing `/`
 - `hiddenRootFolders: ["data", "scripts"]`
-- Mobile responsive (<=640px breakpoint)
+- Mobile responsive (<=640px breakpoint, `h1: 1.8rem`)
 
 ## Backend Architecture
 
@@ -87,3 +92,4 @@ Key guarantees:
 - **Idempotency**: Multiple runs without changes = no extra commits
 - **Sync integrity**: Local delete → auto-remove from HF + .gitignore + manifest
 - **404 tolerance**: Deleting already-deleted HF files treated as success
+- **CI/fresh-clone safety**: `skip_deletion` when no local large files but .gitignore has rules

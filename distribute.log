@@ -603,3 +603,14 @@ A file with the name "《内容算法：把内容变成价值的效率系统》_
 2026-02-15 17:27:09,544 [INFO] [OK] Manifest generated with 2675 total files
 2026-02-15 17:27:09,544 [INFO] 
 [OK] All steps complete in 3.2s! Ready for git push.
+2026-02-15 17:53:12,557 [INFO] Scanning files (Threshold: 50MB)...
+2026-02-15 17:53:13,306 [INFO] Stats: 0 large files, 2675 small files
+2026-02-15 17:53:13,307 [INFO] Checking for redundant files on HuggingFace (hfhfn/full_stack_resources)...
+2026-02-15 17:53:15,659 [INFO] No redundant files found.
+2026-02-15 17:53:15,659 [INFO] Processing Git tracking & .gitignore...
+2026-02-15 17:53:15,661 [INFO] Updated .gitignore with 0 rules (new: 0, removed: 0)
+2026-02-15 17:53:15,661 [INFO] Generating full manifest (data/file_manifest.json)...
+2026-02-15 17:53:15,815 [INFO]     (Timestamp preserved - no content changes)
+2026-02-15 17:53:15,841 [INFO] [OK] Manifest generated with 2675 total files
+2026-02-15 17:53:15,842 [INFO] 
+[OK] All steps complete in 3.3s! Ready for git push.
