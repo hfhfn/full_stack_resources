@@ -5,7 +5,12 @@
       "mcp__serena__think_about_task_adherence",
       "mcp__serena__think_about_whether_you_are_done",
       "Bash(ls:*)",
-      "Bash(git config:*)"
+      "Bash(git config:*)",
+      "Bash(git rm:*)",
+      "Bash(git check-ignore:*)",
+      "Bash(git add:*)",
+      "Bash(git commit --amend -m \"$\\(cat <<''EOF''\nAuto update: fix gitignore escaping for bracket chars, add longpaths support\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\n同步skills: gitignore转义修复写入模板和文档\n\n- distribute_files.py.template: 添加 escape_gitignore/unescape_gitignore 函数\n- SKILL.md: 新增 gitignore escaping 保障条目\n- architecture.md: 新增 v4.1.1 特性说明、错误处理表项、版本记录\n\nCo-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>\nEOF\n\\)\")"
     ]
   }
 }
