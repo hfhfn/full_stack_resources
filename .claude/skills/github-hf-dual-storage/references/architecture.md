@@ -36,12 +36,14 @@ A modern, glassmorphism-styled web interface that:
 - Supports dark mode, searching, and type filtering.
 - **v4.2**: Header includes GitHub link, HuggingFace dataset link (🤗 button), and theme toggle.
 
-### 2.3 GitHub Pages: `.nojekyll`
+### 2.3 GitHub Pages: `.nojekyll` + `deploy-pages.yml`
 
-- **v4.2**: An empty `.nojekyll` file in the repository root bypasses Jekyll processing.
+- **v4.2**: An empty `.nojekyll` file in the repository root signals Jekyll bypass.
+- **v4.2**: A dedicated `deploy-pages.yml` workflow deploys static files directly via `actions/deploy-pages`, replacing the default Jekyll build pipeline.
 - Required because Jekyll cannot handle filenames with CJK characters or special symbols (e.g., `开篇词｜用好A_B测试.html`).
 - Without it, Jekyll build failures cause GitHub Pages to stall on old content.
-- `setup.bat`/`setup.sh` automatically create this file if missing.
+- `setup.bat`/`setup.sh` automatically create `.nojekyll` if missing.
+- **Setup requirement**: GitHub Settings > Pages > Source must be set to **"GitHub Actions"** (not "Deploy from a branch").
 
 ### 2.4 Orchestration: `setup.bat` / `setup.sh` (v4.2)
 
@@ -64,6 +66,17 @@ GitHub Actions workflow with read-only model:
 - **v4.1 Model**: Read-only - script runs but does NOT commit or push
 - **Reasoning**: Prevents GitHub Actions from overwriting user's local updates with stale versions
 - **Responsibility Model**: User (local) controls all commits, GitHub Actions only validates
+
+### 2.6 Deployment: `.github/workflows/deploy-pages.yml` (v4.2)
+
+Static GitHub Pages deployment (bypasses Jekyll entirely):
+
+- **Triggers**: On push to main branch
+- **Purpose**: Deploy repository as static site to GitHub Pages without Jekyll processing
+- **v4.2**: Replaces default Jekyll build with `actions/upload-pages-artifact` + `actions/deploy-pages`
+- **Why needed**: Jekyll fails on CJK filenames and special characters; static deployment serves all files as-is
+- **Requires**: GitHub Settings > Pages > Source set to "GitHub Actions"
+- **Concurrency**: Uses `cancel-in-progress: false` to ensure deployments complete
 
 ## 3. Workflow Architecture
 
@@ -195,7 +208,7 @@ Result: Atomic operation, consistent state
 
 | 特性 | v4.1 (旧) | v4.2 (新) |
 |------|-----------|-----------|
-| GitHub Pages 兼容 | 依赖 Jekyll 默认构建，中文文件名导致构建失败 | 自动创建 `.nojekyll`，跳过 Jekyll 直接提供静态文件 |
+| GitHub Pages 兼容 | 依赖 Jekyll 默认构建，中文文件名导致构建失败 | `.nojekyll` + `deploy-pages.yml` 静态部署，彻底跳过 Jekyll |
 | HuggingFace 入口 | 页面无直接链接到 HF 数据集 | Header 添加 🤗 按钮，一键跳转 HF 数据集页面 |
 | Setup 步骤 | 7 步 (检查→依赖→同步→分发→提交→推送) | 8 步 (新增 .nojekyll 检查步骤) |
 

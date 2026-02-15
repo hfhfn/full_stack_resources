@@ -14,7 +14,12 @@
       "mcp__serena__get_symbols_overview",
       "mcp__serena__think_about_collected_information",
       "Bash(del \"\\\\?\\\\D:\\\\工作\\\\其他笔记&资料\\\\github仓库资料\\\\full_stack_resources\\\\nul\")",
-      "Bash(cmd /c \"del \"\"\\\\?\\\\D:\\\\工作\\\\其他笔记&资料\\\\github仓库资料\\\\full_stack_resources\\\\nul\"\"\")"
+      "Bash(cmd /c \"del \"\"\\\\?\\\\D:\\\\工作\\\\其他笔记&资料\\\\github仓库资料\\\\full_stack_resources\\\\nul\"\"\")",
+      "Bash(cmd /c \"cd /d \"\"D:\\\\工作\\\\其他笔记&资料\\\\github仓库资料\\\\full_stack_resources\"\" && gh api repos/hfhfn/full_stack_resources/pages\")",
+      "Bash(cmd /c \"gh api repos/hfhfn/full_stack_resources/pages 2>&1\")",
+      "Bash(where:*)",
+      "Bash(gh:*)",
+      "Bash(powershell -Command:*)"
     ]
   }
 }

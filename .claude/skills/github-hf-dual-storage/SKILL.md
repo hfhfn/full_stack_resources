@@ -32,7 +32,7 @@ metadata:
 - **只读 CI**: GitHub Actions 仅同步 HF，不提交/推送，避免覆盖用户本地更新
 - **智能时间戳**: Manifest 仅在文件内容或数量变化时更新，避免无意义 diff
 - **统一 UI**: 玻璃拟态界面，支持暗色模式、文件夹匹配搜索、类型过滤、HF 徽章与 HF 数据集入口按钮
-- **Pages 兼容**: 自动创建 `.nojekyll`，确保中文/特殊字符文件名的仓库在 GitHub Pages 正常部署
+- **Pages 兼容**: `.nojekyll` + `deploy-pages.yml` 静态部署，彻底绕过 Jekyll，支持中文/特殊字符文件名
 - **一键脚本**: `setup.bat`/`setup.sh` 包含 HF 认证、autostash 同步、.nojekyll 检查、分发、提交、推送全流程
 
 ## References
