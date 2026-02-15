@@ -82,7 +82,7 @@ def scan_files():
         if any(ex in parts for ex in EXCLUDE_DIRS): continue # 排除目录
         if 'scripts' in parts: continue # 明确排除 scripts 文件夹
         if 'data' in parts: continue # 排除清单存储目录
-        if path.name in ['index.html', 'README.md', 'setup.bat', 'setup.sh', 'distribute.log', '.gitignore', '.gitattributes']: continue
+        if path.parent == PROJECT_ROOT and path.name in ['index.html', 'README.md', 'setup.bat', 'setup.sh', 'distribute.log', '.gitignore', '.gitattributes', '.nojekyll']: continue
 
         try:
             info = get_file_info(path)

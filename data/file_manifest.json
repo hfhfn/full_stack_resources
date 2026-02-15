@@ -1,6 +1,6 @@
 {
   "hf_repo_id": "hfhfn/full_stack_resources",
-  "updated_at": "2026-02-15 13:25:01",
+  "updated_at": "2026-02-15 14:46:26",
   "files": [
     {
       "name": "开篇词｜用好A_B测试，你得这么学.html",
@@ -615,6 +615,15 @@
       "last_modified": "2026-02-15 11:52:19"
     },
     {
+      "name": "index.html",
+      "path": "02-前端/vue_basic/index.html",
+      "extension": "html",
+      "size_mb": 0.01,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/02-%E5%89%8D%E7%AB%AF/vue_basic/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:14"
+    },
+    {
       "name": "app.js",
       "path": "02-前端/vue组件/gitbook/app.js",
       "extension": "js",
@@ -730,6 +739,15 @@
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/02-%E5%89%8D%E7%AB%AF/vue%E7%BB%84%E4%BB%B6/gitbook/style.css",
       "is_hf": false,
       "last_modified": "2026-02-15 11:49:23"
+    },
+    {
+      "name": "index.html",
+      "path": "02-前端/vue组件/index.html",
+      "extension": "html",
+      "size_mb": 0.02,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/02-%E5%89%8D%E7%AB%AF/vue%E7%BB%84%E4%BB%B6/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:20"
     },
     {
       "name": "Snip20190404_1.png",
@@ -993,6 +1011,15 @@
       "last_modified": "2026-02-15 11:50:58"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/01-Python基础/file/1/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/file/1/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:21"
+    },
+    {
       "name": "section.0.html",
       "path": "03-python语言/01-Python基础/file/1/section.0.html",
       "extension": "html",
@@ -1092,11 +1119,29 @@
       "last_modified": "2026-02-15 11:51:22"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/01-Python基础/file/12/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/file/12/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:31"
+    },
+    {
       "name": "section.1.html",
       "path": "03-python语言/01-Python基础/file/12/section.1.html",
       "extension": "html",
       "size_mb": 0.08,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/file/12/section.1.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:31"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/01-Python基础/file/13/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/file/13/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:51:31"
     },
@@ -1117,6 +1162,24 @@
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/file/13/section.1md",
       "is_hf": false,
       "last_modified": "2026-02-15 11:51:31"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/01-Python基础/file/14/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/file/14/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:31"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/01-Python基础/file/2/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/file/2/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:22"
     },
     {
       "name": "section.1.html",
@@ -1261,6 +1324,15 @@
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/file/3/100.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:51:23"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/01-Python基础/file/3/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/file/3/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:25"
     },
     {
       "name": "section.1.0.md",
@@ -1439,6 +1511,15 @@
       "extension": "html",
       "size_mb": 0.06,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/file/4/README-2.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:24"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/01-Python基础/file/4/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/file/4/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:51:24"
     },
@@ -1659,6 +1740,15 @@
       "last_modified": "2026-02-15 11:51:27"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/01-Python基础/file/5/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/file/5/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:27"
+    },
+    {
       "name": "section.1.html",
       "path": "03-python语言/01-Python基础/file/5/section.1.html",
       "extension": "html",
@@ -1783,6 +1873,15 @@
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/file/5/section.99.md",
       "is_hf": false,
       "last_modified": "2026-02-15 11:51:27"
+    },
+    {
+      "name": "README.md",
+      "path": "03-python语言/01-Python基础/file/55/README.md",
+      "extension": "md",
+      "size_mb": 0.0,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/file/55/README.md",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:30"
     },
     {
       "name": "section.1.md",
@@ -1999,6 +2098,15 @@
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/file/6/0.md",
       "is_hf": false,
       "last_modified": "2026-02-15 11:51:26"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/01-Python基础/file/6/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/file/6/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:27"
     },
     {
       "name": "section.1.html",
@@ -2321,6 +2429,15 @@
       "extension": "html",
       "size_mb": 0.06,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/file/66/0.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:32"
+    },
+    {
+      "name": "README.md",
+      "path": "03-python语言/01-Python基础/file/66/README.md",
+      "extension": "md",
+      "size_mb": 0.0,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/file/66/README.md",
       "is_hf": false,
       "last_modified": "2026-02-15 11:51:32"
     },
@@ -2667,6 +2784,15 @@
       "last_modified": "2026-02-15 11:51:29"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/01-Python基础/file/7/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/file/7/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:29"
+    },
+    {
       "name": "section.1.md",
       "path": "03-python语言/01-Python基础/file/7/section.1.md",
       "extension": "md",
@@ -2816,6 +2942,15 @@
       "extension": "md",
       "size_mb": 0.0,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/file/77/0.md",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:32"
+    },
+    {
+      "name": "README.md",
+      "path": "03-python语言/01-Python基础/file/77/README.md",
+      "extension": "md",
+      "size_mb": 0.0,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/file/77/README.md",
       "is_hf": false,
       "last_modified": "2026-02-15 11:51:32"
     },
@@ -3025,6 +3160,15 @@
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/file/77/section.99.md",
       "is_hf": false,
       "last_modified": "2026-02-15 11:51:34"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/01-Python基础/file/8/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/file/8/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:30"
     },
     {
       "name": "section.1.md",
@@ -5979,6 +6123,15 @@
       "last_modified": "2026-02-15 11:51:00"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/01-Python基础/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/01-Python%E5%9F%BA%E7%A1%80/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:50:58"
+    },
+    {
       "name": "search_index.json",
       "path": "03-python语言/01-Python基础/search_index.json",
       "extension": "json",
@@ -6402,6 +6555,15 @@
       "last_modified": "2026-02-15 11:51:48"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/02-Python高级(含linux)/html+css/index.html",
+      "extension": "html",
+      "size_mb": 0.04,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/02-Python%E9%AB%98%E7%BA%A7%28%E5%90%ABlinux%29/html%2Bcss/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:02"
+    },
+    {
       "name": "vscode的基本使用.html",
       "path": "03-python语言/02-Python高级(含linux)/html+css/vscode的基本使用.html",
       "extension": "html",
@@ -6663,6 +6825,15 @@
       "last_modified": "2026-02-15 11:51:48"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/02-Python高级(含linux)/http/index.html",
+      "extension": "html",
+      "size_mb": 0.04,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/02-Python%E9%AB%98%E7%BA%A7%28%E5%90%ABlinux%29/http/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:03"
+    },
+    {
       "name": "搭建Python自带静态Web服务器.html",
       "path": "03-python语言/02-Python高级(含linux)/http/搭建Python自带静态Web服务器.html",
       "extension": "html",
@@ -6724,6 +6895,15 @@
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/02-Python%E9%AB%98%E7%BA%A7%28%E5%90%ABlinux%29/http/%E9%9D%99%E6%80%81Web%E6%9C%8D%E5%8A%A1%E5%99%A8-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E5%BC%80%E5%8F%91.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:51:04"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/02-Python高级(含linux)/index.html",
+      "extension": "html",
+      "size_mb": 0.04,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/02-Python%E9%AB%98%E7%BA%A7%28%E5%90%ABlinux%29/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:50:58"
     },
     {
       "name": "Linux内核及发行版.html",
@@ -7228,6 +7408,15 @@
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/02-Python%E9%AB%98%E7%BA%A7%28%E5%90%ABlinux%29/linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/imgs/xnjzy.png",
       "is_hf": false,
       "last_modified": "2026-02-15 11:51:57"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/02-Python高级(含linux)/linux基础命令/index.html",
+      "extension": "html",
+      "size_mb": 0.04,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/02-Python%E9%AB%98%E7%BA%A7%28%E5%90%ABlinux%29/linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:04"
     },
     {
       "name": "ls命令选项.html",
@@ -8184,6 +8373,15 @@
       "last_modified": "2026-02-15 11:51:51"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/02-Python高级(含linux)/linux高级命令/index.html",
+      "extension": "html",
+      "size_mb": 0.04,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/02-Python%E9%AB%98%E7%BA%A7%28%E5%90%ABlinux%29/linux%E9%AB%98%E7%BA%A7%E5%91%BD%E4%BB%A4/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:04"
+    },
+    {
       "name": "压缩和解压缩命令.html",
       "path": "03-python语言/02-Python高级(含linux)/linux高级命令/压缩和解压缩命令.html",
       "extension": "html",
@@ -8373,6 +8571,15 @@
       "last_modified": "2026-02-15 11:51:56"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/02-Python高级(含linux)/multitasking/index.html",
+      "extension": "html",
+      "size_mb": 0.04,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/02-Python%E9%AB%98%E7%BA%A7%28%E5%90%ABlinux%29/multitasking/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:05"
+    },
+    {
       "name": "互斥锁的使用.html",
       "path": "03-python语言/02-Python高级(含linux)/multitasking/互斥锁的使用.html",
       "extension": "html",
@@ -8488,6 +8695,15 @@
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/02-Python%E9%AB%98%E7%BA%A7%28%E5%90%ABlinux%29/multitasking/%E8%BF%9B%E7%A8%8B%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:51:05"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/02-Python高级(含linux)/multitasking2/index.html",
+      "extension": "html",
+      "size_mb": 0.04,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/02-Python%E9%AB%98%E7%BA%A7%28%E5%90%ABlinux%29/multitasking2/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:06"
     },
     {
       "name": "IP地址的介绍.html",
@@ -8697,6 +8913,15 @@
       "last_modified": "2026-02-15 11:51:58"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/02-Python高级(含linux)/network/index.html",
+      "extension": "html",
+      "size_mb": 0.04,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/02-Python%E9%AB%98%E7%BA%A7%28%E5%90%ABlinux%29/network/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:06"
+    },
+    {
       "name": "socket之send和recv原理剖析.html",
       "path": "03-python语言/02-Python高级(含linux)/network/socket之send和recv原理剖析.html",
       "extension": "html",
@@ -8740,6 +8965,15 @@
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/03-Python%E9%AB%98%E7%BA%A72%28%E5%90%ABjs%26mysql%29/Python%E9%AB%98%E7%BA%A72.pdf",
       "is_hf": false,
       "last_modified": "2026-02-15 11:50:48"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/03-Python高级2(含js&mysql)/closure&decorator/index.html",
+      "extension": "html",
+      "size_mb": 0.05,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/03-Python%E9%AB%98%E7%BA%A72%28%E5%90%ABjs%26mysql%29/closure%26decorator/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:06"
     },
     {
       "name": "修改闭包内使用的外部变量.html",
@@ -9255,6 +9489,15 @@
       "last_modified": "2026-02-15 11:51:59"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/03-Python高级2(含js&mysql)/html+css/index.html",
+      "extension": "html",
+      "size_mb": 0.05,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/03-Python%E9%AB%98%E7%BA%A72%28%E5%90%ABjs%26mysql%29/html%2Bcss/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:08"
+    },
+    {
       "name": "vscode的基本使用.html",
       "path": "03-python语言/03-Python高级2(含js&mysql)/html+css/vscode的基本使用.html",
       "extension": "html",
@@ -9327,6 +9570,15 @@
       "last_modified": "2026-02-15 11:51:08"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/03-Python高级2(含js&mysql)/index.html",
+      "extension": "html",
+      "size_mb": 0.05,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/03-Python%E9%AB%98%E7%BA%A72%28%E5%90%ABjs%26mysql%29/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:50:58"
+    },
+    {
       "name": "JavaScript的介绍.html",
       "path": "03-python语言/03-Python高级2(含js&mysql)/javascript/JavaScript的介绍.html",
       "extension": "html",
@@ -9352,6 +9604,15 @@
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/03-Python%E9%AB%98%E7%BA%A72%28%E5%90%ABjs%26mysql%29/javascript/imgs/html%E5%9F%BA%E6%9C%AC%E7%BB%93%E6%9E%84.png",
       "is_hf": false,
       "last_modified": "2026-02-15 11:51:59"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/03-Python高级2(含js&mysql)/javascript/index.html",
+      "extension": "html",
+      "size_mb": 0.05,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/03-Python%E9%AB%98%E7%BA%A72%28%E5%90%ABjs%26mysql%29/javascript/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:08"
     },
     {
       "name": "函数定义和调用.html",
@@ -9471,6 +9732,15 @@
       "last_modified": "2026-02-15 11:51:59"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/03-Python高级2(含js&mysql)/jquery/index.html",
+      "extension": "html",
+      "size_mb": 0.05,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/03-Python%E9%AB%98%E7%BA%A72%28%E5%90%ABjs%26mysql%29/jquery/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:09"
+    },
+    {
       "name": "jQuery事件.html",
       "path": "03-python语言/03-Python高级2(含js&mysql)/jquery/jQuery事件.html",
       "extension": "html",
@@ -9586,6 +9856,15 @@
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/03-Python%E9%AB%98%E7%BA%A72%28%E5%90%ABjs%26mysql%29/miniweb/imgs/%E6%97%A5%E5%BF%97%E6%96%87%E4%BB%B6.png",
       "is_hf": false,
       "last_modified": "2026-02-15 11:51:59"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/03-Python高级2(含js&mysql)/miniweb/index.html",
+      "extension": "html",
+      "size_mb": 0.05,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/03-Python%E9%AB%98%E7%BA%A72%28%E5%90%ABjs%26mysql%29/miniweb/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:10"
     },
     {
       "name": "logging日志.html",
@@ -9957,6 +10236,15 @@
       "last_modified": "2026-02-15 11:52:01"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/03-Python高级2(含js&mysql)/mysqlbase/index.html",
+      "extension": "html",
+      "size_mb": 0.05,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/03-Python%E9%AB%98%E7%BA%A72%28%E5%90%ABjs%26mysql%29/mysqlbase/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:11"
+    },
+    {
       "name": "where条件查询.html",
       "path": "03-python语言/03-Python高级2(含js&mysql)/mysqlbase/where条件查询.html",
       "extension": "html",
@@ -10054,6 +10342,15 @@
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/03-Python%E9%AB%98%E7%BA%A72%28%E5%90%ABjs%26mysql%29/mysqlhigh/imgs/%E8%A1%A8%E7%9A%84%E5%AD%98%E5%82%A8%E5%BC%95%E6%93%8E.png",
       "is_hf": false,
       "last_modified": "2026-02-15 11:52:00"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/03-Python高级2(含js&mysql)/mysqlhigh/index.html",
+      "extension": "html",
+      "size_mb": 0.05,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/03-Python%E9%AB%98%E7%BA%A72%28%E5%90%ABjs%26mysql%29/mysqlhigh/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:11"
     },
     {
       "name": "事务.html",
@@ -10218,6 +10515,15 @@
       "last_modified": "2026-02-15 11:52:02"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/03-Python高级2(含js&mysql)/mysqlquery/index.html",
+      "extension": "html",
+      "size_mb": 0.05,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/03-Python%E9%AB%98%E7%BA%A72%28%E5%90%ABjs%26mysql%29/mysqlquery/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:12"
+    },
+    {
       "name": "内连接.html",
       "path": "03-python语言/03-Python高级2(含js&mysql)/mysqlquery/内连接.html",
       "extension": "html",
@@ -10304,6 +10610,15 @@
       "extension": "html",
       "size_mb": 0.05,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/03-Python%E9%AB%98%E7%BA%A72%28%E5%90%ABjs%26mysql%29/mysqlquery/%E8%87%AA%E8%BF%9E%E6%8E%A5.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:12"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/03-Python高级2(含js&mysql)/regular/index.html",
+      "extension": "html",
+      "size_mb": 0.05,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/03-Python%E9%AB%98%E7%BA%A72%28%E5%90%ABjs%26mysql%29/regular/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:51:12"
     },
@@ -10443,6 +10758,15 @@
       "last_modified": "2026-02-15 12:16:30"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/04-Django框架/C01-CreateProject/index.html",
+      "extension": "html",
+      "size_mb": 0.03,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/04-Django%E6%A1%86%E6%9E%B6/C01-CreateProject/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 12:16:30"
+    },
+    {
       "name": "Settings.html",
       "path": "03-python语言/04-Django框架/C02-SettingsStaticAndURL/Settings.html",
       "extension": "html",
@@ -10466,6 +10790,15 @@
       "extension": "html",
       "size_mb": 0.04,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/04-Django%E6%A1%86%E6%9E%B6/C02-SettingsStaticAndURL/URL.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 12:16:30"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/04-Django框架/C02-SettingsStaticAndURL/index.html",
+      "extension": "html",
+      "size_mb": 0.03,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/04-Django%E6%A1%86%E6%9E%B6/C02-SettingsStaticAndURL/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 12:16:30"
     },
@@ -10524,6 +10857,15 @@
       "last_modified": "2026-02-15 12:16:31"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/04-Django框架/C03-RequestAndResponse/index.html",
+      "extension": "html",
+      "size_mb": 0.03,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/04-Django%E6%A1%86%E6%9E%B6/C03-RequestAndResponse/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 12:16:30"
+    },
+    {
       "name": "ClassView.html",
       "path": "03-python语言/04-Django框架/C04-ClassViewAndMiddleware/ClassView.html",
       "extension": "html",
@@ -10578,11 +10920,29 @@
       "last_modified": "2026-02-15 12:16:31"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/04-Django框架/C04-ClassViewAndMiddleware/index.html",
+      "extension": "html",
+      "size_mb": 0.03,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/04-Django%E6%A1%86%E6%9E%B6/C04-ClassViewAndMiddleware/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 12:16:31"
+    },
+    {
       "name": "csrf.html",
       "path": "03-python语言/04-Django框架/C05-Template/csrf.html",
       "extension": "html",
       "size_mb": 0.03,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/04-Django%E6%A1%86%E6%9E%B6/C05-Template/csrf.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 12:16:31"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/04-Django框架/C05-Template/index.html",
+      "extension": "html",
+      "size_mb": 0.03,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/04-Django%E6%A1%86%E6%9E%B6/C05-Template/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 12:16:31"
     },
@@ -10776,6 +11136,15 @@
       "last_modified": "2026-02-15 12:16:35"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/04-Django框架/C06-Database/index.html",
+      "extension": "html",
+      "size_mb": 0.03,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/04-Django%E6%A1%86%E6%9E%B6/C06-Database/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 12:16:32"
+    },
+    {
       "name": "Config.html",
       "path": "03-python语言/04-Django框架/C07-Admin/Config.html",
       "extension": "html",
@@ -10808,6 +11177,15 @@
       "extension": "html",
       "size_mb": 0.03,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/04-Django%E6%A1%86%E6%9E%B6/C07-Admin/UploadImage.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 12:16:32"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/04-Django框架/C07-Admin/index.html",
+      "extension": "html",
+      "size_mb": 0.03,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/04-Django%E6%A1%86%E6%9E%B6/C07-Admin/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 12:16:32"
     },
@@ -11631,6 +12009,15 @@
       "last_modified": "2026-02-15 12:16:35"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/04-Django框架/index.html",
+      "extension": "html",
+      "size_mb": 0.03,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/04-Django%E6%A1%86%E6%9E%B6/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 12:16:30"
+    },
+    {
       "name": "AboutDRF.html",
       "path": "03-python语言/05-DjangoRESTframework/C01-IntroduceToDRF/AboutDRF.html",
       "extension": "html",
@@ -11685,6 +12072,15 @@
       "last_modified": "2026-02-15 12:17:41"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/05-DjangoRESTframework/C01-IntroduceToDRF/index.html",
+      "extension": "html",
+      "size_mb": 0.02,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/05-DjangoRESTframework/C01-IntroduceToDRF/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 12:17:42"
+    },
+    {
       "name": "InstallAndConfig.html",
       "path": "03-python语言/05-DjangoRESTframework/C02-DRFProject/InstallAndConfig.html",
       "extension": "html",
@@ -11699,6 +12095,15 @@
       "extension": "md",
       "size_mb": 0.0,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/05-DjangoRESTframework/C02-DRFProject/TheFirstDRFProgram.md",
+      "is_hf": false,
+      "last_modified": "2026-02-15 12:17:42"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/05-DjangoRESTframework/C02-DRFProject/index.html",
+      "extension": "html",
+      "size_mb": 0.02,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/05-DjangoRESTframework/C02-DRFProject/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 12:17:42"
     },
@@ -11735,6 +12140,15 @@
       "extension": "html",
       "size_mb": 0.03,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/05-DjangoRESTframework/C03-Serializer/Serializing.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 12:17:42"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/05-DjangoRESTframework/C03-Serializer/index.html",
+      "extension": "html",
+      "size_mb": 0.02,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/05-DjangoRESTframework/C03-Serializer/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 12:17:42"
     },
@@ -11780,6 +12194,15 @@
       "extension": "html",
       "size_mb": 0.03,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/05-DjangoRESTframework/C04-View/ViewSet.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 12:17:42"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/05-DjangoRESTframework/C04-View/index.html",
+      "extension": "html",
+      "size_mb": 0.02,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/05-DjangoRESTframework/C04-View/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 12:17:42"
     },
@@ -11863,6 +12286,15 @@
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/05-DjangoRESTframework/C05-Components/Versioning.md",
       "is_hf": false,
       "last_modified": "2026-02-15 12:17:43"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/05-DjangoRESTframework/C05-Components/index.html",
+      "extension": "html",
+      "size_mb": 0.02,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/05-DjangoRESTframework/C05-Components/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 12:17:42"
     },
     {
       "name": "app.js",
@@ -12171,6 +12603,15 @@
       "last_modified": "2026-02-15 12:17:44"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/05-DjangoRESTframework/index.html",
+      "extension": "html",
+      "size_mb": 0.02,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/05-DjangoRESTframework/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 12:17:42"
+    },
+    {
       "name": "app.js",
       "path": "03-python语言/06-美多商城后台/gitbook/app.js",
       "extension": "js",
@@ -12268,6 +12709,15 @@
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/06-%E7%BE%8E%E5%A4%9A%E5%95%86%E5%9F%8E%E5%90%8E%E5%8F%B0/gitbook/style.css",
       "is_hf": false,
       "last_modified": "2026-02-15 11:52:33"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/06-美多商城后台/index.html",
+      "extension": "html",
+      "size_mb": 0.03,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/06-%E7%BE%8E%E5%A4%9A%E5%95%86%E5%9F%8E%E5%90%8E%E5%8F%B0/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:52:34"
     },
     {
       "name": "admin.png",
@@ -12558,6 +13008,15 @@
       "last_modified": "2026-02-15 11:49:24"
     },
     {
+      "name": "README.md",
+      "path": "03-python语言/07-Flask项目/Flask框架课件(md&html)/C01-CreateProject/README.md",
+      "extension": "md",
+      "size_mb": 0.0,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/Flask%E6%A1%86%E6%9E%B6%E8%AF%BE%E4%BB%B6%28md%26html%29/C01-CreateProject/README.md",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:24"
+    },
+    {
       "name": "StartDevelopmentServer.md",
       "path": "03-python语言/07-Flask项目/Flask框架课件(md&html)/C01-CreateProject/StartDevelopmentServer.md",
       "extension": "md",
@@ -12572,6 +13031,15 @@
       "extension": "md",
       "size_mb": 0.01,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/Flask%E6%A1%86%E6%9E%B6%E8%AF%BE%E4%BB%B6%28md%26html%29/C02-RouterAndBlueprint/Blueprint.md",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:24"
+    },
+    {
+      "name": "README.md",
+      "path": "03-python语言/07-Flask项目/Flask框架课件(md&html)/C02-RouterAndBlueprint/README.md",
+      "extension": "md",
+      "size_mb": 0.0,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/Flask%E6%A1%86%E6%9E%B6%E8%AF%BE%E4%BB%B6%28md%26html%29/C02-RouterAndBlueprint/README.md",
       "is_hf": false,
       "last_modified": "2026-02-15 11:49:24"
     },
@@ -12599,6 +13067,15 @@
       "extension": "md",
       "size_mb": 0.0,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/Flask%E6%A1%86%E6%9E%B6%E8%AF%BE%E4%BB%B6%28md%26html%29/C03-RequestAndResponse/HandleResponse.md",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:26"
+    },
+    {
+      "name": "README.md",
+      "path": "03-python语言/07-Flask项目/Flask框架课件(md&html)/C03-RequestAndResponse/README.md",
+      "extension": "md",
+      "size_mb": 0.0,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/Flask%E6%A1%86%E6%9E%B6%E8%AF%BE%E4%BB%B6%28md%26html%29/C03-RequestAndResponse/README.md",
       "is_hf": false,
       "last_modified": "2026-02-15 11:49:26"
     },
@@ -12639,6 +13116,15 @@
       "last_modified": "2026-02-15 11:49:26"
     },
     {
+      "name": "README.md",
+      "path": "03-python语言/07-Flask项目/Flask框架课件(md&html)/C04-HookAndContext/README.md",
+      "extension": "md",
+      "size_mb": 0.0,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/Flask%E6%A1%86%E6%9E%B6%E8%AF%BE%E4%BB%B6%28md%26html%29/C04-HookAndContext/README.md",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:25"
+    },
+    {
       "name": "AboutRequest.md",
       "path": "03-python语言/07-Flask项目/Flask框架课件(md&html)/C05-Flask-RESTful/AboutRequest.md",
       "extension": "md",
@@ -12673,6 +13159,24 @@
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/Flask%E6%A1%86%E6%9E%B6%E8%AF%BE%E4%BB%B6%28md%26html%29/C05-Flask-RESTful/QuickStart.md",
       "is_hf": false,
       "last_modified": "2026-02-15 11:49:25"
+    },
+    {
+      "name": "README.md",
+      "path": "03-python语言/07-Flask项目/Flask框架课件(md&html)/C05-Flask-RESTful/README.md",
+      "extension": "md",
+      "size_mb": 0.0,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/Flask%E6%A1%86%E6%9E%B6%E8%AF%BE%E4%BB%B6%28md%26html%29/C05-Flask-RESTful/README.md",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:25"
+    },
+    {
+      "name": "README.md",
+      "path": "03-python语言/07-Flask项目/Flask框架课件(md&html)/README.md",
+      "extension": "md",
+      "size_mb": 0.0,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/Flask%E6%A1%86%E6%9E%B6%E8%AF%BE%E4%BB%B6%28md%26html%29/README.md",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:24"
     },
     {
       "name": "SUMMARY.md",
@@ -12729,6 +13233,15 @@
       "last_modified": "2026-02-15 11:49:37"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/07-Flask项目/Flask框架课件(md&html)/_book/C01-CreateProject/index.html",
+      "extension": "html",
+      "size_mb": 0.02,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/Flask%E6%A1%86%E6%9E%B6%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C01-CreateProject/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:37"
+    },
+    {
       "name": "Blueprint.html",
       "path": "03-python语言/07-Flask项目/Flask框架课件(md&html)/_book/C02-RouterAndBlueprint/Blueprint.html",
       "extension": "html",
@@ -12743,6 +13256,15 @@
       "extension": "html",
       "size_mb": 0.02,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/Flask%E6%A1%86%E6%9E%B6%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C02-RouterAndBlueprint/Router.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:37"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/07-Flask项目/Flask框架课件(md&html)/_book/C02-RouterAndBlueprint/index.html",
+      "extension": "html",
+      "size_mb": 0.02,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/Flask%E6%A1%86%E6%9E%B6%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C02-RouterAndBlueprint/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:49:37"
     },
@@ -12774,6 +13296,15 @@
       "last_modified": "2026-02-15 11:49:37"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/07-Flask项目/Flask框架课件(md&html)/_book/C03-RequestAndResponse/index.html",
+      "extension": "html",
+      "size_mb": 0.02,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/Flask%E6%A1%86%E6%9E%B6%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C03-RequestAndResponse/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:37"
+    },
+    {
       "name": "AbortAndErrorhandler.html",
       "path": "03-python语言/07-Flask项目/Flask框架课件(md&html)/_book/C04-HookAndContext/AbortAndErrorhandler.html",
       "extension": "html",
@@ -12797,6 +13328,15 @@
       "extension": "html",
       "size_mb": 0.03,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/Flask%E6%A1%86%E6%9E%B6%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C04-HookAndContext/Hook.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:37"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/07-Flask项目/Flask框架课件(md&html)/_book/C04-HookAndContext/index.html",
+      "extension": "html",
+      "size_mb": 0.02,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/Flask%E6%A1%86%E6%9E%B6%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C04-HookAndContext/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:49:37"
     },
@@ -12835,6 +13375,15 @@
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/Flask%E6%A1%86%E6%9E%B6%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C05-Flask-RESTful/QuickStart.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:49:38"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/07-Flask项目/Flask框架课件(md&html)/_book/C05-Flask-RESTful/index.html",
+      "extension": "html",
+      "size_mb": 0.02,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/Flask%E6%A1%86%E6%9E%B6%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C05-Flask-RESTful/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:37"
     },
     {
       "name": "app.js",
@@ -13206,6 +13755,15 @@
       "last_modified": "2026-02-15 11:49:39"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/07-Flask项目/Flask框架课件(md&html)/_book/index.html",
+      "extension": "html",
+      "size_mb": 0.02,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/Flask%E6%A1%86%E6%9E%B6%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:24"
+    },
+    {
       "name": "search_index.json",
       "path": "03-python语言/07-Flask项目/Flask框架课件(md&html)/_book/search_index.json",
       "extension": "json",
@@ -13467,6 +14025,15 @@
       "last_modified": "2026-02-15 11:49:27"
     },
     {
+      "name": "README.md",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/C01-Introduction/README.md",
+      "extension": "md",
+      "size_mb": 0.0,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/C01-Introduction/README.md",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:27"
+    },
+    {
       "name": "DatabaseOptimize.md",
       "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/C02-Database/DatabaseOptimize.md",
       "extension": "md",
@@ -13499,6 +14066,15 @@
       "extension": "md",
       "size_mb": 0.0,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/C02-Database/ORM.md",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:27"
+    },
+    {
+      "name": "README.md",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/C02-Database/README.md",
+      "extension": "md",
+      "size_mb": 0.0,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/C02-Database/README.md",
       "is_hf": false,
       "last_modified": "2026-02-15 11:49:27"
     },
@@ -13566,6 +14142,15 @@
       "last_modified": "2026-02-15 11:49:27"
     },
     {
+      "name": "README.md",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/C03-Gitflow/README.md",
+      "extension": "md",
+      "size_mb": 0.0,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/C03-Gitflow/README.md",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:28"
+    },
+    {
       "name": "Forbbiden.md",
       "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/C04-JWT/Forbbiden.md",
       "extension": "md",
@@ -13611,6 +14196,15 @@
       "last_modified": "2026-02-15 11:49:28"
     },
     {
+      "name": "README.md",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/C04-JWT/README.md",
+      "extension": "md",
+      "size_mb": 0.0,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/C04-JWT/README.md",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:28"
+    },
+    {
       "name": "CDN.md",
       "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/C05-OSS/CDN.md",
       "extension": "md",
@@ -13625,6 +14219,15 @@
       "extension": "md",
       "size_mb": 0.01,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/C05-OSS/Qiniu.md",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:28"
+    },
+    {
+      "name": "README.md",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/C05-OSS/README.md",
+      "extension": "md",
+      "size_mb": 0.0,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/C05-OSS/README.md",
       "is_hf": false,
       "last_modified": "2026-02-15 11:49:28"
     },
@@ -13692,6 +14295,15 @@
       "last_modified": "2026-02-15 11:49:28"
     },
     {
+      "name": "README.md",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/C06-Cache/README.md",
+      "extension": "md",
+      "size_mb": 0.0,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/C06-Cache/README.md",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:28"
+    },
+    {
       "name": "项目缓存与Redis持久存储设计.md",
       "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/C06-Cache/项目缓存与Redis持久存储设计.md",
       "extension": "md",
@@ -13719,6 +14331,15 @@
       "last_modified": "2026-02-15 11:49:29"
     },
     {
+      "name": "README.md",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/C07-APScheduler/README.md",
+      "extension": "md",
+      "size_mb": 0.0,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/C07-APScheduler/README.md",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:29"
+    },
+    {
       "name": "AboutRPC.md",
       "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/C08-RPC/AboutRPC.md",
       "extension": "md",
@@ -13742,6 +14363,15 @@
       "extension": "md",
       "size_mb": 0.01,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/C08-RPC/ProtocolBuffers.md",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:29"
+    },
+    {
+      "name": "README.md",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/C08-RPC/README.md",
+      "extension": "md",
+      "size_mb": 0.0,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/C08-RPC/README.md",
       "is_hf": false,
       "last_modified": "2026-02-15 11:49:29"
     },
@@ -13796,6 +14426,15 @@
       "extension": "md",
       "size_mb": 0.01,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/C09-IM/MessagePush.md",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:29"
+    },
+    {
+      "name": "README.md",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/C09-IM/README.md",
+      "extension": "md",
+      "size_mb": 0.0,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/C09-IM/README.md",
       "is_hf": false,
       "last_modified": "2026-02-15 11:49:29"
     },
@@ -13908,6 +14547,15 @@
       "last_modified": "2026-02-15 11:49:30"
     },
     {
+      "name": "README.md",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/C10-Elasticsearch/README.md",
+      "extension": "md",
+      "size_mb": 0.0,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/C10-Elasticsearch/README.md",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:30"
+    },
+    {
       "name": "C11-Unittest.md",
       "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/C11-Unittest/C11-Unittest.md",
       "extension": "md",
@@ -13926,6 +14574,15 @@
       "last_modified": "2026-02-15 11:49:30"
     },
     {
+      "name": "README.md",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/C12-Deployment/README.md",
+      "extension": "md",
+      "size_mb": 0.0,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/C12-Deployment/README.md",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:30"
+    },
+    {
       "name": "Supervisor.md",
       "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/C12-Deployment/Supervisor.md",
       "extension": "md",
@@ -13933,6 +14590,15 @@
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/C12-Deployment/Supervisor.md",
       "is_hf": false,
       "last_modified": "2026-02-15 11:49:30"
+    },
+    {
+      "name": "README.md",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/README.md",
+      "extension": "md",
+      "size_mb": 0.0,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/README.md",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:24"
     },
     {
       "name": "SUMMARY.md",
@@ -13985,6 +14651,15 @@
       "extension": "html",
       "size_mb": 0.04,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C01-Introduction/PycharmRemoteDevelop.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:41"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/_book/C01-Introduction/index.html",
+      "extension": "html",
+      "size_mb": 0.04,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C01-Introduction/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:49:41"
     },
@@ -14052,6 +14727,15 @@
       "last_modified": "2026-02-15 11:49:42"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/_book/C02-Database/index.html",
+      "extension": "html",
+      "size_mb": 0.04,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C02-Database/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:41"
+    },
+    {
       "name": "数据库设计.html",
       "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/_book/C02-Database/数据库设计.html",
       "extension": "html",
@@ -14084,6 +14768,15 @@
       "extension": "html",
       "size_mb": 0.06,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C03-Gitflow/Gitflow.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:42"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/_book/C03-Gitflow/index.html",
+      "extension": "html",
+      "size_mb": 0.04,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C03-Gitflow/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:49:42"
     },
@@ -14133,6 +14826,15 @@
       "last_modified": "2026-02-15 11:49:42"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/_book/C04-JWT/index.html",
+      "extension": "html",
+      "size_mb": 0.04,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C04-JWT/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:42"
+    },
+    {
       "name": "CDN.html",
       "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/_book/C05-OSS/CDN.html",
       "extension": "html",
@@ -14147,6 +14849,15 @@
       "extension": "html",
       "size_mb": 0.06,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C05-OSS/Qiniu.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:42"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/_book/C05-OSS/index.html",
+      "extension": "html",
+      "size_mb": 0.04,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C05-OSS/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:49:42"
     },
@@ -14214,6 +14925,15 @@
       "last_modified": "2026-02-15 11:49:43"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/_book/C06-Cache/index.html",
+      "extension": "html",
+      "size_mb": 0.04,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C06-Cache/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:43"
+    },
+    {
       "name": "项目缓存与Redis持久存储设计.html",
       "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/_book/C06-Cache/项目缓存与Redis持久存储设计.html",
       "extension": "html",
@@ -14237,6 +14957,15 @@
       "extension": "html",
       "size_mb": 0.08,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C07-APScheduler/FixStatistics.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:43"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/_book/C07-APScheduler/index.html",
+      "extension": "html",
+      "size_mb": 0.04,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C07-APScheduler/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:49:43"
     },
@@ -14295,6 +15024,15 @@
       "last_modified": "2026-02-15 11:49:43"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/_book/C08-RPC/index.html",
+      "extension": "html",
+      "size_mb": 0.04,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C08-RPC/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:44"
+    },
+    {
       "name": "实现调用远程rpc接口.html",
       "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/_book/C08-RPC/实现调用远程rpc接口.html",
       "extension": "html",
@@ -14336,6 +15074,15 @@
       "extension": "html",
       "size_mb": 0.05,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C09-IM/WebSocket.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:44"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/_book/C09-IM/index.html",
+      "extension": "html",
+      "size_mb": 0.04,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C09-IM/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:49:44"
     },
@@ -14430,6 +15177,15 @@
       "last_modified": "2026-02-15 11:49:44"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/_book/C10-Elasticsearch/index.html",
+      "extension": "html",
+      "size_mb": 0.04,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C10-Elasticsearch/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:45"
+    },
+    {
       "name": "C11-Unittest.html",
       "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/_book/C11-Unittest/C11-Unittest.html",
       "extension": "html",
@@ -14453,6 +15209,15 @@
       "extension": "html",
       "size_mb": 0.05,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C12-Deployment/Supervisor.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:45"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/_book/C12-Deployment/index.html",
+      "extension": "html",
+      "size_mb": 0.04,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/C12-Deployment/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:49:45"
     },
@@ -15625,6 +16390,15 @@
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/images/%E9%A1%B9%E7%9B%AE%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84.png",
       "is_hf": false,
       "last_modified": "2026-02-15 11:49:49"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/07-Flask项目/头条项目课件(md&html)/_book/index.html",
+      "extension": "html",
+      "size_mb": 0.04,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/07-Flask%E9%A1%B9%E7%9B%AE/%E5%A4%B4%E6%9D%A1%E9%A1%B9%E7%9B%AE%E8%AF%BE%E4%BB%B6%28md%26html%29/_book/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:49:26"
     },
     {
       "name": "search_index.json",
@@ -17004,6 +17778,15 @@
       "last_modified": "2026-02-15 11:52:35"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/08-爬虫课件/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:52:34"
+    },
+    {
       "name": "search_index.json",
       "path": "03-python语言/08-爬虫课件/search_index.json",
       "extension": "json",
@@ -17074,6 +17857,15 @@
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E6%89%A9%E5%B1%95%E9%98%85%E8%AF%BB/images/docker-1.png",
       "is_hf": false,
       "last_modified": "2026-02-15 11:52:41"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/08-爬虫课件/扩展阅读/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E6%89%A9%E5%B1%95%E9%98%85%E8%AF%BB/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:52:36"
     },
     {
       "name": "15265704038717.jpg",
@@ -17490,6 +18282,15 @@
       "last_modified": "2026-02-15 11:52:46"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/08-爬虫课件/爬虫入门/1.爬虫的基础知识/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/1.%E7%88%AC%E8%99%AB%E7%9A%84%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:52:46"
+    },
+    {
       "name": "1.requests模块的基本使用.html",
       "path": "03-python语言/08-爬虫课件/爬虫入门/2.requests模块的使用/1.requests模块的基本使用.html",
       "extension": "html",
@@ -17540,6 +18341,15 @@
       "extension": "html",
       "size_mb": 0.06,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/2.requests%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/6%E5%B0%8F%E7%BB%93.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:52:46"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/08-爬虫课件/爬虫入门/2.requests模块的使用/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/2.requests%E6%A8%A1%E5%9D%97%E7%9A%84%E4%BD%BF%E7%94%A8/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:52:46"
     },
@@ -17603,6 +18413,15 @@
       "extension": "md",
       "size_mb": 0.0,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/3.%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96%E6%96%B9%E6%B3%95/7.%E5%B0%8F%E7%BB%93.md",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:52:47"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/08-爬虫课件/爬虫入门/3.数据提取方法/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/3.%E6%95%B0%E6%8D%AE%E6%8F%90%E5%8F%96%E6%96%B9%E6%B3%95/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:52:47"
     },
@@ -18030,6 +18849,15 @@
       "last_modified": "2026-02-15 11:52:47"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/08-爬虫课件/爬虫入门/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E5%85%A5%E9%97%A8/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:52:37"
+    },
+    {
       "name": "1.单线程爬虫.html",
       "path": "03-python语言/08-爬虫课件/爬虫提高/1.高性能爬虫/1.单线程爬虫.html",
       "extension": "html",
@@ -18080,6 +18908,15 @@
       "extension": "html",
       "size_mb": 0.06,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E6%8F%90%E9%AB%98/1.%E9%AB%98%E6%80%A7%E8%83%BD%E7%88%AC%E8%99%AB/6.%E5%B0%8F%E7%BB%93.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:52:50"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/08-爬虫课件/爬虫提高/1.高性能爬虫/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E6%8F%90%E9%AB%98/1.%E9%AB%98%E6%80%A7%E8%83%BD%E7%88%AC%E8%99%AB/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:52:50"
     },
@@ -18138,6 +18975,15 @@
       "last_modified": "2026-02-15 11:52:50"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/08-爬虫课件/爬虫提高/2.selenium/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E6%8F%90%E9%AB%98/2.selenium/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:52:50"
+    },
+    {
       "name": "1.常见的反扒手段和解决方法.html",
       "path": "03-python语言/08-爬虫课件/爬虫提高/3.反扒以及解决方案/1.常见的反扒手段和解决方法.html",
       "extension": "html",
@@ -18179,6 +19025,15 @@
       "extension": "html",
       "size_mb": 0.06,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E6%8F%90%E9%AB%98/3.%E5%8F%8D%E6%89%92%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/5.%E5%B0%8F%E7%BB%93.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:52:50"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/08-爬虫课件/爬虫提高/3.反扒以及解决方案/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E6%8F%90%E9%AB%98/3.%E5%8F%8D%E6%89%92%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:52:50"
     },
@@ -18251,6 +19106,15 @@
       "extension": "html",
       "size_mb": 0.06,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E6%8F%90%E9%AB%98/4.MONGODB%E6%95%B0%E6%8D%AE%E5%BA%93/8.%E5%B0%8F%E7%BB%93.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:52:51"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/08-爬虫课件/爬虫提高/4.MONGODB数据库/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E6%8F%90%E9%AB%98/4.MONGODB%E6%95%B0%E6%8D%AE%E5%BA%93/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:52:51"
     },
@@ -18390,6 +19254,15 @@
       "last_modified": "2026-02-15 11:52:51"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/08-爬虫课件/爬虫提高/5.scrapy/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E6%8F%90%E9%AB%98/5.scrapy/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:52:51"
+    },
+    {
       "name": "15274191483382.jpg",
       "path": "03-python语言/08-爬虫课件/爬虫提高/5.scrapy/media/15274191483382.jpg",
       "extension": "jpg",
@@ -18525,6 +19398,15 @@
       "last_modified": "2026-02-15 11:52:51"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/08-爬虫课件/爬虫提高/6.scrapy_redis/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E6%8F%90%E9%AB%98/6.scrapy_redis/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:52:52"
+    },
+    {
       "name": "15250807068855.jpg",
       "path": "03-python语言/08-爬虫课件/爬虫提高/6.scrapy_redis/media/15250807068855.jpg",
       "extension": "jpg",
@@ -18584,6 +19466,15 @@
       "extension": "html",
       "size_mb": 0.06,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E6%8F%90%E9%AB%98/7.%E7%88%AC%E8%99%AB%E7%9A%84%E9%83%A8%E7%BD%B2/4.%E5%B0%8F%E7%BB%93.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:52:52"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/08-爬虫课件/爬虫提高/7.爬虫的部署/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E6%8F%90%E9%AB%98/7.%E7%88%AC%E8%99%AB%E7%9A%84%E9%83%A8%E7%BD%B2/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:52:52"
     },
@@ -19866,6 +20757,15 @@
       "last_modified": "2026-02-15 11:52:58"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/08-爬虫课件/爬虫提高/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E6%8F%90%E9%AB%98/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:52:37"
+    },
+    {
       "name": "1.了解框架.html",
       "path": "03-python语言/08-爬虫课件/爬虫框架开发/1.爬虫框架开发分析/1.了解框架.html",
       "extension": "html",
@@ -19889,6 +20789,15 @@
       "extension": "html",
       "size_mb": 0.07,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91/1.%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91%E5%88%86%E6%9E%90/3.%E6%A1%86%E6%9E%B6%E4%BB%A3%E7%A0%81%E9%9B%8F%E5%BD%A2%E7%BB%93%E6%9E%84.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:52:43"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/08-爬虫课件/爬虫框架开发/1.爬虫框架开发分析/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91/1.%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91%E5%88%86%E6%9E%90/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:52:43"
     },
@@ -19934,6 +20843,15 @@
       "extension": "html",
       "size_mb": 0.08,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91/2.%E6%A1%86%E6%9E%B6%E9%9B%8F%E5%BD%A2%E5%AE%9E%E7%8E%B0/5.%E6%A1%86%E6%9E%B6%E9%9B%8F%E5%BD%A2--%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%A8%A1%E5%9D%97.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:52:44"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/08-爬虫课件/爬虫框架开发/2.框架雏形实现/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91/2.%E6%A1%86%E6%9E%B6%E9%9B%8F%E5%BD%A2%E5%AE%9E%E7%8E%B0/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:52:44"
     },
@@ -20037,6 +20955,15 @@
       "last_modified": "2026-02-15 11:52:44"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/08-爬虫课件/爬虫框架开发/4.框架功能完善/index.html",
+      "extension": "html",
+      "size_mb": 0.07,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91/4.%E6%A1%86%E6%9E%B6%E5%8A%9F%E8%83%BD%E5%AE%8C%E5%96%84/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:52:44"
+    },
+    {
       "name": "1.框架升级--分布式爬虫设计原理及其实现.html",
       "path": "03-python语言/08-爬虫课件/爬虫框架开发/5.框架功能升级/1.框架升级--分布式爬虫设计原理及其实现.html",
       "extension": "html",
@@ -20064,6 +20991,15 @@
       "last_modified": "2026-02-15 11:52:44"
     },
     {
+      "name": "index.html",
+      "path": "03-python语言/08-爬虫课件/爬虫框架开发/5.框架功能升级/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91/5.%E6%A1%86%E6%9E%B6%E5%8A%9F%E8%83%BD%E5%8D%87%E7%BA%A7/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:52:45"
+    },
+    {
       "name": "15266586492651.jpg",
       "path": "03-python语言/08-爬虫课件/爬虫框架开发/5.框架功能升级/media/15266586492651.jpg",
       "extension": "jpg",
@@ -20087,6 +21023,15 @@
       "extension": "html",
       "size_mb": 0.08,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91/6.%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/2.%E6%A1%88%E4%BE%8B2-scrapy_plus%E5%AE%9E%E7%8E%B0%E6%96%B0%E6%B5%AA%E6%96%B0%E9%97%BB%E7%88%AC%E8%99%AB.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:52:45"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/08-爬虫课件/爬虫框架开发/6.项目实战/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91/6.%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 11:52:45"
     },
@@ -20251,6 +21196,15 @@
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91/images/%E9%A1%B9%E7%9B%AE%E4%BB%A3%E7%A0%81%E4%B8%8E%E6%A1%86%E6%9E%B6%E4%BB%A3%E7%A0%81%E7%9A%84%E5%85%B3%E7%B3%BB%E5%88%86%E6%9E%90.png",
       "is_hf": false,
       "last_modified": "2026-02-15 11:52:45"
+    },
+    {
+      "name": "index.html",
+      "path": "03-python语言/08-爬虫课件/爬虫框架开发/index.html",
+      "extension": "html",
+      "size_mb": 0.06,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/03-python%E8%AF%AD%E8%A8%80/08-%E7%88%AC%E8%99%AB%E8%AF%BE%E4%BB%B6/%E7%88%AC%E8%99%AB%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:52:37"
     },
     {
       "name": "maketest.png",
@@ -20901,6 +21855,15 @@
       "last_modified": "2026-02-15 11:52:18"
     },
     {
+      "name": "index.html",
+      "path": "04-数据库/Redis/index.html",
+      "extension": "html",
+      "size_mb": 0.02,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/04-%E6%95%B0%E6%8D%AE%E5%BA%93/Redis/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:13"
+    },
+    {
       "name": "redis.html",
       "path": "04-数据库/Redis/redis.html",
       "extension": "html",
@@ -21538,6 +22501,15 @@
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/05-%E5%BC%80%E5%8F%91/git/images/Git%E7%9A%84%E8%AF%9E%E7%94%9F.png",
       "is_hf": false,
       "last_modified": "2026-02-15 11:52:13"
+    },
+    {
+      "name": "README.md",
+      "path": "05-开发/git/images/README.md",
+      "extension": "md",
+      "size_mb": 0.0,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/05-%E5%BC%80%E5%8F%91/git/images/README.md",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:52:12"
     },
     {
       "name": "SSH修改电脑git配置.png",
@@ -22404,6 +23376,15 @@
       "last_modified": "2026-02-15 11:52:15"
     },
     {
+      "name": "index.html",
+      "path": "05-开发/git/index.html",
+      "extension": "html",
+      "size_mb": 0.01,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/05-%E5%BC%80%E5%8F%91/git/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 11:51:13"
+    },
+    {
       "name": "search_index.json",
       "path": "05-开发/git/search_index.json",
       "extension": "json",
@@ -22562,6 +23543,15 @@
       "extension": "html",
       "size_mb": 0.02,
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/06-%E8%BF%90%E7%BB%B4/nginx%26docker/docker/images.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 12:45:44"
+    },
+    {
+      "name": "index.html",
+      "path": "06-运维/nginx&docker/docker/index.html",
+      "extension": "html",
+      "size_mb": 0.02,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/06-%E8%BF%90%E7%BB%B4/nginx%26docker/docker/index.html",
       "is_hf": false,
       "last_modified": "2026-02-15 12:45:44"
     },
@@ -22951,6 +23941,15 @@
       "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/06-%E8%BF%90%E7%BB%B4/nginx%26docker/img/%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%9E%B6%E6%9E%84%E5%9B%BE.png",
       "is_hf": false,
       "last_modified": "2026-02-15 12:45:46"
+    },
+    {
+      "name": "index.html",
+      "path": "06-运维/nginx&docker/index.html",
+      "extension": "html",
+      "size_mb": 0.02,
+      "url": "https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/06-%E8%BF%90%E7%BB%B4/nginx%26docker/index.html",
+      "is_hf": false,
+      "last_modified": "2026-02-15 12:45:42"
     },
     {
       "name": "Advanced.html",
