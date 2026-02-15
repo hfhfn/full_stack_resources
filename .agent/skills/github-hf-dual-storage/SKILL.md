@@ -94,3 +94,4 @@ Key guarantees:
 - **Sync integrity**: Local delete → auto-remove from HF + .gitignore + manifest
 - **404 tolerance**: Deleting already-deleted HF files treated as success
 - **CI/fresh-clone safety**: `skip_deletion` when no local large files but .gitignore has rules
+- **Gitignore escaping**: `escape_gitignore()` / `unescape_gitignore()` handle `[]!#*?\` in filenames — prevents glob misinterpretation
