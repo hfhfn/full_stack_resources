@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """
-Dual-Storage Distribution Script v3.1
+Dual-Storage Distribution Script v4.1
 - Scans project for all files.
 - Uploads large files (>50MB) to HuggingFace.
 - Implement retry logic for network stability.
 - Generates a full manifest (including small files) to avoid GitHub API rate limits.
 - Sync Deletion: Cleans up redundant files on HF.
+- v4.1: Smart timestamps, automatic .gitignore deletion, 404 handling.
 """
 import os
 import sys
@@ -68,6 +69,25 @@ def run_git_cmd(args):
     except Exception as e:
         logger.debug(f"Git command failed: {args} - {e}")
 
+def read_gitignore_managed_paths():
+    """Read the auto-managed HF file paths from .gitignore."""
+    gitignore_path = PROJECT_ROOT / '.gitignore'
+    managed = set()
+    if gitignore_path.exists():
+        header = "# [Auto] Large files managed by HuggingFace\n"
+        in_auto = False
+        with open(gitignore_path, 'r', encoding='utf-8') as f:
+            for line in f:
+                if line == header:
+                    in_auto = True
+                    continue
+                if in_auto:
+                    if line.strip() == "":
+                        in_auto = False
+                        continue
+                    managed.add(line.rstrip())
+    return managed
+
 def scan_files():
     large_files = []
     small_files = []
@@ -76,12 +96,12 @@ def scan_files():
     for path in PROJECT_ROOT.rglob('*'):
         if not path.is_file(): continue
         parts = path.relative_to(PROJECT_ROOT).parts
-        
-        # 严格过滤逻辑
-        if any(p.startswith('.') for p in parts): continue # 隐藏文件/文件夹
-        if any(ex in parts for ex in EXCLUDE_DIRS): continue # 排除目录
-        if 'scripts' in parts: continue # 明确排除 scripts 文件夹
-        if 'data' in parts: continue # 排除清单存储目录
+
+        # Strict filtering logic
+        if any(p.startswith('.') for p in parts): continue # Hidden files/folders
+        if any(ex in parts for ex in EXCLUDE_DIRS): continue # Exclude directories
+        if 'scripts' in parts: continue # Explicitly exclude scripts folder
+        if 'data' in parts: continue # Exclude manifest storage directory
         if path.parent == PROJECT_ROOT and path.name in ['index.html', 'README.md', 'setup.bat', 'setup.sh', 'distribute.log', '.gitignore', '.gitattributes', '.nojekyll']: continue
 
         try:
@@ -117,7 +137,7 @@ def upload_to_hf(files):
         for file_path in files:
             rel_path = file_path.relative_to(PROJECT_ROOT).as_posix()
             upload_file_to_hf(api, file_path, rel_path)
-        
+
         logger.info("[OK] HF Upload complete")
         return True
     except ImportError:
@@ -136,7 +156,12 @@ def sync_hf_deletions(local_large_files):
         remote_files = list_repo_files(repo_id=HF_REPO_ID, repo_type="dataset")
         local_rel_paths = {f.relative_to(PROJECT_ROOT).as_posix() for f in local_large_files}
 
-        to_delete = [rf for rf in remote_files if rf not in local_rel_paths and not rf.endswith(('.gitattributes', 'README.md', '.gitignore'))]
+        # Protect files that are listed in .gitignore auto section
+        # (they may not exist locally in CI/fresh-clone, but are still managed)
+        managed_paths = read_gitignore_managed_paths()
+        expected_on_hf = local_rel_paths | managed_paths
+
+        to_delete = [rf for rf in remote_files if rf not in expected_on_hf and not rf.endswith(('.gitattributes', 'README.md', '.gitignore'))]
 
         if to_delete:
             logger.info(f"Found {len(to_delete)} redundant files. Deleting...")
@@ -149,17 +174,17 @@ def sync_hf_deletions(local_large_files):
             logger.info("No redundant files found.")
     except Exception as e:
         logger.warning(f"Sync deletion failed: {str(e)}")
-    
+
     return deleted_files
 
 def update_gitignore_and_git(large_files, hf_files_to_delete):
     logger.info("Processing Git tracking & .gitignore...")
     gitignore_path = PROJECT_ROOT / '.gitignore'
-    
+
     # Read existing content
     lines = []
     existing_auto_rules = set()
-    
+
     if gitignore_path.exists():
         with open(gitignore_path, 'r', encoding='utf-8') as f:
             lines = f.readlines()
@@ -167,7 +192,7 @@ def update_gitignore_and_git(large_files, hf_files_to_delete):
     # Extract existing auto-generated rules
     header = "# [Auto] Large files managed by HuggingFace\n"
     in_auto_section = False
-    
+
     for line in lines:
         if line == header:
             in_auto_section = True
@@ -181,7 +206,7 @@ def update_gitignore_and_git(large_files, hf_files_to_delete):
     # Remove old auto-generated section
     new_content = []
     skip = False
-    
+
     for line in lines:
         if line == header:
             skip = True
@@ -192,13 +217,13 @@ def update_gitignore_and_git(large_files, hf_files_to_delete):
                 continue
             else:
                 continue
-        
+
         new_content.append(line)
-    
+
     # Remove trailing empty lines
     while new_content and new_content[-1].strip() == "":
         new_content.pop()
-    
+
     # Prepare new rules from currently scanned large files
     new_rules = set()
     for f in large_files:
@@ -208,15 +233,24 @@ def update_gitignore_and_git(large_files, hf_files_to_delete):
 
     # Check which rules to remove
     # Rules should be removed if the local file doesn't exist
+    # BUT: if no large files were found locally and gitignore has rules,
+    # this is likely CI/fresh-clone — skip deletion to avoid wiping HF
     rules_to_remove = set()
-    
+    skip_deletion = (not large_files) and (len(existing_auto_rules) > 0)
+
+    if skip_deletion:
+        logger.info("    No local large files found but gitignore has rules — skipping deletion (CI/fresh-clone detected)")
+
     for rule in existing_auto_rules:
         file_path = PROJECT_ROOT / rule
         # If the file doesn't exist locally, remove the rule
         if not file_path.exists():
+            if skip_deletion:
+                logger.info(f"    Keeping rule (protected): {rule}")
+                continue
             rules_to_remove.add(rule)
             logger.info(f"    Removing rule for deleted local file: {rule}")
-            
+
             # Also delete from HuggingFace
             try:
                 from huggingface_hub import HfApi
@@ -232,7 +266,7 @@ def update_gitignore_and_git(large_files, hf_files_to_delete):
                     logger.info(f"    [OK] File already deleted from HuggingFace: {rule}")
                 else:
                     logger.warning(f"    [WARNING] Could not delete {rule} from HF: {e}")
-    
+
     # Merge rules: keep existing rules that still have local files, add new rules
     all_rules = (existing_auto_rules - rules_to_remove) | new_rules
 
@@ -240,7 +274,7 @@ def update_gitignore_and_git(large_files, hf_files_to_delete):
     with open(gitignore_path, 'w', encoding='utf-8') as f:
         # Write existing content
         f.writelines(new_content)
-        
+
         # Add separator and auto section if there are any rules
         if all_rules:
             # Ensure blank line before auto section
@@ -249,7 +283,7 @@ def update_gitignore_and_git(large_files, hf_files_to_delete):
             f.write("\n" + header)
             for rule in sorted(all_rules):
                 f.write(f"{rule}\n")
-    
+
     removed_count = len(rules_to_remove)
     logger.info(f"Updated .gitignore with {len(all_rules)} rules (new: {len(new_rules)}, removed: {removed_count})")
 
@@ -269,12 +303,12 @@ def generate_manifest(large_files, small_files):
             # URL encode the path for robustness with Chinese characters
             quoted_rel = quote(rel)
             info = get_file_info(f)
-            
+
             if is_hf:
                 url = f"https://huggingface.co/datasets/{HF_REPO_ID}/resolve/main/{quoted_rel}?download=true"
             else:
                 url = f"https://raw.githubusercontent.com/hfhfn/full_stack_resources/main/{quoted_rel}"
-            
+
             entries.append({
                 "name": f.name,
                 "path": rel,
@@ -284,7 +318,7 @@ def generate_manifest(large_files, small_files):
                 "is_hf": is_hf,
                 "last_modified": datetime.fromtimestamp(info["mtime"]).strftime("%Y-%m-%d %H:%M:%S")
             })
-        
+
         # Sort by path for consistent ordering
         return sorted(entries, key=lambda x: x["path"])
 
@@ -295,33 +329,17 @@ def generate_manifest(large_files, small_files):
     manifest_dir = PROJECT_ROOT / 'data'
     manifest_dir.mkdir(exist_ok=True)
     manifest_path = manifest_dir / 'file_manifest.json'
-    
+
     # Read current .gitignore to identify managed HuggingFace files
-    gitignore_path = PROJECT_ROOT / '.gitignore'
-    managed_hf_files = set()
-    
-    if gitignore_path.exists():
-        with open(gitignore_path, 'r', encoding='utf-8') as f:
-            in_auto_section = False
-            header = "# [Auto] Large files managed by HuggingFace\n"
-            for line in f:
-                if line == header:
-                    in_auto_section = True
-                    continue
-                if in_auto_section:
-                    if line.strip() == "":
-                        in_auto_section = False
-                        continue
-                    # This is a managed file rule
-                    managed_hf_files.add(line.rstrip())
-    
+    managed_hf_files = read_gitignore_managed_paths()
+
     # Check if manifest exists and try to preserve HuggingFace files that are still managed
     old_hf_files = {}
     if manifest_path.exists():
         try:
             with open(manifest_path, 'r', encoding='utf-8') as f:
                 old_manifest = json.load(f)
-            
+
             # Collect old HuggingFace files that are STILL MANAGED in .gitignore
             for file_entry in old_manifest.get('files', []):
                 if file_entry.get('is_hf'):
@@ -333,16 +351,16 @@ def generate_manifest(large_files, small_files):
                         logger.info(f"    Removing unmanaged HF file from manifest: {file_path}")
         except Exception as e:
             logger.debug(f"Could not read old manifest: {e}")
-    
+
     # Get paths of newly scanned HuggingFace files
     new_hf_paths = {f.relative_to(PROJECT_ROOT).as_posix() for f in large_files}
-    
+
     # Add back HuggingFace files that were in the old manifest and are still managed
     for old_path, old_entry in old_hf_files.items():
         if old_path not in new_hf_paths:
             logger.info(f"    Preserving managed HF file: {old_path}")
             manifest["files"].insert(0, old_entry)
-    
+
     # Handle managed files that exist in .gitignore but not in local or old manifest
     for managed_file in managed_hf_files:
         if managed_file not in new_hf_paths and managed_file not in old_hf_files:
@@ -365,7 +383,7 @@ def generate_manifest(large_files, small_files):
                 })
             except Exception as e:
                 logger.debug(f"Could not restore HF file {managed_file}: {e}")
-    
+
     # Check if manifest content would be the same (except updated_at)
     # BUT: if .gitignore rules changed (especially decreased), always update timestamp
     preserve_timestamp = False
@@ -374,18 +392,12 @@ def generate_manifest(large_files, small_files):
             with open(manifest_path, 'r', encoding='utf-8') as f:
                 old_manifest = json.load(f)
 
-            # Get old .gitignore rules
-            old_gitignore_path = PROJECT_ROOT / '.gitignore'
-            old_managed_hf_files = set()
-
-            # We can't actually get the old .gitignore easily, but we can check
-            # if the number of managed files changed significantly
             old_hf_count = len([f for f in old_manifest.get('files', []) if f.get('is_hf')])
             new_hf_count = len([f for f in manifest['files'] if f.get('is_hf')])
 
             # If HF file count decreased, it means user deleted rules - always update timestamp
             if new_hf_count < old_hf_count:
-                logger.info(f"    (HF files decreased: {old_hf_count} → {new_hf_count}, updating timestamp)")
+                logger.info(f"    (HF files decreased: {old_hf_count} -> {new_hf_count}, updating timestamp)")
                 preserve_timestamp = False
             else:
                 # Only preserve timestamp if everything matches exactly
@@ -393,7 +405,6 @@ def generate_manifest(large_files, small_files):
                 new_files = manifest['files']
 
                 if len(old_files) == len(new_files):
-                    # Compare file entries - must be in same order and identical
                     all_same = True
                     for old_file, new_file in zip(old_files, new_files):
                         if old_file != new_file:
@@ -401,16 +412,15 @@ def generate_manifest(large_files, small_files):
                             break
 
                     if all_same:
-                        # Preserve the old timestamp if content hasn't changed
                         preserve_timestamp = True
                         manifest['updated_at'] = old_manifest['updated_at']
                         logger.info(f"    (Timestamp preserved - no content changes)")
         except Exception as e:
             logger.debug(f"Could not compare manifests: {e}")
-    
+
     with open(manifest_path, 'w', encoding='utf-8') as f:
         json.dump(manifest, f, ensure_ascii=False, indent=2)
-    
+
     logger.info(f"[OK] Manifest generated with {len(manifest['files'])} total files")
 
 def main():

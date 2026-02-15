@@ -2,26 +2,8 @@
   "permissions": {
     "allow": [
       "mcp__serena__list_dir",
-      "Bash(gh api:*)",
-      "WebFetch(domain:github.com)",
-      "WebFetch(domain:hfhfn.github.io)",
-      "mcp__serena__initial_instructions",
-      "mcp__serena__check_onboarding_performed",
-      "mcp__serena__read_memory",
-      "mcp__serena__find_symbol",
-      "Bash(ls:*)",
-      "mcp__serena__search_for_pattern",
-      "mcp__serena__get_symbols_overview",
-      "mcp__serena__think_about_collected_information",
-      "Bash(del \"\\\\?\\\\D:\\\\工作\\\\其他笔记&资料\\\\github仓库资料\\\\full_stack_resources\\\\nul\")",
-      "Bash(cmd /c \"del \"\"\\\\?\\\\D:\\\\工作\\\\其他笔记&资料\\\\github仓库资料\\\\full_stack_resources\\\\nul\"\"\")",
-      "Bash(cmd /c \"cd /d \"\"D:\\\\工作\\\\其他笔记&资料\\\\github仓库资料\\\\full_stack_resources\"\" && gh api repos/hfhfn/full_stack_resources/pages\")",
-      "Bash(cmd /c \"gh api repos/hfhfn/full_stack_resources/pages 2>&1\")",
-      "Bash(where:*)",
-      "Bash(gh:*)",
-      "Bash(powershell -Command:*)",
-      "Bash(cmd /c \"cd /d \"\"D:\\\\工作\\\\其他笔记&资料\\\\github仓库资料\\\\full_stack_resources\"\" && xcopy /Y /S /I \"\".claude\\\\skills\\\\github-hf-dual-storage\"\" \"\".agent\\\\skills\\\\github-hf-dual-storage\"\" 2>&1\")",
-      "Bash(powershell -File -:*)"
+      "mcp__serena__think_about_task_adherence",
+      "mcp__serena__think_about_whether_you_are_done"
     ]
   }
 }
