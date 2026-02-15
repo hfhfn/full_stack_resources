@@ -1,0 +1,1808 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>定时修正统计数据 | 课程简介</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-back-to-top-button/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-chapter-fold/chapter-fold.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toc2/toc2.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-tbfed-pagefooter/footer.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../C08-RPC/index.html" />
+    
+    
+    <link rel="prev" href="../C07-APScheduler/APSchedulerTutorial.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="7.2"
+        data-chapter-title="定时修正统计数据"
+        data-filepath="C07-APScheduler/FixStatistics.md"
+        data-basepath=".."
+        data-revision="Wed Sep 04 2019 16:39:29 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        课程简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="C01-Introduction/index.html">
+            
+                
+                    <a href="../C01-Introduction/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        项目介绍
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="C01-Introduction/AboutToutiaoWebVM.html">
+            
+                
+                    <a href="../C01-Introduction/AboutToutiaoWebVM.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        ToutiaoWeb虚拟机使用说明
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="C01-Introduction/PycharmRemoteDevelop.html">
+            
+                
+                    <a href="../C01-Introduction/PycharmRemoteDevelop.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Pycharm远程开发设置
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="C01-Introduction/AboutProject.html">
+            
+                
+                    <a href="../C01-Introduction/AboutProject.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        产品与开发
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="C01-Introduction/ProjectDirectory.html">
+            
+                
+                    <a href="../C01-Introduction/ProjectDirectory.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        工程目录
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="C01-Introduction/DebugMethod.html">
+            
+                
+                    <a href="../C01-Introduction/DebugMethod.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        调试方法
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="C02-Database/index.html">
+            
+                
+                    <a href="../C02-Database/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        数据库
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="C02-Database/数据库设计.html">
+            
+                
+                    <a href="../C02-Database/数据库设计.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        数据库理论--数据库设计
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="C02-Database/DatabaseTheory.html">
+            
+                
+                    <a href="../C02-Database/DatabaseTheory.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        数据库理论--复制集与分布式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="C02-Database/DistributedID.html">
+            
+                
+                    <a href="../C02-Database/DistributedID.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        数据库理论--分布式ID
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="C02-Database/DatabaseOptimize.html">
+            
+                
+                    <a href="../C02-Database/DatabaseOptimize.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        数据库理论--数据库优化
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="C02-Database/ORM.html">
+            
+                
+                    <a href="../C02-Database/ORM.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        理解ORM
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="C02-Database/SQLAlchemyMapping.html">
+            
+                
+                    <a href="../C02-Database/SQLAlchemyMapping.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        ORM--SQLAlchemy映射构建
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="C02-Database/SQLAlchemyOperations.html">
+            
+                
+                    <a href="../C02-Database/SQLAlchemyOperations.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                        ORM--SQLAlchemy操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="C02-Database/Redis.html">
+            
+                
+                    <a href="../C02-Database/Redis.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.8.</b>
+                        
+                        Redis
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="C03-Gitflow/index.html">
+            
+                
+                    <a href="../C03-Gitflow/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Git工作流
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="C03-Gitflow/Gitflow.html">
+            
+                
+                    <a href="../C03-Gitflow/Gitflow.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        课前阅读：Gitflow
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="C03-Gitflow/AboutGit.html">
+            
+                
+                    <a href="../C03-Gitflow/AboutGit.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        项目中的Git工作流
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="C04-JWT/index.html">
+            
+                
+                    <a href="../C04-JWT/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        JWT
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="C04-JWT/JWT.html">
+            
+                
+                    <a href="../C04-JWT/JWT.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        JWT
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="C04-JWT/PythonLib.html">
+            
+                
+                    <a href="../C04-JWT/PythonLib.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        PythonLib
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="C04-JWT/Implement.html">
+            
+                
+                    <a href="../C04-JWT/Implement.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        实施方案
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="C04-JWT/Forbbiden.html">
+            
+                
+                    <a href="../C04-JWT/Forbbiden.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        禁用问题
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="C04-JWT/JWT拓展.html">
+            
+                
+                    <a href="../C04-JWT/JWT拓展.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        JWT拓展
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="C05-OSS/index.html">
+            
+                
+                    <a href="../C05-OSS/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        对象存储
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="C05-OSS/Qiniu.html">
+            
+                
+                    <a href="../C05-OSS/Qiniu.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        七牛云存储
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="C05-OSS/CDN.html">
+            
+                
+                    <a href="../C05-OSS/CDN.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        CDN
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="C06-Cache/index.html">
+            
+                
+                    <a href="../C06-Cache/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        缓存
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="C06-Cache/CacheArchitecture.html">
+            
+                
+                    <a href="../C06-Cache/CacheArchitecture.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        缓存理论--缓存的架构
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="C06-Cache/CacheData.html">
+            
+                
+                    <a href="../C06-Cache/CacheData.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        缓存理论--缓存的数据
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="C06-Cache/CacheTTLAndEviction.html">
+            
+                
+                    <a href="../C06-Cache/CacheTTLAndEviction.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        缓存理论--缓存的有效期与淘汰策略
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="C06-Cache/CachePatterns.html">
+            
+                
+                    <a href="../C06-Cache/CachePatterns.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                        缓存理论--缓存模式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="C06-Cache/CacheProblems.html">
+            
+                
+                    <a href="../C06-Cache/CacheProblems.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.5.</b>
+                        
+                        缓存理论--缓存穿透和雪崩问题
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="C06-Cache/项目缓存与Redis持久存储设计.html">
+            
+                
+                    <a href="../C06-Cache/项目缓存与Redis持久存储设计.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.6.</b>
+                        
+                        项目缓存与Redis持久存储设计
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="C06-Cache/ProjectCacheImplement.html">
+            
+                
+                    <a href="../C06-Cache/ProjectCacheImplement.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.7.</b>
+                        
+                        项目缓存实现
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="C06-Cache/ProjectRedisStorageImplement.html">
+            
+                
+                    <a href="../C06-Cache/ProjectRedisStorageImplement.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.8.</b>
+                        
+                        项目Redis持久存储实现
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="C07-APScheduler/index.html">
+            
+                
+                    <a href="../C07-APScheduler/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        APScheduler
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="C07-APScheduler/APSchedulerTutorial.html">
+            
+                
+                    <a href="../C07-APScheduler/APSchedulerTutorial.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        APScheduler使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="7.2" data-path="C07-APScheduler/FixStatistics.html">
+            
+                
+                    <a href="../C07-APScheduler/FixStatistics.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        定时修正统计数据
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="C08-RPC/index.html">
+            
+                
+                    <a href="../C08-RPC/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        RPC
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="C08-RPC/AboutRPC.html">
+            
+                
+                    <a href="../C08-RPC/AboutRPC.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        RPC简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="C08-RPC/gRPC.html">
+            
+                
+                    <a href="../C08-RPC/gRPC.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                        gRPC
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="C08-RPC/RecoSysIDL.html">
+            
+                
+                    <a href="../C08-RPC/RecoSysIDL.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.</b>
+                        
+                        推荐系统接口定义
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="C08-RPC/Server.html">
+            
+                
+                    <a href="../C08-RPC/Server.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.</b>
+                        
+                        rpc服务端
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="C08-RPC/Client.html">
+            
+                
+                    <a href="../C08-RPC/Client.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.</b>
+                        
+                        rpc客户端
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="C08-RPC/实现调用远程rpc接口.html">
+            
+                
+                    <a href="../C08-RPC/实现调用远程rpc接口.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.</b>
+                        
+                        [课后作业]实现调用远程rpc视图接口.md
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="C08-RPC/ProtocolBuffers.html">
+            
+                
+                    <a href="../C08-RPC/ProtocolBuffers.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.7.</b>
+                        
+                        [查表]Protocol Buffers语法
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="C09-IM/index.html">
+            
+                
+                    <a href="../C09-IM/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        即时通信
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1" data-path="C09-IM/WebSocket.html">
+            
+                
+                    <a href="../C09-IM/WebSocket.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                        即时通讯和WebSocket
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="C09-IM/SocketIO.html">
+            
+                
+                    <a href="../C09-IM/SocketIO.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.</b>
+                        
+                        Socket.IO的使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="C09-IM/Chat.html">
+            
+                
+                    <a href="../C09-IM/Chat.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.3.</b>
+                        
+                        [课后作业]实现头条聊天服务
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="C09-IM/MessagePush.html">
+            
+                
+                    <a href="../C09-IM/MessagePush.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.</b>
+                        
+                        头条在线消息推送实现
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="C10-Elasticsearch/index.html">
+            
+                
+                    <a href="../C10-Elasticsearch/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Elasticsearch
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.1" data-path="C10-Elasticsearch/1-认识ES.html">
+            
+                
+                    <a href="../C10-Elasticsearch/1-认识ES.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.</b>
+                        
+                        认识Elasticsearch
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="C10-Elasticsearch/2-了解ES搜索引擎的原理.html">
+            
+                
+                    <a href="../C10-Elasticsearch/2-了解ES搜索引擎的原理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.</b>
+                        
+                        了解ES搜索引擎的原理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="C10-Elasticsearch/3-IK中文分析器.html">
+            
+                
+                    <a href="../C10-Elasticsearch/3-IK中文分析器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.3.</b>
+                        
+                        IK中文分析器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="C10-Elasticsearch/4-ES索引和类型.html">
+            
+                
+                    <a href="../C10-Elasticsearch/4-ES索引和类型.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.4.</b>
+                        
+                        ES索引和类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="C10-Elasticsearch/5-Logstash导入数据.html">
+            
+                
+                    <a href="../C10-Elasticsearch/5-Logstash导入数据.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.5.</b>
+                        
+                        Logstash导入数据
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.6" data-path="C10-Elasticsearch/6-ES文档的增删改.html">
+            
+                
+                    <a href="../C10-Elasticsearch/6-ES文档的增删改.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.6.</b>
+                        
+                        ES文档的增删改
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.7" data-path="C10-Elasticsearch/7-ES文档的查询.html">
+            
+                
+                    <a href="../C10-Elasticsearch/7-ES文档的查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.7.</b>
+                        
+                        ES文档的查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.8" data-path="C10-Elasticsearch/8-头条全文检索实现.html">
+            
+                
+                    <a href="../C10-Elasticsearch/8-头条全文检索实现.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.8.</b>
+                        
+                        项目实现全文检索接口
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.9" data-path="C10-Elasticsearch/9-ES联想提示.html">
+            
+                
+                    <a href="../C10-Elasticsearch/9-ES联想提示.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.9.</b>
+                        
+                        ES拼写纠错和自动补全
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.10" data-path="C10-Elasticsearch/10-头条suggest查询实现.html">
+            
+                
+                    <a href="../C10-Elasticsearch/10-头条suggest查询实现.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.10.</b>
+                        
+                        项目实现自动补全和纠错接口
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="C11-Unittest/C11-Unittest.html">
+            
+                
+                    <a href="../C11-Unittest/C11-Unittest.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        单元测试
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="C12-Deployment/index.html">
+            
+                
+                    <a href="../C12-Deployment/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        部署相关
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="12.1" data-path="C12-Deployment/Gunicorn.html">
+            
+                
+                    <a href="../C12-Deployment/Gunicorn.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.</b>
+                        
+                        Gunicorn
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="C12-Deployment/Supervisor.html">
+            
+                
+                    <a href="../C12-Deployment/Supervisor.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.2.</b>
+                        
+                        Supervisor
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >课程简介</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x5B9A;&#x65F6;&#x4FEE;&#x6B63;&#x7EDF;&#x8BA1;&#x6570;&#x636E;">&#x5B9A;&#x65F6;&#x4FEE;&#x6B63;&#x7EDF;&#x8BA1;&#x6570;&#x636E;</h1>
+<blockquote>
+<p>&#x5B9A;&#x671F;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x5E93;&#x548C;&#x6301;&#x4E45;&#x5316;&#x7F13;&#x5B58;&#x6570;&#x636E;&#x540C;&#x6B65;</p>
+</blockquote>
+<p>[TOC]</p>
+<!-- toc -->
+<ul>
+<li><a href="#1-&#x9700;&#x6C42;">1. &#x9700;&#x6C42;</a></li>
+<li><a href="#2-&#x5206;&#x6790;">2. &#x5206;&#x6790;</a></li>
+<li><a href="#3-&#x6309;&#x5206;&#x6790;&#x6B65;&#x9AA4;&#x5B8C;&#x6210;&#x4EE3;&#x7801;">3. &#x6309;&#x5206;&#x6790;&#x6B65;&#x9AA4;&#x5B8C;&#x6210;&#x4EE3;&#x7801;</a><ul>
+<li><a href="#31-&#x5B8C;&#x6210;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x5E93;&#x5E76;&#x8FD4;&#x56DE;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x7684;&#x51FD;&#x6570;">3.1 &#x5B8C;&#x6210;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x5E93;&#x5E76;&#x8FD4;&#x56DE;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x7684;&#x51FD;&#x6570;</a></li>
+<li><a href="#32-&#x5B8C;&#x6210;&#x5220;&#x9664;&#x6301;&#x4E45;&#x6570;&#x636E;&#x540E;&#x5199;&#x5165;&#x67E5;&#x5E93;&#x83B7;&#x53D6;&#x7684;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x51FD;&#x6570;">3.2 &#x5B8C;&#x6210;&#x5220;&#x9664;&#x6301;&#x4E45;&#x6570;&#x636E;&#x540E;&#x5199;&#x5165;&#x67E5;&#x5E93;&#x83B7;&#x53D6;&#x7684;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x51FD;&#x6570;</a></li>
+<li><a href="#33-&#x5B8C;&#x6210;&#x6301;&#x4E45;&#x5316;&#x6570;&#x636E;&#x540C;&#x6B65;&#x903B;&#x8F91;&#x7684;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;">3.3 &#x5B8C;&#x6210;&#x6301;&#x4E45;&#x5316;&#x6570;&#x636E;&#x540C;&#x6B65;&#x903B;&#x8F91;&#x7684;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;</a><ul>
+<li><a href="#331-&#x5B8C;&#x6210;apscheduler&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x4E3B;&#x903B;&#x8F91;&#x4EE3;&#x7801;">3.3.1 &#x5B8C;&#x6210;APScheduler&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x4E3B;&#x903B;&#x8F91;&#x4EE3;&#x7801;</a></li>
+<li><a href="#332-&#x521D;&#x6B65;&#x5B8C;&#x6210;&#x5B9A;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x5E76;&#x6D4B;&#x8BD5;&#x8FD0;&#x884C;">3.3.2 &#x521D;&#x6B65;&#x5B8C;&#x6210;&#x5B9A;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x5E76;&#x6D4B;&#x8BD5;&#x8FD0;&#x884C;</a></li>
+<li><a href="#333-&#x63D0;&#x4F9B;flaskapplication">3.3.3 &#x63D0;&#x4F9B;<code>flask_application</code></a></li>
+<li><a href="#334-&#x628A;&#x7279;&#x5B9A;&#x7684;&#x8DEF;&#x5F84;&#x6DFB;&#x52A0;&#x5230;&#x5BFC;&#x5305;&#x8DEF;&#x5F84;">3.3.4 &#x628A;&#x7279;&#x5B9A;&#x7684;&#x8DEF;&#x5F84;&#x6DFB;&#x52A0;&#x5230;&#x5BFC;&#x5305;&#x8DEF;&#x5F84;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#4-&#x6D4B;&#x8BD5;&#x8FD0;&#x884C;&#x7684;&#x65B9;&#x6CD5;">4. &#x6D4B;&#x8BD5;&#x8FD0;&#x884C;&#x7684;&#x65B9;&#x6CD5;</a></li>
+<li><a href="#5-&#x6700;&#x7EC8;&#x5B8C;&#x6210;&#x53C2;&#x8003;&#x4EE3;&#x7801;">5. &#x6700;&#x7EC8;&#x5B8C;&#x6210;&#x53C2;&#x8003;&#x4EE3;&#x7801;</a><ul>
+<li><a href="#51-commoncachestatusticpy">5.1 <code>/common/cache/statustic.py</code></a></li>
+<li><a href="#52-schedulermainpy">5.2 <code>/scheduler/main.py</code></a></li>
+</ul>
+</li>
+</ul>
+<!-- toc stop -->
+<h2 id="1-&#x9700;&#x6C42;">1. &#x9700;&#x6C42;</h2>
+<blockquote>
+<ul>
+<li>&#x4EFB;&#x52A1;&#x8981;&#x6C42;&#xFF1A;<ul>
+<li>&#x5BF9;<code>&#x7528;&#x6237;&#x53D1;&#x5E03;&#x603B;&#x6570;</code> &#x3001;<code>&#x7528;&#x6237;&#x5173;&#x6CE8;&#x603B;&#x6570;</code> &#x6570;&#x636E;&#x8FDB;&#x884C;&#x4FEE;&#x6B63;</li>
+<li>&#x6BCF;&#x5929;&#x51CC;&#x6668;3&#x5929;&#xFF0C;&#x4ECE;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x67E5;&#x8BE2;&#x5E76;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x540E;&#xFF0C;&#x5411;redis&#x540C;&#x6B65;&#xFF0C;&#x6301;&#x4E45;&#x5316;&#x4FDD;&#x5B58;</li>
+<li>&#x8BE5;&#x4EFB;&#x52A1;&#x8981;&#x6C42;&#x4F7F;&#x7528;<code>APScheduler</code>&#xFF0C;&#x4E14;<strong>&#x4EE5;&#x72EC;&#x7ACB;&#x8FDB;&#x7A0B;&#x8FD0;&#x884C;</strong></li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="2-&#x5206;&#x6790;">2. &#x5206;&#x6790;</h2>
+<blockquote>
+<p>&#x200B;    <img src="../images/7-2-1.png" alt="7-2-1.png"></p>
+<ul>
+<li><code>&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x5E93;&#x5E76;&#x8FD4;&#x56DE;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x7684;&#x51FD;&#x6570;</code><ul>
+<li>&#x56E0;&#x4E3A;&#x662F;&#x5BF9;&#x6301;&#x4E45;&#x5316;&#x7684;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x653E;&#x5165;&#x6301;&#x4E45;&#x5316;&#x6570;&#x636E;&#x5DE5;&#x5177;&#x7C7B;&#x4E2D;</li>
+</ul>
+</li>
+<li><code>&#x5220;&#x9664;&#x6301;&#x4E45;&#x6570;&#x636E;&#x540E;&#x5199;&#x5165;&#x67E5;&#x5E93;&#x83B7;&#x53D6;&#x7684;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x51FD;&#x6570;</code><ul>
+<li>&#x56E0;&#x4E3A;&#x662F;&#x5BF9;&#x6301;&#x4E45;&#x5316;&#x7684;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;&#x53EF;&#x4EE5;&#x653E;&#x5165;&#x6301;&#x4E45;&#x5316;&#x6570;&#x636E;&#x5DE5;&#x5177;&#x7C7B;&#x4E2D;</li>
+</ul>
+</li>
+<li><code>&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x51FD;&#x6570;</code>&#x8C03;&#x7528;&#x4E0A;&#x8FF0;&#x4E24;&#x4E2A;&#x51FD;&#x6570;</li>
+</ul>
+</blockquote>
+<h2 id="3-&#x6309;&#x5206;&#x6790;&#x6B65;&#x9AA4;&#x5B8C;&#x6210;&#x4EE3;&#x7801;">3. &#x6309;&#x5206;&#x6790;&#x6B65;&#x9AA4;&#x5B8C;&#x6210;&#x4EE3;&#x7801;</h2>
+<h3 id="31-&#x5B8C;&#x6210;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x5E93;&#x5E76;&#x8FD4;&#x56DE;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x7684;&#x51FD;&#x6570;">3.1 &#x5B8C;&#x6210;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x5E93;&#x5E76;&#x8FD4;&#x56DE;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x7684;&#x51FD;&#x6570;</h3>
+<blockquote>
+<p>&#x5728;<code>/common/cache/statustic.py</code>&#x7684;&#x5404;&#x4E2A; &#x6301;&#x4E45;&#x5316;&#x6570;&#x636E;&#x7684;&#x5DE5;&#x5177;&#x7C7B;&#xFF0C;&#x521B;&#x5EFA;&#x5E76;&#x5B8C;&#x6210;<code>db_query</code>&#x51FD;&#x6570;</p>
+<blockquote>
+<p>&#x4EE5;&#x7528;&#x6237;&#x53D1;&#x5E03;&#x603B;&#x6570;&#x4E3A;&#x4F8B;&#xFF0C; <code>count:user:arts</code>&#x4E2D;&#x6570;&#x636E;&#x683C;&#x5F0F;&#x4E3A;</p>
+<pre><code class="lang-shell">zset count:user:arts = [(user_id<value>, count<score>),
+                        (user_id<value>, count<score>),
+                        ...]
+</score></value></score></value></code></pre>
+</blockquote>
+<ul>
+<li><p>&#x5411;<code>news_article_basic</code>&#x8868;&#x67E5;&#x8BE2;status=2&#xFF08;&#x901A;&#x8FC7;&#x5BA1;&#x6838;&#xFF09;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;&#xFF0C;&#x518D;&#x6839;&#x636E;user_id&#x5206;&#x7EC4;&#xFF0C;&#x518D;&#x5206;&#x522B;&#x7EDF;&#x8BA1;&#x6BCF;&#x4E2A;user_id&#x6709;&#x591A;&#x5C11;&#x4E2A;article_id&#xFF0C;&#x8FD4;&#x56DE;db_query_ret</p>
+<blockquote>
+<p><code>sql</code></p>
+<pre><code class="lang-sql">mysql -uroot -p
+mysql
+<span class="hljs-operator"><span class="hljs-keyword">use</span> toutiao;</span>
+
+<span class="hljs-operator"><span class="hljs-keyword">select</span> news_article_basic.user_id, <span class="hljs-keyword">count</span>(news_article_basic.article_id) 
+<span class="hljs-keyword">from</span> news_article_basic 
+<span class="hljs-keyword">where</span> <span class="hljs-keyword">status</span>=<span class="hljs-number">2</span> 
+<span class="hljs-keyword">group</span> <span class="hljs-keyword">by</span> news_article_basic.user_id;</span>
+</code></pre>
+</blockquote>
+</li>
+<li><p>&#x6CE8;&#x610F;&#xFF1A;&#x628A;db_query&#x51FD;&#x6570;&#x8BBE;&#x4E3A;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x65B9;&#x4FBF;&#x76F4;&#x63A5;&#x8C03;&#x7528;</p>
+<ul>
+<li>&#x8BE5;&#x51FD;&#x6570;&#x53EA;&#x662F;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x5E93;&#x5E76;&#x8FD4;&#x56DE;&#xFF0C;&#x4E14;&#x4E0D;&#x9700;&#x8981;&#x5165;&#x53C2;&#xFF0C;&#x4E5F;&#x7528;&#x4E0D;&#x4E0A;&#x5176;&#x4ED6;&#x7C7B;&#x5C5E;&#x6027;</li>
+</ul>
+</li>
+<li><p>&#x53C2;&#x8003;&#x4EE3;&#x7801;</p>
+<blockquote>
+<p>&#x5728;<code>/common/cache/statustic.py</code>&#x4E2D;</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="lang-python">......
+<span class="hljs-keyword">from</span> sqlalchemy <span class="hljs-keyword">import</span> func
+<span class="hljs-keyword">from</span> models.user <span class="hljs-keyword">import</span> Relation
+<span class="hljs-keyword">from</span> models.news <span class="hljs-keyword">import</span> Article
+<span class="hljs-keyword">from</span> models <span class="hljs-keyword">import</span> db
+......
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserArticleCountStorage</span><span class="hljs-params">(BaseCountStorage)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x7528;&#x6237;&#x53D1;&#x5E03;&#x603B;&#x6570;&#x5DE5;&#x5177;&#x7C7B;&quot;&quot;&quot;</span>
+    key = <span class="hljs-string">&apos;count:user:arts&apos;</span>
+
+<span class="hljs-decorator">    @staticmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">db_query</span><span class="hljs-params">()</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x8FD4;&#x56DE;&#xFF08;&#x6240;&#x6709;&#x7528;&#x6237;&#x53D1;&#x5E03;&#x603B;&#x6570;&#xFF09;&#x7EDF;&#x8BA1;&#x6570;&#x636E;
+        &#x6839;&#x636E;user_id&#x5411;news_article_basic&#x8868;&#x67E5;&#x8BE2;status=2&#xFF08;&#x901A;&#x8FC7;&#x5BA1;&#x6838;&#xFF09;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;&#xFF0C;
+        &#x518D;&#x6839;&#x636E;user_id&#x5206;&#x7EC4;&#xFF0C;
+        &#x518D;&#x5206;&#x522B;&#x7EDF;&#x8BA1;&#x6BCF;&#x4E2A;user_id&#x6709;&#x591A;&#x5C11;&#x4E2A;article_id&#xFF0C;&#x8FD4;&#x56DE;db_query_ret
+        :return: db_query_ret=[(user_id, count), (user_id, count), (user_id, count), ...]
+        &quot;&quot;&quot;</span>
+        <span class="hljs-comment"># select user_id, count(article_id) from news_article_basic</span>
+        <span class="hljs-comment"># where status=2 group by user_id</span>
+        <span class="hljs-comment"># &#x4F7F;&#x7528;&#x4E86;sqlalchemy.func.count &#x5C31;&#x5FC5;&#x987B;&#x4F7F;&#x7528; db.session</span>
+        db_query_ret = db.session.query(Article.user_id, func.count(Article.id)).\
+            filter(Article.status==Article.STATUS.APPROVED).\
+            group_by(Article.user_id).all()
+        <span class="hljs-keyword">return</span> db_query_ret
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserFollowingCountStorage</span><span class="hljs-params">(BaseCountStorage)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x7528;&#x6237;&#x5173;&#x6CE8;&#x603B;&#x6570;&#x5DE5;&#x5177;&#x7C7B;&quot;&quot;&quot;</span>
+    key = <span class="hljs-string">&apos;count:user:following&apos;</span>
+
+<span class="hljs-decorator">    @staticmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">db_query</span><span class="hljs-params">()</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x67E5;&#x8BE2;&#x6570;&#x636E;&#x5E93;&#xFF0C;&#x8FD4;&#x56DE;&#xFF08;&#x6240;&#x6709;&#x7528;&#x6237;&#x5173;&#x6CE8;&#x603B;&#x6570;&#xFF09;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&quot;&quot;&quot;</span>
+
+        <span class="hljs-comment"># select user_relation.user_id, count(user_relation.target_user_id)</span>
+        <span class="hljs-comment"># from user_relation</span>
+        <span class="hljs-comment"># where user_relation.relation=1 group by by user_relation.user_id</span>
+        db_query_ret = db.session.query(Relation.user_id, func.count(Relation.target_user_id)).\
+            filter(Relation.relation==Relation.RELATION.FOLLOW).\
+            group_by(Relation.user_id)
+        <span class="hljs-keyword">return</span> db_query_ret
+</code></pre>
+</blockquote>
+<h3 id="32-&#x5B8C;&#x6210;&#x5220;&#x9664;&#x6301;&#x4E45;&#x6570;&#x636E;&#x540E;&#x5199;&#x5165;&#x67E5;&#x5E93;&#x83B7;&#x53D6;&#x7684;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x51FD;&#x6570;">3.2 &#x5B8C;&#x6210;&#x5220;&#x9664;&#x6301;&#x4E45;&#x6570;&#x636E;&#x540E;&#x5199;&#x5165;&#x67E5;&#x5E93;&#x83B7;&#x53D6;&#x7684;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x51FD;&#x6570;</h3>
+<blockquote>
+<p>&#x5728;<code>/common/cache/statustic.py</code>&#x7684;<code>BaseCountStorage</code>&#x7C7B;&#x4E2D;&#x5B8C;&#x6210;<code>reset</code>&#x51FD;&#x6570;</p>
+<blockquote>
+<p>&#x76F4;&#x63A5;&#x5728;<code>BaseCountStorage</code>&#x57FA;&#x7C7B;&#x4E2D;&#x5B8C;&#x6210;&#x6240;&#x6709;&#x5B50;&#x7C7B;&#x90FD;&#x80FD;&#x8C03;&#x7528;&#x7684;&#x65B9;&#x6CD5;&#xFF1A;&#x91CD;&#x7F6E;redis&#x7684;&#x6301;&#x4E45;&#x5316;&#x6570;&#x636E;</p>
+<ul>
+<li>&#x5148;&#x5220;&#x9664; redis&#x4E2D;&#x6301;&#x4E45;&#x5316;&#x7684;&#x6570;&#x636E;</li>
+<li>&#x518D;&#x5199;&#x5165; &#x6570;&#x636E;&#x5E93;&#x67E5;&#x8BE2;&#x83B7;&#x53D6;&#x7684;&#x6570;&#x636E;<ul>
+<li><code>BaseCountStorage</code>&#x7684;&#x5B50;&#x7C7B;&#x7684;<code>db_query</code>&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x4F5C;&#x4E3A;&#x5165;&#x53C2;</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>&#x6CE8;&#x610F;&#x70B9;&#xFF1A;</p>
+<ul>
+<li>&#x8003;&#x8651;&#x4F7F;&#x7528;redis_master.pipeline()</li>
+<li>&#x8003;&#x8651;reset&#x51FD;&#x6570;&#x8BBE;&#x7F6E;&#x4E3A;&#x7C7B;&#x65B9;&#x6CD5;<ul>
+<li>&#x6700;&#x7EC8;apscheduler&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x4E2D;&#x8C03;&#x7528;reset&#x51FD;&#x6570;&#xFF0C;&#x7C7B;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x65E0;&#x9700;&#x5B9E;&#x4F8B;&#x5316;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x53C2;&#x8003;&#x4EE3;&#x7801;</p>
+<blockquote>
+<p>&#x5728;<code>/common/cache/statustic.py</code>&#x7684;<code>BaseCountStorage</code>&#x7C7B;&#x4E2D;</p>
+</blockquote>
+</li>
+</ul>
+<pre><code class="lang-python">    ......
+<span class="hljs-decorator">    @classmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">reset</span><span class="hljs-params">(cls, db_query_ret)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x91CD;&#x7F6E;redis&#x4E2D;&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;&#x7684;&#x7EDF;&#x8BA1;&#x6570;&#x636E;
+        # &#x5148;&#x5220;&#x9664; redis&#x4E2D;&#x6301;&#x4E45;&#x5316;&#x7684;&#x6570;&#x636E;
+        # &#x518D;&#x5199;&#x5165; &#x6570;&#x636E;&#x5E93;&#x67E5;&#x8BE2;&#x83B7;&#x53D6;&#x7684;&#x6570;&#x636E;
+        :param db_query_ret: &#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x5DE5;&#x5177;&#x7C7B;&#x7684;&#x81EA;&#x5B9A;&#x4E49;db_query&#x51FD;&#x6570;&#x7684;&#x8FD4;&#x56DE;&#x503C;[(user_id, count), ...]
+        :return:
+        &quot;&quot;&quot;</span>
+        <span class="hljs-comment"># &#x53EF;&#x4EE5;&#x590D;&#x7528;flask_app&#x4E2D;&#x914D;&#x7F6E;&#x597D;&#x7684;redis_master</span>
+        <span class="hljs-comment"># &#x901A;&#x8FC7;toutiao/__init_.py&#x4E2D;&#x7684;create_app&#x51FD;&#x6570;&#x8FD4;&#x56DE;flask_app</span>
+        <span class="hljs-comment"># &#x8003;&#x8651;&#x4F7F;&#x7528;redis&#x7BA1;&#x9053;&#x64CD;&#x4F5C;</span>
+        p = current_app.redis_master.pipeline()
+        p.delete(cls.key) <span class="hljs-comment"># &#x5220;&#x9664; zset key</span>
+
+        <span class="hljs-comment"># zadd key score1 value1 score2 value2 ...</span>
+        <span class="hljs-comment"># &#x5199;&#x5165; zset key &#x65B9;&#x5F0F;&#x4E00;</span>
+        redis_data = []
+        <span class="hljs-keyword">for</span> user_id, count <span class="hljs-keyword">in</span> db_query_ret:
+            redis_data.append(count)
+            redis_data.append(user_id)
+        p.zadd(cls.key, *redis_data) <span class="hljs-comment"># *redis_data &#x8868;&#x793A;&#x53C2;&#x6570;&#x89E3;&#x5305;</span>
+        <span class="hljs-comment"># &#x5199;&#x5165; zset key &#x65B9;&#x5F0F;&#x4E8C;</span>
+        <span class="hljs-comment"># for user_id, count in db_query_ret:</span>
+        <span class="hljs-comment">#     p.zadd(cls.key, count, user_id)</span>
+        p.execute() <span class="hljs-comment"># &#x6267;&#x884C;&#x7BA1;&#x9053;&#x547D;&#x4EE4; </span>
+......
+</code></pre>
+</blockquote>
+<h3 id="33-&#x5B8C;&#x6210;&#x6301;&#x4E45;&#x5316;&#x6570;&#x636E;&#x540C;&#x6B65;&#x903B;&#x8F91;&#x7684;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;">3.3 &#x5B8C;&#x6210;&#x6301;&#x4E45;&#x5316;&#x6570;&#x636E;&#x540C;&#x6B65;&#x903B;&#x8F91;&#x7684;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;</h3>
+<blockquote>
+<p>&#x521B;&#x5EFA;<code>/scheduler/main.py</code></p>
+<ul>
+<li><p>&#x5BFC;&#x5165;/common/cache/statistic.py&#xFF0C;&#x5206;&#x522B;&#x8C03;&#x7528;&#x5404;&#x4E2A;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x7684;db_query&#x548C;reset&#x51FD;&#x6570;</p>
+</li>
+<li><p><strong>&#x6CE8;&#x610F;</strong>&#xFF1A;</p>
+<blockquote>
+<p>&#x8C03;&#x7528;/common/cache/statustic.py &#x4E2D;&#x7684;  reset() &#x548C; db_query() &#x4F7F;&#x7528;&#x4E86; </p>
+<ul>
+<li>db.session&#x5BF9;&#x8C61;</li>
+<li>redis&#x64CD;&#x4F5C;&#x5BF9;&#x8C61;</li>
+</ul>
+<p>&#x601D;&#x8003;&#xFF1A;&#x4E0A;&#x54EA;&#x53BB;&#x5F04;&#x8FD9;&#x4E24;&#x4E2A;&#x4E1C;&#x897F;&#x5462;&#xFF1F;</p>
+<ul>
+<li><p><code>toutiao/__init__.py</code>&#x4E2D;&#x6709;&#x521B;&#x5EFA;flask_app&#x7684;&#x5DE5;&#x5382;&#x51FD;&#x6570;</p>
+<ul>
+<li>&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x8BE5;&#x51FD;&#x6570;&#xFF0C;&#x751F;&#x6210;flask_app</li>
+<li>&#x4ECE;common/settings/default.py&#x4E2D;&#x62FF;&#x5230;DefaultConfig&#x914D;&#x7F6E;&#x5BF9;&#x8C61;</li>
+</ul>
+</li>
+<li><p>&#x5047;&#x8BBE;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x521B;&#x5EFA;&#x4E86;flask_app</p>
+<ul>
+<li>&#x62FF;&#x5C31;&#x53EF;&#x4EE5;&#x5728; with flask_app.app_context() &#x5176;&#x5E94;&#x7528;&#x73AF;&#x5883;&#x4E2D;&#x5B8C;&#x6210;&#x903B;&#x8F91;</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+</li>
+<li><p>&#x5B8C;&#x6574;&#x4EE3;&#x7801;</p>
+</li>
+</ul>
+</blockquote>
+<h4 id="331-&#x5B8C;&#x6210;apscheduler&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x4E3B;&#x903B;&#x8F91;&#x4EE3;&#x7801;">3.3.1 &#x5B8C;&#x6210;APScheduler&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x4E3B;&#x903B;&#x8F91;&#x4EE3;&#x7801;</h4>
+<blockquote>
+<p>&#x5728;<code>/scheduler/main.py</code>&#x4E2D;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> apscheduler.schedulers.blocking <span class="hljs-keyword">import</span> BlockingScheduler
+<span class="hljs-keyword">from</span> apscheduler.executors.pool <span class="hljs-keyword">import</span> ThreadPoolExecutor
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fix_statistics</span><span class="hljs-params">()</span>:</span>
+    print(<span class="hljs-string">&apos;hahahah&apos;</span>)
+
+<span class="hljs-string">&quot;&quot;&quot;&#x7B2C;1&#x90E8;&#x5206;. &#x521B;&#x5EFA;&#x5E76;&#x914D;&#x7F6E;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#x5668;&#xFF0C;&#x6DFB;&#x52A0;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x5E76;&#x6267;&#x884C;&quot;&quot;&quot;</span>
+<span class="hljs-comment"># &#x6267;&#x884C;&#x5668; &#x7EBF;&#x7A0B;&#x6C60;3&#x4E2A;&#x7EBF;&#x7A0B;</span>
+executors = {<span class="hljs-string">&apos;default&apos;</span>: ThreadPoolExecutor(<span class="hljs-number">3</span>)}
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x963B;&#x585E;&#x7684;&#x8C03;&#x5EA6;&#x5668;&#x5BF9;&#x8C61;</span>
+scheduler = BlockingScheduler(executors=executors)
+<span class="hljs-comment"># &#x6DFB;&#x52A0;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;</span>
+<span class="hljs-comment"># scheduler.add_job(fix_statistics, &apos;cron&apos;, hour=3) # &#x5728;&#x6BCF;&#x5929;&#x7684;&#x51CC;&#x6668;3&#x70B9;&#x6267;&#x884C;</span>
+<span class="hljs-comment"># date&#x89E6;&#x53D1;&#x5668;&#xFF0C;&#x4E0D;&#x4F20;&#x65F6;&#x95F4;&#x53C2;&#x6570;&#xFF0C;&#x5C31;&#x7ACB;&#x523B;&#x6267;&#x884C;</span>
+scheduler.add_job(fix_statistics, <span class="hljs-string">&apos;date&apos;</span>) <span class="hljs-comment"># &#x6D4B;&#x8BD5;&#x4F7F;&#x7528;</span>
+
+<span class="hljs-string">&quot;&quot;&quot;&#x6267;&#x884C;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&quot;&quot;&quot;</span>
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    scheduler.start() <span class="hljs-comment"># &#x963B;&#x585E;&#xFF0C;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x4E5F;&#x4E0D;&#x9000;&#x51FA;</span>
+</code></pre>
+</blockquote>
+<h4 id="332-&#x521D;&#x6B65;&#x5B8C;&#x6210;&#x5B9A;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x5E76;&#x6D4B;&#x8BD5;&#x8FD0;&#x884C;">3.3.2 &#x521D;&#x6B65;&#x5B8C;&#x6210;&#x5B9A;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x5E76;&#x6D4B;&#x8BD5;&#x8FD0;&#x884C;</h4>
+<blockquote>
+<p>&#x5728;<code>/scheduler/main.py</code>&#x4E2D;</p>
+<pre><code class="lang-python">......
+<span class="hljs-string">&quot;&quot;&quot;&#x7B2C;2&#x90E8;&#x5206;. &#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&quot;&quot;&quot;</span>
+<span class="hljs-keyword">from</span> cache <span class="hljs-keyword">import</span> statistic
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fix_statistics</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot; &#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x51FD;&#x6570; &#x540C;&#x6B65;&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;&#x7684;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#xFF1A;&#x8C03;&#x7528;&#x6301;&#x4E45;&#x5316;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x5DE5;&#x5177;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&quot;&quot;&quot;</span>
+    <span class="hljs-comment"># &#x5BF9;&#x7528;&#x6237;&#x53D1;&#x5E03;&#x603B;&#x6570;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x540C;&#x6B65;</span>
+    db_query_ret = statistic.UserArticleCountStorage.db_query()
+    statistic.UserArticleCountStorage.reset(db_query_ret)
+    <span class="hljs-comment"># &#x5BF9;&#x7528;&#x6237;&#x5173;&#x6CE8;&#x603B;&#x6570;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x540C;&#x6B65;</span>
+    db_query_ret = statistic.UserFollowingCountStorage.db_query()
+    statistic.UserFollowingCountStorage.reset(db_query_ret)
+
+<span class="hljs-string">&quot;&quot;&quot;&#x7B2C;1&#x90E8;&#x5206;. &#x521B;&#x5EFA;&#x5E76;&#x914D;&#x7F6E;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#x5668;&#xFF0C;&#x6DFB;&#x52A0;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x5E76;&#x6267;&#x884C;&quot;&quot;&quot;</span>
+......
+</code></pre>
+<ul>
+<li><p>&#x8FD0;&#x884C;/scheduler/main.py&#x62A5;&#x9519;&#xFF1A;</p>
+<pre><code class="lang-shell">RuntimeError: No application found. Either work inside a view function or push an application context.
+</code></pre>
+<ul>
+<li>&#x7F3A;&#x5C11;application&#xFF01;&#x8981;&#x4E48;&#x5DE5;&#x4F5C;&#x5728;&#x4E00;&#x4E2A;<code>view function</code>&#x4E2D;&#xFF0C;&#x8981;&#x4E48;&#x5FC5;&#x987B;<code>push an application context</code><ul>
+<li>&#x95EE;&#x9898;&#x7684;&#x672C;&#x8D28;&#x662F;&#xFF1A;&#x8C03;&#x7528;/common/cache/statustic.py &#x4E2D;&#x5DE5;&#x5177;&#x7C7B;&#x7684;  reset() &#x548C; db_query() &#x4F7F;&#x7528;&#x4E86; <ul>
+<li>db.session&#x5BF9;&#x8C61;</li>
+<li>redis&#x64CD;&#x4F5C;&#x5BF9;&#x8C61;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><strong>&#x90A3;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x7ED9;&#x5B83;&#x4E00;&#x4E2A; <code>flask application</code>&#xFF01;</strong><ul>
+<li>&#x601D;&#x8003;&#xFF1A;&#x4E0A;&#x54EA;&#x53BB;&#x5F04;&#x8FD9;<code>flask app</code>&#x5462;&#xFF1F;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h4 id="333-&#x63D0;&#x4F9B;flaskapplication">3.3.3 &#x63D0;&#x4F9B;<code>flask_application</code></h4>
+<blockquote>
+<p>&#x601D;&#x8003;&#xFF1A;&#x54EA;&#x91CC;&#x6709;&#x73B0;&#x6210;&#x7684;flask_app&#x5462;&#xFF1F;</p>
+<ul>
+<li><p>&#x5206;&#x6790;</p>
+<ul>
+<li><code>toutiao/__init__.py</code>&#x4E2D;&#x6709;&#x521B;&#x5EFA;flask_app&#x7684;&#x5DE5;&#x5382;&#x51FD;&#x6570;<ul>
+<li>&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x8BE5;&#x51FD;&#x6570;&#xFF0C;&#x751F;&#x6210;flask_app</li>
+<li>&#x4ECE;<code>common/settings/default.py</code>&#x4E2D;&#x62FF;&#x5230;<code>DefaultConfig&#x914D;&#x7F6E;&#x5BF9;&#x8C61;</code></li>
+<li>&#x8FD9;&#x6837;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528; <code>with flask_app.app_context()</code>&#x4E0B;&#xFF0C;&#x5176;<code>flask app</code>&#x4E0A;&#x4E0B;&#x6587;&#x5E94;&#x7528;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;&#x5C31;&#x6709;&#x4E86;<code>db.session&#x5BF9;&#x8C61;</code>&#x548C;<code>redis&#x64CD;&#x4F5C;&#x5BF9;&#x8C61;</code></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>&#x5728;<code>/scheduler/main.py</code>&#x4E2D;</p>
+<pre><code class="lang-python">......
+<span class="hljs-string">&quot;&quot;&quot;&#x7B2C;3&#x90E8;&#x5206;. &#x751F;&#x6210;flask_app
+&#x5728;with flask_app.app_context()&#x4E2D;&#xFF0C;&#x5C31;&#x5305;&#x542B;&#x4E86;db.session&#x548C;redis_master&#x53CA;&#x5176;&#x914D;&#x7F6E;&quot;&quot;&quot;</span>
+<span class="hljs-keyword">from</span> toutiao <span class="hljs-keyword">import</span> create_app
+<span class="hljs-keyword">from</span> settings.default <span class="hljs-keyword">import</span> DefaultConfig
+
+flask_app = create_app(DefaultConfig)
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x4E2D;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5230;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5BF9;&#x8C61;&#x548C;redis&#x5BF9;&#x8C61;</span>
+<span class="hljs-comment"># &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8C03;&#x7528;create_app&#x65B9;&#x6CD5;&#xFF0C;&#x521B;&#x5EFA;flask app&#xFF0C;&#x4F1A;&#x8FDE;&#x5E26;&#x521D;&#x59CB;&#x5316;&#x6570;&#x636E;&#x5E93;db&#x5BF9;&#x8C61;&#x548C;redis&#x5BF9;&#x8C61;</span>
+<span class="hljs-comment"># with flask_app.app_context()</span>
+
+<span class="hljs-string">&quot;&quot;&quot;&#x7B2C;2&#x90E8;&#x5206;. &#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&quot;&quot;&quot;</span>
+<span class="hljs-keyword">from</span> cache <span class="hljs-keyword">import</span> statistic
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fix_statistics</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot; &#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x51FD;&#x6570; &#x540C;&#x6B65;&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;&#x7684;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#xFF1A;&#x8C03;&#x7528;&#x6301;&#x4E45;&#x5316;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x5DE5;&#x5177;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&quot;&quot;&quot;</span>
+    <span class="hljs-keyword">with</span> flask_app.app_context():
+        <span class="hljs-comment"># &#x5BF9;&#x7528;&#x6237;&#x53D1;&#x5E03;&#x603B;&#x6570;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x540C;&#x6B65;</span>
+        db_query_ret = statistic.UserArticleCountStorage.db_query()
+        statistic.UserArticleCountStorage.reset(db_query_ret)
+        ......
+</code></pre>
+</li>
+<li><p><strong>&#x6D4B;&#x8BD5;&#x8FD0;&#x884C;</strong></p>
+<blockquote>
+<p>&#x5728;pycharmIDE&#x4E2D;&#x76F4;&#x63A5;&#x53F3;&#x952E;&#x8FD0;&#x884C;&#x80FD;&#x8DD1;&#x901A;&#xFF0C;&#x90A3;&#x5E76;&#x4E0D;&#x7B97;&#x771F;&#x7684;&#x80FD;&#x8DD1;&#x901A;&#xFF01;&#x6211;&#x4EEC;&#x7684;&#x9700;&#x6C42;&#x662F;&#x628A;&#x5B9A;&#x65F6;&#x6570;&#x636E;&#x540C;&#x6B65;&#x4EFB;&#x52A1;&#x505A;&#x6210;&#x72EC;&#x7ACB;&#x8FDB;&#x7A0B;&#xFF0C;&#x6211;&#x4EEC;&#x8FD8;<strong>&#x9700;&#x8981;&#x5728;&#x547D;&#x4EE4;&#x884C;&#x7EC8;&#x7AEF;&#x8FDB;&#x884C;&#x8FD0;&#x884C;&#x6D4B;&#x8BD5;</strong>&#x3002;&#x629B;&#x51FA;&#x5F02;&#x5E38;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-shell">......
+    from toutiao import create_app
+ModuleNotFoundError: No module named &apos;toutiao&apos;
+</code></pre>
+</blockquote>
+<ul>
+<li>&#x5206;&#x6790;&#x5F02;&#x5E38;<ul>
+<li>pycharm&#x91CC;&#x80FD;&#x591F;&#x5BFC;&#x5165;<code>/toutiao</code>&#x662F;&#x56E0;&#x4E3A;&#x628A;&#x6574;&#x4E2A;<code>toutiao-backend</code>&#x9879;&#x76EE;&#x7684;&#x5BFC;&#x5305;&#x8DEF;&#x5F84;&#x90FD;&#x4F5C;&#x4E3A;&#x5BFC;&#x5305;&#x8DEF;&#x5F84;&#x4E86;</li>
+<li><code>scheduler/main.py</code>&#x53C8;&#x9700;&#x8981;&#x72EC;&#x7ACB;&#x8FD0;&#x884C;&#xFF0C;python&#x9ED8;&#x8BA4;&#x53EA;&#x80FD;&#x4ECE;&#x8FD0;&#x884C;&#x7684;&#x4F4D;&#x7F6E;&#x540C;&#x7EA7;&#x548C;&#x5411;&#x4E0B;&#x5BFC;&#x5165;&#x5305;&#x6A21;&#x5757;</li>
+<li>&#x5982;&#x679C;&#x8981;&#x662F;&#x80FD;&#x591F;&#x5728;&#x6267;&#x884C;&#x4EE3;&#x7801;&#x7684;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x628A;&#x6574;&#x4E2A;&#x9879;&#x76EE;&#x8DEF;&#x5F84;&#x4E5F;&#x6DFB;&#x52A0;&#x5230;&#x5BFC;&#x5305;&#x73AF;&#x5883;&#x4E2D;&#x5C31;&#x89E3;&#x51B3;&#x4E86;&#xFF01;<ul>
+<li>&#x5728;python&#x63D0;&#x4F9B;&#x4E86;<code>sys.path.insert</code>&#x51FD;&#x6570;&#x6765;&#x6DFB;&#x52A0;&#x5BFC;&#x5305;&#x8DEF;&#x5F84;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h4 id="334-&#x628A;&#x7279;&#x5B9A;&#x7684;&#x8DEF;&#x5F84;&#x6DFB;&#x52A0;&#x5230;&#x5BFC;&#x5305;&#x8DEF;&#x5F84;">3.3.4 &#x628A;&#x7279;&#x5B9A;&#x7684;&#x8DEF;&#x5F84;&#x6DFB;&#x52A0;&#x5230;&#x5BFC;&#x5305;&#x8DEF;&#x5F84;</h4>
+<blockquote>
+<p>&#x5728;<code>/scheduler/main.py</code>&#x4E2D;</p>
+<blockquote>
+<ul>
+<li>&#x901A;&#x8FC7;<code>&#x5F53;&#x524D;&#x8FD0;&#x884C;&#x6587;&#x4EF6;</code>&#x5B9A;&#x4F4D;&#x5230;<code>&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x5939;</code>&#x7684;&#x8DEF;&#x5F84;</li>
+<li>&#x518D;&#x901A;&#x8FC7;<code>sys.path.insert</code>&#x51FD;&#x6570;&#x5C06;<code>&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x5939;</code>&#x7684;&#x8DEF;&#x5F84;&#x6DFB;&#x52A0;&#x5BFC;&#x5305;&#x8DEF;&#x5F84;</li>
+<li>&#x8FD9;&#x6837;&#x5F53;&#x524D;&#x6587;&#x4EF6;&#x4E00;&#x65E6;&#x6267;&#x884C;&#xFF0C;&#x5C31;&#x4F1A;&#x5148;&#x628A;<code>&#x9879;&#x76EE;&#x6587;&#x4EF6;&#x5939;</code>&#x7684;&#x8DEF;&#x5F84;&#x6DFB;&#x52A0;&#x5BFC;&#x5305;&#x8DEF;&#x5F84;&#x4E2D;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x627E;&#x5230;<code>toutiao-backend/toutiao</code>&#x5305;&#x4E86;&#xFF01;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">from</span> apscheduler.schedulers.blocking <span class="hljs-keyword">import</span> BlockingScheduler
+<span class="hljs-keyword">from</span> apscheduler.executors.pool <span class="hljs-keyword">import</span> ThreadPoolExecutor
+
+<span class="hljs-string">&quot;&quot;&quot;&#x7B2C;4&#x90E8;&#x5206;. &#x51C6;&#x5907;&#x5BFC;&#x5305;&#x73AF;&#x5883;&quot;&quot;&quot;</span>
+<span class="hljs-comment"># todo &#x5F53;&#x524D;&#x662F;&#x542F;&#x52A8;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x5BFC;&#x5305;&#x8DEF;&#x5F84;&#x662F;&#x5F53;&#x524D;&#x8DEF;&#x5F84;&#xFF1B;&#x4ECE;&#x54EA;&#x91CC;&#x6267;&#x884C;&#x5C31;&#x4ECE;&#x54EA;&#x91CC;&#x5BFC;&#x5305;&#xFF0C;python&#x9ED8;&#x8BA4;&#x628A;&#x5411;&#x4E0B;&#x7684;&#x8DEF;&#x5F84;&#x6DFB;&#x52A0;&#x5230;&#x5BFC;&#x5305;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;</span>
+<span class="hljs-comment"># BASE_DIR = &#x4E0A;&#x4E00;&#x7EA7;&#x6587;&#x4EF6;&#x5939;&#x8DEF;&#x5F84;(&#x4E0A;&#x4E00;&#x7EA7;&#x6587;&#x4EF6;&#x5939;&#x8DEF;&#x5F84;(&#x5F53;&#x524D;&#x6587;&#x4EF6;)) == toutiao-backend</span>
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+<span class="hljs-comment"># &#x6DFB;&#x52A0;&#x5230;&#x5BFC;&#x5305;&#x8DEF;&#x5F84;&#x4E2D;(toutiao-backend) == &#x628A;toutiao-backend&#x6DFB;&#x52A0;&#x5230;&#x5BFC;&#x5305;&#x8DEF;&#x5F84;&#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;</span>
+sys.path.insert(<span class="hljs-number">0</span>, os.path.join(BASE_DIR))
+
+......
+</code></pre>
+</blockquote>
+<ul>
+<li><p>&#x518D;&#x6B21;&#x6D4B;&#x8BD5;&#x8FD0;&#x884C;&#x53D1;&#x73B0;&#x627E;&#x4E0D;&#x5230;<code>toutiao-backend/common/settings</code>&#x6587;&#x4EF6;&#x5939;</p>
+<pre><code class="lang-shell">......    
+    from settings.default import DefaultConfig
+ModuleNotFoundError: No module named &apos;settings&apos;
+</code></pre>
+</li>
+<li><p>&#x8FD8;&#x662F;&#x540C;&#x6837;&#x7684;&#x601D;&#x8DEF;&#xFF0C;&#x5728;&#x4EE3;&#x7801;&#x4E2D;&#x628A;<code>toutiao-backend/common/</code>&#x6DFB;&#x52A0;&#x5230;&#x5BFC;&#x5305;&#x8DEF;&#x5F84;&#x4E2D;</p>
+<pre><code class="lang-python">......
+<span class="hljs-string">&quot;&quot;&quot;&#x7B2C;4&#x90E8;&#x5206;. &#x51C6;&#x5907;&#x5BFC;&#x5305;&#x73AF;&#x5883;&quot;&quot;&quot;</span>
+<span class="hljs-comment"># todo &#x5F53;&#x524D;&#x662F;&#x542F;&#x52A8;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x5BFC;&#x5305;&#x8DEF;&#x5F84;&#x662F;&#x5F53;&#x524D;&#x8DEF;&#x5F84;&#xFF1B;&#x4ECE;&#x54EA;&#x91CC;&#x6267;&#x884C;&#x5C31;&#x4ECE;&#x54EA;&#x91CC;&#x5BFC;&#x5305;&#xFF0C;python&#x9ED8;&#x8BA4;&#x628A;&#x5411;&#x4E0B;&#x7684;&#x8DEF;&#x5F84;&#x6DFB;&#x52A0;&#x5230;&#x5BFC;&#x5305;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;</span>
+<span class="hljs-comment"># BASE_DIR = &#x4E0A;&#x4E00;&#x7EA7;&#x6587;&#x4EF6;&#x5939;&#x8DEF;&#x5F84;(&#x4E0A;&#x4E00;&#x7EA7;&#x6587;&#x4EF6;&#x5939;&#x8DEF;&#x5F84;(&#x5F53;&#x524D;&#x6587;&#x4EF6;)) == toutiao-backend</span>
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+<span class="hljs-comment"># &#x6DFB;&#x52A0;&#x5230;&#x5BFC;&#x5305;&#x8DEF;&#x5F84;&#x4E2D;(toutiao-backend) == &#x628A;toutiao-backend&#x6DFB;&#x52A0;&#x5230;&#x5BFC;&#x5305;&#x8DEF;&#x5F84;&#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;</span>
+sys.path.insert(<span class="hljs-number">0</span>, os.path.join(BASE_DIR))
+<span class="hljs-comment"># &#x6DFB;&#x52A0;&#x5230;&#x5BFC;&#x5305;&#x8DEF;&#x5F84;&#x4E2D;(&#x62FC;&#x63A5;&#x8DEF;&#x5F84;(toutiao-backend, common)) == &#x628A;toutiao-backend/common&#x6DFB;&#x52A0;&#x5230;&#x5BFC;&#x5305;&#x8DEF;&#x5F84;&#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;</span>
+sys.path.insert(<span class="hljs-number">0</span>, os.path.join(BASE_DIR, <span class="hljs-string">&apos;common&apos;</span>))
+......
+</code></pre>
+</li>
+<li><p>&#x6D4B;&#x8BD5;&#x8FD0;&#x884C;&#x6210;&#x529F;&#xFF01;</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="4-&#x6D4B;&#x8BD5;&#x8FD0;&#x884C;&#x7684;&#x65B9;&#x6CD5;">4. &#x6D4B;&#x8BD5;&#x8FD0;&#x884C;&#x7684;&#x65B9;&#x6CD5;</h2>
+<blockquote>
+<pre><code class="lang-shell">ssh root@192.168.xx.xxx # &#x8FDE;&#x63A5;&#x8FDC;&#x7A0B;centos&#x670D;&#x52A1;&#x5668;
+# &#x8F93;&#x5165;&#x5BC6;&#x7801;chuanzhi
+source /home/python/.virtualenv/toutiao/bin/activate # &#x5207;&#x6362;&#x8FDB;&#x865A;&#x62DF;&#x73AF;&#x5883;
+cd /home/python/toutiao-backend/scheduler # &#x8FDB;&#x5165;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x542F;&#x52A8;&#x6587;&#x4EF6;&#x6240;&#x5728;&#x8DEF;&#x5F84;
+python main.py # &#x8FD0;&#x884C;
+# ctrl + C &#x505C;&#x6B62;&#x5F53;&#x524D;&#x8FDB;&#x7A0B;
+</code></pre>
+</blockquote>
+<h2 id="5-&#x6700;&#x7EC8;&#x5B8C;&#x6210;&#x53C2;&#x8003;&#x4EE3;&#x7801;">5. &#x6700;&#x7EC8;&#x5B8C;&#x6210;&#x53C2;&#x8003;&#x4EE3;&#x7801;</h2>
+<h4 id="51-commoncachestatusticpy">5.1 <code>/common/cache/statustic.py</code></h4>
+<blockquote>
+<pre><code class="lang-python"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">BaseCountStorage</span><span class="hljs-params">()</span>:</span>    
+    ......
+<span class="hljs-decorator">    @classmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">reset</span><span class="hljs-params">(cls, db_query_ret)</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;&#x91CD;&#x7F6E;redis&#x7684;&#x6301;&#x4E45;&#x5316;&#x6570;&#x636E;&#xFF1A;&#x5148;&#x5220;&#x9664;&#xFF0C;&#x518D;&#x5199;&#x5165;
+        &#x7531;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x8C03;&#x7528;&#x7684;&#x91CD;&#x7F6E;&#x6570;&#x636E;&#x65B9;&#x6CD5;
+        /scheduler/statistic.py/__fix_statistics()&#x8C03;&#x7528;&#x6B64;&#x51FD;&#x6570;
+        :param db_query_ret: cls.db_query()&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x7ED3;&#x679C;
+            db_query_ret = [(user_id, count), (user_id, count), (user_id, count), ...]
+        :return:
+        &quot;&quot;&quot;</span>
+        <span class="hljs-comment"># todo &#x6CE8;&#x610F;&#x554A;&#xFF01;&#x6B64;&#x51FD;&#x6570;&#x4E2D;&#x7684;current_app&#x8DDF;&#x540C;&#x7C7B;&#x5176;&#x4ED6;&#x51FD;&#x6570;&#x7684;current_app&#x90A3;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;flask_app!</span>
+        <span class="hljs-comment">#  &#x8C01;&#x8C03;&#x7528;&#x51FD;&#x6570;&#xFF0C;&#x51FD;&#x6570;&#x4E2D;&#x7684;current_app&#x5C31;&#x4ECE;&#x54EA;&#x6765;&#xFF01;</span>
+        <span class="hljs-comment">#  /scheduler/statistic.py/__fix_statistics()&#x8C03;&#x7528;&#x672C;&#x51FD;&#x6570;&#x65F6;&#xFF0C;&#x5148;with flask_app.app_context()!!</span>
+        pl = current_app.redis_master.pipeline()
+        pl.delete(cls.key)
+
+        <span class="hljs-comment"># &#x65B9;&#x5F0F;&#x4E00;&#xFF1A;&#x5411;zset_key&#x4E2D;&#x4E00;&#x6B21;&#x5199;&#x5165;&#x4E00;&#x4E2A; (value, score) == (user_id, count)</span>
+        <span class="hljs-comment"># for user_id, count in db_query_ret:</span>
+        <span class="hljs-comment">#     pl.zadd(cls.key, count, user_id)</span>
+
+        <span class="hljs-comment"># &#x65B9;&#x5F0F;&#x4E8C;&#xFF1A;&#x4E00;&#x6B21;&#x6027;&#x5199;&#x5165;&#x4E00;&#x6574;&#x4E2A;zset_key</span>
+        redis_data = []
+        <span class="hljs-keyword">for</span> user_id, count <span class="hljs-keyword">in</span> db_query_ret:
+            redis_data.append(count)
+            redis_data.append(user_id)
+        <span class="hljs-comment"># &#x6B64;&#x65F6; redis_data = [count1, user_id1, count2, user_id2, ..]</span>
+        pl.zadd(cls.key, *redis_data) <span class="hljs-comment"># func(*args)&#x53C2;&#x6570;&#x89E3;&#x5305; args&#x662F;&#x5217;&#x8868;&#x6216;&#x5143;&#x7956;&#xFF0C;&#x7B49;&#x4EF7;&#x4E8E;&#x628A;&#x5168;&#x90E8;&#x5143;&#x7D20;&#x6309;&#x987A;&#x5E8F;&#x5411;func&#x4F20;&#x53C2;</span>
+        <span class="hljs-comment"># pl.zadd(cls.key, count1, user_id1, count2, user_id2, ..]</span>
+
+        pl.execute()
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserArticleCountStorage</span><span class="hljs-params">(BaseCountStorage)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x7528;&#x6237;&#x53D1;&#x5E03;&#x603B;&#x6570;&#x5DE5;&#x5177;&#x7C7B;&quot;&quot;&quot;</span>
+    key = <span class="hljs-string">&apos;count:user:arts&apos;</span>
+
+<span class="hljs-decorator">    @staticmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">db_query</span><span class="hljs-params">()</span>:</span>
+        <span class="hljs-string">&quot;&quot;&quot;
+        &#x6839;&#x636E;user_id&#x5411;news_article_basic&#x8868;&#x67E5;&#x8BE2;status=2&#xFF08;&#x901A;&#x8FC7;&#x5BA1;&#x6838;&#xFF09;&#x7684;&#x6240;&#x6709;&#x6570;&#x636E;&#xFF0C;
+        &#x518D;&#x6839;&#x636E;user_id&#x5206;&#x7EC4;&#xFF0C;
+        &#x518D;&#x5206;&#x522B;&#x7EDF;&#x8BA1;&#x6BCF;&#x4E2A;user_id&#x6709;&#x591A;&#x5C11;&#x4E2A;article_id&#xFF0C;&#x8FD4;&#x56DE;db_query_ret
+        :return: db_query_ret=[(user_id, count), (user_id, count), (user_id, count), ...]
+        &quot;&quot;&quot;</span>
+        <span class="hljs-comment"># select user_id, count(article_id) from news_article_basic</span>
+        <span class="hljs-comment"># where status=2 group by user_id</span>
+        <span class="hljs-comment"># &#x4F7F;&#x7528;&#x4E86;sqlalchemy.func.count &#x5C31;&#x5FC5;&#x987B;&#x4F7F;&#x7528; db.session</span>
+        <span class="hljs-keyword">return</span> db.session.query(Article.user_id, func.count(Article.id))\
+            .filter(Article.status == Article.STATUS.APPROVED)\
+            .group_by(Article.user_id).all()
+
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserFollowingCountStorage</span><span class="hljs-params">(BaseCountStorage)</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;&#x7528;&#x6237;&#x5173;&#x6CE8;&#x603B;&#x6570;&#x5DE5;&#x5177;&#x7C7B;&quot;&quot;&quot;</span>
+    key = <span class="hljs-string">&apos;count:user:following&apos;</span>
+<span class="hljs-decorator">    @staticmethod</span>
+    <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">db_query</span><span class="hljs-params">()</span>:</span>
+        <span class="hljs-keyword">return</span> db.session.query(Relation.user_id, func.count(Relation.target_user_id)) \
+            .filter(Relation.relation == Relation.RELATION.FOLLOW)\
+            .group_by(Relation.user_id).all()
+</code></pre>
+</blockquote>
+<h4 id="52-schedulermainpy">5.2 <code>/scheduler/main.py</code></h4>
+<blockquote>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> os
+<span class="hljs-keyword">import</span> sys
+<span class="hljs-keyword">from</span> apscheduler.schedulers.blocking <span class="hljs-keyword">import</span> BlockingScheduler
+<span class="hljs-keyword">from</span> apscheduler.executors.pool <span class="hljs-keyword">import</span> ThreadPoolExecutor
+
+<span class="hljs-string">&quot;&quot;&quot;&#x7B2C;4&#x90E8;&#x5206;. &#x51C6;&#x5907;&#x5BFC;&#x5305;&#x73AF;&#x5883;&quot;&quot;&quot;</span>
+<span class="hljs-comment"># todo &#x5F53;&#x524D;&#x662F;&#x542F;&#x52A8;&#x6587;&#x4EF6;&#xFF0C;&#x6240;&#x4EE5;&#x5BFC;&#x5305;&#x8DEF;&#x5F84;&#x662F;&#x5F53;&#x524D;&#x8DEF;&#x5F84;&#xFF1B;&#x4ECE;&#x54EA;&#x91CC;&#x6267;&#x884C;&#x5C31;&#x4ECE;&#x54EA;&#x91CC;&#x5BFC;&#x5305;&#xFF0C;python&#x9ED8;&#x8BA4;&#x628A;&#x5411;&#x4E0B;&#x7684;&#x8DEF;&#x5F84;&#x6DFB;&#x52A0;&#x5230;&#x5BFC;&#x5305;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;</span>
+<span class="hljs-comment"># BASE_DIR = &#x4E0A;&#x4E00;&#x7EA7;&#x6587;&#x4EF6;&#x5939;&#x8DEF;&#x5F84;(&#x4E0A;&#x4E00;&#x7EA7;&#x6587;&#x4EF6;&#x5939;&#x8DEF;&#x5F84;(&#x5F53;&#x524D;&#x6587;&#x4EF6;)) == toutiao-backend</span>
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+<span class="hljs-comment"># &#x6DFB;&#x52A0;&#x5230;&#x5BFC;&#x5305;&#x8DEF;&#x5F84;&#x4E2D;(toutiao-backend) == &#x628A;toutiao-backend&#x6DFB;&#x52A0;&#x5230;&#x5BFC;&#x5305;&#x8DEF;&#x5F84;&#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;</span>
+sys.path.insert(<span class="hljs-number">0</span>, os.path.join(BASE_DIR))
+<span class="hljs-comment"># &#x6DFB;&#x52A0;&#x5230;&#x5BFC;&#x5305;&#x8DEF;&#x5F84;&#x4E2D;(&#x62FC;&#x63A5;&#x8DEF;&#x5F84;(toutiao-backend, common)) == &#x628A;toutiao-backend/common&#x6DFB;&#x52A0;&#x5230;&#x5BFC;&#x5305;&#x8DEF;&#x5F84;&#x7684;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x4E2D;</span>
+sys.path.insert(<span class="hljs-number">0</span>, os.path.join(BASE_DIR, <span class="hljs-string">&apos;common&apos;</span>))
+
+<span class="hljs-string">&quot;&quot;&quot;&#x7B2C;3&#x90E8;&#x5206;. &#x751F;&#x6210;flask_app
+&#x5728;with flask_app.app_context()&#x4E2D;&#xFF0C;&#x5C31;&#x5305;&#x542B;&#x4E86;db.session&#x548C;redis_master&#x53CA;&#x5176;&#x914D;&#x7F6E;&quot;&quot;&quot;</span>
+<span class="hljs-keyword">from</span> toutiao <span class="hljs-keyword">import</span> create_app
+<span class="hljs-keyword">from</span> settings.default <span class="hljs-keyword">import</span> DefaultConfig
+
+flask_app = create_app(DefaultConfig)
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x4E2D;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5230;&#x7684;&#x6570;&#x636E;&#x5E93;&#x5BF9;&#x8C61;&#x548C;redis&#x5BF9;&#x8C61;</span>
+<span class="hljs-comment"># &#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8C03;&#x7528;create_app&#x65B9;&#x6CD5;&#xFF0C;&#x521B;&#x5EFA;flask app&#xFF0C;&#x4F1A;&#x8FDE;&#x5E26;&#x521D;&#x59CB;&#x5316;&#x6570;&#x636E;&#x5E93;db&#x5BF9;&#x8C61;&#x548C;redis&#x5BF9;&#x8C61;</span>
+<span class="hljs-comment"># with flask_app.app_context()</span>
+
+<span class="hljs-string">&quot;&quot;&quot;&#x7B2C;2&#x90E8;&#x5206;. &#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&quot;&quot;&quot;</span>
+<span class="hljs-keyword">from</span> cache <span class="hljs-keyword">import</span> statistic
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">fix_statistics</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot; &#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x51FD;&#x6570; &#x540C;&#x6B65;&#x6301;&#x4E45;&#x5316;&#x5B58;&#x50A8;&#x7684;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#xFF1A;&#x8C03;&#x7528;&#x6301;&#x4E45;&#x5316;&#x7EDF;&#x8BA1;&#x6570;&#x636E;&#x5DE5;&#x5177;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&quot;&quot;&quot;</span>
+    <span class="hljs-keyword">with</span> flask_app.app_context():
+        <span class="hljs-comment"># &#x5BF9;&#x7528;&#x6237;&#x53D1;&#x5E03;&#x603B;&#x6570;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x540C;&#x6B65;</span>
+        db_query_ret = statistic.UserArticleCountStorage.db_query()
+        statistic.UserArticleCountStorage.reset(db_query_ret)
+        <span class="hljs-comment"># &#x5BF9;&#x7528;&#x6237;&#x5173;&#x6CE8;&#x603B;&#x6570;&#x8FDB;&#x884C;&#x6570;&#x636E;&#x540C;&#x6B65;</span>
+        db_query_ret = statistic.UserFollowingCountStorage.db_query()
+        statistic.UserFollowingCountStorage.reset(db_query_ret)
+
+<span class="hljs-string">&quot;&quot;&quot;&#x7B2C;1&#x90E8;&#x5206;. &#x521B;&#x5EFA;&#x5E76;&#x914D;&#x7F6E;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&#x8C03;&#x5EA6;&#x5668;&#xFF0C;&#x6DFB;&#x52A0;&#x4EFB;&#x52A1;&#x51FD;&#x6570;&#x5E76;&#x6267;&#x884C;&quot;&quot;&quot;</span>
+<span class="hljs-comment"># &#x6267;&#x884C;&#x5668; &#x7EBF;&#x7A0B;&#x6C60;3&#x4E2A;&#x7EBF;&#x7A0B;</span>
+executors = {<span class="hljs-string">&apos;default&apos;</span>: ThreadPoolExecutor(<span class="hljs-number">3</span>)}
+<span class="hljs-comment"># &#x521B;&#x5EFA;&#x963B;&#x585E;&#x7684;&#x8C03;&#x5EA6;&#x5668;&#x5BF9;&#x8C61;</span>
+scheduler = BlockingScheduler(executors=executors)
+<span class="hljs-comment"># &#x6DFB;&#x52A0;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;</span>
+<span class="hljs-comment"># scheduler.add_job(fix_statistics, &apos;cron&apos;, hour=3) # &#x5728;&#x6BCF;&#x5929;&#x7684;&#x51CC;&#x6668;3&#x70B9;&#x6267;&#x884C;</span>
+<span class="hljs-comment"># date&#x89E6;&#x53D1;&#x5668;&#xFF0C;&#x4E0D;&#x4F20;&#x65F6;&#x95F4;&#x53C2;&#x6570;&#xFF0C;&#x5C31;&#x7ACB;&#x523B;&#x6267;&#x884C;</span>
+scheduler.add_job(fix_statistics, <span class="hljs-string">&apos;date&apos;</span>) <span class="hljs-comment"># &#x6D4B;&#x8BD5;&#x4F7F;&#x7528;</span>
+
+<span class="hljs-string">&quot;&quot;&quot;&#x6267;&#x884C;&#x5B9A;&#x65F6;&#x4EFB;&#x52A1;&quot;&quot;&quot;</span>
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    scheduler.start() <span class="hljs-comment"># &#x963B;&#x585E;&#xFF0C;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x4E5F;&#x4E0D;&#x9000;&#x51FA;</span>
+</code></pre>
+</blockquote>
+<footer class="page-footer"><span class="copyright">toutiao-flask-v5.06 &#xA9;2019.8 yaoxiangyu@itcast.cn be based on toutiao-flask-v5.01 &#xA9;2019.5 kongdehai@itcast.cn all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-09-01 21:19:23
+</span></footer>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../C07-APScheduler/APSchedulerTutorial.html" class="navigation navigation-prev " aria-label="Previous page: APScheduler使用"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../C08-RPC/index.html" class="navigation navigation-next " aria-label="Next page: RPC"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-back-to-top-button/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toc2/toc2.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"expandable-chapters-small":{},"toc2":{"addClass":true,"className":"toc"},"tbfed-pagefooter":{"copyright":"toutiao-flask-v5.06 ©2019.8 yaoxiangyu@itcast.cn be based on toutiao-flask-v5.01 ©2019.5 kongdehai@itcast.cn","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"splitter":{},"back-to-top-button":{},"chapter-fold":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

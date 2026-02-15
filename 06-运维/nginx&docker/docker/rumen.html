@@ -1,0 +1,687 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <!-- Start book Django课程讲义 -->
+    <head>
+        <!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Dockerfile快速入门 | Django课程讲义</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="author" content="BigCat">
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../docker/meiduo.html" />
+    
+    
+    <link rel="prev" href="../docker/jianjie.html" />
+    
+
+        <!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+        
+    <div class="book"
+        data-level="5.2"
+        data-chapter-title="Dockerfile快速入门"
+        data-filepath="docker/rumen.md"
+        data-basepath=".."
+        data-revision="Mon Jul 22 2019 08:02:25 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="nginx/deploy.html">
+            
+                
+                    <a href="../nginx/deploy.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        部署基础
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="nginx/cycle.html">
+            
+                
+                    <a href="../nginx/cycle.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        生命周期
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="nginx/deployment.html">
+            
+                
+                    <a href="../nginx/deployment.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        项目部署
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="nginx/Advanced.html">
+            
+                
+                    <a href="../nginx/Advanced.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Nginx入门
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="nginx/nginx-deployment.html">
+            
+                
+                    <a href="../nginx/nginx-deployment.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Nginx部署
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="nginx/nginx-detailed.html">
+            
+                
+                    <a href="../nginx/nginx-detailed.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        配置详解
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="nginx/nginx-advanced.html">
+            
+                
+                    <a href="../nginx/nginx-advanced.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Nginx进阶
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="nginx/nginx-reverse.html">
+            
+                
+                    <a href="../nginx/nginx-reverse.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        反向代理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="nginx/nginx-load.html">
+            
+                
+                    <a href="../nginx/nginx-load.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        负载均衡
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="nginx/nginx-logs.html">
+            
+                
+                    <a href="../nginx/nginx-logs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        日志解析
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="nginx/nginx-deploy.html">
+            
+                
+                    <a href="../nginx/nginx-deploy.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        Django部署
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="docker/index.html">
+            
+                
+                    <a href="../docker/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Docker入门
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="docker/bushu.html">
+            
+                
+                    <a href="../docker/bushu.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Docker安装部署
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="docker/jiasu.html">
+            
+                
+                    <a href="../docker/jiasu.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Docker加速器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="docker/images.html">
+            
+                
+                    <a href="../docker/images.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        镜像管理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="docker/rongqi.html">
+            
+                
+                    <a href="../docker/rongqi.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        容器管理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="docker/cangku.html">
+            
+                
+                    <a href="../docker/cangku.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        仓库管理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="docker/shuju.html">
+            
+                
+                    <a href="../docker/shuju.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.6.</b>
+                        
+                        数据管理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="docker/wangluo.html">
+            
+                
+                    <a href="../docker/wangluo.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.</b>
+                        
+                        网路管理
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="docker/jinjie.html">
+            
+                
+                    <a href="../docker/jinjie.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Docker进阶
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="docker/jianjie.html">
+            
+                
+                    <a href="../docker/jianjie.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        Dockerfile简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="5.2" data-path="docker/rumen.html">
+            
+                
+                    <a href="../docker/rumen.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        Dockerfile快速入门
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="docker/meiduo.html">
+            
+                
+                    <a href="../docker/meiduo.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        Dockerfile部署美多商城
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="tuozhan/tuozhan.html">
+            
+                
+                    <a href="../tuozhan/tuozhan.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        部署拓展
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="tuozhan/yanbian.html">
+            
+                
+                    <a href="../tuozhan/yanbian.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        架构演变
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="tuozhan/yunying.html">
+            
+                
+                    <a href="../tuozhan/yunying.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        项目运营
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Django课程讲义</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="dockerfile&#x5FEB;&#x901F;&#x5165;&#x95E8;">Dockerfile&#x5FEB;&#x901F;&#x5165;&#x95E8;</h1>
+<p>&#x57FA;&#x4E8E;dockerfile&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x57FA;&#x672C;&#x7684;Django&#x9879;&#x76EE;</p>
+<pre><code class="lang-dockerfile"><span class="hljs-comment"># &#x5BFC;&#x5165;&#x57FA;&#x7840;&#x955C;&#x50CF;</span>
+<span class="hljs-built_in">FROM</span> django
+<span class="hljs-comment"># &#x8FDB;&#x5165;/home&#x76EE;&#x5F55;&#x4E0B;</span>
+<span class="hljs-built_in">WORKDIR</span> <span class="bash">/home
+</span><span class="hljs-comment"># &#x521B;&#x5EFA;Django&#x9879;&#x76EE;</span>
+<span class="hljs-built_in">RUN</span> <span class="bash">django-admin startproject meiduo
+</span><span class="hljs-comment"># &#x8FDB;&#x5165;&#x9879;&#x76EE;&#x76EE;&#x5F55;</span>
+<span class="hljs-built_in">WORKDIR</span> <span class="bash">/home/meiduo
+</span><span class="hljs-comment"># &#x5BF9;&#x5916;&#x5F00;&#x53D1;8000&#x7AEF;&#x53E3;</span>
+<span class="hljs-built_in">EXPOSE</span> <span class="hljs-number">8000</span>
+<span class="hljs-comment"># &#x8FD0;&#x884C;Django&#x9879;&#x76EE;</span>
+ENTRYPOINT python3 manage.py runserver <span class="hljs-number">0.0</span>.<span class="hljs-number">0.0</span>:<span class="hljs-number">8000</span>
+</code></pre>
+<h2 id="&#x57FA;&#x7840;&#x6307;&#x4EE4;&#x8BE6;&#x89E3;">&#x57FA;&#x7840;&#x6307;&#x4EE4;&#x8BE6;&#x89E3;</h2>
+<h3 id="from">FROM</h3>
+<pre><code class="lang-python"><span class="hljs-comment">#&#x683C;&#x5F0F;&#xFF1A;</span>
+    FROM &lt;image&gt;
+    FROM &lt;image&gt;:&lt;tag&gt;&#x3002;
+<span class="hljs-comment"># &#x89E3;&#x91CA;&#xFF1A;</span>
+        FROM &#x662F; Dockerfile &#x91CC;&#x7684;&#x7B2C;&#x4E00;&#x6761;&#x800C;&#x4E14;&#x53EA;&#x80FD;&#x662F;&#x9664;&#x4E86;&#x9996;&#x884C;&#x6CE8;&#x91CA;&#x4E4B;&#x5916;&#x7684;&#x7B2C;&#x4E00;&#x6761;&#x6307;&#x4EE4;
+</code></pre>
+<h3 id="maintainer">MAINTAINER</h3>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x683C;&#x5F0F;&#xFF1A;</span>
+MAINTAINER &lt;name&gt;
+<span class="hljs-comment"># &#x89E3;&#x91CA;&#xFF1A;</span>
+&#x6307;&#x5B9A;&#x8BE5;dockerfile&#x6587;&#x4EF6;&#x7684;&#x7EF4;&#x62A4;&#x8005;&#x4FE1;&#x606F;&#x3002;&#x7C7B;&#x4F3C;&#x6211;&#x4EEC;&#x5728;docker commit &#x65F6;&#x5019;&#x4F7F;&#x7528;-a&#x53C2;&#x6570;&#x6307;&#x5B9A;&#x7684;&#x4FE1;&#x606F;
+</code></pre>
+<h3 id="run">RUN</h3>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x683C;&#x5F0F;&#xFF1A;</span>
+      RUN &lt;command&gt;                                        (shell&#x6A21;&#x5F0F;)
+      RUN[<span class="hljs-string">&quot;executable&quot;</span>, <span class="hljs-string">&quot;param1&quot;</span>, <span class="hljs-string">&quot;param2&quot;</span>]&#x3002;            (<span class="hljs-keyword">exec</span> &#x6A21;&#x5F0F;)
+<span class="hljs-comment"># &#x89E3;&#x91CA;&#xFF1A;</span>
+    &#x8868;&#x793A;&#x5F53;&#x524D;&#x955C;&#x50CF;&#x6784;&#x5EFA;&#x65F6;&#x5019;&#x8FD0;&#x884C;&#x7684;&#x547D;&#x4EE4;
+<span class="hljs-comment"># &#x6CE8;&#x91CA;&#xFF1A;</span>
+       shell&#x6A21;&#x5F0F;&#xFF1A;&#x7C7B;&#x4F3C;&#x4E8E;  /bin/bash -c command
+                 &#x4E3E;&#x4F8B;&#xFF1A; RUN echo hello
+      <span class="hljs-keyword">exec</span>  &#x6A21;&#x5F0F;&#xFF1A;&#x7C7B;&#x4F3C;&#x4E8E; RUN [<span class="hljs-string">&quot;/bin/bash&quot;</span>, <span class="hljs-string">&quot;-c&quot;</span>, <span class="hljs-string">&quot;command&quot;</span>]
+                 &#x4E3E;&#x4F8B;&#xFF1A; RUN [<span class="hljs-string">&quot;echo&quot;</span>, <span class="hljs-string">&quot;hello&quot;</span>]
+</code></pre>
+<h3 id="expose">EXPOSE</h3>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x683C;&#x5F0F;&#xFF1A;</span>
+    EXPOSE &lt;port&gt; [&lt;port&gt;...]
+<span class="hljs-comment"># &#x89E3;&#x91CA;&#xFF1A;</span>
+        &#x8BBE;&#x7F6E;Docker&#x5BB9;&#x5668;&#x5BF9;&#x5916;&#x66B4;&#x9732;&#x7684;&#x7AEF;&#x53E3;&#x53F7;&#xFF0C;Docker&#x4E3A;&#x4E86;&#x5B89;&#x5168;&#xFF0C;&#x4E0D;&#x4F1A;&#x81EA;&#x52A8;&#x5BF9;&#x5916;&#x6253;&#x5F00;&#x7AEF;&#x53E3;&#xFF0C;&#x5982;&#x679C;&#x9700;&#x8981;&#x5916;&#x90E8;&#x63D0;&#x4F9B;&#x8BBF;&#x95EE;&#xFF0C;&#x8FD8;&#x9700;&#x8981;&#x542F;&#x52A8;&#x5BB9;&#x5668;&#x65F6;&#x589E;&#x52A0;-p&#x6216;&#x8005;-P&#x53C2;&#x6570;&#x5BF9;&#x5BB9;&#x5668;&#x7684;&#x7AEF;&#x53E3;&#x8FDB;&#x884C;&#x5206;&#x914D;&#x3002;
+</code></pre>
+<h3 id="entrypoint">ENTRYPOINT</h3>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x683C;&#x5F0F;&#xFF1A;</span>
+   ENTRYPOINT [<span class="hljs-string">&quot;executable&quot;</span>, <span class="hljs-string">&quot;param1&quot;</span>,<span class="hljs-string">&quot;param2&quot;</span>]         (<span class="hljs-keyword">exec</span> &#x6A21;&#x5F0F;)
+   ENTRYPOINT command param1 param2                         (shell&#x6A21;&#x5F0F;)
+<span class="hljs-comment"># &#x89E3;&#x91CA;&#xFF1A;</span>
+&#x3000;&#x3000;&#x6BCF;&#x4E2A; Dockerfile &#x4E2D;&#x53EA;&#x80FD;&#x6709;&#x4E00;&#x4E2A; ENTRYPOINT&#xFF0C;&#x5F53;&#x6307;&#x5B9A;&#x591A;&#x4E2A;&#x65F6;&#xFF0C;&#x53EA;&#x6709;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x8D77;&#x6548;&#x3002;
+</code></pre>
+<h2 id="&#x6587;&#x4EF6;&#x7F16;&#x8F91;&#x6307;&#x4EE4;&#x8BE6;&#x89E3;">&#x6587;&#x4EF6;&#x7F16;&#x8F91;&#x6307;&#x4EE4;&#x8BE6;&#x89E3;</h2>
+<h3 id="add">ADD</h3>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x683C;&#x5F0F;&#xFF1A;</span>
+    ADD &lt;src&gt;... &lt;dest&gt;
+    ADD [<span class="hljs-string">&quot;&lt;src&gt;&quot;</span>,... <span class="hljs-string">&quot;&lt;dest&gt;&quot;</span>]
+<span class="hljs-comment"># &#x89E3;&#x91CA;&#xFF1A;</span>
+&#x5C06;&#x6307;&#x5B9A;&#x7684; &lt;src&gt; &#x6587;&#x4EF6;&#x590D;&#x5236;&#x5230;&#x5BB9;&#x5668;&#x6587;&#x4EF6;&#x7CFB;&#x7EDF;&#x4E2D;&#x7684; &lt;dest&gt; 
+src &#x6307;&#x7684;&#x662F;&#x5BBF;&#x4E3B;&#x673A;&#xFF0C;dest &#x6307;&#x7684;&#x662F;&#x5BB9;&#x5668;&#x5982;&#x679C;&#x6E90;&#x6587;&#x4EF6;&#x662F;&#x4E2A;&#x538B;&#x7F29;&#x6587;&#x4EF6;&#xFF0C;&#x5219;docker&#x4F1A;&#x81EA;&#x52A8;&#x5E2E;&#x89E3;&#x538B;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x5BB9;&#x5668;&#x4E2D;(&#x65E0;&#x8BBA;&#x76EE;&#x6807;&#x662F;&#x6587;&#x4EF6;&#x8FD8;&#x662F;&#x76EE;&#x5F55;&#xFF0C;&#x90FD;&#x4F1A;&#x5F53;&#x6210;&#x76EE;&#x5F55;&#x5904;&#x7406;)&#x3002;
+</code></pre>
+<h3 id="copy">COPY</h3>
+<pre><code class="lang-python"><span class="hljs-comment">#&#x683C;&#x5F0F;&#xFF1A;</span>
+    COPY &lt;src&gt;... &lt;dest&gt;
+    COPY [<span class="hljs-string">&quot;&lt;src&gt;&quot;</span>,... <span class="hljs-string">&quot;&lt;dest&gt;&quot;</span>]
+<span class="hljs-comment">#&#x89E3;&#x91CA;&#xFF1A;</span>
+     &#x5355;&#x7EAF;&#x590D;&#x5236;&#x6587;&#x4EF6;&#x573A;&#x666F;&#xFF0C;Docker&#x63A8;&#x8350;&#x4F7F;&#x7528;COPY
+</code></pre>
+<h2 id="&#x73AF;&#x5883;&#x6307;&#x4EE4;&#x8BE6;&#x89E3;">&#x73AF;&#x5883;&#x6307;&#x4EE4;&#x8BE6;&#x89E3;</h2>
+<h3 id="env">ENV</h3>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x683C;&#x5F0F;&#xFF1A;</span>
+    ENV &lt;key&gt; &lt;value&gt;
+    ENV &lt;key&gt;=&lt;value&gt; ...
+<span class="hljs-comment"># &#x89E3;&#x91CA;&#xFF1A;</span>
+    &#x8BBE;&#x7F6E;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;RUN&#x4E4B;&#x524D;&#x4F7F;&#x7528;&#xFF0C;&#x7136;&#x540E;RUN&#x547D;&#x4EE4;&#x65F6;&#x8C03;&#x7528;&#xFF0C;&#x5BB9;&#x5668;&#x542F;&#x52A8;&#x65F6;&#x8FD9;&#x4E9B;&#x73AF;&#x5883;&#x53D8;&#x91CF;&#x90FD;&#x4F1A;&#x88AB;&#x6307;&#x5B9A;
+</code></pre>
+<h3 id="workdir">WORKDIR</h3>
+<pre><code class="lang-python"><span class="hljs-comment"># &#x683C;&#x5F0F;&#xFF1A;</span>
+        WORKDIR /path/to/workdir                    (shell &#x6A21;&#x5F0F;)
+<span class="hljs-comment"># &#x89E3;&#x91CA;&#xFF1A;</span>
+    &#x5207;&#x6362;&#x76EE;&#x5F55;&#xFF0C;&#x4E3A;&#x540E;&#x7EED;&#x7684;RUN&#x3001;CMD&#x3001;ENTRYPOINT &#x6307;&#x4EE4;&#x914D;&#x7F6E;&#x5DE5;&#x4F5C;&#x76EE;&#x5F55;&#x3002; &#x76F8;&#x5F53;&#x4E8E;cd
+    &#x53EF;&#x4EE5;&#x591A;&#x6B21;&#x5207;&#x6362;(&#x76F8;&#x5F53;&#x4E8E;cd&#x547D;&#x4EE4;)&#xFF0C; 
+    &#x3000;&#x4E5F;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x591A;&#x4E2A;WORKDIR &#x6307;&#x4EE4;&#xFF0C;&#x540E;&#x7EED;&#x547D;&#x4EE4;&#x5982;&#x679C;&#x53C2;&#x6570;&#x662F;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#xFF0C;&#x5219;&#x4F1A;&#x57FA;&#x4E8E;&#x4E4B;&#x524D;&#x547D;&#x4EE4;&#x6307;&#x5B9A;&#x7684;&#x8DEF;&#x5F84;&#x3002;&#x4F8B;&#x5982;
+   &#x4E3E;&#x4F8B;&#xFF1A;
+    WORKDIR /a
+    WORKDIR b
+    WORKDIR c
+    RUN pwd
+    &#x5219;&#x6700;&#x7EC8;&#x8DEF;&#x5F84;&#x4E3A; /a/b/c&#x3002;
+</code></pre>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../docker/jianjie.html" class="navigation navigation-prev " aria-label="Previous page: Dockerfile简介"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../docker/meiduo.html" class="navigation navigation-next " aria-label="Next page: Dockerfile部署美多商城"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"disqus":{"shortName":"gitbookuse"},"github":{"url":"https://github.com/dododream"},"search-pro":{"cutWordLib":"nodejieba","defineWord":["gitbook-use"]},"sharing":{"weibo":true,"facebook":true,"twitter":true,"google":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"tbfed-pagefooter":{"copyright":"Copyright © ITCast","modify_label":"「Revision Time:","modify_format":"YYYY-MM-DD HH:mm:ss」"},"baidu":{"token":"ff100361cdce95dd4c8fb96b4009f7bc"},"sitemap":{"hostname":"http://www.treenewbee.top"},"donate":{"wechat":"http://weixin.png","alipay":"http://alipay.png","title":"","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"edit-link":{"base":"https://github.com/dododream/edit","label":"Edit This Page"},"splitter":{},"toggle-chapters":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+    </body>
+    <!-- End of book Django课程讲义 -->
+</html>

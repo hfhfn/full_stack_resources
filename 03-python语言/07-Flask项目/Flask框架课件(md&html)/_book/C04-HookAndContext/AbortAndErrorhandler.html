@@ -1,0 +1,654 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>异常处理 | 课程简介</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-back-to-top-button/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-chapter-fold/chapter-fold.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toc2/toc2.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-tbfed-pagefooter/footer.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../C04-HookAndContext/Hook.html" />
+    
+    
+    <link rel="prev" href="../C04-HookAndContext/index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="5.1"
+        data-chapter-title="异常处理"
+        data-filepath="C04-HookAndContext/AbortAndErrorhandler.md"
+        data-basepath=".."
+        data-revision="Mon Aug 19 2019 18:41:40 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        课程简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="AboutFlask.html">
+            
+                
+                    <a href="../AboutFlask.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        Flask介绍
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="C01-CreateProject/index.html">
+            
+                
+                    <a href="../C01-CreateProject/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        工程搭建
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="C01-CreateProject/EnvInstall.html">
+            
+                
+                    <a href="../C01-CreateProject/EnvInstall.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        环境安装
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="C01-CreateProject/HelloWorld.html">
+            
+                
+                    <a href="../C01-CreateProject/HelloWorld.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        HelloWorld程序
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="C01-CreateProject/AboutParams.html">
+            
+                
+                    <a href="../C01-CreateProject/AboutParams.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        参数说明
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="C01-CreateProject/StartDevelopmentServer.html">
+            
+                
+                    <a href="../C01-CreateProject/StartDevelopmentServer.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        开发服务器运行方式
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="C02-RouterAndBlueprint/index.html">
+            
+                
+                    <a href="../C02-RouterAndBlueprint/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        路由与蓝图
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="C02-RouterAndBlueprint/Router.html">
+            
+                
+                    <a href="../C02-RouterAndBlueprint/Router.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        路由
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="C02-RouterAndBlueprint/Blueprint.html">
+            
+                
+                    <a href="../C02-RouterAndBlueprint/Blueprint.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        蓝图
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="C03-RequestAndResponse/index.html">
+            
+                
+                    <a href="../C03-RequestAndResponse/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        请求与响应
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="C03-RequestAndResponse/flask处理请求.html">
+            
+                
+                    <a href="../C03-RequestAndResponse/flask处理请求.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        处理请求
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="C03-RequestAndResponse/HandleResponse.html">
+            
+                
+                    <a href="../C03-RequestAndResponse/HandleResponse.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        处理响应
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="C03-RequestAndResponse/CookieAndSession.html">
+            
+                
+                    <a href="../C03-RequestAndResponse/CookieAndSession.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        Cookie与Session
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="C04-HookAndContext/index.html">
+            
+                
+                    <a href="../C04-HookAndContext/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        请求钩子与上下文
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="5.1" data-path="C04-HookAndContext/AbortAndErrorhandler.html">
+            
+                
+                    <a href="../C04-HookAndContext/AbortAndErrorhandler.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        异常处理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="C04-HookAndContext/Hook.html">
+            
+                
+                    <a href="../C04-HookAndContext/Hook.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        请求钩子
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="C04-HookAndContext/Context.html">
+            
+                
+                    <a href="../C04-HookAndContext/Context.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        上下文
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="C05-Flask-RESTful/index.html">
+            
+                
+                    <a href="../C05-Flask-RESTful/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        Flask-RESTful
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="C05-Flask-RESTful/QuickStart.html">
+            
+                
+                    <a href="../C05-Flask-RESTful/QuickStart.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        快速认识FLASK-RESTful
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="C05-Flask-RESTful/AboutView.html">
+            
+                
+                    <a href="../C05-Flask-RESTful/AboutView.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        关于视图
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="C05-Flask-RESTful/AboutRequest.html">
+            
+                
+                    <a href="../C05-Flask-RESTful/AboutRequest.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        关于请求
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="C05-Flask-RESTful/AboutResponse.html">
+            
+                
+                    <a href="../C05-Flask-RESTful/AboutResponse.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                        关于响应
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >课程简介</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x5F02;&#x5E38;&#x5904;&#x7406;">&#x5F02;&#x5E38;&#x5904;&#x7406;</h1>
+<p>[TOC]</p>
+<!-- toc -->
+<ul>
+<li><a href="#1-http&#x5F02;&#x5E38;&#x4E3B;&#x52A8;&#x629B;&#x51FA;">1. HTTP&#x5F02;&#x5E38;&#x4E3B;&#x52A8;&#x629B;&#x51FA;</a></li>
+<li><a href="#2-&#x6355;&#x83B7;&#x9519;&#x8BEF;">2. &#x6355;&#x83B7;&#x9519;&#x8BEF;</a></li>
+<li><a href="#3-&#x5B8C;&#x6574;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x89E3;&#x8BFB;">3. &#x5B8C;&#x6574;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x89E3;&#x8BFB;</a></li>
+</ul>
+<!-- toc stop -->
+<h2 id="1-http&#x5F02;&#x5E38;&#x4E3B;&#x52A8;&#x629B;&#x51FA;">1. HTTP&#x5F02;&#x5E38;&#x4E3B;&#x52A8;&#x629B;&#x51FA;</h2>
+<blockquote>
+<ul>
+<li>abort &#x65B9;&#x6CD5;<ul>
+<li>&#x629B;&#x51FA;&#x4E00;&#x4E2A;&#x7ED9;&#x5B9A;&#x72B6;&#x6001;&#x4EE3;&#x7801;&#x7684; HTTPException &#x6216;&#x8005; &#x6307;&#x5B9A;&#x54CD;&#x5E94;&#xFF0C;&#x4F8B;&#x5982;&#x60F3;&#x8981;&#x7528;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x672A;&#x627E;&#x5230;&#x5F02;&#x5E38;&#x6765;&#x7EC8;&#x6B62;&#x8BF7;&#x6C42;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x8C03;&#x7528; abort(404)&#x3002;</li>
+</ul>
+</li>
+<li>&#x53C2;&#x6570;&#xFF1A;<ul>
+<li>code &#x2013; HTTP&#x7684;&#x9519;&#x8BEF;&#x72B6;&#x6001;&#x7801;</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-comment"># abort(404)</span>
+abort(<span class="hljs-number">500</span>)
+</code></pre>
+<p>&#x629B;&#x51FA;&#x72B6;&#x6001;&#x7801;&#x7684;&#x8BDD;&#xFF0C;&#x53EA;&#x80FD;&#x629B;&#x51FA; HTTP &#x534F;&#x8BAE;&#x7684;&#x9519;&#x8BEF;&#x72B6;&#x6001;&#x7801;</p>
+</blockquote>
+<h2 id="2-&#x6355;&#x83B7;&#x9519;&#x8BEF;">2. &#x6355;&#x83B7;&#x9519;&#x8BEF;</h2>
+<blockquote>
+<ul>
+<li>errorhandler &#x88C5;&#x9970;&#x5668;</li>
+<li>&#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#x5904;&#x7406;&#x7A0B;&#x5E8F;&#xFF0C;&#x5F53;&#x7A0B;&#x5E8F;&#x629B;&#x51FA;&#x6307;&#x5B9A;&#x9519;&#x8BEF;&#x72B6;&#x6001;&#x7801;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5C31;&#x4F1A;&#x8C03;&#x7528;&#x8BE5;&#x88C5;&#x9970;&#x5668;&#x6240;&#x88C5;&#x9970;&#x7684;&#x65B9;&#x6CD5;</li>
+<li>&#x53C2;&#x6570;&#xFF1A;<ul>
+<li>code_or_exception &#x2013; HTTP&#x7684;&#x9519;&#x8BEF;&#x72B6;&#x6001;&#x7801;&#x6216;&#x6307;&#x5B9A;&#x5F02;&#x5E38;</li>
+</ul>
+</li>
+<li>&#x4F8B;&#x5982;&#x7EDF;&#x4E00;&#x5904;&#x7406;&#x72B6;&#x6001;&#x7801;&#x4E3A;500&#x7684;&#x9519;&#x8BEF;&#x7ED9;&#x7528;&#x6237;&#x53CB;&#x597D;&#x7684;&#x63D0;&#x793A;&#xFF1A;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-decorator">@app.errorhandler(500)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">internal_server_error</span><span class="hljs-params">(e)</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&#x670D;&#x52A1;&#x5668;&#x642C;&#x5BB6;&#x4E86;&apos;</span>
+</code></pre>
+<ul>
+<li>&#x6355;&#x83B7;&#x6307;&#x5B9A;&#x5F02;&#x5E38;</li>
+</ul>
+<pre><code class="lang-python"><span class="hljs-decorator">@app.errorhandler(ZeroDivisionError)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">zero_division_error</span><span class="hljs-params">(e)</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&#x9664;&#x6570;&#x4E0D;&#x80FD;&#x4E3A;0&apos;</span>
+</code></pre>
+</blockquote>
+<h2 id="3-&#x5B8C;&#x6574;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x89E3;&#x8BFB;">3. &#x5B8C;&#x6574;&#x793A;&#x4F8B;&#x4EE3;&#x7801;&#x89E3;&#x8BFB;</h2>
+<blockquote>
+<pre><code class="lang-python"><span class="hljs-keyword">from</span> flask <span class="hljs-keyword">import</span> Flask, abort
+
+app = Flask(__name__)
+
+<span class="hljs-comment"># app.errorhandler &#x53EF;&#x4EE5;&#x6355;&#x83B7;http&#x9519;&#x8BEF; &#x548C; &#x7CFB;&#x7EDF;&#x5185;&#x7F6E;&#x9519;&#x8BEF;</span>
+<span class="hljs-decorator">@app.errorhandler(404) # &#x6355;&#x83B7;http-404&#x9519;&#x8BEF;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">eror_404</span><span class="hljs-params">(e)</span>:</span> <span class="hljs-comment"># &#x5FC5;&#x987B;&#x63A5;&#x6536;&#x5F02;&#x5E38;&#x4FE1;&#x606F;&#x53C2;&#x6570;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&#x8D70;&#x4E22;&#x4E86;&#xFF01; 404 &apos;</span> <span class="hljs-comment"># &#x4E00;&#x65E6;&#x89E6;&#x53D1;&#x6355;&#x83B7;&#x7684;&#x5F02;&#x5E38;&#x7ED9;&#x524D;&#x7AEF;&#x8FD4;&#x56DE;&#x7684;&#x5185;&#x5BB9;</span>
+
+<span class="hljs-decorator">@app.route(&apos;/404&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index1</span><span class="hljs-params">()</span>:</span>
+    abort(<span class="hljs-number">404</span>) <span class="hljs-comment"># &#x4E3B;&#x52A8;&#x629B;&#x51FA;http&#x5F02;&#x5E38;&#xFF0C;&#x88AB;@app.errorhandler(404)&#x6355;&#x83B7;&#x4E86;&#x5F02;&#x5E38;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;heihei&apos;</span>
+
+<span class="hljs-decorator">@app.route(&apos;/500&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index2</span><span class="hljs-params">()</span>:</span>
+    abort(<span class="hljs-number">500</span>) <span class="hljs-comment"># &#x4E3B;&#x52A8;&#x629B;&#x51FA;http&#x5F02;&#x5E38;&#xFF0C;</span>
+    <span class="hljs-keyword">return</span>
+
+<span class="hljs-decorator">@app.errorhandler(ZeroDivisionError) # &#x6355;&#x83B7;&#x7CFB;&#x7EDF;&#x5185;&#x7F6E;&#x9519;&#x8BEF;</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">error_zero</span><span class="hljs-params">(e)</span>:</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&#x9664;&#x6570;&#x771F;&#x7684;&#x4E0D;&#x80FD;&#x4E3A;0&apos;</span>
+
+<span class="hljs-decorator">@app.route(&apos;/0&apos;)</span>
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">index3</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-number">1</span> / <span class="hljs-number">0</span> <span class="hljs-comment"># &#x5F3A;&#x884C;&#x9020;&#x7684;&#x5F02;&#x5E38;</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;&#x9664;&#x6570;&#x4E0D;&#x80FD;&#x4E3A;0&apos;</span> 
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+    app.run(debug=<span class="hljs-keyword">True</span>)
+</code></pre>
+</blockquote>
+<footer class="page-footer"><span class="copyright">toutiao-flask-v5.06 &#xA9;2019.8 yaoxiangyu@itcast.cn be based on toutiao-flask-v5.01 &#xA9;2019.5 kongdehai@itcast.cn all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-08-19 18:24:23
+</span></footer>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../C04-HookAndContext/index.html" class="navigation navigation-prev " aria-label="Previous page: 请求钩子与上下文"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../C04-HookAndContext/Hook.html" class="navigation navigation-next " aria-label="Next page: 请求钩子"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-back-to-top-button/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toc2/toc2.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"expandable-chapters-small":{},"toc2":{"addClass":true,"className":"toc"},"tbfed-pagefooter":{"copyright":"toutiao-flask-v5.06 ©2019.8 yaoxiangyu@itcast.cn be based on toutiao-flask-v5.01 ©2019.5 kongdehai@itcast.cn","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"splitter":{},"back-to-top-button":{},"chapter-fold":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

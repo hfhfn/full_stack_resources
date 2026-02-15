@@ -1,0 +1,651 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <!-- Start book Django课程讲义 -->
+    <head>
+        <!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>项目部署 | Django课程讲义</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="author" content="BigCat">
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../nginx/Advanced.html" />
+    
+    
+    <link rel="prev" href="../nginx/cycle.html" />
+    
+
+        <!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+        
+    <div class="book"
+        data-level="1.2"
+        data-chapter-title="项目部署"
+        data-filepath="nginx/deployment.md"
+        data-basepath=".."
+        data-revision="Mon Jul 22 2019 08:02:25 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="nginx/deploy.html">
+            
+                
+                    <a href="../nginx/deploy.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        部署基础
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="nginx/cycle.html">
+            
+                
+                    <a href="../nginx/cycle.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        生命周期
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2" data-path="nginx/deployment.html">
+            
+                
+                    <a href="../nginx/deployment.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        项目部署
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="nginx/Advanced.html">
+            
+                
+                    <a href="../nginx/Advanced.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Nginx入门
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="nginx/nginx-deployment.html">
+            
+                
+                    <a href="../nginx/nginx-deployment.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Nginx部署
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="nginx/nginx-detailed.html">
+            
+                
+                    <a href="../nginx/nginx-detailed.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        配置详解
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="nginx/nginx-advanced.html">
+            
+                
+                    <a href="../nginx/nginx-advanced.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Nginx进阶
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="nginx/nginx-reverse.html">
+            
+                
+                    <a href="../nginx/nginx-reverse.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        反向代理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="nginx/nginx-load.html">
+            
+                
+                    <a href="../nginx/nginx-load.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        负载均衡
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="nginx/nginx-logs.html">
+            
+                
+                    <a href="../nginx/nginx-logs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        日志解析
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="nginx/nginx-deploy.html">
+            
+                
+                    <a href="../nginx/nginx-deploy.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        Django部署
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="docker/index.html">
+            
+                
+                    <a href="../docker/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Docker入门
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="docker/bushu.html">
+            
+                
+                    <a href="../docker/bushu.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Docker安装部署
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="docker/jiasu.html">
+            
+                
+                    <a href="../docker/jiasu.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Docker加速器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="docker/images.html">
+            
+                
+                    <a href="../docker/images.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        镜像管理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="docker/rongqi.html">
+            
+                
+                    <a href="../docker/rongqi.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        容器管理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="docker/cangku.html">
+            
+                
+                    <a href="../docker/cangku.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        仓库管理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="docker/shuju.html">
+            
+                
+                    <a href="../docker/shuju.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.6.</b>
+                        
+                        数据管理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="docker/wangluo.html">
+            
+                
+                    <a href="../docker/wangluo.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.</b>
+                        
+                        网路管理
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="docker/jinjie.html">
+            
+                
+                    <a href="../docker/jinjie.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Docker进阶
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="docker/jianjie.html">
+            
+                
+                    <a href="../docker/jianjie.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        Dockerfile简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="docker/rumen.html">
+            
+                
+                    <a href="../docker/rumen.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        Dockerfile快速入门
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="docker/meiduo.html">
+            
+                
+                    <a href="../docker/meiduo.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        Dockerfile部署美多商城
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="tuozhan/tuozhan.html">
+            
+                
+                    <a href="../tuozhan/tuozhan.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        部署拓展
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="tuozhan/yanbian.html">
+            
+                
+                    <a href="../tuozhan/yanbian.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        架构演变
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="tuozhan/yunying.html">
+            
+                
+                    <a href="../tuozhan/yunying.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        项目运营
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Django课程讲义</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x9879;&#x76EE;&#x90E8;&#x7F72;">&#x9879;&#x76EE;&#x90E8;&#x7F72;</h1>
+<p>&#x5BF9;&#x4E8E;&#x4E00;&#x4E2A;&#x8F6F;&#x4EF6;&#x9879;&#x76EE;&#x7684;&#x90E8;&#x7F72;&#x6765;&#x8BF4;&#xFF0C;&#x6211;&#x4EEC;&#x4E3B;&#x8981;&#x8003;&#x8651;&#x4E24;&#x65B9;&#x9762;&#xFF1A;</p>
+<p>&#x200B;    1&#x3001;&#x90E8;&#x7F72;&#x6D41;&#x7A0B;--&#x57FA;&#x4E8E;&#x9879;&#x76EE;&#x529F;&#x80FD;&#xFF0C;&#x8BBE;&#x8BA1;&#x5408;&#x7406;&#x7684;&#x90E8;&#x7F72;&#x65B9;&#x6848;&#xFF1B;</p>
+<p>&#x200B;    2&#x3001;&#x90E8;&#x7F72;&#x9879;&#x76EE;--&#x7ED3;&#x5408;&#x90E8;&#x7F72;&#x65B9;&#x6848;&#xFF0C;&#x5B9E;&#x73B0;&#x987A;&#x7545;&#x7684;&#x9879;&#x76EE;&#x90E8;&#x7F72;&#x6211;&#x4EEC;&#x5728;&#x8FD9;&#x4E00;&#x8282;&#x4E3B;&#x8981;&#x5173;&#x6CE8;&#x90E8;&#x7F72;&#x6D41;&#x7A0B;&#x3002;</p>
+<p>&#x5173;&#x4E8E;&#x90E8;&#x7F72;&#x6D41;&#x7A0B;&#xFF0C;&#x4E3B;&#x8981;&#x5305;&#x542B;&#x4EE5;&#x4E0B;&#x4E24;&#x4E2A;&#x65B9;&#x9762;&#xFF1A;&#x90E8;&#x7F72;&#x65B9;&#x6848;&#x3001;&#x90E8;&#x7F72;&#x73AF;&#x5883;</p>
+<p><strong>&#x90E8;&#x7F72;&#x65B9;&#x6848;</strong></p>
+<p>&#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x987A;&#x7545;&#x7684;&#x9879;&#x76EE;&#x90E8;&#x7F72;&#xFF0C;&#x6211;&#x4EEC;&#x4E00;&#x822C;&#x4F1A;&#x5728;&#x90E8;&#x7F72;&#x64CD;&#x4F5C;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6309;&#x7167;&#x65E2;&#x5B9A;&#x7684;&#x90E8;&#x7F72;&#x65B9;&#x6848;&#x6709;&#x8BA1;&#x5212;&#x7684;&#x5B9E;&#x65BD;&#x4E0B;&#x53BB;&#x3002;&#x90A3;&#x4E48;&#x90E8;&#x7F72;&#x65B9;&#x6848;&#x662F;&#x600E;&#x4E48;&#x8BBE;&#x8BA1;&#x51FA;&#x6765;&#x7684;&#x5462;&#xFF1F;</p>
+<p>&#x200B;    1&#x3001;&#x5206;&#x6790;&#x9879;&#x76EE;&#x7684;&#x4EA7;&#x54C1;&#x9700;&#x6C42;&#x6587;&#x6863;&#xFF0C;&#x83B7;&#x53D6;&#x9879;&#x76EE;&#x7684;&#x4E3B;&#x65E8;&#xFF0C;&#x5B9A;&#x597D;&#x90E8;&#x7F72;&#x65B9;&#x6848;&#x7684;&#x65B9;&#x5411;</p>
+<p>&#x200B;    2&#x3001;&#x5206;&#x6790;&#x9879;&#x76EE;&#x5F00;&#x53D1;&#x6587;&#x6863;&#xFF0C;&#x6309;&#x7167;&#x529F;&#x80FD;&#x8FB9;&#x754C;&#xFF0C;&#x8BBE;&#x8BA1;&#x90E8;&#x7F72;&#x7684;&#x7ED3;&#x70B9;</p>
+<p>&#x200B;    3&#x3001;&#x5206;&#x6790;&#x8FB9;&#x754C;&#x529F;&#x80FD;&#xFF0C;&#x8C03;&#x7814;&#x529F;&#x80FD;&#x8F6F;&#x4EF6;&#xFF0C;&#x5408;&#x7406;&#x7684;&#x53D6;&#x820D;&#xFF0C;&#x9009;&#x7B26;&#x5408;&#x5F53;&#x524D;&#x4E1A;&#x52A1;&#x573A;&#x666F;&#x7684;</p>
+<p>&#x200B;    4&#x3001;&#x68B3;&#x7406;&#x9879;&#x76EE;&#x90E8;&#x7F72;&#x6D89;&#x53CA;&#x5230;&#x7684;&#x90E8;&#x7F72;&#x8F6F;&#x4EF6;&#x5B9E;&#x73B0;&#x65B9;&#x6848;&#xFF0C;&#x6839;&#x636E;2&#x786E;&#x5B9A;&#x7684;&#x7ED3;&#x70B9;&#xFF0C;&#x786E;&#x5B9A;&#x521D;&#x7248;&#x90E8;&#x7F72;&#x65B9;&#x6848;</p>
+<p>&#x200B;    5&#x3001;&#x6839;&#x636E;&#x9879;&#x76EE;&#x5B9E;&#x9645;&#x60C5;&#x51B5;&#xFF0C;&#x8C03;&#x6574;&#x4F18;&#x5316;&#x5E76;&#x786E;&#x5B9A;&#x9879;&#x76EE;&#x90E8;&#x7F72;&#x65B9;&#x6848;&#x3002;</p>
+<p><strong>&#x90E8;&#x7F72;&#x73AF;&#x5883;</strong></p>
+<p>&#x200B;    &#x6839;&#x636E;&#x6211;&#x4EEC;&#x5BF9;&#x9879;&#x76EE;&#x751F;&#x547D;&#x5468;&#x671F;&#x7684;&#x7406;&#x89E3;&#xFF0C;&#x4E00;&#x4E2A;&#x9879;&#x76EE;&#x9700;&#x8981;&#x7ECF;&#x5386;&#x591A;&#x4E2A;&#x56E2;&#x961F;&#x7684;&#x5DE5;&#x4F5C;&#xFF0C;&#x624D;&#x80FD;&#x6700;&#x7EC8;&#x5F62;&#x6210;&#x4E00;&#x4E2A;&#x6210;&#x54C1;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x5F00;&#x53D1;&#x597D;&#x7684;&#x9879;&#x76EE;&#x9700;&#x8981;&#x5728;&#x591A;&#x4E2A;&#x9636;&#x6BB5;&#x73AF;&#x5883;&#x4E2D;&#x6309;&#x7167;&#x6211;&#x4EEC;&#x7684;&#x90E8;&#x7F72;&#x65B9;&#x6848;&#x90E8;&#x7F72;&#x9879;&#x76EE;&#xFF0C;&#x800C;&#x6BCF;&#x4E2A;&#x9636;&#x6BB5;&#x7684;&#x73AF;&#x5883;&#x90FD;&#x662F;&#x6709;&#x7279;&#x6B8A;&#x4F5C;&#x7528;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x63A5;&#x4E0B;&#x6765;&#x6211;&#x4EEC;&#x6765;&#x5B66;&#x4E60;&#x4E00;&#x4E0B;&#x9879;&#x76EE;&#x53D1;&#x5E03;&#x8FC7;&#x7A0B;&#x4E2D;&#x6240;&#x6D89;&#x53CA;&#x5230;&#x7684;&#x4E94;&#x4E2A;&#x73AF;&#x5883;&#xFF1A;</p>
+<p>&#x4E2A;&#x4EBA;&#x5F00;&#x53D1;&#x73AF;&#x5883;</p>
+<p>&#x200B;    &#x5DE5;&#x4F5C;&#x4EBA;&#x5458;&#xFF1A;&#x81EA;&#x5DF1;</p>
+<p>&#x200B;    &#x5DE5;&#x4F5C;&#x5E73;&#x53F0;&#xFF1A;&#x4E2A;&#x4EBA;&#x7B14;&#x8BB0;&#x672C;&#x3001;&#x516C;&#x53F8;&#x914D;&#x7684;&#x7535;&#x8111;</p>
+<p>&#x200B;    &#x5E73;&#x53F0;&#x7279;&#x70B9;&#xFF1A;&#x73AF;&#x5883;&#x662F;&#x81EA;&#x5DF1;&#x914D;&#x7684;&#xFF0C;&#x56E2;&#x961F;&#x4E2D;&#x4E0D;&#x540C;&#x7684;&#x4E2A;&#x4EBA;&#x5F00;&#x53D1;&#x73AF;&#x5883;&#x53EF;&#x4EE5;&#x4E0D;&#x4E00;&#x6837;&#x5DE5;&#x4F5C;&#x5185;&#x5BB9;&#xFF1A;&#x9879;&#x76EE;&#x7684;&#x5B50;&#x6A21;&#x5757;&#xFF0C;&#x5B50;&#x529F;&#x80FD;</p>
+<pre><code> &#x5B8C;&#x6210;&#x6807;&#x51C6;&#xFF1A;&#x5B8C;&#x6210;&#x9886;&#x5BFC;&#x5B89;&#x6392;&#x7684;&#x5185;&#x5BB9;[&#x9879;&#x76EE;&#x7684;&#x529F;&#x80FD;&#x5B50;&#x6A21;&#x5757;&#x5F00;&#x53D1;]
+</code></pre><p>&#x516C;&#x53F8;&#x5F00;&#x53D1;&#x73AF;&#x5883;</p>
+<pre><code> &#x5DE5;&#x4F5C;&#x4EBA;&#x5458;&#xFF1A;&#x5F00;&#x53D1;&#x56E2;&#x961F;
+
+ &#x5DE5;&#x4F5C;&#x5E73;&#x53F0;&#xFF1A;&#x516C;&#x53F8;&#x5185;&#x90E8;&#x670D;&#x52A1;&#x5668;
+
+ &#x5E73;&#x53F0;&#x7279;&#x70B9;&#xFF1A;&#x670D;&#x52A1;&#x5668;&#x73AF;&#x5883;&#x548C;&#x7EBF;&#x4E0A;&#x7684;&#x670D;&#x52A1;&#x5668;&#x73AF;&#x5883;&#x5B8C;&#x5168;&#x4E00;&#x81F4;
+
+ &#x5DE5;&#x4F5C;&#x5185;&#x5BB9;&#xFF1A;&#x9879;&#x76EE;&#x5B50;&#x6A21;&#x5757;&#x95F4;&#x7684;&#x529F;&#x80FD;&#x8054;&#x8C03;
+
+ &#x5B8C;&#x6210;&#x6807;&#x51C6;&#xFF1A;&#x9879;&#x76EE;&#x9636;&#x6BB5;&#x5F00;&#x53D1;&#x3001;&#x8C03;&#x8BD5;&#x5B8C;&#x6210;
+</code></pre><p> &#x9879;&#x76EE;&#x6D4B;&#x8BD5;&#x73AF;&#x5883;</p>
+<pre><code> &#x5DE5;&#x4F5C;&#x4EBA;&#x5458;&#xFF1A;&#x6D4B;&#x8BD5;&#x56E2;&#x961F;
+
+ &#x5DE5;&#x4F5C;&#x5E73;&#x53F0;&#xFF1A;&#x516C;&#x53F8;&#x5185;&#x90E8;&#x670D;&#x52A1;&#x5668;
+
+ &#x5E73;&#x53F0;&#x7279;&#x70B9;&#xFF1A;&#x670D;&#x52A1;&#x5668;&#x73AF;&#x5883;&#x548C;&#x7EBF;&#x4E0A;&#x7684;&#x670D;&#x52A1;&#x5668;&#x73AF;&#x5883;&#x5B8C;&#x5168;&#x4E00;&#x81F4;
+
+ &#x5DE5;&#x4F5C;&#x5185;&#x5BB9;&#xFF1A;&#x9879;&#x76EE;&#x529F;&#x80FD;/&#x975E;&#x529F;&#x80FD;/&#x63A2;&#x7D22;&#x7B49;&#x6D4B;&#x8BD5;
+
+ &#x5B8C;&#x6210;&#x6807;&#x51C6;&#xFF1A;&#x9879;&#x76EE;&#x9636;&#x6BB5;&#x529F;&#x80FD;&#x6B63;&#x5E38;&#x8FD0;&#x884C;
+</code></pre><p>&#x9879;&#x76EE;&#x9884;&#x53D1;&#x5E03;&#x73AF;&#x5883;</p>
+<pre><code> &#x5DE5;&#x4F5C;&#x4EBA;&#x5458;&#xFF1A;&#x8FD0;&#x7EF4;&#x56E2;&#x961F;
+
+ &#x5DE5;&#x4F5C;&#x5E73;&#x53F0;&#xFF1A;&#x516C;&#x53F8;&#x7EBF;&#x4E0A;&#x670D;&#x52A1;&#x5668;&#x7EC4;&#x4E2D;&#x7684;&#x4E00;&#x53F0;
+
+ &#x5E73;&#x53F0;&#x7279;&#x70B9;&#xFF1A;&#x670D;&#x52A1;&#x5668;&#x73AF;&#x5883;&#x548C;&#x7EBF;&#x4E0A;&#x7684;&#x670D;&#x52A1;&#x5668;&#x73AF;&#x5883;&#x5B8C;&#x5168;&#x4E00;&#x81F4;
+
+ &#x5DE5;&#x4F5C;&#x5185;&#x5BB9;&#xFF1A;&#x7279;&#x6B8A;&#x529F;&#x80FD;&#x6D4B;&#x8BD5;(&#x6BD4;&#x5982;&#x652F;&#x4ED8;)&#x3001;&#x6570;&#x636E;&#x538B;&#x529B;&#x6D4B;&#x8BD5;&#x3001;&#x5176;&#x4ED6;&#x5B89;&#x5168;&#x6D4B;&#x8BD5;&#x7B49;&#x5B8C;&#x6210;&#x6807;&#x51C6;&#xFF1A;&#x9879;&#x76EE;&#x9636;&#x6BB5;&#x529F;&#x80FD;&#x6B63;&#x5E38;&#x8FD0;&#x884C;&#xFF0C;&#x6700;&#x540E;&#x4E00;&#x9053;&#x9632;&#x7EBF;
+</code></pre><p>&#x9879;&#x76EE;&#x7EBF;&#x4E0A;&#x73AF;&#x5883;</p>
+<pre><code> &#x5DE5;&#x4F5C;&#x4EBA;&#x5458;&#xFF1A;&#x8FD0;&#x7EF4;&#x56E2;&#x961F;
+
+ &#x5DE5;&#x4F5C;&#x5E73;&#x53F0;&#xFF1A;&#x516C;&#x53F8;&#x7EBF;&#x4E0A;&#x670D;&#x52A1;&#x5668;&#x7EC4;
+
+ &#x5E73;&#x53F0;&#x7279;&#x70B9;&#xFF1A;&#x6807;&#x51C6;&#x7EBF;&#x4E0A;&#x7684;&#x670D;&#x52A1;&#x5668;&#x73AF;&#x5883;
+
+ &#x5DE5;&#x4F5C;&#x5185;&#x5BB9;&#xFF1A;&#x4EE3;&#x7801;&#x90E8;&#x7F72;&#x548C;&#x7EF4;&#x62A4;
+</code></pre><p>&#x200B;    &#x5B8C;&#x6210;&#x6807;&#x51C6;&#xFF1A;&#x9879;&#x76EE;&#x6B63;&#x5E38;&#x8FD0;&#x884C;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../nginx/cycle.html" class="navigation navigation-prev " aria-label="Previous page: 生命周期"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../nginx/Advanced.html" class="navigation navigation-next " aria-label="Next page: Nginx入门"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"disqus":{"shortName":"gitbookuse"},"github":{"url":"https://github.com/dododream"},"search-pro":{"cutWordLib":"nodejieba","defineWord":["gitbook-use"]},"sharing":{"weibo":true,"facebook":true,"twitter":true,"google":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"tbfed-pagefooter":{"copyright":"Copyright © ITCast","modify_label":"「Revision Time:","modify_format":"YYYY-MM-DD HH:mm:ss」"},"baidu":{"token":"ff100361cdce95dd4c8fb96b4009f7bc"},"sitemap":{"hostname":"http://www.treenewbee.top"},"donate":{"wechat":"http://weixin.png","alipay":"http://alipay.png","title":"","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"edit-link":{"base":"https://github.com/dododream/edit","label":"Edit This Page"},"splitter":{},"toggle-chapters":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+    </body>
+    <!-- End of book Django课程讲义 -->
+</html>

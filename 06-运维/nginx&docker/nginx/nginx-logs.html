@@ -1,0 +1,761 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    <!-- Start book Django课程讲义 -->
+    <head>
+        <!-- head:start -->
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>日志解析 | Django课程讲义</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        <meta name="author" content="BigCat">
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../nginx/nginx-deploy.html" />
+    
+    
+    <link rel="prev" href="../nginx/nginx-load.html" />
+    
+
+        <!-- head:end -->
+    </head>
+    <body>
+        <!-- body:start -->
+        
+    <div class="book"
+        data-level="3.3"
+        data-chapter-title="日志解析"
+        data-filepath="nginx/nginx-logs.md"
+        data-basepath=".."
+        data-revision="Mon Jul 22 2019 08:02:25 GMT+0800 (CST)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        Introduction
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="nginx/deploy.html">
+            
+                
+                    <a href="../nginx/deploy.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        部署基础
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="nginx/cycle.html">
+            
+                
+                    <a href="../nginx/cycle.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        生命周期
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="nginx/deployment.html">
+            
+                
+                    <a href="../nginx/deployment.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        项目部署
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="nginx/Advanced.html">
+            
+                
+                    <a href="../nginx/Advanced.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        Nginx入门
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="nginx/nginx-deployment.html">
+            
+                
+                    <a href="../nginx/nginx-deployment.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        Nginx部署
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="nginx/nginx-detailed.html">
+            
+                
+                    <a href="../nginx/nginx-detailed.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        配置详解
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="nginx/nginx-advanced.html">
+            
+                
+                    <a href="../nginx/nginx-advanced.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Nginx进阶
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="nginx/nginx-reverse.html">
+            
+                
+                    <a href="../nginx/nginx-reverse.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        反向代理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="nginx/nginx-load.html">
+            
+                
+                    <a href="../nginx/nginx-load.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        负载均衡
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="3.3" data-path="nginx/nginx-logs.html">
+            
+                
+                    <a href="../nginx/nginx-logs.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.3.</b>
+                        
+                        日志解析
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="nginx/nginx-deploy.html">
+            
+                
+                    <a href="../nginx/nginx-deploy.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.4.</b>
+                        
+                        Django部署
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="docker/index.html">
+            
+                
+                    <a href="../docker/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        Docker入门
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="docker/bushu.html">
+            
+                
+                    <a href="../docker/bushu.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        Docker安装部署
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="docker/jiasu.html">
+            
+                
+                    <a href="../docker/jiasu.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        Docker加速器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="docker/images.html">
+            
+                
+                    <a href="../docker/images.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        镜像管理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="docker/rongqi.html">
+            
+                
+                    <a href="../docker/rongqi.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        容器管理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="docker/cangku.html">
+            
+                
+                    <a href="../docker/cangku.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        仓库管理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.6" data-path="docker/shuju.html">
+            
+                
+                    <a href="../docker/shuju.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.6.</b>
+                        
+                        数据管理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.7" data-path="docker/wangluo.html">
+            
+                
+                    <a href="../docker/wangluo.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.7.</b>
+                        
+                        网路管理
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="docker/jinjie.html">
+            
+                
+                    <a href="../docker/jinjie.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        Docker进阶
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="docker/jianjie.html">
+            
+                
+                    <a href="../docker/jianjie.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        Dockerfile简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="docker/rumen.html">
+            
+                
+                    <a href="../docker/rumen.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        Dockerfile快速入门
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="docker/meiduo.html">
+            
+                
+                    <a href="../docker/meiduo.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.3.</b>
+                        
+                        Dockerfile部署美多商城
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="tuozhan/tuozhan.html">
+            
+                
+                    <a href="../tuozhan/tuozhan.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        部署拓展
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="tuozhan/yanbian.html">
+            
+                
+                    <a href="../tuozhan/yanbian.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        架构演变
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="tuozhan/yunying.html">
+            
+                
+                    <a href="../tuozhan/yunying.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        项目运营
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >Django课程讲义</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x65E5;&#x5FD7;&#x89E3;&#x6790;">&#x65E5;&#x5FD7;&#x89E3;&#x6790;</h1>
+<h3 id="&#x65E5;&#x5FD7;&#x529F;&#x80FD;&#x7B80;&#x4ECB;">&#x65E5;&#x5FD7;&#x529F;&#x80FD;&#x7B80;&#x4ECB;</h3>
+<p>Nginx&#x9ED8;&#x8BA4;&#x63D0;&#x4F9B;&#x4E86;&#x4E24;&#x4E2A;&#x65E5;&#x5FD7;&#x6587;&#x4EF6; access.log&#x548C;error.log&#xFF0C;&#x901A;&#x8FC7;access.log&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x7528;&#x6237;&#x8BF7;&#x6C42;&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF1B;&#x901A;&#x8FC7;error.log&#x53EF;&#x4EE5;&#x83B7;&#x53D6;&#x67D0;&#x4E2A;web&#x670D;&#x52A1;&#x6545;&#x969C;&#x6216;&#x5176;&#x6027;&#x80FD;&#x74F6;&#x9888;&#x7B49;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x800C;&#x4E14;nginx&#x7684;&#x65E5;&#x5FD7;&#x652F;&#x6301;&#x5B9A;&#x5236;&#x5316;&#x683C;&#x5F0F;&#xFF0C;&#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x5B9E;&#x9645;&#x7684;&#x4E1A;&#x52A1;&#x60C5;&#x51B5;&#x66F4;&#x597D;&#x7684;&#x9AD8;&#x6548;&#x5DE5;&#x4F5C;&#x3002;&#x6700;&#x5E38;&#x89C1;&#x7684;&#x573A;&#x666F;&#x5C31;&#x662F;&#x83B7;&#x53D6;&#x5BA2;&#x6237;&#x7AEF;&#x7684;IP&#xFF0C;&#x8BB0;&#x5F55;&#x7528;&#x6237;&#x8BBF;&#x95EE;&#x91CF;&#x3002;</p>
+<p>&#x5B98;&#x65B9;&#x4ECB;&#x7ECD;&#xFF1A;<a href="http://nginx.org/en/docs/http/ngx_http_log_module.html" target="_blank">http://nginx.org/en/docs/http/ngx_http_log_module.html</a></p>
+<p><strong>&#x9ED8;&#x8BA4;&#x914D;&#x7F6E;</strong></p>
+<pre><code class="lang-nginx"><span class="hljs-comment">##</span>
+<span class="hljs-comment"># Logging Settings</span>
+<span class="hljs-comment">##</span>
+    <span class="hljs-title">access_log</span> /var/log/nginx/access.log;
+    <span class="hljs-title">error_log</span> /var/log/nginx/error.log;
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF1A;</p>
+<p>&#x200B;        nginx&#x65E5;&#x5FD7;&#x5C5E;&#x6027;&#x8BBE;&#x7F6E;&#x7684;&#x5B8C;&#x6574;&#x683C;&#x5F0F;&#x662F;&#xFF1A;</p>
+<p>&#x200B;                &#x5C5E;&#x6027;&#x540D;&#x79F0; access_log</p>
+<p>&#x200B;                &#x5B58;&#x50A8;&#x4F4D;&#x7F6E; /var/log/nginx/access.log</p>
+<p>&#x200B;                &#x65E5;&#x5FD7;&#x683C;&#x5F0F; &#x4F4D;&#x7F6E;&#x4E3A;&#x7A7A;&#x8868;&#x793A;&#x4F7F;&#x7528;&#x9ED8;&#x8BA4;&#x7684;combined &#x65E5;&#x5FD7;&#x683C;&#x5F0F;&#x3002;&#x5B83;&#x662F;&#x901A;&#x8FC7;log_format&#x8BBE;&#x7F6E;&#x7684;</p>
+<p><strong>&#x9ED8;&#x8BA4;&#x65E5;&#x5FD7;&#x8F93;&#x51FA;&#x683C;&#x5F0F;</strong></p>
+<pre><code class="lang-nginx"><span class="hljs-title">log_format</span> combined <span class="hljs-string">&apos;<span class="hljs-variable">$remote_addr</span> - <span class="hljs-variable">$remote_user</span> [<span class="hljs-variable">$time_local</span>] &apos;</span>
+                    <span class="hljs-string">&apos;&quot;<span class="hljs-variable">$request</span>&quot; <span class="hljs-variable">$status</span> <span class="hljs-variable">$body_bytes_sent</span> &apos;</span>
+                    <span class="hljs-string">&apos;&quot;<span class="hljs-variable">$http_referer</span>&quot; &quot;<span class="hljs-variable">$http_user_agent</span>&quot;&apos;</span>;
+<span class="hljs-comment"># $remote_addr&#x4E3A;ngixn&#x5185;&#x7F6E;&#x53D8;&#x91CF;</span>
+</code></pre>
+<p><strong>&#x8F93;&#x5165;&#x6548;&#x679C;</strong></p>
+<pre><code class="lang-nginx">10.211.55.30 - - [17/Jul/2019:15:57:56 +0800] &quot;GET / HTTP/1.0&quot; 304 0 &quot;-&quot; &quot;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36&quot;
+</code></pre>
+<h3 id="nginx&#x5185;&#x7F6E;&#x53D8;&#x91CF;">nginx&#x5185;&#x7F6E;&#x53D8;&#x91CF;</h3>
+<p>nginx&#x5E38;&#x7528;&#x7684;&#x5185;&#x7F6E;&#x53D8;&#x91CF;&#x4E3B;&#x8981;&#x662F;&#x7528;&#x6765;&#x5206;&#x6790;&#x65E5;&#x5FD7;&#x4E2D;&#x7684;http&#x8BB0;&#x5F55;&#x7684;&#xFF0C;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x6839;&#x636E;&#x5185;&#x7F6E;&#x7684;&#x53D8;&#x91CF;&#x7CBE;&#x786E;&#x7684;&#x83B7;&#x53D6;&#x76F8;&#x5173;&#x7684;&#x4FE1;&#x606F;</p>
+<p><strong>&#x9ED8;&#x8BA4;&#x53D8;&#x91CF;</strong></p>
+<table>
+<thead>
+<tr>
+<th>&#x53D8;&#x91CF;&#x540D;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$remote_addr</td>
+<td>&#x524D;&#x4E00;&#x53F0;&#x4E3B;&#x673A;&#x7684;ip&#x5730;&#x5740;&#xFF0C;&#x4E0D;&#x4E00;&#x5B9A;&#x662F;&#x771F;&#x5B9E;&#x7684;&#x5BA2;&#x6237;&#x7AEF;IP</td>
+</tr>
+<tr>
+<td>$remote_user</td>
+<td>&#x7528;&#x4E8E;&#x8BB0;&#x5F55;&#x8FDC;&#x7A0B;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x7528;&#x6237;&#x540D;&#x79F0;&#xFF08;&#x4E00;&#x822C;&#x4E3A;&#x201C;-&#x201D;&#xFF09;</td>
+</tr>
+<tr>
+<td>$time_local</td>
+<td>&#x7528;&#x4E8E;&#x8BB0;&#x5F55;&#x8BBF;&#x95EE;&#x65F6;&#x95F4;&#x548C;&#x65F6;&#x533A;</td>
+</tr>
+<tr>
+<td>$request</td>
+<td>&#x7528;&#x4E8E;&#x8BB0;&#x5F55;&#x8BF7;&#x6C42;&#x7684;url&#x4EE5;&#x53CA;&#x8BF7;&#x6C42;&#x65B9;&#x6CD5;</td>
+</tr>
+<tr>
+<td>$status</td>
+<td>&#x54CD;&#x5E94;&#x72B6;&#x6001;&#x7801;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;200&#x6210;&#x529F;&#x3001;404&#x9875;&#x9762;&#x627E;&#x4E0D;&#x5230;&#x7B49;&#x3002;</td>
+</tr>
+<tr>
+<td>$body_bytes_sent</td>
+<td>&#x54CD;&#x5E94;&#x72B6;&#x6001;&#x7801;&#xFF0C;&#x4F8B;&#x5982;&#xFF1A;200&#x6210;&#x529F;&#x3001;404&#x9875;&#x9762;&#x627E;&#x4E0D;&#x5230;&#x7B49;&#x3002;</td>
+</tr>
+<tr>
+<td>$http_referer</td>
+<td>&#x53EF;&#x4EE5;&#x8BB0;&#x5F55;&#x7528;&#x6237;&#x662F;&#x4ECE;&#x54EA;&#x4E2A;&#x94FE;&#x63A5;&#x8BBF;&#x95EE;&#x8FC7;&#x6765;&#x7684;</td>
+</tr>
+<tr>
+<td>$http_user_agent</td>
+<td>&#x7528;&#x6237;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x4EE3;&#x7406;&#xFF08;&#x4E00;&#x822C;&#x4E3A;&#x6D4F;&#x89C8;&#x5668;&#xFF09;</td>
+</tr>
+</tbody>
+</table>
+<p><strong>&#x5176;&#x5B83;&#x5E38;&#x7528;&#x53D8;&#x91CF;</strong></p>
+<table>
+<thead>
+<tr>
+<th>&#x53D8;&#x91CF;&#x540D;</th>
+<th>&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$request_uri</td>
+<td>&#x5305;&#x542B;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x7684;&#x539F;&#x59CB;URI&#xFF0C;&#x4E0D;&#x5305;&#x542B;&#x4E3B;&#x673A;&#x540D;</td>
+</tr>
+<tr>
+<td>$uri</td>
+<td>&#x4E0D;&#x5E26;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x7684;&#x5F53;&#x524D;URI&#xFF0C;&#x4E0D;&#x5305;&#x542B;&#x4E3B;&#x673A;&#x540D;</td>
+</tr>
+<tr>
+<td>$http_x_forwarded_for</td>
+<td>&#x53EF;&#x4EE5;&#x8BB0;&#x5F55;&#x5BA2;&#x6237;&#x7AEF;IP&#xFF0C;&#x901A;&#x8FC7;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x6765;&#x8BB0;&#x5F55;&#x5BA2;&#x6237;&#x7AEF;&#x7684;ip&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>$http_x_real_ip</td>
+<td>&#x53EF;&#x4EE5;&#x8BB0;&#x5F55;&#x5BA2;&#x6237;&#x7AEF;IP&#xFF0C;&#x901A;&#x8FC7;&#x4EE3;&#x7406;&#x670D;&#x52A1;&#x5668;&#x6765;&#x8BB0;&#x5F55;&#x5BA2;&#x6237;&#x7AEF;&#x7684;ip&#x5730;&#x5740;</td>
+</tr>
+<tr>
+<td>$args</td>
+<td>&#x8FD9;&#x4E2A;&#x53D8;&#x91CF;&#x7B49;&#x4E8E;&#x8BF7;&#x6C42;&#x884C;&#x4E2D;&#x7684;&#x53C2;&#x6570;&#xFF0C;&#x540C;$query_string</td>
+</tr>
+<tr>
+<td>$host</td>
+<td>&#x8BF7;&#x6C42;&#x4E3B;&#x673A;&#x5934;&#x5B57;&#x6BB5;&#xFF0C;&#x5426;&#x5219;&#x4E3A;&#x670D;&#x52A1;&#x5668;&#x540D;&#x79F0;</td>
+</tr>
+<tr>
+<td>$scheme</td>
+<td>HTTP&#x65B9;&#x6CD5;&#xFF08;&#x5982;http&#xFF0C;https&#xFF09;</td>
+</tr>
+<tr>
+<td>$document_uri</td>
+<td>&#x4E0E;$uri&#x76F8;&#x540C;</td>
+</tr>
+<tr>
+<td>$document_root</td>
+<td>&#x5F53;&#x524D;&#x8BF7;&#x6C42;&#x6587;&#x4EF6;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x4E2D;html&#x7684;&#x6839;&#x76EE;&#x5F55;&#x5373;root&#x503C;</td>
+</tr>
+<tr>
+<td>$request_filename</td>
+<td>&#x5F53;&#x524D;&#x8BF7;&#x6C42;&#x7684;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#xFF0C;&#x7531;root&#x6216;alias&#x6307;&#x4EE4;&#x4E0E;URI&#x8BF7;&#x6C42;&#x751F;&#x6210;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="&#x81EA;&#x5B9A;&#x4E49;&#x65E5;&#x5FD7;">&#x81EA;&#x5B9A;&#x4E49;&#x65E5;&#x5FD7;</h3>
+<p>&#x9700;&#x6C42;&#xFF1A;</p>
+<p>&#x57FA;&#x4E8E;&#x4EE3;&#x7406;&#x65B9;&#x5F0F;&#x8BBF;&#x95EE;app1&#x5E94;&#x7528;&#xFF0C;&#x65E5;&#x5FD7;&#x5B58;&#x653E;&#x5728;/var/logs/nginx/app1/access.log&#xFF0C;&#x8981;&#x6C42;&#x80FD;&#x4ECE;&#x65E5;&#x5FD7;&#x4E2D;&#x83B7;&#x53D6;&#x5BA2;&#x6237;&#x7AEF;&#x7684;IP&#x5730;&#x5740;</p>
+<p>&#x56E0;&#x4E3A;&#x662F;&#x83B7;&#x53D6;&#x4EE3;&#x7406;&#x524D;&#x9762;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x771F;&#x5B9E;IP&#xFF0C;&#x9700;&#x8981;nginx&#x5F00;&#x542F; --with-http_realip_module &#x529F;&#x80FD;&#xFF0C;&#x4F7F;&#x7528;nginx -V&#x6765;&#x68C0;&#x67E5;&#xFF0C;ubuntu&#x9ED8;&#x8BA4;&#x5B89;&#x88C5;&#x7684;&#x5DF2;&#x7ECF;&#x5F00;&#x542F;&#x4E86;&#x8BE5;&#x529F;&#x80FD;&#x3002;</p>
+<p><strong>&#x8BBE;&#x7F6E;&#x65E5;&#x5FD7;&#x683C;&#x5F0F;</strong></p>
+<p>&#x4FEE;&#x6539;nginx&#x76EE;&#x5F55;&#x4E0B;&#x7684;nginx.conf&#x6587;&#x4EF6;&#xFF0C;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x4EE3;&#x7801;</p>
+<pre><code class="lang-nginx">    <span class="hljs-comment">##</span>
+    <span class="hljs-comment"># Logging Settings</span>
+    <span class="hljs-comment">##  &#x8BBE;&#x5B9A;&#x65E5;&#x5FD7;&#x683C;&#x5F0F;&#x7684;&#x65B9;&#x6CD5;&#xFF1A; log_format &#x683C;&#x5F0F;&#x540D;&#x79F0; &quot;&#x65E5;&#x5FD7;&#x8868;&#x73B0;&#x6837;&#x5F0F;&quot;</span>
+     <span class="hljs-title">log_format</span> proxy_format <span class="hljs-string">&apos;<span class="hljs-variable">$remote_addr</span> - <span class="hljs-variable">$remote_user</span> [<span class="hljs-variable">$time_local</span>] &apos;</span>
+                    <span class="hljs-string">&apos;&quot;<span class="hljs-variable">$request</span>&quot; <span class="hljs-variable">$status</span> <span class="hljs-variable">$body_bytes_sent</span> &quot;<span class="hljs-variable">$http_referer</span>&quot;&apos;</span>
+                    <span class="hljs-string">&apos;&quot;<span class="hljs-variable">$http_user_agent</span>&quot; &quot;<span class="hljs-variable">$http_x_real_ip</span>&quot; &quot;<span class="hljs-variable">$http_x_forwarded_for</span>&quot;&apos;</span>;
+</code></pre>
+<h5 id="&#x4FEE;&#x6539;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x914D;&#x7F6E;&#x6587;&#x4EF6;">&#x4FEE;&#x6539;&#x8D1F;&#x8F7D;&#x5747;&#x8861;&#x914D;&#x7F6E;&#x6587;&#x4EF6;</h5>
+<pre><code class="lang-nginx"><span class="hljs-title">upstream</span> backends {
+  <span class="hljs-title">server</span> <span class="hljs-number">192.168.8.14:8001</span>;
+}
+<span class="hljs-title">server</span> {
+  <span class="hljs-title">listen</span> <span class="hljs-number">80</span>;
+  <span class="hljs-title">server_name</span> localhost;
+  <span class="hljs-title">location</span> / {
+    <span class="hljs-title">proxy_pass</span> <span class="hljs-url">http://backends</span>;
+    <span class="hljs-title">proxy_set_header</span> X-Real-IP <span class="hljs-variable">$remote_addr</span>;
+    <span class="hljs-title">proxy_set_header</span> X-Forwarded-For <span class="hljs-variable">$proxy_add_x_forwarded_for</span>;
+  }
+}
+
+<span class="hljs-title">server</span> {
+  <span class="hljs-title">listen</span> <span class="hljs-number">192.168.8.14:8001</span>;
+  <span class="hljs-title">root</span> /var/www/html/app1/;
+  <span class="hljs-comment"># &#x6307;&#x5B9A;access_log&#x6587;&#x4EF6;&#x4FDD;&#x5B58;&#x8DEF;&#x5F84;</span>
+  <span class="hljs-title">access_log</span> /var/log/nginx/app1/access.log proxy_format;
+  <span class="hljs-title">real_ip_header</span> X-Forwarded-For; 
+  <span class="hljs-title">set_real_ip_from</span> <span class="hljs-number">10.211.0.0</span>/<span class="hljs-number">16</span>; 
+  <span class="hljs-title">real_ip_recursive</span> <span class="hljs-built_in">on</span>;
+  <span class="hljs-title">location</span> / {
+    <span class="hljs-title">try_files</span> <span class="hljs-variable">$uri</span> <span class="hljs-variable">$uri</span>/ =<span class="hljs-number">404</span>;
+  }
+}
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF1A;</p>
+<p>&#x5982;&#x679C;&#x751F;&#x4EA7;&#x4E2D;&#x51FA;&#x73B0;&#x4E86;&#x591A;&#x7EA7;&#x4EE3;&#x7406;&#xFF0C;&#x5728;&#x7B2C;&#x4E00;&#x5C42;&#x4EE3;&#x7406;&#x4E0A;&#x6DFB;&#x52A0; <strong>proxy_set_header X-Real-IP $remote_addr;</strong>&#x5C5E;&#x6027;</p>
+<p>&#x5728;&#x6240;&#x6709;&#x4EE3;&#x7406;&#x4E0A;&#x5FC5;&#x987B;&#x6DFB;&#x52A0;  <strong>proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</strong>&#x5C5E;&#x6027;</p>
+<p>&#x771F;&#x5B9E;&#x670D;&#x52A1;&#x4E3B;&#x673A;&#x4E0A;&#x4F7F;&#x7528; <strong>real_ip_header X-Forwarded-For;</strong>&#x5C5E;&#x6027;</p>
+
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../nginx/nginx-load.html" class="navigation navigation-prev " aria-label="Previous page: 负载均衡"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../nginx/nginx-deploy.html" class="navigation navigation-next " aria-label="Next page: Django部署"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toggle-chapters/toggle.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-livereload/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"disqus":{"shortName":"gitbookuse"},"github":{"url":"https://github.com/dododream"},"search-pro":{"cutWordLib":"nodejieba","defineWord":["gitbook-use"]},"sharing":{"weibo":true,"facebook":true,"twitter":true,"google":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"tbfed-pagefooter":{"copyright":"Copyright © ITCast","modify_label":"「Revision Time:","modify_format":"YYYY-MM-DD HH:mm:ss」"},"baidu":{"token":"ff100361cdce95dd4c8fb96b4009f7bc"},"sitemap":{"hostname":"http://www.treenewbee.top"},"donate":{"wechat":"http://weixin.png","alipay":"http://alipay.png","title":"","button":"赏","alipayText":"支付宝打赏","wechatText":"微信打赏"},"edit-link":{"base":"https://github.com/dododream/edit","label":"Edit This Page"},"splitter":{},"toggle-chapters":{},"highlight":{},"fontsettings":{"theme":"white","family":"sans","size":2},"livereload":{}};
+    gitbook.start(config);
+});
+</script>
+
+        <!-- body:end -->
+    </body>
+    <!-- End of book Django课程讲义 -->
+</html>

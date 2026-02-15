@@ -1,0 +1,1356 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>Gunicorn | 课程简介</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-back-to-top-button/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-chapter-fold/chapter-fold.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toc2/toc2.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-tbfed-pagefooter/footer.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../C12-Deployment/Supervisor.html" />
+    
+    
+    <link rel="prev" href="../C12-Deployment/index.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="12.1"
+        data-chapter-title="Gunicorn"
+        data-filepath="C12-Deployment/Gunicorn.md"
+        data-basepath=".."
+        data-revision="Wed Sep 04 2019 16:39:29 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        课程简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="C01-Introduction/index.html">
+            
+                
+                    <a href="../C01-Introduction/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        项目介绍
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="C01-Introduction/AboutToutiaoWebVM.html">
+            
+                
+                    <a href="../C01-Introduction/AboutToutiaoWebVM.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        ToutiaoWeb虚拟机使用说明
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="C01-Introduction/PycharmRemoteDevelop.html">
+            
+                
+                    <a href="../C01-Introduction/PycharmRemoteDevelop.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Pycharm远程开发设置
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="C01-Introduction/AboutProject.html">
+            
+                
+                    <a href="../C01-Introduction/AboutProject.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        产品与开发
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="C01-Introduction/ProjectDirectory.html">
+            
+                
+                    <a href="../C01-Introduction/ProjectDirectory.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        工程目录
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="C01-Introduction/DebugMethod.html">
+            
+                
+                    <a href="../C01-Introduction/DebugMethod.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        调试方法
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="C02-Database/index.html">
+            
+                
+                    <a href="../C02-Database/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        数据库
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="C02-Database/数据库设计.html">
+            
+                
+                    <a href="../C02-Database/数据库设计.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        数据库理论--数据库设计
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="C02-Database/DatabaseTheory.html">
+            
+                
+                    <a href="../C02-Database/DatabaseTheory.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        数据库理论--复制集与分布式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="C02-Database/DistributedID.html">
+            
+                
+                    <a href="../C02-Database/DistributedID.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        数据库理论--分布式ID
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="C02-Database/DatabaseOptimize.html">
+            
+                
+                    <a href="../C02-Database/DatabaseOptimize.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        数据库理论--数据库优化
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="C02-Database/ORM.html">
+            
+                
+                    <a href="../C02-Database/ORM.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        理解ORM
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="C02-Database/SQLAlchemyMapping.html">
+            
+                
+                    <a href="../C02-Database/SQLAlchemyMapping.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        ORM--SQLAlchemy映射构建
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="C02-Database/SQLAlchemyOperations.html">
+            
+                
+                    <a href="../C02-Database/SQLAlchemyOperations.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                        ORM--SQLAlchemy操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="C02-Database/Redis.html">
+            
+                
+                    <a href="../C02-Database/Redis.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.8.</b>
+                        
+                        Redis
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="C03-Gitflow/index.html">
+            
+                
+                    <a href="../C03-Gitflow/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Git工作流
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="C03-Gitflow/Gitflow.html">
+            
+                
+                    <a href="../C03-Gitflow/Gitflow.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        课前阅读：Gitflow
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="C03-Gitflow/AboutGit.html">
+            
+                
+                    <a href="../C03-Gitflow/AboutGit.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        项目中的Git工作流
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="C04-JWT/index.html">
+            
+                
+                    <a href="../C04-JWT/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        JWT
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="C04-JWT/JWT.html">
+            
+                
+                    <a href="../C04-JWT/JWT.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        JWT
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="C04-JWT/PythonLib.html">
+            
+                
+                    <a href="../C04-JWT/PythonLib.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        PythonLib
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="C04-JWT/Implement.html">
+            
+                
+                    <a href="../C04-JWT/Implement.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        实施方案
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="C04-JWT/Forbbiden.html">
+            
+                
+                    <a href="../C04-JWT/Forbbiden.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        禁用问题
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="C04-JWT/JWT拓展.html">
+            
+                
+                    <a href="../C04-JWT/JWT拓展.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        JWT拓展
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="C05-OSS/index.html">
+            
+                
+                    <a href="../C05-OSS/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        对象存储
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="C05-OSS/Qiniu.html">
+            
+                
+                    <a href="../C05-OSS/Qiniu.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        七牛云存储
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="C05-OSS/CDN.html">
+            
+                
+                    <a href="../C05-OSS/CDN.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        CDN
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="C06-Cache/index.html">
+            
+                
+                    <a href="../C06-Cache/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        缓存
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="C06-Cache/CacheArchitecture.html">
+            
+                
+                    <a href="../C06-Cache/CacheArchitecture.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        缓存理论--缓存的架构
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="C06-Cache/CacheData.html">
+            
+                
+                    <a href="../C06-Cache/CacheData.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        缓存理论--缓存的数据
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="C06-Cache/CacheTTLAndEviction.html">
+            
+                
+                    <a href="../C06-Cache/CacheTTLAndEviction.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        缓存理论--缓存的有效期与淘汰策略
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="C06-Cache/CachePatterns.html">
+            
+                
+                    <a href="../C06-Cache/CachePatterns.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                        缓存理论--缓存模式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="C06-Cache/CacheProblems.html">
+            
+                
+                    <a href="../C06-Cache/CacheProblems.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.5.</b>
+                        
+                        缓存理论--缓存穿透和雪崩问题
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="C06-Cache/项目缓存与Redis持久存储设计.html">
+            
+                
+                    <a href="../C06-Cache/项目缓存与Redis持久存储设计.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.6.</b>
+                        
+                        项目缓存与Redis持久存储设计
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="C06-Cache/ProjectCacheImplement.html">
+            
+                
+                    <a href="../C06-Cache/ProjectCacheImplement.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.7.</b>
+                        
+                        项目缓存实现
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="C06-Cache/ProjectRedisStorageImplement.html">
+            
+                
+                    <a href="../C06-Cache/ProjectRedisStorageImplement.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.8.</b>
+                        
+                        项目Redis持久存储实现
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="C07-APScheduler/index.html">
+            
+                
+                    <a href="../C07-APScheduler/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        APScheduler
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="C07-APScheduler/APSchedulerTutorial.html">
+            
+                
+                    <a href="../C07-APScheduler/APSchedulerTutorial.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        APScheduler使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="C07-APScheduler/FixStatistics.html">
+            
+                
+                    <a href="../C07-APScheduler/FixStatistics.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        定时修正统计数据
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="C08-RPC/index.html">
+            
+                
+                    <a href="../C08-RPC/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        RPC
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="C08-RPC/AboutRPC.html">
+            
+                
+                    <a href="../C08-RPC/AboutRPC.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        RPC简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="C08-RPC/gRPC.html">
+            
+                
+                    <a href="../C08-RPC/gRPC.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                        gRPC
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="C08-RPC/RecoSysIDL.html">
+            
+                
+                    <a href="../C08-RPC/RecoSysIDL.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.</b>
+                        
+                        推荐系统接口定义
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.4" data-path="C08-RPC/Server.html">
+            
+                
+                    <a href="../C08-RPC/Server.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.</b>
+                        
+                        rpc服务端
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="C08-RPC/Client.html">
+            
+                
+                    <a href="../C08-RPC/Client.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.</b>
+                        
+                        rpc客户端
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="C08-RPC/实现调用远程rpc接口.html">
+            
+                
+                    <a href="../C08-RPC/实现调用远程rpc接口.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.</b>
+                        
+                        [课后作业]实现调用远程rpc视图接口.md
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="C08-RPC/ProtocolBuffers.html">
+            
+                
+                    <a href="../C08-RPC/ProtocolBuffers.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.7.</b>
+                        
+                        [查表]Protocol Buffers语法
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="C09-IM/index.html">
+            
+                
+                    <a href="../C09-IM/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        即时通信
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1" data-path="C09-IM/WebSocket.html">
+            
+                
+                    <a href="../C09-IM/WebSocket.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                        即时通讯和WebSocket
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="C09-IM/SocketIO.html">
+            
+                
+                    <a href="../C09-IM/SocketIO.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.</b>
+                        
+                        Socket.IO的使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="C09-IM/Chat.html">
+            
+                
+                    <a href="../C09-IM/Chat.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.3.</b>
+                        
+                        [课后作业]实现头条聊天服务
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="C09-IM/MessagePush.html">
+            
+                
+                    <a href="../C09-IM/MessagePush.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.</b>
+                        
+                        头条在线消息推送实现
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="C10-Elasticsearch/index.html">
+            
+                
+                    <a href="../C10-Elasticsearch/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Elasticsearch
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.1" data-path="C10-Elasticsearch/1-认识ES.html">
+            
+                
+                    <a href="../C10-Elasticsearch/1-认识ES.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.</b>
+                        
+                        认识Elasticsearch
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="C10-Elasticsearch/2-了解ES搜索引擎的原理.html">
+            
+                
+                    <a href="../C10-Elasticsearch/2-了解ES搜索引擎的原理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.</b>
+                        
+                        了解ES搜索引擎的原理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="C10-Elasticsearch/3-IK中文分析器.html">
+            
+                
+                    <a href="../C10-Elasticsearch/3-IK中文分析器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.3.</b>
+                        
+                        IK中文分析器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="C10-Elasticsearch/4-ES索引和类型.html">
+            
+                
+                    <a href="../C10-Elasticsearch/4-ES索引和类型.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.4.</b>
+                        
+                        ES索引和类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="C10-Elasticsearch/5-Logstash导入数据.html">
+            
+                
+                    <a href="../C10-Elasticsearch/5-Logstash导入数据.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.5.</b>
+                        
+                        Logstash导入数据
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.6" data-path="C10-Elasticsearch/6-ES文档的增删改.html">
+            
+                
+                    <a href="../C10-Elasticsearch/6-ES文档的增删改.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.6.</b>
+                        
+                        ES文档的增删改
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.7" data-path="C10-Elasticsearch/7-ES文档的查询.html">
+            
+                
+                    <a href="../C10-Elasticsearch/7-ES文档的查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.7.</b>
+                        
+                        ES文档的查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.8" data-path="C10-Elasticsearch/8-头条全文检索实现.html">
+            
+                
+                    <a href="../C10-Elasticsearch/8-头条全文检索实现.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.8.</b>
+                        
+                        项目实现全文检索接口
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.9" data-path="C10-Elasticsearch/9-ES联想提示.html">
+            
+                
+                    <a href="../C10-Elasticsearch/9-ES联想提示.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.9.</b>
+                        
+                        ES拼写纠错和自动补全
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.10" data-path="C10-Elasticsearch/10-头条suggest查询实现.html">
+            
+                
+                    <a href="../C10-Elasticsearch/10-头条suggest查询实现.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.10.</b>
+                        
+                        项目实现自动补全和纠错接口
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="C11-Unittest/C11-Unittest.html">
+            
+                
+                    <a href="../C11-Unittest/C11-Unittest.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        单元测试
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="C12-Deployment/index.html">
+            
+                
+                    <a href="../C12-Deployment/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        部署相关
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter active" data-level="12.1" data-path="C12-Deployment/Gunicorn.html">
+            
+                
+                    <a href="../C12-Deployment/Gunicorn.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.</b>
+                        
+                        Gunicorn
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="C12-Deployment/Supervisor.html">
+            
+                
+                    <a href="../C12-Deployment/Supervisor.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.2.</b>
+                        
+                        Supervisor
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >课程简介</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="gunicorn&#x7684;&#x4F7F;&#x7528;">Gunicorn&#x7684;&#x4F7F;&#x7528;</h1>
+<blockquote>
+<p>Gunicorn&#xFF08;&#x7EFF;&#x8272;&#x72EC;&#x89D2;&#x517D;&#xFF09;&#x662F;&#x4E00;&#x4E2A;Python WSGI&#x7684;HTTP&#x670D;&#x52A1;&#x5668;&#x3002;&#x4ECE;Ruby&#x7684;&#x72EC;&#x89D2;&#x517D;&#xFF08;Unicorn &#xFF09;&#x9879;&#x76EE;&#x79FB;&#x690D;&#x3002;&#x8BE5;Gunicorn&#x670D;&#x52A1;&#x5668;&#x4E0E;&#x5404;&#x79CD;Web&#x6846;&#x67B6;&#x517C;&#x5BB9;&#xFF0C;&#x5B9E;&#x73B0;&#x975E;&#x5E38;&#x7B80;&#x5355;&#xFF0C;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x8D44;&#x6E90;&#x6D88;&#x8017;&#x3002;Gunicorn&#x76F4;&#x63A5;&#x7528;&#x547D;&#x4EE4;&#x542F;&#x52A8;&#xFF0C;&#x4E0D;&#x9700;&#x8981;&#x7F16;&#x5199;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#xFF0C;&#x76F8;&#x5BF9;uWSGI&#x8981;&#x5BB9;&#x6613;&#x5F88;&#x591A;&#x3002;</p>
+</blockquote>
+<p>[TOC]</p>
+<!-- toc -->
+<ul>
+<li><a href="#1-&#x5B89;&#x88C5;gunicorn">1. &#x5B89;&#x88C5;gunicorn</a></li>
+<li><a href="#2-&#x67E5;&#x770B;&#x547D;&#x4EE4;&#x884C;&#x9009;&#x9879;">2. &#x67E5;&#x770B;&#x547D;&#x4EE4;&#x884C;&#x9009;&#x9879;</a></li>
+<li><a href="#3-&#x4F7F;&#x7528;gunicorn&#x542F;&#x52A8;flask">3. &#x4F7F;&#x7528;gunicorn&#x542F;&#x52A8;flask</a><ul>
+<li><a href="#31-&#x76F4;&#x63A5;&#x8FD0;&#x884C;">3.1 &#x76F4;&#x63A5;&#x8FD0;&#x884C;</a></li>
+<li><a href="#32-&#x6307;&#x5B9A;&#x8FDB;&#x7A0B;&#x548C;&#x7AEF;&#x53E3;&#x53F7;">3.2 &#x6307;&#x5B9A;&#x8FDB;&#x7A0B;&#x548C;&#x7AEF;&#x53E3;&#x53F7;</a><ul>
+<li><a href="#33-&#x8BBE;&#x7F6E;gunicorn&#x7684;&#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x548C;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;">3.3 &#x8BBE;&#x7F6E;gunicorn&#x7684;&#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x548C;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#4-&#x6CE8;&#x610F;">4. &#x6CE8;&#x610F;</a></li>
+</ul>
+<!-- toc stop -->
+<h2 id="1-&#x5B89;&#x88C5;gunicorn">1. &#x5B89;&#x88C5;gunicorn</h2>
+<blockquote>
+<p>&#x53EF;&#x4EE5;&#x5B89;&#x88C5;&#x5230;python&#x865A;&#x62DF;&#x73AF;&#x5883;&#x4E2D;&#xFF0C;centos&#x6D4B;&#x8BD5;&#x5F00;&#x53D1;&#x865A;&#x62DF;&#x673A;&#x5DF2;&#x7ECF;&#x5B89;&#x88C5;&#x8FC7;&#x4E86;</p>
+<pre><code class="lang-shell">pip install gunicorn
+</code></pre>
+</blockquote>
+<h2 id="2-&#x67E5;&#x770B;&#x547D;&#x4EE4;&#x884C;&#x9009;&#x9879;">2. &#x67E5;&#x770B;&#x547D;&#x4EE4;&#x884C;&#x9009;&#x9879;</h2>
+<blockquote>
+<p>&#x5B89;&#x88C5;gunicorn&#x6210;&#x529F;&#x540E;&#xFF0C;&#x901A;&#x8FC7;&#x547D;&#x4EE4;&#x884C;&#x7684;&#x65B9;&#x5F0F;&#x53EF;&#x4EE5;&#x67E5;&#x770B;gunicorn&#x7684;&#x4F7F;&#x7528;&#x4FE1;&#x606F;&#x3002;</p>
+<pre><code class="lang-shell">gunicorn -h
+</code></pre>
+</blockquote>
+<h2 id="3-&#x4F7F;&#x7528;gunicorn&#x542F;&#x52A8;flask">3. &#x4F7F;&#x7528;gunicorn&#x542F;&#x52A8;flask</h2>
+<h3 id="31-&#x76F4;&#x63A5;&#x8FD0;&#x884C;">3.1 &#x76F4;&#x63A5;&#x8FD0;&#x884C;</h3>
+<blockquote>
+<p>&#x4E0D;&#x63A8;&#x8350;&#x4F7F;&#x7528;&#x8BE5;&#x65B9;&#x5F0F;</p>
+<pre><code class="lang-shell">#&#x76F4;&#x63A5;&#x8FD0;&#x884C;&#xFF0C;&#x9ED8;&#x8BA4;&#x542F;&#x52A8;&#x7684;127.0.0.1::8000
+gunicorn &#x8FD0;&#x884C;&#x6587;&#x4EF6;&#x540D;&#x79F0;:Flask&#x7A0B;&#x5E8F;&#x5B9E;&#x4F8B;&#x540D;
+</code></pre>
+</blockquote>
+<h3 id="32-&#x6307;&#x5B9A;&#x8FDB;&#x7A0B;&#x548C;&#x7AEF;&#x53E3;&#x53F7;">3.2 &#x6307;&#x5B9A;&#x8FDB;&#x7A0B;&#x548C;&#x7AEF;&#x53E3;&#x53F7;</h3>
+<blockquote>
+<pre><code class="lang-shell">source /home/python/.virtualenv/toutiao/bin/activate
+cd /home/python/toutiao-backend
+gunicorn -w 4 --threads 10 -b 0.0.0.0:5001 toutiao.main:app
+</code></pre>
+<ul>
+<li><code>-w 4</code> &#x8FDB;&#x7A0B;&#x6570;&#x91CF;</li>
+<li><code>-threads 10</code> &#x7EBF;&#x7A0B;&#x6570;&#x91CF; </li>
+<li><code>-b 0.0.0.0:5001</code> &#x7ED1;&#x5B9A;ip:port </li>
+<li><code>toutiao.main:app</code> &#x8FD0;&#x884C;&#x6587;&#x4EF6;&#x7684;&#x540D;&#x79F0;:flask_app&#x7684;&#x5B9E;&#x4F8B;&#x5316;&#x5BF9;&#x8C61;&#x540D;&#x5B57;</li>
+</ul>
+</blockquote>
+<h4 id="33-&#x8BBE;&#x7F6E;gunicorn&#x7684;&#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x548C;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;">3.3 &#x8BBE;&#x7F6E;gunicorn&#x7684;&#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x548C;&#x9519;&#x8BEF;&#x65E5;&#x5FD7;</h4>
+<blockquote>
+<pre><code class="lang-shell">source /home/python/.virtualenv/toutiao/bin/activate
+cd /home/python/toutiao-backend
+gunicorn -w 4 --threads 10 -b 0.0.0.0:5001 --access-logfile /home/python/logs/access_app.log --error-logfile /home/python/logs/error_app.log toutiao.main:app
+</code></pre>
+<ul>
+<li><code>--access-logfile</code> &#x8BBF;&#x95EE;&#x65E5;&#x5FD7;&#x8DEF;&#x5F84;</li>
+<li><code>--error-logfile</code> &#x9519;&#x8BEF;&#x65E5;&#x5FD7;&#x8DEF;&#x5F84;</li>
+<li>&#x6CE8;&#x610F;&#xFF1A;&#x8FD9;&#x91CC;&#x8BBE;&#x7F6E;&#x7684;gunicorn&#x7684;&#x65E5;&#x5FD7;&#x8DEF;&#x5F84;&#xFF0C;&#x8DDF;flask&#x7684;&#x65E5;&#x5FD7;&#x6CA1;&#x6709;&#x5173;&#x7CFB;&#xFF01;</li>
+</ul>
+</blockquote>
+<h2 id="4-&#x6CE8;&#x610F;">4. &#x6CE8;&#x610F;</h2>
+<blockquote>
+<ul>
+<li>&#x5982;&#x679C;&#x4F7F;&#x7528;gunicorn&#x6765;&#x542F;&#x52A8;web&#x5E94;&#x7528;, &#x9996;&#x5148;&#x6267;&#x884C;&#x7684;&#x6587;&#x4EF6;&#x4E0D;&#x662F;main.py, &#x800C;&#x662F;<code>toutiao/__init.py</code></li>
+<li>ip&#x4E0D;&#x80FD;&#x8BBE;&#x4E3A;<code>127.0.0.1</code></li>
+<li><code>--error-logfile</code>&#x548C; <code>--access-logfile</code> &#x8BBE;&#x7F6E;&#x7684;gunicorn&#x7684;&#x65E5;&#x5FD7; &#x548C;flask&#x7684;&#x65E5;&#x5FD7;&#x65E0;&#x5173;</li>
+<li><code>-w 4 --threads 10</code>&#x8868;&#x793A;&#x5F00;&#x542F;4&#x4E2A;&#x8FDB;&#x7A0B;&#xFF0C;&#x6BCF;&#x4E2A;&#x8FDB;&#x7A0B;&#x5F00;&#x542F;10&#x4E2A;&#x7EBF;&#x7A0B; </li>
+</ul>
+</blockquote>
+<footer class="page-footer"><span class="copyright">toutiao-flask-v5.06 &#xA9;2019.8 yaoxiangyu@itcast.cn be based on toutiao-flask-v5.01 &#xA9;2019.5 kongdehai@itcast.cn all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-08-18 23:36:31
+</span></footer>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../C12-Deployment/index.html" class="navigation navigation-prev " aria-label="Previous page: 部署相关"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../C12-Deployment/Supervisor.html" class="navigation navigation-next " aria-label="Next page: Supervisor"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-back-to-top-button/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toc2/toc2.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"expandable-chapters-small":{},"toc2":{"addClass":true,"className":"toc"},"tbfed-pagefooter":{"copyright":"toutiao-flask-v5.06 ©2019.8 yaoxiangyu@itcast.cn be based on toutiao-flask-v5.01 ©2019.5 kongdehai@itcast.cn","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"splitter":{},"back-to-top-button":{},"chapter-fold":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>

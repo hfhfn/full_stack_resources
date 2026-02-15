@@ -1,0 +1,22 @@
+{
+    "plugins": [
+    	"expandable-chapters-small",
+    	"splitter",
+    	"back-to-top-button",
+    	"chapter-fold",
+    	"toc2",
+    	"tbfed-pagefooter"
+    ],
+    "pluginsConfig": {
+        "expandable-chapters-small":{},
+        "toc2": {
+            "addClass": true,
+            "className": "toc"
+        },
+        "tbfed-pagefooter": {
+            "copyright":"toutiao-flask-v5.06 ©2019.8 yaoxiangyu@itcast.cn be based on toutiao-flask-v5.01 ©2019.5 kongdehai@itcast.cn",
+            "modify_label": "该文件修订时间：",
+            "modify_format": "YYYY-MM-DD HH:mm:ss"
+        }
+    }
+}

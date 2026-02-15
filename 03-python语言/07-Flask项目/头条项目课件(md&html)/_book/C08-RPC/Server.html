@@ -1,0 +1,1511 @@
+<!DOCTYPE HTML>
+<html lang="en" >
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>rpc服务端 | 课程简介</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 2.6.7">
+        
+        
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    <link rel="stylesheet" href="../gitbook/style.css">
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-splitter/splitter.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-back-to-top-button/plugin.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-chapter-fold/chapter-fold.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-toc2/toc2.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-tbfed-pagefooter/footer.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-highlight/website.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-search/search.css">
+        
+    
+        
+        <link rel="stylesheet" href="../gitbook/plugins/gitbook-plugin-fontsettings/website.css">
+        
+    
+    
+
+        
+    
+    
+    <link rel="next" href="../C08-RPC/Client.html" />
+    
+    
+    <link rel="prev" href="../C08-RPC/RecoSysIDL.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+    <div class="book"
+        data-level="8.4"
+        data-chapter-title="rpc服务端"
+        data-filepath="C08-RPC/Server.md"
+        data-basepath=".."
+        data-revision="Wed Sep 04 2019 16:39:29 GMT+0800 (中国标准时间)"
+        data-innerlanguage="">
+    
+
+<div class="book-summary">
+    <nav role="navigation">
+        <ul class="summary">
+            
+            
+            
+            
+
+            
+
+            
+    
+        <li class="chapter " data-level="0" data-path="index.html">
+            
+                
+                    <a href="../index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                        课程简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1" data-path="C01-Introduction/index.html">
+            
+                
+                    <a href="../C01-Introduction/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.</b>
+                        
+                        项目介绍
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="C01-Introduction/AboutToutiaoWebVM.html">
+            
+                
+                    <a href="../C01-Introduction/AboutToutiaoWebVM.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.1.</b>
+                        
+                        ToutiaoWeb虚拟机使用说明
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="C01-Introduction/PycharmRemoteDevelop.html">
+            
+                
+                    <a href="../C01-Introduction/PycharmRemoteDevelop.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.2.</b>
+                        
+                        Pycharm远程开发设置
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="C01-Introduction/AboutProject.html">
+            
+                
+                    <a href="../C01-Introduction/AboutProject.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.3.</b>
+                        
+                        产品与开发
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="C01-Introduction/ProjectDirectory.html">
+            
+                
+                    <a href="../C01-Introduction/ProjectDirectory.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.4.</b>
+                        
+                        工程目录
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="C01-Introduction/DebugMethod.html">
+            
+                
+                    <a href="../C01-Introduction/DebugMethod.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>1.5.</b>
+                        
+                        调试方法
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="C02-Database/index.html">
+            
+                
+                    <a href="../C02-Database/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.</b>
+                        
+                        数据库
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="2.1" data-path="C02-Database/数据库设计.html">
+            
+                
+                    <a href="../C02-Database/数据库设计.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.1.</b>
+                        
+                        数据库理论--数据库设计
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.2" data-path="C02-Database/DatabaseTheory.html">
+            
+                
+                    <a href="../C02-Database/DatabaseTheory.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.2.</b>
+                        
+                        数据库理论--复制集与分布式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.3" data-path="C02-Database/DistributedID.html">
+            
+                
+                    <a href="../C02-Database/DistributedID.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.3.</b>
+                        
+                        数据库理论--分布式ID
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.4" data-path="C02-Database/DatabaseOptimize.html">
+            
+                
+                    <a href="../C02-Database/DatabaseOptimize.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.4.</b>
+                        
+                        数据库理论--数据库优化
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.5" data-path="C02-Database/ORM.html">
+            
+                
+                    <a href="../C02-Database/ORM.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.5.</b>
+                        
+                        理解ORM
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.6" data-path="C02-Database/SQLAlchemyMapping.html">
+            
+                
+                    <a href="../C02-Database/SQLAlchemyMapping.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.6.</b>
+                        
+                        ORM--SQLAlchemy映射构建
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.7" data-path="C02-Database/SQLAlchemyOperations.html">
+            
+                
+                    <a href="../C02-Database/SQLAlchemyOperations.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.7.</b>
+                        
+                        ORM--SQLAlchemy操作
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="2.8" data-path="C02-Database/Redis.html">
+            
+                
+                    <a href="../C02-Database/Redis.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>2.8.</b>
+                        
+                        Redis
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="C03-Gitflow/index.html">
+            
+                
+                    <a href="../C03-Gitflow/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.</b>
+                        
+                        Git工作流
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="C03-Gitflow/Gitflow.html">
+            
+                
+                    <a href="../C03-Gitflow/Gitflow.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.1.</b>
+                        
+                        课前阅读：Gitflow
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="C03-Gitflow/AboutGit.html">
+            
+                
+                    <a href="../C03-Gitflow/AboutGit.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>3.2.</b>
+                        
+                        项目中的Git工作流
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="C04-JWT/index.html">
+            
+                
+                    <a href="../C04-JWT/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.</b>
+                        
+                        JWT
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="C04-JWT/JWT.html">
+            
+                
+                    <a href="../C04-JWT/JWT.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.1.</b>
+                        
+                        JWT
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="C04-JWT/PythonLib.html">
+            
+                
+                    <a href="../C04-JWT/PythonLib.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.2.</b>
+                        
+                        PythonLib
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.3" data-path="C04-JWT/Implement.html">
+            
+                
+                    <a href="../C04-JWT/Implement.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.3.</b>
+                        
+                        实施方案
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.4" data-path="C04-JWT/Forbbiden.html">
+            
+                
+                    <a href="../C04-JWT/Forbbiden.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.4.</b>
+                        
+                        禁用问题
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.5" data-path="C04-JWT/JWT拓展.html">
+            
+                
+                    <a href="../C04-JWT/JWT拓展.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>4.5.</b>
+                        
+                        JWT拓展
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="C05-OSS/index.html">
+            
+                
+                    <a href="../C05-OSS/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.</b>
+                        
+                        对象存储
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="C05-OSS/Qiniu.html">
+            
+                
+                    <a href="../C05-OSS/Qiniu.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.1.</b>
+                        
+                        七牛云存储
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="C05-OSS/CDN.html">
+            
+                
+                    <a href="../C05-OSS/CDN.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>5.2.</b>
+                        
+                        CDN
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="C06-Cache/index.html">
+            
+                
+                    <a href="../C06-Cache/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.</b>
+                        
+                        缓存
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="C06-Cache/CacheArchitecture.html">
+            
+                
+                    <a href="../C06-Cache/CacheArchitecture.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.1.</b>
+                        
+                        缓存理论--缓存的架构
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="C06-Cache/CacheData.html">
+            
+                
+                    <a href="../C06-Cache/CacheData.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.2.</b>
+                        
+                        缓存理论--缓存的数据
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="C06-Cache/CacheTTLAndEviction.html">
+            
+                
+                    <a href="../C06-Cache/CacheTTLAndEviction.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.3.</b>
+                        
+                        缓存理论--缓存的有效期与淘汰策略
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.4" data-path="C06-Cache/CachePatterns.html">
+            
+                
+                    <a href="../C06-Cache/CachePatterns.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.4.</b>
+                        
+                        缓存理论--缓存模式
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.5" data-path="C06-Cache/CacheProblems.html">
+            
+                
+                    <a href="../C06-Cache/CacheProblems.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.5.</b>
+                        
+                        缓存理论--缓存穿透和雪崩问题
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.6" data-path="C06-Cache/项目缓存与Redis持久存储设计.html">
+            
+                
+                    <a href="../C06-Cache/项目缓存与Redis持久存储设计.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.6.</b>
+                        
+                        项目缓存与Redis持久存储设计
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.7" data-path="C06-Cache/ProjectCacheImplement.html">
+            
+                
+                    <a href="../C06-Cache/ProjectCacheImplement.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.7.</b>
+                        
+                        项目缓存实现
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.8" data-path="C06-Cache/ProjectRedisStorageImplement.html">
+            
+                
+                    <a href="../C06-Cache/ProjectRedisStorageImplement.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>6.8.</b>
+                        
+                        项目Redis持久存储实现
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="C07-APScheduler/index.html">
+            
+                
+                    <a href="../C07-APScheduler/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.</b>
+                        
+                        APScheduler
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="C07-APScheduler/APSchedulerTutorial.html">
+            
+                
+                    <a href="../C07-APScheduler/APSchedulerTutorial.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.1.</b>
+                        
+                        APScheduler使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="C07-APScheduler/FixStatistics.html">
+            
+                
+                    <a href="../C07-APScheduler/FixStatistics.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>7.2.</b>
+                        
+                        定时修正统计数据
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="C08-RPC/index.html">
+            
+                
+                    <a href="../C08-RPC/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.</b>
+                        
+                        RPC
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="8.1" data-path="C08-RPC/AboutRPC.html">
+            
+                
+                    <a href="../C08-RPC/AboutRPC.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.1.</b>
+                        
+                        RPC简介
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.2" data-path="C08-RPC/gRPC.html">
+            
+                
+                    <a href="../C08-RPC/gRPC.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.2.</b>
+                        
+                        gRPC
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.3" data-path="C08-RPC/RecoSysIDL.html">
+            
+                
+                    <a href="../C08-RPC/RecoSysIDL.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.3.</b>
+                        
+                        推荐系统接口定义
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter active" data-level="8.4" data-path="C08-RPC/Server.html">
+            
+                
+                    <a href="../C08-RPC/Server.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.4.</b>
+                        
+                        rpc服务端
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.5" data-path="C08-RPC/Client.html">
+            
+                
+                    <a href="../C08-RPC/Client.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.5.</b>
+                        
+                        rpc客户端
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.6" data-path="C08-RPC/实现调用远程rpc接口.html">
+            
+                
+                    <a href="../C08-RPC/实现调用远程rpc接口.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.6.</b>
+                        
+                        [课后作业]实现调用远程rpc视图接口.md
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="8.7" data-path="C08-RPC/ProtocolBuffers.html">
+            
+                
+                    <a href="../C08-RPC/ProtocolBuffers.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>8.7.</b>
+                        
+                        [查表]Protocol Buffers语法
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="C09-IM/index.html">
+            
+                
+                    <a href="../C09-IM/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.</b>
+                        
+                        即时通信
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="9.1" data-path="C09-IM/WebSocket.html">
+            
+                
+                    <a href="../C09-IM/WebSocket.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.1.</b>
+                        
+                        即时通讯和WebSocket
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.2" data-path="C09-IM/SocketIO.html">
+            
+                
+                    <a href="../C09-IM/SocketIO.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.2.</b>
+                        
+                        Socket.IO的使用
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.3" data-path="C09-IM/Chat.html">
+            
+                
+                    <a href="../C09-IM/Chat.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.3.</b>
+                        
+                        [课后作业]实现头条聊天服务
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9.4" data-path="C09-IM/MessagePush.html">
+            
+                
+                    <a href="../C09-IM/MessagePush.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>9.4.</b>
+                        
+                        头条在线消息推送实现
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="C10-Elasticsearch/index.html">
+            
+                
+                    <a href="../C10-Elasticsearch/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.</b>
+                        
+                        Elasticsearch
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="10.1" data-path="C10-Elasticsearch/1-认识ES.html">
+            
+                
+                    <a href="../C10-Elasticsearch/1-认识ES.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.1.</b>
+                        
+                        认识Elasticsearch
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.2" data-path="C10-Elasticsearch/2-了解ES搜索引擎的原理.html">
+            
+                
+                    <a href="../C10-Elasticsearch/2-了解ES搜索引擎的原理.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.2.</b>
+                        
+                        了解ES搜索引擎的原理
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.3" data-path="C10-Elasticsearch/3-IK中文分析器.html">
+            
+                
+                    <a href="../C10-Elasticsearch/3-IK中文分析器.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.3.</b>
+                        
+                        IK中文分析器
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.4" data-path="C10-Elasticsearch/4-ES索引和类型.html">
+            
+                
+                    <a href="../C10-Elasticsearch/4-ES索引和类型.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.4.</b>
+                        
+                        ES索引和类型
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.5" data-path="C10-Elasticsearch/5-Logstash导入数据.html">
+            
+                
+                    <a href="../C10-Elasticsearch/5-Logstash导入数据.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.5.</b>
+                        
+                        Logstash导入数据
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.6" data-path="C10-Elasticsearch/6-ES文档的增删改.html">
+            
+                
+                    <a href="../C10-Elasticsearch/6-ES文档的增删改.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.6.</b>
+                        
+                        ES文档的增删改
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.7" data-path="C10-Elasticsearch/7-ES文档的查询.html">
+            
+                
+                    <a href="../C10-Elasticsearch/7-ES文档的查询.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.7.</b>
+                        
+                        ES文档的查询
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.8" data-path="C10-Elasticsearch/8-头条全文检索实现.html">
+            
+                
+                    <a href="../C10-Elasticsearch/8-头条全文检索实现.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.8.</b>
+                        
+                        项目实现全文检索接口
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.9" data-path="C10-Elasticsearch/9-ES联想提示.html">
+            
+                
+                    <a href="../C10-Elasticsearch/9-ES联想提示.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.9.</b>
+                        
+                        ES拼写纠错和自动补全
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10.10" data-path="C10-Elasticsearch/10-头条suggest查询实现.html">
+            
+                
+                    <a href="../C10-Elasticsearch/10-头条suggest查询实现.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>10.10.</b>
+                        
+                        项目实现自动补全和纠错接口
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="C11-Unittest/C11-Unittest.html">
+            
+                
+                    <a href="../C11-Unittest/C11-Unittest.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>11.</b>
+                        
+                        单元测试
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12" data-path="C12-Deployment/index.html">
+            
+                
+                    <a href="../C12-Deployment/index.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.</b>
+                        
+                        部署相关
+                    </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="12.1" data-path="C12-Deployment/Gunicorn.html">
+            
+                
+                    <a href="../C12-Deployment/Gunicorn.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.1.</b>
+                        
+                        Gunicorn
+                    </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="12.2" data-path="C12-Deployment/Supervisor.html">
+            
+                
+                    <a href="../C12-Deployment/Supervisor.html">
+                
+                        <i class="fa fa-check"></i>
+                        
+                            <b>12.2.</b>
+                        
+                        Supervisor
+                    </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+
+            
+            <li class="divider"></li>
+            <li>
+                <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+                    Published with GitBook
+                </a>
+            </li>
+            
+        </ul>
+    </nav>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="book-header" role="navigation">
+    <!-- Actions Left -->
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../" >课程简介</a>
+    </h1>
+</div>
+
+            <div class="page-wrapper" tabindex="-1" role="main">
+                <div class="page-inner">
+                
+                
+                    <section class="normal" id="section-">
+                    
+                        <h1 id="&#x5B8C;&#x6210;rpc&#x670D;&#x52A1;&#x7AEF;&#x4EE3;&#x7801;">&#x5B8C;&#x6210;rpc&#x670D;&#x52A1;&#x7AEF;&#x4EE3;&#x7801;</h1>
+<p>[TOC]</p>
+<!-- toc -->
+<ul>
+<li><a href="#1-grpc&#x4F7F;&#x7528;&#x6D41;&#x7A0B;">1. gRPC&#x4F7F;&#x7528;&#x6D41;&#x7A0B;</a></li>
+<li><a href="#2-&#x5B8C;&#x6210;rpc&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x4EE3;&#x7801;">2. &#x5B8C;&#x6210;rpc&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x4EE3;&#x7801;</a><ul>
+<li><a href="#21-&#x5B8C;&#x6210;rpc&#x670D;&#x52A1;&#x7AEF;&#x88AB;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x7684;&#x4EE3;&#x7801;">2.1 &#x5B8C;&#x6210;rpc&#x670D;&#x52A1;&#x7AEF;&#x88AB;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x7684;&#x4EE3;&#x7801;</a></li>
+<li><a href="#22-&#x5B8C;&#x6210;rpc&#x670D;&#x52A1;&#x7AEF;server&#x7684;&#x4EE3;&#x7801;">2.2 &#x5B8C;&#x6210;rpc&#x670D;&#x52A1;&#x7AEF;server&#x7684;&#x4EE3;&#x7801;</a></li>
+</ul>
+</li>
+<li><a href="#3-&#x5B8C;&#x6574;&#x53C2;&#x8003;&#x4EE3;&#x7801;">3. &#x5B8C;&#x6574;&#x53C2;&#x8003;&#x4EE3;&#x7801;</a></li>
+</ul>
+<!-- toc stop -->
+<h2 id="1-grpc&#x4F7F;&#x7528;&#x6D41;&#x7A0B;">1. gRPC&#x4F7F;&#x7528;&#x6D41;&#x7A0B;</h2>
+<blockquote>
+<ul>
+<li>&#x6839;&#x636E;proto3&#x534F;&#x8BAE;&#x5BF9;&#x5E94;&#x7684;<code>&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x8BED;&#x8A00;</code>&#x6765;&#x63CF;&#x8FF0;&#x63A5;&#x53E3;&#x9700;&#x6C42;<ul>
+<li>&#x7528;proto3&#x8BED;&#x6CD5;&#x5199;&#x4E00;&#x4E2A;proto&#x6587;&#x4EF6;</li>
+</ul>
+</li>
+<li>&#x4F7F;&#x7528;gRPC&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x751F;&#x6210;&#x5BF9;&#x5E94;&#x5E73;&#x53F0;&#x7684;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x4EE3;&#x7801;<ul>
+<li>&#x7528;&#x547D;&#x4EE4;&#x884C;&#x751F;&#x6210;python&#x4EE3;&#x7801;</li>
+</ul>
+</li>
+<li>&#x5B9E;&#x73B0;&#x5BA2;&#x6237;&#x7AEF;&#x548C;&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x5177;&#x4F53;&#x903B;&#x8F91;<ul>
+<li><strong>&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x4EE3;&#x7801;  &#x2192; &#x8FD9;&#x662F;&#x672C;&#x7AE0;&#x8282;&#x8981;&#x5B8C;&#x6210;&#x7684;&#x6B65;&#x9AA4;</strong></li>
+<li>&#x5B8C;&#x6210;&#x5BA2;&#x6237;&#x7AEF;&#x7684;&#x4EE3;&#x7801;</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h2 id="2-&#x5B8C;&#x6210;rpc&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x4EE3;&#x7801;">2. &#x5B8C;&#x6210;rpc&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x4EE3;&#x7801;</h2>
+<blockquote>
+<blockquote>
+<p>&#x4E3A;&#x4E86;&#x5B66;&#x4E60;gRPC&#xFF0C;&#x5E76;&#x4E3A;&#x4E86;&#x770B;&#x5230;rpc&#x7684;&#x6548;&#x679C;&#xFF0C;&#x6211;&#x4EEC;&#x7F16;&#x5199;&#x8865;&#x5168;&#x670D;&#x52A1;&#x7AEF;&#x4EE3;&#x7801;&#x3002;</p>
+<p><strong>&#x6CE8;&#x610F;&#xFF1A;&#x6B64;&#x5904;&#x5B9E;&#x9645;&#x7684;&#x4EE3;&#x7801;&#x5E94;&#x8BE5;&#x8FD0;&#x884C;&#x5728;&#x63A8;&#x8350;&#x7CFB;&#x7EDF;&#x4E2D;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x8FD0;&#x884C;&#x5728;web&#x7CFB;&#x7EDF;&#x4E2D;</strong>&#xFF0C;&#x56E0;&#x4E3A;&#x662F;web&#x7CFB;&#x7EDF;&#x8981;&#x8C03;&#x7528;&#x63A8;&#x8350;&#x7CFB;&#x7EDF;&#x7684;RPC&#x670D;&#x52A1;</p>
+</blockquote>
+<p>&#x5728;toutiao-backend/common/rpc&#x76EE;&#x5F55;&#x4E0B;&#x65B0;&#x5EFA;server.py&#x6587;&#x4EF6;&#xFF0C;&#x6309;&#x6B65;&#x9AA4;&#x5B8C;&#x6210;rpc&#x670D;&#x52A1;&#x7AEF;&#x7684;&#x6A21;&#x62DF;&#x4EE3;&#x7801;</p>
+</blockquote>
+<h3 id="21-&#x5B8C;&#x6210;rpc&#x670D;&#x52A1;&#x7AEF;&#x88AB;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x7684;&#x4EE3;&#x7801;">2.1 &#x5B8C;&#x6210;rpc&#x670D;&#x52A1;&#x7AEF;&#x88AB;&#x8C03;&#x7528;&#x51FD;&#x6570;&#x7684;&#x4EE3;&#x7801;</h3>
+<blockquote>
+<p>&#x5728;<code>toutiao-backend/common/rpc/server.py&#x4E2D;</code></p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> time
+<span class="hljs-comment"># todo &#x8FD9;&#x91CC;&#x6A21;&#x62DF;rpc&#x670D;&#x52A1;&#x7AEF;&#x5904;&#x7406;&#x6570;&#x636E;</span>
+
+<span class="hljs-string">&quot;&quot;&quot;gRPC &#x88AB;&#x8C03;&#x7528;&#x7684;&#x7C7B;&#x548C;&#x65B9;&#x6CD5;&#xFF08;&#x5199;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#xFF09;&quot;&quot;&quot;</span>
+<span class="hljs-keyword">import</span> reco_pb2
+<span class="hljs-keyword">import</span> reco_pb2_grpc
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserRecommendService</span><span class="hljs-params">(reco_pb2_grpc.UserRecommendServicer)</span>:</span>
+ <span class="hljs-comment"># &#x7EE7;&#x627F;&#x7236;&#x7C7B; &#x2018;reco_pb2_grpc.proto&#x6587;&#x4EF6;&#x4E2D;&#x58F0;&#x660E;&#x7C7B;&#x540D;Servicer&#x2019;</span>
+ <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">user_recommend</span><span class="hljs-params">(self, request, context)</span>:</span>
+     <span class="hljs-string">&quot;&quot;&quot;&#x91CD;&#x5199;&#x540C;&#x540D;&#x51FD;&#x6570;&#xFF0C;&#x5BF9;&#x5E94;proto&#x6587;&#x4EF6;&#x4E2D;&#x58F0;&#x660E;&#x7684;&#x51FD;&#x6570;&#x540D;
+     # step 1. &#x89E3;&#x6790;&#x63A5;&#x6536;&#x7684;&#x8BF7;&#x6C42;&#x53C2;&#x6570;
+     # step 2. &#x5904;&#x7406;&#x5E76;&#x8FD4;&#x56DE;&#x54CD;&#x5E94;&#x6570;&#x636E;
+     :param request: &#x8C03;&#x7528;&#x65F6;&#x7684;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x5BF9;&#x8C61;
+     :param context: &#x7528;&#x6765;&#x8BBE;&#x7F6E;&#x8C03;&#x7528;&#x8FD4;&#x56DE;&#x7684;&#x5F02;&#x5E38;&#x4FE1;&#x606F;
+     :return: response = reco_pb2.ArticleResponse() &#x5B9E;&#x4F8B;&#x5316;&#x7684;rpc&#x670D;&#x52A1;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x54CD;&#x5E94;&#x5BF9;&#x8C61;
+     &quot;&quot;&quot;</span>
+     <span class="hljs-comment"># &#x89E3;&#x6790;&#x63A5;&#x6536;&#x7684;&#x8BF7;&#x6C42;&#x53C2;&#x6570;</span>
+     <span class="hljs-comment"># &#x5728;proto&#x6587;&#x4EF6;&#x4E2D;&#x58F0;&#x660E;&#x662F;&#x4EC0;&#x4E48;&#x7C7B;&#x578B;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x89E3;&#x6790;&#x51FA;&#x6765;&#x7684;&#x53C2;&#x6570;&#x4E5F;&#x5C31;&#x662F;&#x76F8;&#x5E94;&#x7684;&#x7C7B;&#x578B;</span>
+     user_id = request.user_id
+     channel_id = request.channel_id
+     article_num = request.article_num
+     time_stamp = request.time_stamp
+     print(<span class="hljs-string">&apos;&#x63A5;&#x6536;&#x5230;&#x4E86;rpc&#x8BF7;&#x6C42;&#x7684;&#x53C2;&#x6570;&apos;</span>)
+
+     <span class="hljs-comment"># &#x5904;&#x7406;&#x5E76;&#x8FD4;&#x56DE; &#x5B9E;&#x4F8B;&#x5316;&#x7684;rpc&#x670D;&#x52A1;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x54CD;&#x5E94;&#x5BF9;&#x8C61;</span>
+     <span class="hljs-comment"># reco_pb2.ArticleResponse() &#x4E2D;&#x7684; ArticleResponse &#x5C31;&#x662F;proto&#x6587;&#x4EF6;&#x4E2D;&#x58F0;&#x660E;&#x7684;&#x54CD;&#x5E94;&#x5BF9;&#x8C61;&#x7684;&#x540D;&#x5B57;</span>
+     response = reco_pb2.ArticleResponse()
+     <span class="hljs-string">&quot;&quot;&quot;&#x8FD9;&#x91CC;&#x662F;&#x6A21;&#x62DF;&#x6784;&#x9020;&#x7684; &#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#xFF01; &#x6BCF;&#x4E2A;&#x5C5E;&#x6027;&#x540D;&#x548C;proto&#x6587;&#x4EF6;&#x4E2D;&#x58F0;&#x660E;&#x90FD;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;&quot;&quot;&quot;</span>
+     response.expousre = <span class="hljs-string">&apos;&#x66DD;&#x5149;&#x57CB;&#x70B9;&#x6570;&#x636E;&apos;</span>
+     <span class="hljs-comment"># &#x4E00;&#x822C;&#x65F6;&#x95F4;&#x6233;&#x90FD;&#x662F;&#x4EE5;&#x6BEB;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;&#xFF0C;py&#x4EE5;&#x79D2;&#x4E3A;&#x5355;&#x4F4D; round&#x56DB;&#x820D;&#x4E94;&#x5165;&#x8F6C;&#x4E3A;&#x6574;&#x578B;</span>
+     response.time_stamp = round(time.time() * <span class="hljs-number">1000</span>)
+
+     recommends = [] <span class="hljs-comment"># python list &#x5BF9;&#x5E94;proto&#x4E2D;repeated&#x7C7B;&#x578B;</span>
+     <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(article_num): <span class="hljs-comment"># &#x6A21;&#x62DF;&#x6784;&#x9020;&#x5177;&#x4F53;&#x63A8;&#x8350;&#x6587;&#x7AE0;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x6570;&#x91CF;&#x5C31;&#x662F;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x4E2D;&#x643A;&#x5E26;&#x7684; article_num</span>
+         article = reco_pb2.Article() <span class="hljs-comment"># reco_pb2.Article()&#x5BF9;&#x5E94;roto&#x6587;&#x4EF6;&#x4E2D;&#x58F0;&#x660E;&#x7684; message Article</span>
+         article.article_id = i+<span class="hljs-number">1</span>
+         <span class="hljs-comment"># &#x5BF9;&#x4E8E;&#x54CD;&#x5E94;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x5D4C;&#x5957;&#x7ED3;&#x6784;&#xFF0C;&#x5DF2;&#x7ECF;&#x5728;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;reco_pb2.py&#x6587;&#x4EF6;&#x4E2D;&#x5B9E;&#x73B0;&#x8FC7;&#x4E86;</span>
+         <span class="hljs-comment"># &#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x4E0D;&#x7528;&#x5199;&#x4E86;&#xFF01;&#xFF01;&#xFF01;</span>
+         <span class="hljs-comment"># article.track = reco_pb2.Track() # reco_pb2.Track() &#x5BF9;&#x5E94;roto&#x6587;&#x4EF6;&#x4E2D;&#x58F0;&#x660E;&#x7684; message Track</span>
+         article.track.click = <span class="hljs-string">&apos;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x884C;&#x4E3A;&#x7684;&#x57CB;&#x70B9;&#x53C2;&#x6570;&apos;</span>
+         article.track.collect = <span class="hljs-string">&apos;&#x7528;&#x6237;&#x6536;&#x85CF;&#x7684;&#x57CB;&#x70B9;&#x53C2;&#x6570;&apos;</span>
+         article.track.share = <span class="hljs-string">&apos;&#x7528;&#x6237;&#x5206;&#x4EAB;&#x7684;&#x57CB;&#x70B9;&#x53C2;&#x6570;&apos;</span>
+         article.track.read = <span class="hljs-string">&apos;&#x7528;&#x6237;&#x8FDB;&#x5165;&#x6587;&#x7AE0;&#x8BE6;&#x60C5;&#x7684;&#x57CB;&#x70B9;&#x53C2;&#x6570;&apos;</span>
+         recommends.append(article) <span class="hljs-comment"># &#x628A;&#x6BCF;&#x4E2A;&#x63A8;&#x8350;&#x6587;&#x7AE0;&#x7684;&#x7EA6;&#x5B9A;&#x8FD4;&#x56DE;&#x53C2;&#x6570;&#x6DFB;&#x52A0;&#x5230;python list&#x4E2D;</span>
+     <span class="hljs-comment"># &#x5BF9;&#x4E8E;&#x5217;&#x8868;&#x7C7B;&#x578B;&#x7684;&#x8D4B;&#x503C;&#xFF0C;&#x5FC5;&#x987B;&#x4F7F;&#x7528;response.&#x7EA6;&#x5B9A;&#x7684;repeated&#x7C7B;&#x578B;&#x540D;.extend(python_list)</span>
+     response.recommends.extend(recommends)
+
+     <span class="hljs-keyword">return</span> response <span class="hljs-comment"># &#x8FD4;&#x56DE;</span>
+</code></pre>
+<ul>
+<li>&#x601D;&#x8003;&#xFF1A;&#x4EE3;&#x7801;&#x4E2D;&#x4E3A;&#x4EC0;&#x4E48;&#x58F0;&#x660E;<code>article = reco_pb2.Article()</code> &#x800C;&#x4E0D;&#x58F0;&#x660E; <code>article.track = reco_pb2.Track()</code> &#x5462;&#xFF1F;<ul>
+<li>Article&#x662F;recommends&#xFF08;list&#xFF09;&#x4E2D;&#x7684;&#x5143;&#x7D20;&#x5BF9;&#x8C61;&#xFF0C;&#x6709;&#x591A;&#x4E2A;</li>
+<li>proto&#x4E2D;repeated&#x7C7B;&#x578B;&#x4E2D;&#x7684;&#x5D4C;&#x5957;&#x5143;&#x7D20;&#xFF0C;&#x5FC5;&#x987B;&#x8981;&#x58F0;&#x660E;&#xFF01;</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h3 id="22-&#x5B8C;&#x6210;rpc&#x670D;&#x52A1;&#x7AEF;server&#x7684;&#x4EE3;&#x7801;">2.2 &#x5B8C;&#x6210;rpc&#x670D;&#x52A1;&#x7AEF;server&#x7684;&#x4EE3;&#x7801;</h3>
+<blockquote>
+<p>&#x5728;<code>toutiao-backend/common/rpc/server.py&#x4E2D;</code></p>
+<pre><code class="lang-python">......
+<span class="hljs-string">&quot;&quot;&quot;gRPC server&quot;&quot;&quot;</span>
+<span class="hljs-keyword">import</span> grpc <span class="hljs-comment"># pip install grpcio &#x5B89;&#x88C5;&#x540D;&#x548C;&#x5BFC;&#x5305;&#x540D;&#x4E0D;&#x4E00;&#x6837;&#xFF01;</span>
+<span class="hljs-comment"># concurrent&#x662F;python32&#x5F00;&#x59CB;&#x81EA;&#x5E26;&#x5305;&#xFF1A;&#x5E76;&#x53D1;&#x5DE5;&#x5177;&#x7BB1; # https://www.cnblogs.com/JerryZao/p/9873824.html</span>
+<span class="hljs-keyword">from</span> concurrent.futures <span class="hljs-keyword">import</span> ThreadPoolExecutor
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">serve</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-string">&quot;&quot;&quot;rpc&#x670D;&#x52A1;&#x542F;&#x52A8;&#x51FD;&#x6570;
+    # 1. &#x521B;&#x5EFA;&#x4E00;&#x4E2A;rpc&#x670D;&#x52A1;&#x5668;
+    # 1.1 &#x6307;&#x5B9A;&#x4F7F;&#x7528;&#x7EBF;&#x7A0B;&#x6C60;&#x5904;&#x7406;&#x5668; concurrent.futures.ThreadPoolExecutor
+    # 2. &#x5411;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x6DFB;&#x52A0;&#x88AB;&#x8C03;&#x7528;&#x7684;&#x670D;&#x52A1;&#x65B9;&#x6CD5;
+    # 3. rpc&#x670D;&#x52A1;&#x7ED1;&#x5B9A;ip&#x5730;&#x5740;&#x548C;&#x7AEF;&#x53E3;
+    # 4. &#x542F;&#x52A8;rpc&#x670D;&#x52A1;&#xFF0C;&#x4E0D;&#x4F1A;&#x963B;&#x585E;&#x7A0B;&#x5E8F;
+    # 5. &#x4E0D;&#x65AD;&#x5FAA;&#x73AF;&#x9632;&#x6B62;&#x7A0B;&#x5E8F;&#x9000;&#x51FA;
+    &quot;&quot;&quot;</span>
+    <span class="hljs-comment"># 1. &#x521B;&#x5EFA;&#x4E00;&#x4E2A;rpc&#x670D;&#x52A1;&#x5668;</span>
+    <span class="hljs-comment"># &#x6307;&#x5B9A;&#x4F7F;&#x7528;concurrent.futures.ThreadPoolExecutor&#x7EBF;&#x7A0B;&#x6C60;&#x5904;&#x7406;&#x5668;&#xFF0C;&#x5E76;&#x89C4;&#x5B9A;&#x6C60;&#x5927;&#x5C0F;&#x6709;3&#x4E2A;&#x7EBF;&#x7A0B;</span>
+    server = grpc.server(ThreadPoolExecutor(max_workers=<span class="hljs-number">3</span>))
+    <span class="hljs-comment"># 2. &#x5411;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x6DFB;&#x52A0;&#x88AB;&#x8C03;&#x7528;&#x7684;&#x670D;&#x52A1;&#x65B9;&#x6CD5;</span>
+    <span class="hljs-comment"># reco_pb2_grpc.add_&#x7EA6;&#x5B9A;&#x7684;&#x7C7B;&#x540D;Servicer_to_server(&#x7EE7;&#x627F;&#x5E76;&#x91CD;&#x65B0;&#x7684;&#x5904;&#x7406;&#x6570;&#x636E;&#x7684;&#x5B50;&#x7C7B;(), grpc_server&#x5BF9;&#x8C61;)</span>
+    reco_pb2_grpc.add_UserRecommendServicer_to_server(UserRecommendServicer(), server)
+    <span class="hljs-comment"># 3. rpc&#x670D;&#x52A1;&#x7ED1;&#x5B9A;ip&#x5730;&#x5740;&#x548C;&#x7AEF;&#x53E3;</span>
+    server.add_insecure_port(<span class="hljs-string">&apos;0.0.0.0:8888&apos;</span>)
+    <span class="hljs-comment"># 4. &#x542F;&#x52A8;rpc&#x670D;&#x52A1;&#xFF0C;&#x4E0D;&#x4F1A;&#x963B;&#x585E;&#x7A0B;&#x5E8F;</span>
+    server.start()
+    <span class="hljs-comment"># 5. &#x4E0D;&#x65AD;&#x5FAA;&#x73AF;&#x9632;&#x6B62;&#x7A0B;&#x5E8F;&#x9000;&#x51FA;</span>
+    <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>: time.sleep(<span class="hljs-number">100</span>)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+
+    serve()
+</code></pre>
+</blockquote>
+<h2 id="3-&#x5B8C;&#x6574;&#x53C2;&#x8003;&#x4EE3;&#x7801;">3. &#x5B8C;&#x6574;&#x53C2;&#x8003;&#x4EE3;&#x7801;</h2>
+<blockquote>
+<p>&#x5728;<code>toutiao-backend/common/rpc/server.py</code>&#x4E2D;</p>
+<pre><code class="lang-python"><span class="hljs-keyword">import</span> time
+<span class="hljs-comment"># todo &#x8FD9;&#x91CC;&#x6A21;&#x62DF;rpc&#x670D;&#x52A1;&#x7AEF;&#x5904;&#x7406;&#x6570;&#x636E;</span>
+
+<span class="hljs-string">&quot;&quot;&quot;gRPC &#x88AB;&#x8C03;&#x7528;&#x7684;&#x7C7B;&#x548C;&#x65B9;&#x6CD5;&#xFF08;&#x5199;&#x5728;&#x670D;&#x52A1;&#x7AEF;&#xFF09;&quot;&quot;&quot;</span>
+<span class="hljs-keyword">import</span> reco_pb2
+<span class="hljs-keyword">import</span> reco_pb2_grpc
+
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserRecommendServicer</span><span class="hljs-params">(reco_pb2_grpc.UserRecommendServicer)</span>:</span>
+ <span class="hljs-comment"># &#x7EE7;&#x627F;&#x7236;&#x7C7B; &#x2018;reco_pb2_grpc.proto&#x6587;&#x4EF6;&#x4E2D;&#x58F0;&#x660E;&#x7C7B;&#x540D;Servicer&#x2019;</span>
+ <span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">user_recommend</span><span class="hljs-params">(self, request, context)</span>:</span>
+     <span class="hljs-string">&quot;&quot;&quot;&#x91CD;&#x5199;&#x540C;&#x540D;&#x51FD;&#x6570;&#xFF0C;&#x5BF9;&#x5E94;proto&#x6587;&#x4EF6;&#x4E2D;&#x58F0;&#x660E;&#x7684;&#x51FD;&#x6570;&#x540D;
+     # step 1. &#x89E3;&#x6790;&#x63A5;&#x6536;&#x7684;&#x8BF7;&#x6C42;&#x53C2;&#x6570;
+     # step 2. &#x5904;&#x7406;&#x5E76;&#x8FD4;&#x56DE;&#x54CD;&#x5E94;&#x6570;&#x636E;
+     :param request: &#x8C03;&#x7528;&#x65F6;&#x7684;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x5BF9;&#x8C61;
+     :param context: &#x7528;&#x6765;&#x8BBE;&#x7F6E;&#x8C03;&#x7528;&#x8FD4;&#x56DE;&#x7684;&#x5F02;&#x5E38;&#x4FE1;&#x606F;
+     :return: response = reco_pb2.ArticleResponse() &#x5B9E;&#x4F8B;&#x5316;&#x7684;rpc&#x670D;&#x52A1;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x54CD;&#x5E94;&#x5BF9;&#x8C61;
+     &quot;&quot;&quot;</span>
+     <span class="hljs-comment"># &#x89E3;&#x6790;&#x63A5;&#x6536;&#x7684;&#x8BF7;&#x6C42;&#x53C2;&#x6570;</span>
+     <span class="hljs-comment"># &#x5728;proto&#x6587;&#x4EF6;&#x4E2D;&#x58F0;&#x660E;&#x662F;&#x4EC0;&#x4E48;&#x7C7B;&#x578B;&#x7684;&#xFF0C;&#x90A3;&#x4E48;&#x89E3;&#x6790;&#x51FA;&#x6765;&#x7684;&#x53C2;&#x6570;&#x4E5F;&#x5C31;&#x662F;&#x76F8;&#x5E94;&#x7684;&#x7C7B;&#x578B;</span>
+     user_id = request.user_id
+     channel_id = request.channel_id
+     article_num = request.article_num
+     time_stamp = request.time_stamp
+     print(<span class="hljs-string">&apos;&#x63A5;&#x6536;&#x5230;&#x4E86;rpc&#x8BF7;&#x6C42;&#x7684;&#x53C2;&#x6570;&apos;</span>)
+
+     <span class="hljs-comment"># &#x5904;&#x7406;&#x5E76;&#x8FD4;&#x56DE; &#x5B9E;&#x4F8B;&#x5316;&#x7684;rpc&#x670D;&#x52A1;&#x51FD;&#x6570;&#x8FD4;&#x56DE;&#x7684;&#x54CD;&#x5E94;&#x5BF9;&#x8C61;</span>
+     <span class="hljs-comment"># reco_pb2.ArticleResponse() &#x4E2D;&#x7684; ArticleResponse &#x5C31;&#x662F;proto&#x6587;&#x4EF6;&#x4E2D;&#x58F0;&#x660E;&#x7684;&#x54CD;&#x5E94;&#x5BF9;&#x8C61;&#x7684;&#x540D;&#x5B57;</span>
+     response = reco_pb2.ArticleResponse()
+     <span class="hljs-string">&quot;&quot;&quot;&#x8FD9;&#x91CC;&#x662F;&#x6A21;&#x62DF;&#x6784;&#x9020;&#x7684; &#x8FD4;&#x56DE;&#x7684;&#x6570;&#x636E;&#xFF01; &#x6BCF;&#x4E2A;&#x5C5E;&#x6027;&#x540D;&#x548C;proto&#x6587;&#x4EF6;&#x4E2D;&#x58F0;&#x660E;&#x90FD;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;&quot;&quot;&quot;</span>
+     response.expousre = <span class="hljs-string">&apos;&#x66DD;&#x5149;&#x57CB;&#x70B9;&#x6570;&#x636E;&apos;</span>
+     <span class="hljs-comment"># &#x4E00;&#x822C;&#x65F6;&#x95F4;&#x6233;&#x90FD;&#x662F;&#x4EE5;&#x6BEB;&#x79D2;&#x4E3A;&#x5355;&#x4F4D;&#xFF0C;py&#x4EE5;&#x79D2;&#x4E3A;&#x5355;&#x4F4D; round&#x56DB;&#x820D;&#x4E94;&#x5165;&#x8F6C;&#x4E3A;&#x6574;&#x578B;</span>
+     response.time_stamp = round(time.time() * <span class="hljs-number">1000</span>)
+
+     recommends = [] <span class="hljs-comment"># python list &#x5BF9;&#x5E94;proto&#x4E2D;repeated&#x7C7B;&#x578B;</span>
+     <span class="hljs-keyword">for</span> i <span class="hljs-keyword">in</span> range(article_num): <span class="hljs-comment"># &#x6A21;&#x62DF;&#x6784;&#x9020;&#x5177;&#x4F53;&#x63A8;&#x8350;&#x6587;&#x7AE0;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x6570;&#x91CF;&#x5C31;&#x662F;&#x8BF7;&#x6C42;&#x53C2;&#x6570;&#x4E2D;&#x643A;&#x5E26;&#x7684; article_num</span>
+         article = reco_pb2.Article() <span class="hljs-comment"># reco_pb2.Article()&#x5BF9;&#x5E94;roto&#x6587;&#x4EF6;&#x4E2D;&#x58F0;&#x660E;&#x7684; message Article</span>
+         article.article_id = i+<span class="hljs-number">1</span>
+         <span class="hljs-comment"># &#x5BF9;&#x4E8E;&#x54CD;&#x5E94;&#x5BF9;&#x8C61;&#x4E2D;&#x7684;&#x5D4C;&#x5957;&#x7ED3;&#x6784;&#xFF0C;&#x5DF2;&#x7ECF;&#x5728;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;reco_pb2.py&#x6587;&#x4EF6;&#x4E2D;&#x5B9E;&#x73B0;&#x8FC7;&#x4E86;</span>
+         <span class="hljs-comment"># article&#x548C;recommends&#x6CA1;&#x6709;&#x76F4;&#x63A5;&#x7684;&#x5D4C;&#x5957;&#x5173;&#x7CFB;&#xFF08;recommends:[{article1}, {article2}]&#xFF09;</span>
+         <span class="hljs-comment"># track&#x548C;article&#x6709;&#x76F4;&#x63A5;&#x7684;&#x5D4C;&#x5957;&#x5173;&#x7CFB;&#xFF08;&#x7C7B;&#x4F3C;dict&#xFF09;&#xFF0C;&#x6240;&#x4EE5;&#x4E0D;&#x9700;&#x8981;&#x989D;&#x5916;&#x58F0;&#x660E;&#xFF01;</span>
+         <span class="hljs-comment"># &#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x4E0D;&#x7528;&#x5199;&#x4E86;&#xFF01;&#xFF01;&#xFF01;</span>
+         <span class="hljs-comment"># X! article.track = reco_pb2.Track() # reco_pb2.Track() &#x5BF9;&#x5E94;roto&#x6587;&#x4EF6;&#x4E2D;&#x58F0;&#x660E;&#x7684; message Track</span>
+         article.track.click = <span class="hljs-string">&apos;&#x7528;&#x6237;&#x70B9;&#x51FB;&#x884C;&#x4E3A;&#x7684;&#x57CB;&#x70B9;&#x53C2;&#x6570;&apos;</span>
+         article.track.collect = <span class="hljs-string">&apos;&#x7528;&#x6237;&#x6536;&#x85CF;&#x7684;&#x57CB;&#x70B9;&#x53C2;&#x6570;&apos;</span>
+         article.track.share = <span class="hljs-string">&apos;&#x7528;&#x6237;&#x5206;&#x4EAB;&#x7684;&#x57CB;&#x70B9;&#x53C2;&#x6570;&apos;</span>
+         article.track.read = <span class="hljs-string">&apos;&#x7528;&#x6237;&#x8FDB;&#x5165;&#x6587;&#x7AE0;&#x8BE6;&#x60C5;&#x7684;&#x57CB;&#x70B9;&#x53C2;&#x6570;&apos;</span>
+         recommends.append(article) <span class="hljs-comment"># &#x628A;&#x6BCF;&#x4E2A;&#x63A8;&#x8350;&#x6587;&#x7AE0;&#x7684;&#x7EA6;&#x5B9A;&#x8FD4;&#x56DE;&#x53C2;&#x6570;&#x6DFB;&#x52A0;&#x5230;python list&#x4E2D;</span>
+     <span class="hljs-comment"># &#x5BF9;&#x4E8E;&#x5217;&#x8868;&#x7C7B;&#x578B;&#x7684;&#x8D4B;&#x503C;&#xFF0C;&#x5FC5;&#x987B;&#x4F7F;&#x7528;response.&#x7EA6;&#x5B9A;&#x7684;repeated&#x7C7B;&#x578B;&#x540D;.extend(python_list)</span>
+     response.recommends.extend(recommends)
+
+     <span class="hljs-keyword">return</span> response <span class="hljs-comment"># &#x8FD4;&#x56DE;</span>
+
+
+<span class="hljs-string">&quot;&quot;&quot;gRPC server&quot;&quot;&quot;</span>
+<span class="hljs-keyword">import</span> grpc <span class="hljs-comment"># pip install grpcio &#x5B89;&#x88C5;&#x540D;&#x548C;&#x5BFC;&#x5305;&#x540D;&#x4E0D;&#x4E00;&#x6837;&#xFF01;</span>
+<span class="hljs-comment"># concurrent&#x662F;python32&#x5F00;&#x59CB;&#x81EA;&#x5E26;&#x5305;&#xFF1A;&#x5E76;&#x53D1;&#x5DE5;&#x5177;&#x7BB1; # https://www.cnblogs.com/JerryZao/p/9873824.html</span>
+<span class="hljs-keyword">from</span> concurrent.futures <span class="hljs-keyword">import</span> ThreadPoolExecutor
+<span class="hljs-keyword">import</span> reco_pb2_grpc
+
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">serve</span><span class="hljs-params">()</span>:</span>
+ <span class="hljs-string">&quot;&quot;&quot;rpc&#x670D;&#x52A1;&#x542F;&#x52A8;&#x51FD;&#x6570;
+ # 1. &#x521B;&#x5EFA;&#x4E00;&#x4E2A;rpc&#x670D;&#x52A1;&#x5668;
+ # 1.1 &#x6307;&#x5B9A;&#x4F7F;&#x7528;&#x7EBF;&#x7A0B;&#x6C60;&#x5904;&#x7406;&#x5668; concurrent.futures.ThreadPoolExecutor
+ # 2. &#x5411;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x6DFB;&#x52A0;&#x88AB;&#x8C03;&#x7528;&#x7684;&#x670D;&#x52A1;&#x65B9;&#x6CD5;
+ # 3. rpc&#x670D;&#x52A1;&#x7ED1;&#x5B9A;ip&#x5730;&#x5740;&#x548C;&#x7AEF;&#x53E3;
+ # 4. &#x542F;&#x52A8;rpc&#x670D;&#x52A1;&#xFF0C;&#x4E0D;&#x4F1A;&#x963B;&#x585E;&#x7A0B;&#x5E8F;
+ # 5. &#x4E0D;&#x65AD;&#x5FAA;&#x73AF;&#x9632;&#x6B62;&#x7A0B;&#x5E8F;&#x9000;&#x51FA;
+ &quot;&quot;&quot;</span>
+ <span class="hljs-comment"># 1. &#x521B;&#x5EFA;&#x4E00;&#x4E2A;rpc&#x670D;&#x52A1;&#x5668;</span>
+ <span class="hljs-comment"># &#x6307;&#x5B9A;&#x4F7F;&#x7528;concurrent.futures.ThreadPoolExecutor&#x7EBF;&#x7A0B;&#x6C60;&#x5904;&#x7406;&#x5668;&#xFF0C;&#x5E76;&#x89C4;&#x5B9A;&#x6C60;&#x5927;&#x5C0F;&#x6709;3&#x4E2A;&#x7EBF;&#x7A0B;</span>
+ server = grpc.server(ThreadPoolExecutor(max_workers=<span class="hljs-number">3</span>))
+ <span class="hljs-comment"># 2. &#x5411;&#x670D;&#x52A1;&#x5668;&#x4E2D;&#x6DFB;&#x52A0;&#x88AB;&#x8C03;&#x7528;&#x7684;&#x670D;&#x52A1;&#x65B9;&#x6CD5;</span>
+ <span class="hljs-comment"># reco_pb2_grpc.add_&#x7EA6;&#x5B9A;&#x7684;&#x7C7B;&#x540D;Servicer_to_server(&#x7EE7;&#x627F;&#x5E76;&#x91CD;&#x65B0;&#x7684;&#x5904;&#x7406;&#x6570;&#x636E;&#x7684;&#x5B50;&#x7C7B;(), grpc_server&#x5BF9;&#x8C61;)</span>
+ reco_pb2_grpc.add_UserRecommendServicer_to_server(UserRecommendServicer(), server)
+ <span class="hljs-comment"># 3. rpc&#x670D;&#x52A1;&#x7ED1;&#x5B9A;ip&#x5730;&#x5740;&#x548C;&#x7AEF;&#x53E3;</span>
+ server.add_insecure_port(<span class="hljs-string">&apos;0.0.0.0:8888&apos;</span>)
+ <span class="hljs-comment"># 4. &#x542F;&#x52A8;rpc&#x670D;&#x52A1;&#xFF0C;&#x4E0D;&#x4F1A;&#x963B;&#x585E;&#x7A0B;&#x5E8F;</span>
+ server.start()
+ <span class="hljs-comment"># 5. &#x4E0D;&#x65AD;&#x5FAA;&#x73AF;&#x9632;&#x6B62;&#x7A0B;&#x5E8F;&#x9000;&#x51FA;</span>
+ <span class="hljs-keyword">while</span> <span class="hljs-keyword">True</span>: time.sleep(<span class="hljs-number">100</span>)
+
+
+<span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&apos;__main__&apos;</span>:
+
+ serve()
+</code></pre>
+</blockquote>
+<footer class="page-footer"><span class="copyright">toutiao-flask-v5.06 &#xA9;2019.8 yaoxiangyu@itcast.cn be based on toutiao-flask-v5.01 &#xA9;2019.5 kongdehai@itcast.cn all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-09-02 18:13:31
+</span></footer>
+                    
+                    </section>
+                
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../C08-RPC/RecoSysIDL.html" class="navigation navigation-prev " aria-label="Previous page: 推荐系统接口定义"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../C08-RPC/Client.html" class="navigation navigation-next " aria-label="Next page: rpc客户端"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-expandable-chapters-small/expandable-chapters-small.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-splitter/splitter.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-back-to-top-button/plugin.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-toc2/toc2.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/lunr.min.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-search/search.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-sharing/buttons.js"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-fontsettings/buttons.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {"expandable-chapters-small":{},"toc2":{"addClass":true,"className":"toc"},"tbfed-pagefooter":{"copyright":"toutiao-flask-v5.06 ©2019.8 yaoxiangyu@itcast.cn be based on toutiao-flask-v5.01 ©2019.5 kongdehai@itcast.cn","modify_label":"该文件修订时间：","modify_format":"YYYY-MM-DD HH:mm:ss"},"splitter":{},"back-to-top-button":{},"chapter-fold":{},"highlight":{},"search":{"maxIndexSize":1000000},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2}};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
