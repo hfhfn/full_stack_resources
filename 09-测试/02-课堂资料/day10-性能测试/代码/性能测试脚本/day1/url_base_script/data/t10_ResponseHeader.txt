@@ -1,0 +1,11 @@
+HTTP/1.1 200 Ok
+Server: Xitami
+Date: Tue, 21 May 2019 09:31:20 GMT
+Cache-control: no-cache
+Expires: 0
+Content-length: 437
+Content-type: text/html; charset=ISO-8859-1
+Date: Tue, 21 May 2019 09:31:20 GMT
+Expires: 5s
+Set-cookie: MTUserInfo=firstName&Joseph&address2&San%20Jose%2FCA%2F94085&username&jojo&hash&47&lastName&Marshall%0A&address1&234%20Willow%20Drive&creditCard&&expDate&%0A; path=/
+

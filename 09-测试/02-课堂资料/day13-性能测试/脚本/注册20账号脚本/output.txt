@@ -1,0 +1,391 @@
+Virtual User Script started at : 2019-05-27 14:30:01
+Starting action vuser_init.
+Web Turbo Replay of LoadRunner 11.0.0 for Windows 7; build 8859 (Aug 18 2010 20:14:31)  	[MsgId: MMSG-27143]
+Run Mode: HTML  	[MsgId: MMSG-26000]
+Run-Time Settings file: "\\Mac\Home\Desktop\day4\×¢²á20ÕËºÅ½Å±¾\\default.cfg"  	[MsgId: MMSG-27141]
+Ending action vuser_init.
+Running Vuser...
+Starting iteration 1.
+Starting action Action.
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/header.html" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/hp_logo.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/webtours.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/nav.pl?in=home" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/home.html" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/JSFormSubmit.js" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/mer_login.gif" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): web_url("WebTours") was successful, 6873 body bytes, 1808 header bytes  	[MsgId: MMSG-26386]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/profileValidate.js" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): web_url("µã»÷×¢²á°´Å¥") was successful, 14470 body bytes, 571 header bytes  	[MsgId: MMSG-26386]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/profileValidate.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): web_submit_data("login.pl") was successful, 2683 body bytes, 226 header bytes  	[MsgId: MMSG-26386]
+Ending action Action.
+Ending iteration 1.
+Starting iteration 2.
+Starting action Action.
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/header.html" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/hp_logo.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/webtours.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/nav.pl?in=home" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/home.html" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/JSFormSubmit.js" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/mer_login.gif" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): web_url("WebTours") was successful, 6877 body bytes, 1808 header bytes  	[MsgId: MMSG-26386]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/profileValidate.js" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): web_url("µã»÷×¢²á°´Å¥") was successful, 14470 body bytes, 571 header bytes  	[MsgId: MMSG-26386]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/profileValidate.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): web_submit_data("login.pl") was successful, 2683 body bytes, 226 header bytes  	[MsgId: MMSG-26386]
+Ending action Action.
+Ending iteration 2.
+Starting iteration 3.
+Starting action Action.
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/header.html" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/hp_logo.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/webtours.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/nav.pl?in=home" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/home.html" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/JSFormSubmit.js" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/mer_login.gif" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): web_url("WebTours") was successful, 6870 body bytes, 1808 header bytes  	[MsgId: MMSG-26386]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/profileValidate.js" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): web_url("µã»÷×¢²á°´Å¥") was successful, 14470 body bytes, 571 header bytes  	[MsgId: MMSG-26386]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/profileValidate.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): web_submit_data("login.pl") was successful, 2683 body bytes, 226 header bytes  	[MsgId: MMSG-26386]
+Ending action Action.
+Ending iteration 3.
+Starting iteration 4.
+Starting action Action.
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/header.html" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/hp_logo.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/webtours.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/nav.pl?in=home" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/home.html" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/JSFormSubmit.js" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/mer_login.gif" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): web_url("WebTours") was successful, 6877 body bytes, 1808 header bytes  	[MsgId: MMSG-26386]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/profileValidate.js" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): web_url("µã»÷×¢²á°´Å¥") was successful, 14470 body bytes, 571 header bytes  	[MsgId: MMSG-26386]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/profileValidate.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): web_submit_data("login.pl") was successful, 2683 body bytes, 226 header bytes  	[MsgId: MMSG-26386]
+Ending action Action.
+Ending iteration 4.
+Starting iteration 5.
+Starting action Action.
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/header.html" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/hp_logo.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/webtours.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/nav.pl?in=home" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/home.html" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/JSFormSubmit.js" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/mer_login.gif" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): web_url("WebTours") was successful, 6875 body bytes, 1808 header bytes  	[MsgId: MMSG-26386]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/profileValidate.js" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): web_url("µã»÷×¢²á°´Å¥") was successful, 14470 body bytes, 571 header bytes  	[MsgId: MMSG-26386]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/profileValidate.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): web_submit_data("login.pl") was successful, 2683 body bytes, 226 header bytes  	[MsgId: MMSG-26386]
+Ending action Action.
+Ending iteration 5.
+Starting iteration 6.
+Starting action Action.
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/header.html" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/hp_logo.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/webtours.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/nav.pl?in=home" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/home.html" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/JSFormSubmit.js" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/mer_login.gif" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): web_url("WebTours") was successful, 6876 body bytes, 1808 header bytes  	[MsgId: MMSG-26386]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/profileValidate.js" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): web_url("µã»÷×¢²á°´Å¥") was successful, 14470 body bytes, 571 header bytes  	[MsgId: MMSG-26386]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/profileValidate.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): web_submit_data("login.pl") was successful, 2683 body bytes, 226 header bytes  	[MsgId: MMSG-26386]
+Ending action Action.
+Ending iteration 6.
+Starting iteration 7.
+Starting action Action.
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/header.html" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/hp_logo.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/webtours.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/nav.pl?in=home" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/home.html" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/JSFormSubmit.js" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/mer_login.gif" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): web_url("WebTours") was successful, 6877 body bytes, 1808 header bytes  	[MsgId: MMSG-26386]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/profileValidate.js" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): web_url("µã»÷×¢²á°´Å¥") was successful, 14470 body bytes, 571 header bytes  	[MsgId: MMSG-26386]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/profileValidate.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): web_submit_data("login.pl") was successful, 2683 body bytes, 226 header bytes  	[MsgId: MMSG-26386]
+Ending action Action.
+Ending iteration 7.
+Starting iteration 8.
+Starting action Action.
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/header.html" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/hp_logo.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/webtours.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/nav.pl?in=home" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/home.html" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/JSFormSubmit.js" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/mer_login.gif" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): web_url("WebTours") was successful, 6869 body bytes, 1808 header bytes  	[MsgId: MMSG-26386]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/profileValidate.js" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): web_url("µã»÷×¢²á°´Å¥") was successful, 14470 body bytes, 571 header bytes  	[MsgId: MMSG-26386]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/profileValidate.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): web_submit_data("login.pl") was successful, 2683 body bytes, 226 header bytes  	[MsgId: MMSG-26386]
+Ending action Action.
+Ending iteration 8.
+Starting iteration 9.
+Starting action Action.
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/header.html" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/hp_logo.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/webtours.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/nav.pl?in=home" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/home.html" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/JSFormSubmit.js" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/mer_login.gif" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): web_url("WebTours") was successful, 6877 body bytes, 1808 header bytes  	[MsgId: MMSG-26386]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/profileValidate.js" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): web_url("µã»÷×¢²á°´Å¥") was successful, 14470 body bytes, 571 header bytes  	[MsgId: MMSG-26386]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/profileValidate.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): web_submit_data("login.pl") was successful, 2683 body bytes, 226 header bytes  	[MsgId: MMSG-26386]
+Ending action Action.
+Ending iteration 9.
+Starting iteration 10.
+Starting action Action.
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/header.html" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/hp_logo.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/webtours.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/nav.pl?in=home" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/home.html" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/JSFormSubmit.js" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/mer_login.gif" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): web_url("WebTours") was successful, 6876 body bytes, 1808 header bytes  	[MsgId: MMSG-26386]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/profileValidate.js" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): web_url("µã»÷×¢²á°´Å¥") was successful, 14470 body bytes, 571 header bytes  	[MsgId: MMSG-26386]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/profileValidate.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): web_submit_data("login.pl") was successful, 2685 body bytes, 226 header bytes  	[MsgId: MMSG-26386]
+Ending action Action.
+Ending iteration 10.
+Starting iteration 11.
+Starting action Action.
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/header.html" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/hp_logo.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/webtours.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/nav.pl?in=home" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/home.html" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/JSFormSubmit.js" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/mer_login.gif" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): web_url("WebTours") was successful, 6872 body bytes, 1808 header bytes  	[MsgId: MMSG-26386]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/profileValidate.js" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): web_url("µã»÷×¢²á°´Å¥") was successful, 14470 body bytes, 571 header bytes  	[MsgId: MMSG-26386]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/profileValidate.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): web_submit_data("login.pl") was successful, 2685 body bytes, 226 header bytes  	[MsgId: MMSG-26386]
+Ending action Action.
+Ending iteration 11.
+Starting iteration 12.
+Starting action Action.
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/header.html" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/hp_logo.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/webtours.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/nav.pl?in=home" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/home.html" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/JSFormSubmit.js" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/mer_login.gif" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): web_url("WebTours") was successful, 6875 body bytes, 1808 header bytes  	[MsgId: MMSG-26386]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/profileValidate.js" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): web_url("µã»÷×¢²á°´Å¥") was successful, 14470 body bytes, 571 header bytes  	[MsgId: MMSG-26386]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/profileValidate.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): web_submit_data("login.pl") was successful, 2685 body bytes, 226 header bytes  	[MsgId: MMSG-26386]
+Ending action Action.
+Ending iteration 12.
+Starting iteration 13.
+Starting action Action.
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/header.html" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/hp_logo.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/webtours.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/nav.pl?in=home" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/home.html" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/JSFormSubmit.js" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/mer_login.gif" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): web_url("WebTours") was successful, 6877 body bytes, 1808 header bytes  	[MsgId: MMSG-26386]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/profileValidate.js" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): web_url("µã»÷×¢²á°´Å¥") was successful, 14470 body bytes, 571 header bytes  	[MsgId: MMSG-26386]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/profileValidate.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): web_submit_data("login.pl") was successful, 2685 body bytes, 226 header bytes  	[MsgId: MMSG-26386]
+Ending action Action.
+Ending iteration 13.
+Starting iteration 14.
+Starting action Action.
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/header.html" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/hp_logo.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/webtours.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/nav.pl?in=home" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/home.html" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/JSFormSubmit.js" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/mer_login.gif" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): web_url("WebTours") was successful, 6877 body bytes, 1808 header bytes  	[MsgId: MMSG-26386]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/profileValidate.js" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): web_url("µã»÷×¢²á°´Å¥") was successful, 14470 body bytes, 571 header bytes  	[MsgId: MMSG-26386]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/profileValidate.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): web_submit_data("login.pl") was successful, 2685 body bytes, 226 header bytes  	[MsgId: MMSG-26386]
+Ending action Action.
+Ending iteration 14.
+Starting iteration 15.
+Starting action Action.
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/header.html" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/hp_logo.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/webtours.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/nav.pl?in=home" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/home.html" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/JSFormSubmit.js" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/mer_login.gif" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): web_url("WebTours") was successful, 6875 body bytes, 1808 header bytes  	[MsgId: MMSG-26386]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/profileValidate.js" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): web_url("µã»÷×¢²á°´Å¥") was successful, 14470 body bytes, 571 header bytes  	[MsgId: MMSG-26386]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/profileValidate.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): web_submit_data("login.pl") was successful, 2685 body bytes, 226 header bytes  	[MsgId: MMSG-26386]
+Ending action Action.
+Ending iteration 15.
+Starting iteration 16.
+Starting action Action.
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/header.html" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/hp_logo.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/webtours.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/nav.pl?in=home" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/home.html" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/JSFormSubmit.js" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/mer_login.gif" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): web_url("WebTours") was successful, 6873 body bytes, 1808 header bytes  	[MsgId: MMSG-26386]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/profileValidate.js" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): web_url("µã»÷×¢²á°´Å¥") was successful, 14470 body bytes, 571 header bytes  	[MsgId: MMSG-26386]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/profileValidate.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): web_submit_data("login.pl") was successful, 2685 body bytes, 226 header bytes  	[MsgId: MMSG-26386]
+Ending action Action.
+Ending iteration 16.
+Starting iteration 17.
+Starting action Action.
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/header.html" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/hp_logo.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/webtours.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/nav.pl?in=home" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/home.html" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/JSFormSubmit.js" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/mer_login.gif" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): web_url("WebTours") was successful, 6876 body bytes, 1808 header bytes  	[MsgId: MMSG-26386]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/profileValidate.js" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): web_url("µã»÷×¢²á°´Å¥") was successful, 14470 body bytes, 571 header bytes  	[MsgId: MMSG-26386]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/profileValidate.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): web_submit_data("login.pl") was successful, 2685 body bytes, 226 header bytes  	[MsgId: MMSG-26386]
+Ending action Action.
+Ending iteration 17.
+Starting iteration 18.
+Starting action Action.
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/header.html" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/hp_logo.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/webtours.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/nav.pl?in=home" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/home.html" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/JSFormSubmit.js" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/mer_login.gif" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): web_url("WebTours") was successful, 6877 body bytes, 1808 header bytes  	[MsgId: MMSG-26386]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/profileValidate.js" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): web_url("µã»÷×¢²á°´Å¥") was successful, 14470 body bytes, 571 header bytes  	[MsgId: MMSG-26386]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/profileValidate.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): web_submit_data("login.pl") was successful, 2685 body bytes, 226 header bytes  	[MsgId: MMSG-26386]
+Ending action Action.
+Ending iteration 18.
+Starting iteration 19.
+Starting action Action.
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/header.html" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/hp_logo.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/webtours.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/nav.pl?in=home" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/home.html" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/JSFormSubmit.js" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/mer_login.gif" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): web_url("WebTours") was successful, 6867 body bytes, 1808 header bytes  	[MsgId: MMSG-26386]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/profileValidate.js" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): web_url("µã»÷×¢²á°´Å¥") was successful, 14470 body bytes, 571 header bytes  	[MsgId: MMSG-26386]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/profileValidate.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): web_submit_data("login.pl") was successful, 2685 body bytes, 226 header bytes  	[MsgId: MMSG-26386]
+Ending action Action.
+Ending iteration 19.
+Starting iteration 20.
+Starting action Action.
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/header.html" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true" in "http://127.0.0.1:1080/WebTours/"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/hp_logo.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/webtours.png" in HTML "http://127.0.0.1:1080/WebTours/header.html"  	[MsgId: MMSG-26659]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/nav.pl?in=home" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Detected non-resource "http://127.0.0.1:1080/WebTours/home.html" in "http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true"  	[MsgId: MMSG-26574]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/JSFormSubmit.js" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): Found resource "http://127.0.0.1:1080/WebTours/images/mer_login.gif" in HTML "http://127.0.0.1:1080/WebTours/nav.pl?in=home"  	[MsgId: MMSG-26659]
+Action.c(4): web_url("WebTours") was successful, 6877 body bytes, 1808 header bytes  	[MsgId: MMSG-26386]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/profileValidate.js" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): Found resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" in HTML "http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true"  	[MsgId: MMSG-26659]
+Action.c(16): web_url("µã»÷×¢²á°´Å¥") was successful, 14470 body bytes, 571 header bytes  	[MsgId: MMSG-26386]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/profileValidate.js" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): Resource "http://127.0.0.1:1080/WebTours/images/button_next.gif" is in the cache already and will not be downloaded again  	[MsgId: MMSG-26655]
+Action.c(28): web_submit_data("login.pl") was successful, 2685 body bytes, 226 header bytes  	[MsgId: MMSG-26386]
+Ending action Action.
+Ending iteration 20.
+Ending Vuser...
+Starting action vuser_end.
+Ending action vuser_end.
+Vuser Terminated.

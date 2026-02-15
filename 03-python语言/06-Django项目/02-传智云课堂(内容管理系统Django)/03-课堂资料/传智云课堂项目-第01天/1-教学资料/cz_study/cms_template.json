@@ -1,0 +1,8 @@
+{ "_id" : { "$oid" : "5a925be7b00ffc4b3c1578b5" }, "siteId" : "5a751fab6abb5044e0d19ea1", "templateName" : "课程详情页面", "templateParameter" : "courseid", "templateFileId" : "5ad8a51f68db5240b42e5fea" }
+{ "_id" : { "$oid" : "5a962b52b00ffc514038faf7" }, "siteId" : "5a751fab6abb5044e0d19ea1", "templateName" : "首页", "templateParameter" : "", "templateFileId" : "5a962b52b00ffc514038faf5" }
+{ "_id" : { "$oid" : "5a962bf8b00ffc514038fafa" }, "siteId" : "5a751fab6abb5044e0d19ea1", "templateName" : "轮播图", "templateParameter" : "", "templateFileId" : { "$oid" : "5d7eef6cbd20ea8809698938" } }
+{ "_id" : { "$oid" : "5abf57965b05aa2ebcfce6d1" }, "siteId" : "5a751fab6abb5044e0d19ea1", "templateName" : "测试模板", "templateParameter" : "", "templateFileId" : { "$oid" : "5d7eeea0bd20ea8809698936" } }
+{ "_id" : { "$oid" : "5abf2a8f5b05aa2ebcfce6b5" }, "siteId" : "5a751fab6abb5044e0d19ea1", "templateName" : "测试模板", "templateParameter" : "", "templateFileId" : "templatefile01" }
+{ "_id" : { "$oid" : "5ad9a24d68db5239b8fef199" }, "siteId" : "5a751fab6abb5044e0d19ea1", "templateName" : "课程详情页面测试", "templateParameter" : "courseid", "templateFileId" : { "$oid" : "5d84370c2a7749b34def983c" } }
+{ "_id" : { "$oid" : "5aec5dd70e661808240ab7a6" }, "siteId" : "5a751fab6abb5044e0d19ea1", "templateName" : "课程详情正式模板", "templateParameter" : "courseid", "templateFileId" : "5aec5d8c0e6618376c08e47d" }
+{ "_id" : { "$oid" : "5a962c16b00ffc514038fafd" }, "siteId" : "5a751fab6abb5044e0d19ea1", "templateName" : "分类导航", "templateParameter" : "", "templateFileId" : "5a962c16b00ffc514038fafb" }

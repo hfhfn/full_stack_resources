@@ -1,0 +1,42 @@
+Failed to get information of process Id: 0
+Failed to get information of process Id: 4
+Failed to get information of process Id: 264
+Failed to get information of process Id: 356
+Failed to get information of process Id: 412
+Failed to get information of process Id: 424
+Failed to get information of process Id: 476
+Failed to get information of process Id: 512
+Failed to get information of process Id: 528
+Failed to get information of process Id: 536
+Failed to get information of process Id: 652
+Failed to get information of process Id: 716
+Failed to get information of process Id: 760
+Failed to get information of process Id: 844
+Failed to get information of process Id: 904
+Failed to get information of process Id: 948
+Failed to get information of process Id: 1060
+Failed to get information of process Id: 1168
+Failed to get information of process Id: 1336
+Failed to get information of process Id: 1388
+PROCESS 0x580       dwm.exe
+PROCESS 0x5a4       explorer.exe
+Failed to get information of process Id: 1580
+Failed to get information of process Id: 1608
+Failed to get information of process Id: 1628
+Failed to get information of process Id: 1676
+Failed to get information of process Id: 1700
+Failed to get information of process Id: 1912
+Failed to get information of process Id: 116
+Failed to get information of process Id: 2204
+Failed to get information of process Id: 2396
+Failed to get information of process Id: 2640
+PROCESS 0xbac       prl_cc.exe
+PROCESS 0xbc0       jusched.exe
+PROCESS 0xbd0       ctfmon.exe
+PROCESS 0xf2c       wlrun.exe
+PROCESS 0xfb8       xigui32.exe
+PROCESS 0xaf0       vugen.exe
+PROCESS 0xdac       iexplore.exe
+Failed to get information of process Id: 1036
+PROCESS 0x754       sogoucloud.exe
+Failed to get information of process Id: 2716

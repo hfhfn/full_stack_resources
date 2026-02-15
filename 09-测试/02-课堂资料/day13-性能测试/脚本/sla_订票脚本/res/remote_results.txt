@@ -1,0 +1,2 @@
+[Hosts]
+localhost=D:\ĞÔÄÜ²âÊÔ\¿ÎÌÃ\day05\sla_¶©Æ±½Å±¾\res\localhost_1.eve

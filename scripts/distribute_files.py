@@ -56,6 +56,32 @@ def retry(exceptions, tries=3, delay=2, backoff=2):
       return wrapper
     return decorator
 
+def escape_gitignore(path_str):
+    """Escape special gitignore glob characters so the path is treated literally.
+    Without escaping, characters like [ ] are interpreted as glob character classes,
+    causing .gitignore rules to silently fail for filenames containing brackets."""
+    path_str = path_str.replace('\\', '\\\\')
+    path_str = path_str.replace('!', '\\!')
+    path_str = path_str.replace('#', '\\#')
+    path_str = path_str.replace('*', '\\*')
+    path_str = path_str.replace('?', '\\?')
+    path_str = path_str.replace('[', '\\[')
+    path_str = path_str.replace(']', '\\]')
+    return path_str
+
+def unescape_gitignore(pattern):
+    """Unescape gitignore pattern back to literal path."""
+    result = []
+    i = 0
+    while i < len(pattern):
+        if pattern[i] == '\\' and i + 1 < len(pattern):
+            result.append(pattern[i + 1])
+            i += 2
+        else:
+            result.append(pattern[i])
+            i += 1
+    return ''.join(result)
+
 def get_file_info(path):
     stats = path.stat()
     return {
@@ -85,7 +111,7 @@ def read_gitignore_managed_paths():
                     if line.strip() == "":
                         in_auto = False
                         continue
-                    managed.add(line.rstrip())
+                    managed.add(unescape_gitignore(line.rstrip()))
     return managed
 
 def scan_files():
@@ -201,7 +227,7 @@ def update_gitignore_and_git(large_files, hf_files_to_delete):
             if line.strip() == "":
                 in_auto_section = False
                 continue
-            existing_auto_rules.add(line.rstrip())
+            existing_auto_rules.add(unescape_gitignore(line.rstrip()))
 
     # Remove old auto-generated section
     new_content = []
@@ -282,7 +308,7 @@ def update_gitignore_and_git(large_files, hf_files_to_delete):
                 f.write("\n")
             f.write("\n" + header)
             for rule in sorted(all_rules):
-                f.write(f"{rule}\n")
+                f.write(f"{escape_gitignore(rule)}\n")
 
     removed_count = len(rules_to_remove)
     logger.info(f"Updated .gitignore with {len(all_rules)} rules (new: {len(new_rules)}, removed: {removed_count})")

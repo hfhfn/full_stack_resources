@@ -1,0 +1,9 @@
+GET /WebTours/welcome.pl?signOff=1 HTTP/1.1
+Referer: http://localhost:1080/webtours/reservations.pl
+User-Agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT)
+Accept-Encoding: gzip, deflate
+Accept: */*
+Connection: Keep-Alive
+Host: 127.0.0.1:1080
+Cookie: MSO=SID&1558949853&MSO_JSFormSubmit1&on&MSO_ServerErrorsProb&50&MSO_ServerLoadProb&50; MTUserInfo=firstName&w&address2&&username&Test01&hash&49&lastName&e%0A&address1&&creditCard&&expDate&%0A
+

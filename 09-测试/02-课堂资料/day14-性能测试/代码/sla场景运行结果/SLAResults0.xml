@@ -1,0 +1,76 @@
+<SOAP-ENV:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+<SOAP-ENV:Body>
+<a1:TSLAResultsDocument id="ref-1" xmlns:a1="http://schemas.microsoft.com/clr/nsassem/SLAResultsData/Analysis.SLA">
+<m_SLARulesInfoCollection href="#ref-3"/>
+<m_TrackingPeriod>5</m_TrackingPeriod>
+<m_bSaved>false</m_bSaved>
+<m_Title>Service Level Agreement Report</m_Title>
+<Disposed_>false</Disposed_>
+<TLra_Document_x002B_m_bSaved>false</TLra_Document_x002B_m_bSaved>
+<TLra_Document_x002B_m_Title>Service Level Agreement Report</TLra_Document_x002B_m_Title>
+<TLra_Document_x002B_Disposed_>false</TLra_Document_x002B_Disposed_>
+<MarshalByRefObject_x002B___identity xsi:type="xsd:anyType" xsi:null="1"/>
+</a1:TSLAResultsDocument>
+<a2:ArrayList id="ref-3" xmlns:a2="http://schemas.microsoft.com/clr/ns/System.Collections">
+<_items href="#ref-4"/>
+<_size>2</_size>
+<_version>2</_version>
+</a2:ArrayList>
+<SOAP-ENC:Array id="ref-4" SOAP-ENC:arrayType="xsd:anyType[4]">
+<item href="#ref-5"/>
+<item href="#ref-6"/>
+</SOAP-ENC:Array>
+<a4:SLARuleInfo id="ref-5" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/SLARules/Analysis.SLA">
+<m_RuleDef href="#ref-8"/>
+<m_RuleData xsi:null="1"/>
+<m_RuleResult href="#ref-9"/>
+<m_strId>transaction_response_time_percentile_登录事务</m_strId>
+<m_IsValid>true</m_IsValid>
+<m_PrimaryException xsi:null="1"/>
+</a4:SLARuleInfo>
+<a4:SLARuleInfo id="ref-6" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/SLARules/Analysis.SLA">
+<m_RuleDef href="#ref-10"/>
+<m_RuleData xsi:null="1"/>
+<m_RuleResult href="#ref-11"/>
+<m_strId>transaction_response_time_percentile_订票事务</m_strId>
+<m_IsValid>true</m_IsValid>
+<m_PrimaryException xsi:null="1"/>
+</a4:SLARuleInfo>
+<a4:SLAPercentileRuleDef id="ref-8" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/SLARules/Analysis.SLA">
+<FSubMsrName>登录事务</FSubMsrName>
+<FGoalValue>3</FGoalValue>
+<FPercentage>90</FPercentage>
+<m_RuleName>transaction_response_time_percentile_登录事务</m_RuleName>
+<m_RuleUIName>Transaction Response Time (Percentile)</m_RuleUIName>
+<m_Measurement>transaction_response_time_percentile</m_Measurement>
+<m_CalcDirection>greater_than_equal</m_CalcDirection>
+<SLARuleDef_x002B_m_RuleName>transaction_response_time_percentile_登录事务</SLARuleDef_x002B_m_RuleName>
+<SLARuleDef_x002B_m_RuleUIName>Transaction Response Time (Percentile)</SLARuleDef_x002B_m_RuleUIName>
+<SLARuleDef_x002B_m_Measurement>transaction_response_time_percentile</SLARuleDef_x002B_m_Measurement>
+<SLARuleDef_x002B_m_CalcDirection>greater_than_equal</SLARuleDef_x002B_m_CalcDirection>
+</a4:SLAPercentileRuleDef>
+<a4:SLASimpleRuleResult id="ref-9" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/SLARules/Analysis.SLA">
+<m_Status>rulesStatusOK</m_Status>
+<m_RealValue>1.715</m_RealValue>
+<m_GoalValue>3</m_GoalValue>
+</a4:SLASimpleRuleResult>
+<a4:SLAPercentileRuleDef id="ref-10" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/SLARules/Analysis.SLA">
+<FSubMsrName>订票事务</FSubMsrName>
+<FGoalValue>15</FGoalValue>
+<FPercentage>90</FPercentage>
+<m_RuleName>transaction_response_time_percentile_订票事务</m_RuleName>
+<m_RuleUIName>Transaction Response Time (Percentile)</m_RuleUIName>
+<m_Measurement>transaction_response_time_percentile</m_Measurement>
+<m_CalcDirection>greater_than_equal</m_CalcDirection>
+<SLARuleDef_x002B_m_RuleName>transaction_response_time_percentile_订票事务</SLARuleDef_x002B_m_RuleName>
+<SLARuleDef_x002B_m_RuleUIName>Transaction Response Time (Percentile)</SLARuleDef_x002B_m_RuleUIName>
+<SLARuleDef_x002B_m_Measurement>transaction_response_time_percentile</SLARuleDef_x002B_m_Measurement>
+<SLARuleDef_x002B_m_CalcDirection>greater_than_equal</SLARuleDef_x002B_m_CalcDirection>
+</a4:SLAPercentileRuleDef>
+<a4:SLASimpleRuleResult id="ref-11" xmlns:a4="http://schemas.microsoft.com/clr/nsassem/SLARules/Analysis.SLA">
+<m_Status>rulesStatusOK</m_Status>
+<m_RealValue>4.238</m_RealValue>
+<m_GoalValue>15</m_GoalValue>
+</a4:SLASimpleRuleResult>
+</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

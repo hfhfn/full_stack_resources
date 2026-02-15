@@ -1,0 +1,1014 @@
+﻿<?xml version="1.0"?>
+  <!DOCTYPE Report
+[
+<!ELEMENT Report (General ,(Doc|BPT)) >
+<!ATTLIST Report ver CDATA #REQUIRED tmZone CDATA #REQUIRED>
+
+<!ELEMENT General ( DocLocation ) >
+<!ATTLIST General productName CDATA #REQUIRED productVer CDATA #REQUIRED os CDATA #REQUIRED host CDATA #REQUIRED>
+
+<!ELEMENT BPT (DName,Res,DVer?,TSet?,TInst?,NodeArgs,Doc*) >
+<!ATTLIST BPT rID ID #REQUIRED >
+
+<!ELEMENT Doc (DName, Res, DVer?, TSet?, TInst?, RunType?, DT?, Step*, Action+, DIter*, Action*, Summary?, NodeArgs?)> 
+<!ATTLIST Doc rID ID #REQUIRED type (Test|BC) "Test" productName CDATA #REQUIRED BCIter CDATA #IMPLIED >
+
+<!ELEMENT RunType ( #PCDATA )>
+<!ATTLIST RunType fmStep (False|True) "False" batch (False|True) "False" upDesc (False|True) "False" upChk (False|True) "False" upAS (False|True) "False">
+
+<!ELEMENT DName ( #PCDATA ) >
+
+<!ELEMENT Res ( #PCDATA ) >
+
+<!ELEMENT DVer ( #PCDATA ) >
+
+<!ELEMENT TSet ( #PCDATA ) >
+
+<!ELEMENT TInst ( #PCDATA ) >
+
+<!ELEMENT DIter (Step?,Action+,Summary?,NodeArgs)>
+<!ATTLIST DIter rID ID #REQUIRED iterID CDATA #REQUIRED>
+
+<!ELEMENT DocLocation ( #PCDATA )>
+
+<!ELEMENT Action (AName,AIter*,(Step|HtmlStep|Action)*,Summary,NodeArgs) >
+<!ATTLIST Action rID ID #REQUIRED>
+
+<!ELEMENT AIter ((Step|HtmlStep|Action)*,Summary?,NodeArgs) >
+<!ATTLIST AIter rID ID #REQUIRED iterID CDATA #REQUIRED>
+
+<!ELEMENT AName ( #PCDATA ) >
+
+<!ELEMENT Step (Obj,Details,Time,(Step|HtmlStep|Doc)*,NodeArgs) >
+<!ATTLIST Step rID ID #REQUIRED retval CDATA #IMPLIED>
+
+<!ELEMENT HtmlStep (HTML,(Step|HtmlStep|Doc)*,NodeArgs) >
+<!ATTLIST HtmlStep rID ID #REQUIRED >
+
+<!ELEMENT Obj ( #PCDATA ) >
+<!ATTLIST Obj plainTxt (False|True) "True">
+
+<!ELEMENT Details ( #PCDATA ) >
+<!ATTLIST Details plainTxt (False|True) "True">
+
+<!ELEMENT Time ( #PCDATA ) >
+
+<!ELEMENT HTML ( #PCDATA ) >
+
+<!ELEMENT Disp ( #PCDATA ) >
+
+<!ELEMENT NodeArgs (Disp,TopPane?,BtmPane?)>
+<!ATTLIST NodeArgs eType CDATA #REQUIRED icon CDATA #REQUIRED nRep CDATA #REQUIRED filter (False|True) "True">
+<!ATTLIST NodeArgs status (Passed|Failed|Done|Warning|Information) "Done">
+<!ATTLIST NodeArgs iconSel CDATA #IMPLIED nType CDATA #IMPLIED >
+
+<!ELEMENT TopPane (Path)>
+
+<!ELEMENT BtmPane ( (Path|WR)?,ASHilite?)>
+<!ATTLIST BtmPane vType CDATA "HTML">
+
+<!ELEMENT Path ( #PCDATA ) >
+
+<!ELEMENT ASHilite ( #PCDATA ) >
+
+<!ELEMENT WR ( #PCDATA ) >
+
+<!ELEMENT DT (NodeArgs) >
+<!ATTLIST DT rID ID #REQUIRED>
+
+<!ELEMENT Summary (Param*)>
+<!ATTLIST Summary sTime CDATA #IMPLIED eTime CDATA #IMPLIED passed CDATA #IMPLIED failed CDATA #IMPLIED warnings CDATA #IMPLIED retval CDATA #IMPLIED stopped (False|True) "False" >
+
+<!ELEMENT Param (ParamName,ParamVal)+ >
+<!ATTLIST Param paramInOut (In|Out) "In">
+
+<!ELEMENT ParamName ( #PCDATA ) >
+
+<!ELEMENT ParamVal ( #PCDATA ) >
+
+]
+> <Report ver="2.0" tmZone="北亚标准时间">
+<General productName="Vugen" productVer="11" os="" host="MS-20180413TOZN"><DocLocation><![CDATA[\\Mac\Home\Desktop\day4\注册20账号脚本]]></DocLocation></General>
+<Doc rID="T1"   productName= "Vugen"  >
+<DName><![CDATA[注册20账号脚本]]></DName>
+<Res><![CDATA[result1]]></Res>
+<Action rID="T2">
+<AName><![CDATA[vuser_init]]></AName>
+<Summary sTime="2019/5/27 星期一 - 14:30:01" eTime="2019/5/27 星期一 - 14:30:01" passed="0" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="5" >
+<Disp><![CDATA[vuser_init Summary]]></Disp>
+</NodeArgs>
+</Action>
+<DIter rID="T3" iterID="1" >
+<Action rID="T4">
+<AName><![CDATA[Action]]></AName>
+<Step rID="T5">
+<Obj plainTxt="False" ><![CDATA[Url: WebTours]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:05]]></Time>
+<NodeArgs eType="General" icon="4" nRep="9" status="Passed" >
+<Disp><![CDATA[Url: WebTours]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration1\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T6">
+<Obj plainTxt="False" ><![CDATA[Url: 点击注册按钮]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:05]]></Time>
+<NodeArgs eType="General" icon="4" nRep="10" status="Passed" >
+<Disp><![CDATA[Url: 点击注册按钮]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration1\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T7">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login.pl]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:05]]></Time>
+<NodeArgs eType="General" icon="5" nRep="11" status="Passed" >
+<Disp><![CDATA[Submit Data: login.pl]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration1\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="2019/5/27 星期一 - 14:30:01" eTime="2019/5/27 星期一 - 14:30:05" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="8" status="Passed" >
+<Disp><![CDATA[Action Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="7" status="Passed" >
+<Disp><![CDATA[注册20账号脚本 Iteration 1 (Row 1)]]></Disp>
+</NodeArgs>
+</DIter>
+<DIter rID="T8" iterID="2" >
+<Action rID="T9">
+<AName><![CDATA[Action]]></AName>
+<Step rID="T10">
+<Obj plainTxt="False" ><![CDATA[Url: WebTours]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:06]]></Time>
+<NodeArgs eType="General" icon="4" nRep="16" status="Passed" >
+<Disp><![CDATA[Url: WebTours]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration2\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T11">
+<Obj plainTxt="False" ><![CDATA[Url: 点击注册按钮]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:06]]></Time>
+<NodeArgs eType="General" icon="4" nRep="17" status="Passed" >
+<Disp><![CDATA[Url: 点击注册按钮]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration2\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T12">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login.pl]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:06]]></Time>
+<NodeArgs eType="General" icon="5" nRep="18" status="Passed" >
+<Disp><![CDATA[Submit Data: login.pl]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration2\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="2019/5/27 星期一 - 14:30:05" eTime="2019/5/27 星期一 - 14:30:06" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="15" status="Passed" >
+<Disp><![CDATA[Action Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="14" status="Passed" >
+<Disp><![CDATA[注册20账号脚本 Iteration 2 (Row 2)]]></Disp>
+</NodeArgs>
+</DIter>
+<DIter rID="T13" iterID="3" >
+<Action rID="T14">
+<AName><![CDATA[Action]]></AName>
+<Step rID="T15">
+<Obj plainTxt="False" ><![CDATA[Url: WebTours]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:07]]></Time>
+<NodeArgs eType="General" icon="4" nRep="23" status="Passed" >
+<Disp><![CDATA[Url: WebTours]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration3\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T16">
+<Obj plainTxt="False" ><![CDATA[Url: 点击注册按钮]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:07]]></Time>
+<NodeArgs eType="General" icon="4" nRep="24" status="Passed" >
+<Disp><![CDATA[Url: 点击注册按钮]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration3\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T17">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login.pl]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:07]]></Time>
+<NodeArgs eType="General" icon="5" nRep="25" status="Passed" >
+<Disp><![CDATA[Submit Data: login.pl]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration3\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="2019/5/27 星期一 - 14:30:06" eTime="2019/5/27 星期一 - 14:30:07" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="22" status="Passed" >
+<Disp><![CDATA[Action Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="21" status="Passed" >
+<Disp><![CDATA[注册20账号脚本 Iteration 3 (Row 3)]]></Disp>
+</NodeArgs>
+</DIter>
+<DIter rID="T18" iterID="4" >
+<Action rID="T19">
+<AName><![CDATA[Action]]></AName>
+<Step rID="T20">
+<Obj plainTxt="False" ><![CDATA[Url: WebTours]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:08]]></Time>
+<NodeArgs eType="General" icon="4" nRep="30" status="Passed" >
+<Disp><![CDATA[Url: WebTours]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration4\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T21">
+<Obj plainTxt="False" ><![CDATA[Url: 点击注册按钮]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:08]]></Time>
+<NodeArgs eType="General" icon="4" nRep="31" status="Passed" >
+<Disp><![CDATA[Url: 点击注册按钮]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration4\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T22">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login.pl]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:08]]></Time>
+<NodeArgs eType="General" icon="5" nRep="32" status="Passed" >
+<Disp><![CDATA[Submit Data: login.pl]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration4\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="2019/5/27 星期一 - 14:30:07" eTime="2019/5/27 星期一 - 14:30:08" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="29" status="Passed" >
+<Disp><![CDATA[Action Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="28" status="Passed" >
+<Disp><![CDATA[注册20账号脚本 Iteration 4 (Row 4)]]></Disp>
+</NodeArgs>
+</DIter>
+<DIter rID="T23" iterID="5" >
+<Action rID="T24">
+<AName><![CDATA[Action]]></AName>
+<Step rID="T25">
+<Obj plainTxt="False" ><![CDATA[Url: WebTours]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:09]]></Time>
+<NodeArgs eType="General" icon="4" nRep="37" status="Passed" >
+<Disp><![CDATA[Url: WebTours]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration5\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T26">
+<Obj plainTxt="False" ><![CDATA[Url: 点击注册按钮]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:09]]></Time>
+<NodeArgs eType="General" icon="4" nRep="38" status="Passed" >
+<Disp><![CDATA[Url: 点击注册按钮]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration5\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T27">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login.pl]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:09]]></Time>
+<NodeArgs eType="General" icon="5" nRep="39" status="Passed" >
+<Disp><![CDATA[Submit Data: login.pl]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration5\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="2019/5/27 星期一 - 14:30:08" eTime="2019/5/27 星期一 - 14:30:09" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="36" status="Passed" >
+<Disp><![CDATA[Action Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="35" status="Passed" >
+<Disp><![CDATA[注册20账号脚本 Iteration 5 (Row 5)]]></Disp>
+</NodeArgs>
+</DIter>
+<DIter rID="T28" iterID="6" >
+<Action rID="T29">
+<AName><![CDATA[Action]]></AName>
+<Step rID="T30">
+<Obj plainTxt="False" ><![CDATA[Url: WebTours]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:10]]></Time>
+<NodeArgs eType="General" icon="4" nRep="44" status="Passed" >
+<Disp><![CDATA[Url: WebTours]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration6\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T31">
+<Obj plainTxt="False" ><![CDATA[Url: 点击注册按钮]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:10]]></Time>
+<NodeArgs eType="General" icon="4" nRep="45" status="Passed" >
+<Disp><![CDATA[Url: 点击注册按钮]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration6\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T32">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login.pl]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:11]]></Time>
+<NodeArgs eType="General" icon="5" nRep="46" status="Passed" >
+<Disp><![CDATA[Submit Data: login.pl]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration6\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="2019/5/27 星期一 - 14:30:10" eTime="2019/5/27 星期一 - 14:30:11" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="43" status="Passed" >
+<Disp><![CDATA[Action Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="42" status="Passed" >
+<Disp><![CDATA[注册20账号脚本 Iteration 6 (Row 6)]]></Disp>
+</NodeArgs>
+</DIter>
+<DIter rID="T33" iterID="7" >
+<Action rID="T34">
+<AName><![CDATA[Action]]></AName>
+<Step rID="T35">
+<Obj plainTxt="False" ><![CDATA[Url: WebTours]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:11]]></Time>
+<NodeArgs eType="General" icon="4" nRep="51" status="Passed" >
+<Disp><![CDATA[Url: WebTours]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration7\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T36">
+<Obj plainTxt="False" ><![CDATA[Url: 点击注册按钮]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:12]]></Time>
+<NodeArgs eType="General" icon="4" nRep="52" status="Passed" >
+<Disp><![CDATA[Url: 点击注册按钮]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration7\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T37">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login.pl]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:12]]></Time>
+<NodeArgs eType="General" icon="5" nRep="53" status="Passed" >
+<Disp><![CDATA[Submit Data: login.pl]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration7\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="2019/5/27 星期一 - 14:30:11" eTime="2019/5/27 星期一 - 14:30:12" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="50" status="Passed" >
+<Disp><![CDATA[Action Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="49" status="Passed" >
+<Disp><![CDATA[注册20账号脚本 Iteration 7 (Row 7)]]></Disp>
+</NodeArgs>
+</DIter>
+<DIter rID="T38" iterID="8" >
+<Action rID="T39">
+<AName><![CDATA[Action]]></AName>
+<Step rID="T40">
+<Obj plainTxt="False" ><![CDATA[Url: WebTours]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:13]]></Time>
+<NodeArgs eType="General" icon="4" nRep="58" status="Passed" >
+<Disp><![CDATA[Url: WebTours]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration8\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T41">
+<Obj plainTxt="False" ><![CDATA[Url: 点击注册按钮]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:13]]></Time>
+<NodeArgs eType="General" icon="4" nRep="59" status="Passed" >
+<Disp><![CDATA[Url: 点击注册按钮]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration8\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T42">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login.pl]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:13]]></Time>
+<NodeArgs eType="General" icon="5" nRep="60" status="Passed" >
+<Disp><![CDATA[Submit Data: login.pl]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration8\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="2019/5/27 星期一 - 14:30:12" eTime="2019/5/27 星期一 - 14:30:13" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="57" status="Passed" >
+<Disp><![CDATA[Action Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="56" status="Passed" >
+<Disp><![CDATA[注册20账号脚本 Iteration 8 (Row 8)]]></Disp>
+</NodeArgs>
+</DIter>
+<DIter rID="T43" iterID="9" >
+<Action rID="T44">
+<AName><![CDATA[Action]]></AName>
+<Step rID="T45">
+<Obj plainTxt="False" ><![CDATA[Url: WebTours]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:14]]></Time>
+<NodeArgs eType="General" icon="4" nRep="65" status="Passed" >
+<Disp><![CDATA[Url: WebTours]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration9\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T46">
+<Obj plainTxt="False" ><![CDATA[Url: 点击注册按钮]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:14]]></Time>
+<NodeArgs eType="General" icon="4" nRep="66" status="Passed" >
+<Disp><![CDATA[Url: 点击注册按钮]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration9\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T47">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login.pl]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:14]]></Time>
+<NodeArgs eType="General" icon="5" nRep="67" status="Passed" >
+<Disp><![CDATA[Submit Data: login.pl]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration9\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="2019/5/27 星期一 - 14:30:13" eTime="2019/5/27 星期一 - 14:30:14" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="64" status="Passed" >
+<Disp><![CDATA[Action Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="63" status="Passed" >
+<Disp><![CDATA[注册20账号脚本 Iteration 9 (Row 9)]]></Disp>
+</NodeArgs>
+</DIter>
+<DIter rID="T48" iterID="10" >
+<Action rID="T49">
+<AName><![CDATA[Action]]></AName>
+<Step rID="T50">
+<Obj plainTxt="False" ><![CDATA[Url: WebTours]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:15]]></Time>
+<NodeArgs eType="General" icon="4" nRep="72" status="Passed" >
+<Disp><![CDATA[Url: WebTours]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration10\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T51">
+<Obj plainTxt="False" ><![CDATA[Url: 点击注册按钮]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:15]]></Time>
+<NodeArgs eType="General" icon="4" nRep="73" status="Passed" >
+<Disp><![CDATA[Url: 点击注册按钮]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration10\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T52">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login.pl]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:15]]></Time>
+<NodeArgs eType="General" icon="5" nRep="74" status="Passed" >
+<Disp><![CDATA[Submit Data: login.pl]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration10\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="2019/5/27 星期一 - 14:30:14" eTime="2019/5/27 星期一 - 14:30:15" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="71" status="Passed" >
+<Disp><![CDATA[Action Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="70" status="Passed" >
+<Disp><![CDATA[注册20账号脚本 Iteration 10 (Row 10)]]></Disp>
+</NodeArgs>
+</DIter>
+<DIter rID="T53" iterID="11" >
+<Action rID="T54">
+<AName><![CDATA[Action]]></AName>
+<Step rID="T55">
+<Obj plainTxt="False" ><![CDATA[Url: WebTours]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:16]]></Time>
+<NodeArgs eType="General" icon="4" nRep="79" status="Passed" >
+<Disp><![CDATA[Url: WebTours]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration11\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T56">
+<Obj plainTxt="False" ><![CDATA[Url: 点击注册按钮]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:16]]></Time>
+<NodeArgs eType="General" icon="4" nRep="80" status="Passed" >
+<Disp><![CDATA[Url: 点击注册按钮]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration11\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T57">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login.pl]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:16]]></Time>
+<NodeArgs eType="General" icon="5" nRep="81" status="Passed" >
+<Disp><![CDATA[Submit Data: login.pl]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration11\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="2019/5/27 星期一 - 14:30:15" eTime="2019/5/27 星期一 - 14:30:16" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="78" status="Passed" >
+<Disp><![CDATA[Action Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="77" status="Passed" >
+<Disp><![CDATA[注册20账号脚本 Iteration 11 (Row 11)]]></Disp>
+</NodeArgs>
+</DIter>
+<DIter rID="T58" iterID="12" >
+<Action rID="T59">
+<AName><![CDATA[Action]]></AName>
+<Step rID="T60">
+<Obj plainTxt="False" ><![CDATA[Url: WebTours]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:17]]></Time>
+<NodeArgs eType="General" icon="4" nRep="86" status="Passed" >
+<Disp><![CDATA[Url: WebTours]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration12\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T61">
+<Obj plainTxt="False" ><![CDATA[Url: 点击注册按钮]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:17]]></Time>
+<NodeArgs eType="General" icon="4" nRep="87" status="Passed" >
+<Disp><![CDATA[Url: 点击注册按钮]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration12\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T62">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login.pl]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:17]]></Time>
+<NodeArgs eType="General" icon="5" nRep="88" status="Passed" >
+<Disp><![CDATA[Submit Data: login.pl]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration12\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="2019/5/27 星期一 - 14:30:16" eTime="2019/5/27 星期一 - 14:30:17" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="85" status="Passed" >
+<Disp><![CDATA[Action Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="84" status="Passed" >
+<Disp><![CDATA[注册20账号脚本 Iteration 12 (Row 12)]]></Disp>
+</NodeArgs>
+</DIter>
+<DIter rID="T63" iterID="13" >
+<Action rID="T64">
+<AName><![CDATA[Action]]></AName>
+<Step rID="T65">
+<Obj plainTxt="False" ><![CDATA[Url: WebTours]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:18]]></Time>
+<NodeArgs eType="General" icon="4" nRep="93" status="Passed" >
+<Disp><![CDATA[Url: WebTours]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration13\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T66">
+<Obj plainTxt="False" ><![CDATA[Url: 点击注册按钮]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:18]]></Time>
+<NodeArgs eType="General" icon="4" nRep="94" status="Passed" >
+<Disp><![CDATA[Url: 点击注册按钮]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration13\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T67">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login.pl]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:18]]></Time>
+<NodeArgs eType="General" icon="5" nRep="95" status="Passed" >
+<Disp><![CDATA[Submit Data: login.pl]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration13\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="2019/5/27 星期一 - 14:30:17" eTime="2019/5/27 星期一 - 14:30:18" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="92" status="Passed" >
+<Disp><![CDATA[Action Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="91" status="Passed" >
+<Disp><![CDATA[注册20账号脚本 Iteration 13 (Row 13)]]></Disp>
+</NodeArgs>
+</DIter>
+<DIter rID="T68" iterID="14" >
+<Action rID="T69">
+<AName><![CDATA[Action]]></AName>
+<Step rID="T70">
+<Obj plainTxt="False" ><![CDATA[Url: WebTours]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:19]]></Time>
+<NodeArgs eType="General" icon="4" nRep="100" status="Passed" >
+<Disp><![CDATA[Url: WebTours]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration14\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T71">
+<Obj plainTxt="False" ><![CDATA[Url: 点击注册按钮]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:19]]></Time>
+<NodeArgs eType="General" icon="4" nRep="101" status="Passed" >
+<Disp><![CDATA[Url: 点击注册按钮]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration14\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T72">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login.pl]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:20]]></Time>
+<NodeArgs eType="General" icon="5" nRep="102" status="Passed" >
+<Disp><![CDATA[Submit Data: login.pl]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration14\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="2019/5/27 星期一 - 14:30:19" eTime="2019/5/27 星期一 - 14:30:20" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="99" status="Passed" >
+<Disp><![CDATA[Action Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="98" status="Passed" >
+<Disp><![CDATA[注册20账号脚本 Iteration 14 (Row 14)]]></Disp>
+</NodeArgs>
+</DIter>
+<DIter rID="T73" iterID="15" >
+<Action rID="T74">
+<AName><![CDATA[Action]]></AName>
+<Step rID="T75">
+<Obj plainTxt="False" ><![CDATA[Url: WebTours]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:20]]></Time>
+<NodeArgs eType="General" icon="4" nRep="107" status="Passed" >
+<Disp><![CDATA[Url: WebTours]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration15\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T76">
+<Obj plainTxt="False" ><![CDATA[Url: 点击注册按钮]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:21]]></Time>
+<NodeArgs eType="General" icon="4" nRep="108" status="Passed" >
+<Disp><![CDATA[Url: 点击注册按钮]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration15\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T77">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login.pl]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:21]]></Time>
+<NodeArgs eType="General" icon="5" nRep="109" status="Passed" >
+<Disp><![CDATA[Submit Data: login.pl]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration15\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="2019/5/27 星期一 - 14:30:20" eTime="2019/5/27 星期一 - 14:30:21" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="106" status="Passed" >
+<Disp><![CDATA[Action Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="105" status="Passed" >
+<Disp><![CDATA[注册20账号脚本 Iteration 15 (Row 15)]]></Disp>
+</NodeArgs>
+</DIter>
+<DIter rID="T78" iterID="16" >
+<Action rID="T79">
+<AName><![CDATA[Action]]></AName>
+<Step rID="T80">
+<Obj plainTxt="False" ><![CDATA[Url: WebTours]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:21]]></Time>
+<NodeArgs eType="General" icon="4" nRep="114" status="Passed" >
+<Disp><![CDATA[Url: WebTours]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration16\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T81">
+<Obj plainTxt="False" ><![CDATA[Url: 点击注册按钮]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:22]]></Time>
+<NodeArgs eType="General" icon="4" nRep="115" status="Passed" >
+<Disp><![CDATA[Url: 点击注册按钮]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration16\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T82">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login.pl]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:22]]></Time>
+<NodeArgs eType="General" icon="5" nRep="116" status="Passed" >
+<Disp><![CDATA[Submit Data: login.pl]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration16\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="2019/5/27 星期一 - 14:30:21" eTime="2019/5/27 星期一 - 14:30:22" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="113" status="Passed" >
+<Disp><![CDATA[Action Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="112" status="Passed" >
+<Disp><![CDATA[注册20账号脚本 Iteration 16 (Row 16)]]></Disp>
+</NodeArgs>
+</DIter>
+<DIter rID="T83" iterID="17" >
+<Action rID="T84">
+<AName><![CDATA[Action]]></AName>
+<Step rID="T85">
+<Obj plainTxt="False" ><![CDATA[Url: WebTours]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:22]]></Time>
+<NodeArgs eType="General" icon="4" nRep="121" status="Passed" >
+<Disp><![CDATA[Url: WebTours]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration17\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T86">
+<Obj plainTxt="False" ><![CDATA[Url: 点击注册按钮]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:23]]></Time>
+<NodeArgs eType="General" icon="4" nRep="122" status="Passed" >
+<Disp><![CDATA[Url: 点击注册按钮]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration17\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T87">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login.pl]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:23]]></Time>
+<NodeArgs eType="General" icon="5" nRep="123" status="Passed" >
+<Disp><![CDATA[Submit Data: login.pl]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration17\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="2019/5/27 星期一 - 14:30:22" eTime="2019/5/27 星期一 - 14:30:23" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="120" status="Passed" >
+<Disp><![CDATA[Action Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="119" status="Passed" >
+<Disp><![CDATA[注册20账号脚本 Iteration 17 (Row 17)]]></Disp>
+</NodeArgs>
+</DIter>
+<DIter rID="T88" iterID="18" >
+<Action rID="T89">
+<AName><![CDATA[Action]]></AName>
+<Step rID="T90">
+<Obj plainTxt="False" ><![CDATA[Url: WebTours]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:23]]></Time>
+<NodeArgs eType="General" icon="4" nRep="128" status="Passed" >
+<Disp><![CDATA[Url: WebTours]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration18\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T91">
+<Obj plainTxt="False" ><![CDATA[Url: 点击注册按钮]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:24]]></Time>
+<NodeArgs eType="General" icon="4" nRep="129" status="Passed" >
+<Disp><![CDATA[Url: 点击注册按钮]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration18\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T92">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login.pl]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:24]]></Time>
+<NodeArgs eType="General" icon="5" nRep="130" status="Passed" >
+<Disp><![CDATA[Submit Data: login.pl]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration18\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="2019/5/27 星期一 - 14:30:23" eTime="2019/5/27 星期一 - 14:30:24" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="127" status="Passed" >
+<Disp><![CDATA[Action Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="126" status="Passed" >
+<Disp><![CDATA[注册20账号脚本 Iteration 18 (Row 18)]]></Disp>
+</NodeArgs>
+</DIter>
+<DIter rID="T93" iterID="19" >
+<Action rID="T94">
+<AName><![CDATA[Action]]></AName>
+<Step rID="T95">
+<Obj plainTxt="False" ><![CDATA[Url: WebTours]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:24]]></Time>
+<NodeArgs eType="General" icon="4" nRep="135" status="Passed" >
+<Disp><![CDATA[Url: WebTours]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration19\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T96">
+<Obj plainTxt="False" ><![CDATA[Url: 点击注册按钮]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:25]]></Time>
+<NodeArgs eType="General" icon="4" nRep="136" status="Passed" >
+<Disp><![CDATA[Url: 点击注册按钮]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration19\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T97">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login.pl]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:25]]></Time>
+<NodeArgs eType="General" icon="5" nRep="137" status="Passed" >
+<Disp><![CDATA[Submit Data: login.pl]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration19\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="2019/5/27 星期一 - 14:30:24" eTime="2019/5/27 星期一 - 14:30:25" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="134" status="Passed" >
+<Disp><![CDATA[Action Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="133" status="Passed" >
+<Disp><![CDATA[注册20账号脚本 Iteration 19 (Row 19)]]></Disp>
+</NodeArgs>
+</DIter>
+<DIter rID="T98" iterID="20" >
+<Action rID="T99">
+<AName><![CDATA[Action]]></AName>
+<Step rID="T100">
+<Obj plainTxt="False" ><![CDATA[Url: WebTours]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:26]]></Time>
+<NodeArgs eType="General" icon="4" nRep="142" status="Passed" >
+<Disp><![CDATA[Url: WebTours]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration20\t1.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T101">
+<Obj plainTxt="False" ><![CDATA[Url: 点击注册按钮]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:26]]></Time>
+<NodeArgs eType="General" icon="4" nRep="143" status="Passed" >
+<Disp><![CDATA[Url: 点击注册按钮]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration20\t2.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Step rID="T102">
+<Obj plainTxt="False" ><![CDATA[Submit Data: login.pl]]></Obj>
+<Details plainTxt="False" ><![CDATA[<CENTER><STRONG><FONT COLOR=#009A63>Step completed successfully</FONT></STRONG></CENTER>]]></Details>
+<Time><![CDATA[2019/5/27 星期一 - 14:30:26]]></Time>
+<NodeArgs eType="General" icon="5" nRep="144" status="Passed" >
+<Disp><![CDATA[Submit Data: login.pl]]></Disp>
+<BtmPane vType="HTMLSNSH">
+<Path><![CDATA[\Iteration20\t3.inf]]></Path>
+</BtmPane>
+</NodeArgs>
+</Step>
+<Summary sTime="2019/5/27 星期一 - 14:30:25" eTime="2019/5/27 星期一 - 14:30:26" passed="3" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="141" status="Passed" >
+<Disp><![CDATA[Action Summary]]></Disp>
+</NodeArgs>
+</Action>
+<NodeArgs eType="StartIteration" icon="3" nRep="140" status="Passed" >
+<Disp><![CDATA[注册20账号脚本 Iteration 20 (Row 20)]]></Disp>
+</NodeArgs>
+</DIter>
+<Action rID="T103">
+<AName><![CDATA[vuser_end]]></AName>
+<Summary sTime="2019/5/27 星期一 - 14:30:26" eTime="2019/5/27 星期一 - 14:30:26" passed="0" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartAction" icon="2" nRep="147" >
+<Disp><![CDATA[vuser_end Summary]]></Disp>
+</NodeArgs>
+</Action>
+<Summary sTime="2019/5/27 星期一 - 14:30:01" eTime="2019/5/27 星期一 - 14:30:26" passed="60" failed="0" warnings="0" ></Summary>
+<NodeArgs eType="StartTest" icon="1" nRep="4" status="Passed" >
+<Disp><![CDATA[Test 注册20账号脚本 Summary]]></Disp>
+</NodeArgs>
+</Doc>
+</Report>

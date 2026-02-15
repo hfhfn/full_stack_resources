@@ -1,0 +1,7 @@
+HTTP/1.1 200 Ok
+Server: Xitami
+Date: Tue, 21 May 2019 09:31:02 GMT
+Content-type: application/x-javascript
+Content-length: 291
+Last-modified: Tue, 26 Oct 2004 08:18:07 GMT
+

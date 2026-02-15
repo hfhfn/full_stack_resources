@@ -1,0 +1,25 @@
+[t2]
+FileName2=t2_59_profileValidate.js
+FileName5=t1_56_mer_login.gif
+FileName4=t1_57_JSFormSubmit.js
+FileName7=t1_54_hp_logo.png
+FileName6=t1_55_webtours.png
+RequestBodyFile=t2_RequestBody.txt
+ContentType=text/html
+URL1=http://127.0.0.1:1080/WebTours/login.pl?username=&password=&getInfo=true
+URL2=http://127.0.0.1:1080/WebTours/profileValidate.js
+URL3=http://127.0.0.1:1080/WebTours/images/button_next.gif
+ResponseHeaderFile=t2_ResponseHeader.txt
+URL4=http://127.0.0.1:1080/WebTours/JSFormSubmit.js
+URL5=http://127.0.0.1:1080/WebTours/images/mer_login.gif
+URL6=http://127.0.0.1:1080/WebTours/images/webtours.png
+URL7=http://127.0.0.1:1080/WebTours/images/hp_logo.png
+SnapshotXmlFile=snapshot_2.xml
+RequestHeaderFile=t2_RequestHeader.txt
+SaveSnapshotResources=1
+Total=7
+StepName=Url: µã»÷×¢²á°´Å¥
+FileName1=t2.html
+FileName3=t2_58_button_next.gif
+[AdditionalInfo]
+IsIgnorable=0

@@ -1,0 +1,35 @@
+T2001N,Test201学院,Master201,Slogan201,----全传正常数据
+T2002N,Test201学院,Master201,,----必填正常数据
+T2001N,Test201学院,Master201,Slogan201,----dep_id已存在校验
+ ,Test201学院,Master201,Slogan201,----id为空格
+T2003N, ,Master201,Slogan201,----depname为空格
+T2004N,Test201学院, ,Slogan201,----mastername为空格
+T2005N,Test201学院,Master201, ,----slogan为空格
+,Test201学院,Master201,Slogan201,----id为空
+T2006N,,Master201,Slogan201,----depname为空
+T2007N,Test201学院,,Slogan201,----mastername为空
+T2008N,Test201学院,Master201,,----slogan为空
+ T2009N ,Test201学院,Master201,Slogan201,----id为前后含空格
+T2010N, Test201学院 ,Master201,Slogan201,----depname为前后含空格
+T2011N,Test201学院, Master201 ,Slogan201,----mastername为前后含空格
+T2012N,Test201学院,Master201, Slogan201 ,----slogan为前后含空格
+#T2013N#,Test201学院,Master201,Slogan201,----id为前后含#
+T2014N,#Test201学院#,Master201,Slogan201,----depname为前后含#
+T2015N,Test201学院,#Master201#,Slogan201,----mastername为前后含#
+T2016N,Test201学院,Master201,#Slogan201#,----slogan为前后含#
+%T2017N%,Test201学院,Master201,Slogan201,----id为前后含%
+T2018N,%Test201学院%,Master201,Slogan201,----depname为前后含%
+T2019N,Test201学院,%Master201%,Slogan201,----mastername为前后含%
+T2020N,Test201学院,Master201,%Slogan201%,----slogan为前后含%
+/T2021N/,Test201学院,Master201,Slogan201,----id为前后含/
+T2022N,/Test201学院/,Master201,Slogan201,----depname为前后含/
+T2023N,Test201学院,/Master201/,Slogan201,----mastername为前后含/
+T2024N,Test201学院,Master201,/Slogan201/,----slogan为前后含/
+@T2025N@,Test201学院,Master201,Slogan201,----id为前后含@
+T2026N,@Test201学院@,Master201,Slogan201,----depname为前后含@
+T2027N,Test201学院,@Master201@,Slogan201,----mastername为前后含@
+T2028N,Test201学院,Master201,@Slogan201@,----slogan为前后含@
+T2001N1001N1001N1001N1001N100N1,Test201学院,Master201,Slogan201,----id为超长
+T2029N,Test201001N1001N1001N1001N10001学院,Master201,Slogan201,----depname为超长
+T2030N,Test201学院,Master20001N1001N1001N1001N10011,Slogan201,----mastername为超长
+T2031N,Test201学院,Master201,Slogan201001N1001N1001Slogan201001N1001N1001N1001N1001NSlogan201001N1001N1001N1001N1001NSlogan201001N1001N1001N1001N1001NSlogan201001N1001N1001N1001N1001NN1001N1001N1,----slogan为超长

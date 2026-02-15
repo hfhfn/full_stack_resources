@@ -1,0 +1,32 @@
+[Scenario]
+Product=HP LoadRunner Controller
+Version=11.0.0.0
+Path=Scenario1
+Subject=
+Result_file=\\Mac\Home\Desktop\day4\订票20用户脚本\res\res.lrr
+Description=
+ResultName=res
+Time_Zone=-25200
+Start_time=1558945146
+Daylight_Bias=-60
+Stop_time=1558945171
+[Configuration]
+Public_local=1
+Is_mix=1
+Is_runner_file=0
+Runner_file=
+[Running_mode]
+Start_reason=By command
+Stop_reason=By a user
+[Data Collection]
+FullData=1
+[Scenario_summary]
+Scenario Type=Manual Scenario
+Goal Profile Name=Default Schedule
+Mode=Scenario Scheduling
+Scenario Duration=Until Completion
+Load Behavior=Property
+[Scripts]
+订票20用户脚本=\\Mac\Home\Desktop\day4\订票20用户脚本\订票20用户脚本.usr
+[Scripts_types]
+订票20用户脚本=Multi+QTWeb

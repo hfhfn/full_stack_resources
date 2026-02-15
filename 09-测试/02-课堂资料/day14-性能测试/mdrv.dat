@@ -1,0 +1,2826 @@
+;; Extension Configuration
+;; [<extension name>]
+;; ExtPriorityType=< is one of: {internal, protocol}>
+;; WINNT_EXT_LIBS=<dll name for NT>
+;; WIN95_EXT_LIBS=<dll name for 95>
+;; SOLARIS_EXT_LIBS=<dll name for Solaris>
+;; LINUX_EXT_LIBS=<dll name for Linux>
+;; HPUX_EXT_LIBS=<dll name for HP>
+;; AIX_EXT_LIBS=<dll anme for IBM>
+;; LibCfgFunc=<configuration function name>
+;; UtilityExt=<other extensions list>
+;; WINNT_DLLS=<dlls to load to the interpreter context, for NT>
+;; WIN95_DLLS=<dlls to load to the interpreter context, for 95>
+;; SOLARIS_DLLS=<dlls to load to the interpreter context, for Solaris>
+;; LINUX_DLLS=<dlls to load to the interpreter context, for Linux>
+;; HPUX_DLLS=<dlls to load to the interpreter context, for HP>
+;; AIX_DLLS=<dlls to load to the interpreter context, for IBM>
+;; ExtIncludeFiles=<extra include files. several files can be seperated by a comma>
+;; ExtCmdLineConc=<extra command line (if the attr exists concatenate value)>
+;; ExtCmdLineOverwrite=<extra command line (if the attr exists overwrite value)>
+;; CallActionByNameFunc=<interpreter exec_action function>
+;; GetFuncAddress=<interpreter get_location function>
+;; RunLogicInitFunc=<action_logic init function>
+;; RunLogicRunFunc=<action_logic run function>
+;; RunLogicEndFunc=<action_logic end function>
+
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[DbLib]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=lrd32.dll
+WIN95_EXT_LIBS=lrd32.dll
+SOLARIS_EXT_LIBS=liblrdsol.so
+HPUX_EXT_LIBS=liblrdhp.sl
+AIX_EXT_LIBS=liblrdibm.a
+LibCfgFunc=lrd_configure
+UtilityExt=lrun_api
+SecurityRequirementsFiles=lrd.asl
+SecurityMode=On
+ExtIncludeFiles=globals.h
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[SYB-DbLib]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=lrd32.dll
+WIN95_EXT_LIBS=lrd32.dll
+SOLARIS_EXT_LIBS=liblrdsol.so
+HPUX_EXT_LIBS=liblrdhp.sl
+AIX_EXT_LIBS=liblrdibm.a
+LibCfgFunc=lrd_configure
+UtilityExt=lrun_api
+SecurityRequirementsFiles=lrd.asl
+SecurityMode=On
+ExtIncludeFiles=globals.h
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[CtLib]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=lrd32.dll
+WIN95_EXT_LIBS=lrd32.dll
+SOLARIS_EXT_LIBS=liblrdsol.so
+HPUX_EXT_LIBS=liblrdhp.sl
+AIX_EXT_LIBS=liblrdibm.a
+LibCfgFunc=lrd_configure
+UtilityExt=lrun_api
+SecurityRequirementsFiles=lrd.asl
+SecurityMode=On
+ExtIncludeFiles=globals.h
+
+[Sap]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=sapmtdext.dll
+WIN95_EXT_LIBS=sapmtdext.dll
+LINUX_EXT_LIBS=
+SOLARIS_EXT_LIBS=
+HPUX_EXT_LIBS=
+AIX_EXT_LIBS=
+LibCfgFunc=sap_configure
+UtilityExt=lrun_api_sap
+WINNT_DLLS=SapReplayApi.dll
+WIN95_DLLS=SapReplayApi.dll
+ExtCmdLineOverwrite=-drv_pt_coinit ole
+SecurityRequirementsFiles=SapReplayAPI.asl
+SecurityMode=On
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[Oracle]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=lrd32.dll
+WIN95_EXT_LIBS=lrd32.dll
+SOLARIS_EXT_LIBS=liblrdsol.so
+HPUX_EXT_LIBS=liblrdhp.sl
+AIX_EXT_LIBS=liblrdibm.a
+LibCfgFunc=lrd_configure
+UtilityExt=lrun_api
+SecurityRequirementsFiles=lrd.asl
+SecurityMode=On
+ExtIncludeFiles=globals.h
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[Oracle_NCA]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=ncarp11i.dll
+WIN95_EXT_LIBS=ncarp11i.dll
+LINUX_EXT_LIBS=liboranca11i.so
+SOLARIS_EXT_LIBS=liboranca11i.so
+HPUX_EXT_LIBS=liboranca11i.sl
+AIX_EXT_LIBS=liboranca11i.so
+LibCfgFunc=oracle_gui_configure
+UtilityExt=lrun_api,HttpEngine
+ExtCmdLineOverwrite=-WinInet No
+ExtCmdLineConc=-UsingWinInet No
+SecurityRequirementsFiles=oracle_nca.asl
+SecurityMode=On
+ExtIncludeFiles=globals.h,orafuncs.h
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[QTWeb]
+ExtPriorityType=protocol_replay
+WINNT_EXT_LIBS=lrwreplaymain.dll
+WIN95_EXT_LIBS=lrwreplaymain.dll
+LINUX_EXT_LIBS=libLrwReplayMain.so
+SOLARIS_EXT_LIBS=libLrwReplayMain.so
+HPUX_EXT_LIBS=libLrwReplayMain.sl
+AIX_EXT_LIBS=libLrwReplayMain.so
+LibCfgFunc=web_configure
+UtilityExt=lrun_api,LrXml
+ActiveScriptDoc=Mercury.HTTPVUser.2
+ActiveScriptGlobals=Mercury.HTTPDriver.2
+ExtMessageQueue=0
+ExtCmdLineOverwrite=-WinInet RTS(WEB/WinInetReplay/0)
+ExtCmdLineConc=-UsingWinInet RTS(WEB/WinInetReplay/0)
+SecurityRequirementsFiles=lrw.asl
+SecurityMode=On
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[SOAP]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=lrwreplaymain.dll
+WIN95_EXT_LIBS=lrwreplaymain.dll
+LINUX_EXT_LIBS=libLrwReplayMain.so
+SOLARIS_EXT_LIBS=libLrwReplayMain.so
+HPUX_EXT_LIBS=libLrwReplayMain.sl
+AIX_EXT_LIBS=libLrwReplayMain.so
+LibCfgFunc=web_configure
+UtilityExt=lrun_api,LrXml
+ActiveScriptDoc=Mercury.HTTPVUser.2
+ActiveScriptGlobals=Mercury.HTTPDriver.2
+ExtMessageQueue=0
+ExtCmdLineOverwrite=-WinInet RTS(WEB/WinInetReplay/0)
+ExtCmdLineConc=-UsingWinInet RTS(WEB/WinInetReplay/0)
+SecurityRequirementsFiles=lrw.asl
+SecurityMode=On
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[VB-Web]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=lrwreplaymain.dll
+WIN95_EXT_LIBS=lrwreplaymain.dll
+LINUX_EXT_LIBS=libLrwReplayMain.so
+SOLARIS_EXT_LIBS=libLrwReplayMain.so
+HPUX_EXT_LIBS=libLrwReplayMain.sl
+AIX_EXT_LIBS=libLrwReplayMain.so
+LibCfgFunc=web_configure
+UtilityExt=lrun_api
+ActiveScriptDoc=Mercury.HTTPVUser.2
+ActiveScriptGlobals=Mercury.HTTPDriver.2
+ExtMessageQueue=0
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[as_web]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=aswebvu.dll
+WIN95_EXT_LIBS=aswebvu.dll
+LINUX_EXT_LIBS=libWebReplay.so
+SOLARIS_EXT_LIBS=libWebReplay.so
+HPUX_EXT_LIBS=libWebReplay.sl
+AIX_EXT_LIBS=libWebReplay.so
+LibCfgFunc=web_configure
+UtilityExt=lrun_api
+
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[TUXEDO63]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=lrt32n.dll
+WIN95_EXT_LIBS=lrt32n.dll
+LINUX_EXT_LIBS=
+SOLARIS_EXT_LIBS=liblrtn.so
+HPUX_EXT_LIBS=liblrtn.sl
+AIX_EXT_LIBS=liblrtn.a
+LibCfgFunc=lrt_config
+UtilityExt=lrun_api
+SecurityRequirementsFiles=tuxedo.asl
+SecurityMode=On
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[TUXEDO7]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=lrt7.dll
+WIN95_EXT_LIBS=lrt7.dll
+LINUX_EXT_LIBS=
+SOLARIS_EXT_LIBS=liblrt7.so
+HPUX_EXT_LIBS=liblrt7.sl
+AIX_EXT_LIBS=liblrt7.a
+LibCfgFunc=lrt_config
+UtilityExt=lrun_api
+SecurityRequirementsFiles=tuxedo.asl
+SecurityMode=On
+
+[WinSock] 
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=wsrun32.dll
+WIN95_EXT_LIBS=wsrun32.dll
+LINUX_EXT_LIBS=liblrs.so
+SOLARIS_EXT_LIBS=liblrs.so
+HPUX_EXT_LIBS=liblrs.sl
+AIX_EXT_LIBS=liblrs.so
+LibCfgFunc=winsock_exten_conf
+UtilityExt=lrun_api
+ExtMessageQueue=0
+ExtCmdLineOverwrite=-WinInet No
+ExtCmdLineConc=-UsingWinInet No
+SecurityRequirementsFiles=winsock.asl
+SecurityMode=On
+
+[WinSockWeb]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=wsrun32.dll
+WIN95_EXT_LIBS=wsrun32.dll
+LINUX_EXT_LIBS=liblrs.so
+SOLARIS_EXT_LIBS=liblrs.so
+HPUX_EXT_LIBS=liblrs.sl
+AIX_EXT_LIBS=liblrs.so
+LibCfgFunc=winsock_exten_conf
+UtilityExt=lrun_api,QTweb
+ExtMessageQueue=0
+ExtCmdLineOverwrite=-WinInet RTS(WEB/WinInetReplay/0)
+ExtCmdLineConc=-UsingWinInet RTS(WEB/WinInetReplay/0)
+SecurityRequirementsFiles=winsock.asl
+SecurityMode=On
+
+[APPC]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=appc32rn.dll
+LibCfgFunc=EXTENSION_CONFIGURE_FUNC
+UtilityExt=lrun_api
+
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[ODBC]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=lrd32.dll
+WIN95_EXT_LIBS=lrd32.dll
+LibCfgFunc=lrd_configure
+UtilityExt=lrun_api
+SecurityRequirementsFiles=lrd.asl
+SecurityMode=On
+ExtIncludeFiles=globals.h
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[RTE]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=rterun32.dll
+WIN95_EXT_LIBS=rterun32.dll
+LINUX_EXT_LIBS=
+SOLARIS_EXT_LIBS=
+HPUX_EXT_LIBS=
+AIX_EXT_LIBS=
+LibCfgFunc=lrrte_config
+UtilityExt=lrun_api
+SecurityRequirementsFiles=rte.asl
+SecurityMode=On
+
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[Informix]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=lrd32.dll
+WIN95_EXT_LIBS=lrd32.dll
+LibCfgFunc=lrd_configure
+UtilityExt=lrun_api
+SecurityRequirementsFiles=lrd.asl
+SecurityMode=On
+ExtIncludeFiles=globals.h
+
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[SapGui]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=SapGuiReplay.dll
+WIN95_EXT_LIBS=SapGuiReplay.dll
+LibCfgFunc=SapGui_configure
+UtilityExt=lrun_api
+ExtCmdLineConc=-drv_pp_coinit STA -drv_pt_coinit STA
+ExtIncludeFiles=globals.h
+SecurityRequirementsFiles=sapgui.asl
+SecurityMode=On
+ExtCmdLineOverwrite=-WinInet No
+
+[Java]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=java_vu.dll
+WIN95_EXT_LIBS=java_vu.dll
+LibCfgFunc=jvu_configure
+UtilityExt=lrun_api
+SecurityRequirementsFiles=java_protocols.asl
+SecurityMode=On
+
+[JDBC]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LibCfgFunc=any_configure
+UtilityExt=lrun_api
+SecurityRequirementsFiles=java_protocols.asl
+SecurityMode=On
+
+[General-Java]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LibCfgFunc=any_configure
+UtilityExt=lrun_api
+SecurityRequirementsFiles=java_protocols.asl
+SecurityMode=On
+
+[Corba-Java]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LibCfgFunc=any_configure
+UtilityExt=lrun_api
+SecurityRequirementsFiles=java_protocols.asl
+SecurityMode=On
+
+[Java-Interpreter]
+ExtPriorityType=interpreter
+WINNT_EXT_LIBS=java_int.dll
+WIN95_EXT_LIBS=java_int.dll
+LibCfgFunc=mic_ji_configure
+UtilityExt=lrun_api,qtweb
+SecurityRequirementsFiles=java_protocols.asl
+SecurityMode=On
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[DB2 CLI]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=lrd32.dll
+WIN95_EXT_LIBS=lrd32.dll
+LibCfgFunc=lrd_configure
+UtilityExt=lrun_api
+SecurityRequirementsFiles=lrd.asl
+SecurityMode=On
+ExtIncludeFiles=globals.h
+
+[General]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LINUX_EXT_LIBS=libzext.so
+SOLARIS_EXT_LIBS=libzext.so
+HPUX_EXT_LIBS=libzext.sl
+AIX_EXT_LIBS=libzext.so
+LibCfgFunc=any_configure
+UtilityExt=lrun_api
+ExtMessageQueue=0
+SecurityMode=On
+
+[lr_monitor]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LINUX_EXT_LIBS=libzext.so
+SOLARIS_EXT_LIBS=libzext.so
+HPUX_EXT_LIBS=libzext.sl
+AIX_EXT_LIBS=libzext.so
+LibCfgFunc=any_configure
+UtilityExt=lrun_api
+
+[lr_monitor_rp]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LINUX_EXT_LIBS=libzext.so
+SOLARIS_EXT_LIBS=libzext.so
+HPUX_EXT_LIBS=libzext.sl
+AIX_EXT_LIBS=libzext.so
+LibCfgFunc=any_configure
+
+
+[Baan]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=baanrep.dll
+WIN95_EXT_LIBS=baanrep.dll
+LibCfgFunc=baan_configure
+UtilityExt=lrun_api
+SecurityRequirementsFiles=baan.asl
+SecurityMode=On
+
+
+[net_monitor]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LINUX_EXT_LIBS=libzext.so
+SOLARIS_EXT_LIBS=libzext.so
+HPUX_EXT_LIBS=libzext.sl
+AIX_EXT_LIBS=libzext.so
+LibCfgFunc=any_configure
+UtilityExt=lrun_api
+
+[tracert_client]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=tracert_clnt.dll
+WIN95_EXT_LIBS=tracert_clnt.dll
+LINUX_EXT_LIBS=libtracert_clnt.so
+SOLARIS_EXT_LIBS=libtracert_clnt.so
+HPUX_EXT_LIBS=libtracert_clnt.sl
+AIX_EXT_LIBS=libtracert_clnt.so
+LibCfgFunc=configure_traceroute_client
+ExtMessageQueue=0
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[lrc]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LibCfgFunc=any_configure
+UtilityExt=lrun_api,lrcCReplay
+ExtIncludeFiles=user.h,interfaces.h,recordsets.inf
+
+[Jolt]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=lrjlt32.dll
+WIN95_EXT_LIBS=lrjlt32.dll
+SOLARIS_EXT_LIBS=liblrjltsol.so
+HPUX_EXT_LIBS=liblrjlthp.sl
+AIX_EXT_LIBS=liblrjltibm.so
+LibCfgFunc=lrjolt_configure
+UtilityExt=lrun_api
+
+
+
+[interpreter_manager]
+ExtPriorityType=interpreter_manager
+WINNT_EXT_LIBS=interpreter_manager.dll
+WIN95_EXT_LIBS=interpreter_manager.dll
+LINUX_EXT_LIBS=libinterpreter_manager.so
+SOLARIS_EXT_LIBS=libinterpreter_manager.so
+HPUX_EXT_LIBS=libinterpreter_manager.sl
+AIX_EXT_LIBS=libinterpreter_manager.so
+LibCfgFunc=interpreter_manager_config
+GetLoaderInterfaceFunc=get_interp_loader_interface
+AddLoaderClientInterfaceFunc=add_client_interface
+ExtMessageQueue=0
+SecurityMode=On
+Loader=1
+
+[CCI]
+ExtPriorityType=interpreter
+WINNT_EXT_LIBS=cciext.dll
+WIN95_EXT_LIBS=cciext.dll
+LINUX_EXT_LIBS=libcciext.so
+SOLARIS_EXT_LIBS=libcciext.so
+HPUX_EXT_LIBS=libcciext.sl
+AIX_EXT_LIBS=libcciext.so
+LibCfgFunc=cciext_configure
+CallActionByNameFunc=CCI_interpreter_exec_action
+GetFuncAddress=CCI_interpreter_get_location
+ResetStackFunc=CCI_interpreter_reset_stack
+ExtMessageQueue=0
+SecurityMode=On
+
+[CCI_SERVER]
+ExtPriorityType=interpreter
+WINNT_EXT_LIBS=cciext.dll
+WIN95_EXT_LIBS=cciext.dll
+LINUX_EXT_LIBS=libcciext.so
+SOLARIS_EXT_LIBS=libcciext.so
+HPUX_EXT_LIBS=libcciext.sl
+AIX_EXT_LIBS=libcciext.so
+LibCfgFunc=cciext_configure
+CallActionByNameFunc=CCI_interpreter_exec_action
+GetFuncAddress=CCI_interpreter_get_location
+ResetStackFunc=CCI_interpreter_reset_stack
+UsingLoaders=interpreter_manager:cci_client_cfg
+ExtMessageQueue=0
+SecurityMode=On
+
+
+[JAVA_SERVER]
+ExtPriorityType=interpreter
+WINNT_EXT_LIBS=javaext.dll
+WIN95_EXT_LIBS=javaext.dll
+LINUX_EXT_LIBS=libjavaext.so
+SOLARIS_EXT_LIBS=libjavaext.so
+HPUX_EXT_LIBS=libjavaext.sl
+AIX_EXT_LIBS=libjavaext.so
+LibCfgFunc=javaext_configure
+CallActionByNameFunc=javaext_exec_func2
+UsingLoaders=interpreter_manager:java_client_cfg
+
+
+[PERL_SERVER]
+ExtPriorityType=interpreter
+WINNT_EXT_LIBS=perlext.dll
+WIN95_EXT_LIBS=perlext.dll
+LINUX_EXT_LIBS=libperlext.so
+SOLARIS_EXT_LIBS=libperlext.so
+HPUX_EXT_LIBS=libperlext.sl
+AIX_EXT_LIBS=libperlext.so
+LibCfgFunc=perlext_configure
+CallActionByNameFunc=perlext_exec_func_with_prototype
+UsingLoaders=interpreter_manager:perl_client_cfg
+GetLoaderInterfaceFunc=get_perl_interpreter_interface
+AddLoaderClientInterfaceFunc=add_perl_transformers
+Loader=1
+
+
+[sample_script_perl_transformer]
+WINNT_EXT_LIBS=sample_script_perl_transformer.dll
+WIN95_EXT_LIBS=sample_script_perl_transformer.dll
+LINUX_EXT_LIBS=libsample_script_perl_transformer.so
+SOLARIS_EXT_LIBS=libsample_script_perl_transformer.so
+HPUX_EXT_LIBS=libsample_script_perl_transformer.sl
+AIX_EXT_LIBS=libsample_script_perl_transformer.so
+UsingLoaders=PERL_SERVER:script_perl_config
+
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[Com]
+ExtPriorityType=interpreter
+WINNT_EXT_LIBS=comext.dll
+WIN95_EXT_LIBS=comext.dll
+LibCfgFunc=comext_configure
+CallActionByNameFunc=COM_interpreter_exec_action
+
+[JavaSun]
+ExtPriorityType=interpreter
+WINNT_EXT_LIBS=jgj.dll
+WIN95_EXT_LIBS=jgj.dll
+LibCfgFunc=jgj_configure
+
+[Binary]
+ExtPriorityType=interpreter
+WINNT_EXT_LIBS=binext.dll
+WIN95_EXT_LIBS=binext.dll
+LINUX_EXT_LIBS=libbinext.so
+SOLARIS_EXT_LIBS=libbinext.so
+HPUX_EXT_LIBS=libbinext.sl
+AIX_EXT_LIBS=libbinext.so
+LibCfgFunc=binext_configure
+CallActionByNameFunc=BINARY_interpreter_exec_action
+
+[BINARY_SERVER]
+ExtPriorityType=interpreter
+WINNT_EXT_LIBS=binext.dll
+WIN95_EXT_LIBS=binext.dll
+LINUX_EXT_LIBS=libbinext.so
+SOLARIS_EXT_LIBS=libbinext.so
+HPUX_EXT_LIBS=libbinext.sl
+AIX_EXT_LIBS=libbinext.so
+LibCfgFunc=binext_configure
+CallActionByNameFunc=BINARY_interpreter_exec_action
+UsingLoaders=interpreter_manager:binary_client_cfg
+SecurityMode=On
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[VbCom]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LibCfgFunc=any_configure
+UtilityExt=lrun_api
+ExtCmdLineOverwrite=-drv_pp_coinit OLE -drv_pt_coinit OLE
+
+[MdrvGextDll]
+WINNT_EXT_LIBS=mdrvgext.dll
+WIN95_EXT_LIBS=mdrvgext.dll
+SOLARIS_EXT_LIBS=
+HPUX_EXT_LIBS=
+AIX_EXT_LIBS=
+LibCfgFunc=MdrvGExtDll_Config
+UsingLoaders=Transaction:MdrvGXactExtDll_Config
+
+[ParamEngine]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=parameng.dll
+WIN95_EXT_LIBS=parameng.dll
+LINUX_EXT_LIBS=libparamengine.so
+SOLARIS_EXT_LIBS=libparamengine.so
+HPUX_EXT_LIBS=libparamengine.sl
+AIX_EXT_LIBS=libparamengine.so
+LibCfgFunc=ParamEngine_configure
+ExtMessageQueue=0
+SecurityMode=On
+
+[Transaction]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=trans.dll
+WIN95_EXT_LIBS=trans.dll
+LINUX_EXT_LIBS=libtransaction.so
+SOLARIS_EXT_LIBS=libtransaction.so
+HPUX_EXT_LIBS=libtransaction.sl
+AIX_EXT_LIBS=libtransaction.so
+LibCfgFunc=Transaction_configure
+GetLoaderInterfaceFunc=get_tc_interface
+AddLoaderClientInterfaceFunc=add_tc_client_interface
+GetLoaderCommandLine=trans_extra_ext
+Loader=1
+ExtMessageQueue=0
+SecurityMode=On
+;;In order to save compatibility we will put action logic as extra command line, since in LR the controller
+;;give the command -trans_extra_ext RunLogicExt only for each thread and now the trans is a loader and it need
+;;it per process and not per thread:
+UtilityExt=RunLogicExt
+
+[lrun]
+ExtPriorityType=communication
+WINNT_EXT_LIBS=lrun50.dll
+WIN95_EXT_LIBS=lrun50.dll
+LINUX_EXT_LIBS=libLrun50.so
+SOLARIS_EXT_LIBS=libLrun50.so
+HPUX_EXT_LIBS=libLrun50.sl
+AIX_EXT_LIBS=libLrun50.so
+LibCfgFunc=lr_configure
+ExtMessageQueue=0
+
+[action_logic]
+ExtPriorityType=action_logic
+WINNT_EXT_LIBS=runlogic.dll
+WIN95_EXT_LIBS=runlogic.dll
+LINUX_EXT_LIBS=librunlogic.so
+SOLARIS_EXT_LIBS=librunlogic.so
+HPUX_EXT_LIBS=librunlogic.sl
+AIX_EXT_LIBS=librunlogic.so
+LibCfgFunc=runlogicext_configure
+ExtMessageQueue=0
+SecurityMode=On
+
+[ip_spoof]
+ExtPriorityType=hook
+WINNT_EXT_LIBS=ipext.dll
+WIN95_EXT_LIBS=
+LINUX_EXT_LIBS=
+SOLARIS_EXT_LIBS=
+HPUX_EXT_LIBS=
+AIX_EXT_LIBS=
+LibCfgFunc=ipext_config
+ExtMessageQueue=0
+
+[lr_socks]
+ExtPriorityType=hook
+WINNT_EXT_LIBS=lr_socks.dll
+WIN95_EXT_LIBS=lr_socks.dll
+LINUX_EXT_LIBS=liblr_socks.so
+SOLARIS_EXT_LIBS=liblr_socks.so
+HPUX_EXT_LIBS=liblr_socks.sl
+AIX_EXT_LIBS=liblr_socks.so
+LibCfgFunc=lr_socks_configure
+ExtMessageQueue=0
+SecurityMode=On
+ExtCmdLineConc=-UsingWinInet Yes
+
+
+
+
+[lrun_api]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=lrun50.dll
+WIN95_EXT_LIBS=lrun50.dll
+LINUX_EXT_LIBS=libLrun50.so
+SOLARIS_EXT_LIBS=libLrun50.so
+HPUX_EXT_LIBS=libLrun50.sl
+AIX_EXT_LIBS=libLrun50.so
+LibCfgFunc=LrunApi_configure
+UtilityExt=ParamEngine,Transaction,vusr_log,faserver,run_time_context
+ExtIncludeFiles=lrun.h
+ActiveScriptItems=Message:Mercury.Lrvb.LrMessage.1,Timing:Mercury.Lrvb.LrTiming2.1,Transaction:Mercury.Lrvb.LrTransaction2.1
+ExtMessageQueue=0
+SecurityRequirementsFiles=lrun_api.asl
+SecurityMode=On
+
+[lrun_api_sap]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=lrun50.dll
+WIN95_EXT_LIBS=lrun50.dll
+LINUX_EXT_LIBS=libLrun50.so
+SOLARIS_EXT_LIBS=libLrun50.so
+HPUX_EXT_LIBS=libLrun50.sl
+AIX_EXT_LIBS=libLrun50.so
+LibCfgFunc=LrunApi_configure
+UtilityExt=Transaction,vusr_log,faserver
+ExtIncludeFiles=lrun.h
+ActiveScriptItems=Message:Mercury.Lrvb.LrMessage.1,Timing:Mercury.Lrvb.LrTiming2.1,Transaction:Mercury.Lrvb.LrTransaction2.1
+ExtMessageQueue=0
+SecurityRequirementsFiles=lrun_api.asl
+SecurityMode=On
+
+[vusr_log]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=vusr_log.dll
+WIN95_EXT_LIBS=vusr_log.dll
+LINUX_EXT_LIBS=libvusr_log.so
+SOLARIS_EXT_LIBS=libvusr_log.so
+HPUX_EXT_LIBS=libvusr_log.sl
+AIX_EXT_LIBS=libvusr_log.so
+LibCfgFunc=Log_configure
+ExtMessageQueue=0
+SecurityMode=On
+
+[trans_server]
+ExtPriorityType=communication
+WINNT_EXT_LIBS=brex_tr_server.dll
+WIN95_EXT_LIBS=brex_tr_server.dll
+LINUX_EXT_LIBS=libbrex_tr_server.so
+SOLARIS_EXT_LIBS=libbrex_tr_server.so
+HPUX_EXT_LIBS=libbrex_tr_server.sl
+AIX_EXT_LIBS=libbrex_tr_server.so
+LibCfgFunc=TransServer_configure
+ExtMessageQueue=0
+
+[monitors_server]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=monitors.dll
+WIN95_EXT_LIBS=monitors.dll
+LINUX_EXT_LIBS=libmonitors.so
+SOLARIS_EXT_LIBS=libmonitors.so
+HPUX_EXT_LIBS=libmonitors.sl
+AIX_EXT_LIBS=libmonitors.so
+LibCfgFunc=configure_monitors_svc
+UtilityExt=Transaction
+SecurityMode=On
+
+[topaz_trans_server]
+ExtPriorityType=transaction_server
+WINNT_EXT_LIBS=trans_server.dll
+WIN95_EXT_LIBS=trans_server.dll
+LINUX_EXT_LIBS=libtrans_server.so
+SOLARIS_EXT_LIBS=libtrans_server.so
+HPUX_EXT_LIBS=libtrans_server.sl
+AIX_EXT_LIBS=libtrans_server.so
+LibCfgFunc=TransactionServer_configure
+GetLoaderInterfaceFunc=get_ts_interface
+AddLoaderClientInterfaceFunc=add_ts_client_interface
+GetLoaderCommandLine=trans_server_extra_ext
+Loader=1
+ExtMessageQueue=0
+
+[topaz_transaction]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=TTS_Ext.dll
+LibCfgFunc=TopazTransExtStdCfg
+
+[TopazTransExt]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=TTS_Ext.dll
+UsingLoaders=topaz_trans_server:topaz_trans_ext_configure_func_t
+
+[topaz_transaction_mq]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=ttsextmq.dll
+LibCfgFunc=TopazTransExtStdCfg
+
+[TopazTransExtMQ]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=ttsextmq.dll
+UsingLoaders=topaz_trans_server:topaz_trans_ext_configure_func_t
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[PeopleSoft-Tuxedo]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=lrt32n.dll
+WIN95_EXT_LIBS=lrt32n.dll
+SOLARIS_EXT_LIBS=liblrtn.so
+HPUX_EXT_LIBS=liblrtn.sl
+AIX_EXT_LIBS=liblrtn.a
+LibCfgFunc=lrt_config
+UtilityExt=lrun_api
+SecurityRequirementsFiles=tuxedo.asl
+SecurityMode=On
+
+[PeopleSoft-Web]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=lrjlt32.dll
+WIN95_EXT_LIBS=lrjlt32.dll
+SOLARIS_EXT_LIBS=liblrjltsol.so
+HPUX_EXT_LIBS=liblrjlthp.sl
+AIX_EXT_LIBS=liblrjltibm.so
+LibCfgFunc=lrjolt_configure
+UtilityExt=lrun_api
+
+[vugen_dbg]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=vugdbg_x.dll
+WIN95_EXT_LIBS=vugdbg_x.dll
+LibCfgFunc=vugdbg_ext_config
+
+[ExtraExtension]
+vugdbg_ext=vugen_dbg
+ip_spoof=ip_spoof
+
+[HttpEcho]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=httpecho.dll
+WIN95_EXT_LIBS=httpecho.dll
+LibCfgFunc=heconfig
+UtilityExt=lrun_api
+
+[Launcher]
+ExtPriorityType=launcher
+WINNT_EXT_LIBS=launcher.dll
+WIN95_EXT_LIBS=launcher.dll
+LINUX_EXT_LIBS=liblauncher.so
+SOLARIS_EXT_LIBS=liblauncher.so
+HPUX_EXT_LIBS=liblauncher.sl
+AIX_EXT_LIBS=liblauncher.so
+LibCfgFunc=launchext_configure
+GetLoaderInterfaceFunc=get_matcher_loader_interface
+AddLoaderClientInterfaceFunc=add_client_interface
+UtilityExt=two_way_comm,iwc,iwc_rr
+ExtMessageQueue=0
+SecurityMode=On
+Loader=1
+
+[Rmi-Java]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LibCfgFunc=any_configure
+UtilityExt=lrun_api
+ExtCmdLineConc=-tcpBdwn_singleVuser -lr_tcpbdwn_ignore_localhost_connections
+SecurityRequirementsFiles=java_protocols.asl
+SecurityMode=On
+
+[Jacada]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LibCfgFunc=any_configure
+UtilityExt=lrun_api
+SecurityRequirementsFiles=java_protocols.asl
+SecurityMode=On
+
+[TrcRtExt]
+WINNT_EXT_LIBS=TrcRtExt.dll
+WIN95_EXT_LIBS=TrcRtExt.dll
+LibCfgFunc=TrcRTExtDll_Config
+UsingLoaders=Transaction:TrcTransExtCfg
+
+[lr_trans_server]
+ExtPriorityType=transaction_server
+WINNT_EXT_LIBS=trans_server.dll
+WIN95_EXT_LIBS=trans_server.dll
+LINUX_EXT_LIBS=libtrans_server.so
+SOLARIS_EXT_LIBS=libtrans_server.so
+HPUX_EXT_LIBS=libtrans_server.sl
+AIX_EXT_LIBS=libtrans_server.so
+LibCfgFunc=TransactionServer_configure
+GetLoaderInterfaceFunc=get_ts_interface
+AddLoaderClientInterfaceFunc=add_ts_client_interface
+GetLoaderCommandLine=trans_server_extra_ext
+Loader=1
+ExtMessageQueue=0
+SecurityMode=On
+
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[comm_cntrlext]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=comm_cntrlext.dll
+WIN95_EXT_LIBS=comm_cntrlext.dll
+LibCfgFunc=cntrl_comm_config
+UtilityExt=lr_trans_server,mft_client,TrsOnlineExt,aes
+ExtCmdLineOverwrite=-received_msgs_num 500 -main_ts -aes_no_recover -ActionThreads 0
+
+[LrCntrlTransServer]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=comm_cntrlext.dll
+WIN95_EXT_LIBS=comm_cntrlext.dll
+UsingLoaders=lr_trans_server:lr_trans_ext_config_func
+
+[TrsControllerOnlineExt]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=trans_ext.dll
+UsingLoaders=lr_trans_server:lr_extansion_config_func
+
+[Breakdown]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=breakdown.dll
+WIN95_EXT_LIBS=breakdown.dll
+LibCfgFunc=breakdown_configure
+UsingLoaders=Transaction:Breakdown_Tx_configure
+
+[servicecfg]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=servicecfg.dll
+WIN95_EXT_LIBS=servicecfg.dll
+SOLARIS_EXT_LIBS=
+HPUX_EXT_LIBS=
+AIX_EXT_LIBS=
+LibCfgFunc=servicecfgext_configure
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[Wap]
+ExtPriorityType=user_defined0
+WINNT_EXT_LIBS=lrwwapreplaymain.dll
+WIN95_EXT_LIBS=lrwwapreplaymain.dll
+LINUX_EXT_LIBS=libLrwReplayMain.so
+SOLARIS_EXT_LIBS=libLrwReplayMain.so
+HPUX_EXT_LIBS=libLrwReplayMain.sl
+AIX_EXT_LIBS=libLrwReplayMain.so
+LibCfgFunc=wap_configure
+UtilityExt=lrun_api,QTWeb
+SecurityRequirementsFiles=wap.asl
+SecurityMode=On
+
+[time_diff_ext]
+ExtPriorityType=communication
+WINNT_EXT_LIBS=timediff_ext.dll
+WIN95_EXT_LIBS=timediff_ext.dll
+LINUX_EXT_LIBS=libtimediff_ext.so
+SOLARIS_EXT_LIBS=libtimediff_ext.so
+HPUX_EXT_LIBS=libtimediff_ext.sl
+AIX_EXT_LIBS=libtimediff_ext.so
+LibCfgFunc=configure_timediff_ext
+ExtMessageQueue=0
+SecurityMode=On
+
+[BridgeLogic]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=bridge_logic.dll
+WIN95_EXT_LIBS=bridge_logic.dll
+LINUX_EXT_LIBS=libbridge_logic.so
+SOLARIS_EXT_LIBS=libbridge_logic.so
+HPUX_EXT_LIBS=libbridge_logic.sl
+AIX_EXT_LIBS=libbridge_logic.so
+LibCfgFunc=bridge_configure
+ExtMessageQueue=0
+SecurityMode=On
+
+[Resmon]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=rm_server.dll
+WIN95_EXT_LIBS=rm_server.dll
+LINUX_EXT_LIBS=librm_server.so
+SOLARIS_EXT_LIBS=librm_server.so
+HPUX_EXT_LIBS=librm_server.sl
+AIX_EXT_LIBS=librm_server.so
+LibCfgFunc=rms_mdrv_config
+UtilityExt=Transaction
+SecurityMode=On
+ExtCmdLineOverwrite="-rms_loglevel warning -time_in_log"
+
+[RmStub]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=rm_stub.dll
+WIN95_EXT_LIBS=rm_stub.dll
+LINUX_EXT_LIBS=librm_stub.so
+SOLARIS_EXT_LIBS=librm_stub.so
+HPUX_EXT_LIBS=librm_stub.sl
+AIX_EXT_LIBS=librm_stub.so
+LibCfgFunc=rmstub_mdrv_config
+UtilityExt=Transaction,rm_mgr
+SecurityMode=On
+ExtCmdLineOverwrite="-rms_loglevel warning -drv_pp_coinit STA -drv_pt_coinit STA -time_in_log"
+
+[RmDisp]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=rm_dispatcher.dll
+WIN95_EXT_LIBS=rm_dispatcher.dll
+LINUX_EXT_LIBS=librm_dispatcher.so
+SOLARIS_EXT_LIBS=librm_dispatcher.so
+HPUX_EXT_LIBS=librm_dispatcher.sl
+AIX_EXT_LIBS=librm_dispatcher.so
+LibCfgFunc=rmdisp_mdrv_config
+SecurityMode=On
+
+[mft_client]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=mft_clnt.dll
+WIN95_EXT_LIBS=mft_clnt.dll
+LINUX_EXT_LIBS=libmft_clnt.so
+SOLARIS_EXT_LIBS=libmft_clnt.so
+HPUX_EXT_LIBS=libmft_clnt.sl
+AIX_EXT_LIBS=libmft_clnt.so
+LibCfgFunc=configure_mft_client
+ExtMessageQueue=0
+
+[mft_server]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=mft_svc.dll
+WIN95_EXT_LIBS=mft_svc.dll
+LINUX_EXT_LIBS=libmft_svc.so
+SOLARIS_EXT_LIBS=libmft_svc.so
+HPUX_EXT_LIBS=libmft_svc.sl
+AIX_EXT_LIBS=libmft_svc.so
+LibCfgFunc=configure_mft_svc
+ExtMessageQueue=0
+SecurityMode=On
+
+[ResmonTsExt]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=rm_ts_ext.dll
+WIN95_EXT_LIBS=rm_ts_ext.dll
+LibCfgFunc=RmTsExtMdrvExt_Config
+
+[ResmonExt]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=rm_ts_ext.dll
+WIN95_EXT_LIBS=rm_ts_ext.dll
+UsingLoaders=topaz_trans_server:RmTsExt_Config
+
+[TrsOnlineExt]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=trans_ext.dll
+WIN95_EXT_LIBS=trans_ext.dll
+LINUX_EXT_LIBS=libtrans_ext.so
+SOLARIS_EXT_LIBS=libtrans_ext.so
+HPUX_EXT_LIBS=libtrans_ext.sl
+AIX_EXT_LIBS=libtrans_ext.so
+LibCfgFunc=Extansion_configure
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[TrsAnalysisExt]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=anal_ext.dll
+WIN95_EXT_LIBS=anal_ext.dll
+LibCfgFunc=Analysis_DRV_Extansion_Configure
+UtilityExt=lr_trans_server
+UsingLoaders=lr_trans_server:Analysis_TS_Extansion_Configure
+
+[DummyTransExt]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=dummy_ext.dll
+WIN95_EXT_LIBS=dummy_ext.dll
+LINUX_EXT_LIBS=libdummy_ext.so
+SOLARIS_EXT_LIBS=libdummy_ext.so
+HPUX_EXT_LIBS=libdummy_ext.sl
+AIX_EXT_LIBS=libdummy_ext.so
+LibCfgFunc=DummyExt_configure
+ExtMessageQueue=0
+UsingLoaders=lr_trans_server:transaction_server_ext_configure
+
+[TC_DummyExt]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=tc_dummy_ext.dll
+WIN95_EXT_LIBS=tc_dummy_ext.dll
+LINUX_EXT_LIBS=libtc_dummy_ext.so
+SOLARIS_EXT_LIBS=libtc_dummy_ext.so
+HPUX_EXT_LIBS=libtc_dummy_ext.sl
+AIX_EXT_LIBS=libtc_dummy_ext.so
+LibCfgFunc=TC_DummyExt_configure
+ExtMessageQueue=0
+UsingLoaders=Transaction:transaction_client_ext_configure
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[Real]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=lreal32.dll
+WIN95_EXT_LIBS=lreal32.dll
+;;LINUX_EXT_LIBS=liblrs.so
+;;SOLARIS_EXT_LIBS=liblrs.so
+;;HPUX_EXT_LIBS=liblrs.sl
+;;AIX_EXT_LIBS=liblrs.so
+LibCfgFunc=rmext_config
+UtilityExt=lrun_api
+ExtMessageQueue=1
+ExtCmdLineOverwrite=-WinInet Yes
+ExtCmdLineConc=-UsingWinInet Yes
+ExtIncludeFiles=globals.h
+SecurityRequirementsFiles=realplayer.asl
+SecurityMode=On
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[lrcCci]
+ExtPriorityType=interpreter
+WINNT_EXT_LIBS=cciext.dll
+WIN95_EXT_LIBS=cciext.dll
+LINUX_EXT_LIBS=libcciext.so
+SOLARIS_EXT_LIBS=libcciext.so
+HPUX_EXT_LIBS=libcciext.sl
+AIX_EXT_LIBS=libcciext.so
+LibCfgFunc=cciext_configure
+GetFuncAddress=CCI_interpreter_get_location
+CallActionByNameFunc=CCI_interpreter_exec_action
+ResetStackFunc=CCI_interpreter_reset_stack
+ExtMessageQueue="0"
+SecurityMode=On
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[lrcVbi]
+ExtPriorityType=interpreter
+WINNT_EXT_LIBS=vbscriptext.dll
+WIN95_EXT_LIBS=vbscriptext.dll
+LibCfgFunc=vbscript_configure
+UtilityExt=lrcVBReplay
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[lrcJsi]
+ExtPriorityType=interpreter
+WINNT_EXT_LIBS=vbscriptext.dll
+WIN95_EXT_LIBS=vbscriptext.dll
+LibCfgFunc=vbscript_configure
+UtilityExt=lrcJSReplay
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[lrcVba]
+ExtPriorityType=interpreter
+WINNT_EXT_LIBS=vbascriptext.dll
+WIN95_EXT_LIBS=vbascriptext.dll
+LibCfgFunc=vbascript_configure
+UtilityExt=lrcVBAReplay
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[lrcCReplay]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=lrc_rawc.dll
+WIN95_EXT_LIBS=lrc_rawc.dll
+LibCfgFunc=Lrc_configure
+WINNT_DLLS=ole32.dll,oleaut32.dll
+ExtCmdLineOverwrite=-drv_pp_coinit STA -drv_pt_coinit STA
+UtilityExt=lrun_api
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[lrcVBReplay]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LibCfgFunc=any_configure
+UtilityExt=lrun_api
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[lrcJSReplay]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LibCfgFunc=any_configure
+UtilityExt=lrun_api
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[lrcVBAReplay]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LibCfgFunc=any_configure
+UtilityExt=lrun_api
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[iMode]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LINUX_EXT_LIBS=libzext.so
+SOLARIS_EXT_LIBS=libzext.so
+HPUX_EXT_LIBS=libzext.sl
+AIX_EXT_LIBS=libzext.so
+LibCfgFunc=any_configure
+UtilityExt=lrun_api,QTWeb
+ActiveScriptDoc=Mercury.HTTPVUser
+ActiveScriptGlobals=Mercury.HTTPDriver
+
+[SummaryDataTransExt]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=summary_data.dll
+WIN95_EXT_LIBS=summary_data.dll
+LINUX_EXT_LIBS=libsummary_data.so
+SOLARIS_EXT_LIBS=libsummary_data.so
+HPUX_EXT_LIBS=libsummary_data.sl
+AIX_EXT_LIBS=libsummary_data.so
+LibCfgFunc=summary_data_configure
+ExtMessageQueue=0
+SecurityMode=On
+UsingLoaders=lr_trans_server:summary_data_ts_ext_configure
+
+[AesLrExt]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=aes.dll
+WIN95_EXT_LIBS=aes.dll
+LINUX_EXT_LIBS=libaes.so
+SOLARIS_EXT_LIBS=libaes.so
+HPUX_EXT_LIBS=libaes.sl
+AIX_EXT_LIBS=libaes.so
+UsingLoaders=lr_trans_server:summary_data_ts_ext_configure
+SecurityMode=On
+
+[control_winrunner]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=control_wrun.dll
+WIN95_EXT_LIBS=control_wrun.dll
+LibCfgFunc=wrun_control_configure
+UtilityExt=lr_trans_server,vusr_log
+ExtCmdLineOverwrite=-in_communication 1 -time_diff_ext_location localhost -transaction_server_name winrunner_tr_server
+ExtMessageQueue=0
+SecurityMode=On
+
+[topaz_control_winrunner]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=control_wrun.dll
+WIN95_EXT_LIBS=control_wrun.dll
+LibCfgFunc=wrun_control_configure
+UtilityExt=Transaction
+ExtCmdLineOverwrite=-wrun_local_tc
+ExtMessageQueue=0
+
+[WinrunnerTransactionClient]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LINUX_EXT_LIBS=libzext.so
+SOLARIS_EXT_LIBS=libzext.so
+HPUX_EXT_LIBS=libzext.sl
+AIX_EXT_LIBS=libzext.so
+LibCfgFunc=any_configure
+UtilityExt=Transaction
+ExtMessageQueue=0
+
+[LrHostBalance]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=dca_on_bridge.dll
+LibCfgFunc=DCA_ExtCfg
+SecurityMode=On
+
+
+[LRHostBalanceAgent]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=datacollectionagent.dll
+LibCfgFunc=DCA_ExtCfg
+;; period in miliseconds to send host status to Main Application
+ExtCmdLineOverwrite=-lr_hbal_updt_period 30000
+SecurityMode=On
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[Multi]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LINUX_EXT_LIBS=libzext.so
+SOLARIS_EXT_LIBS=libzext.so
+HPUX_EXT_LIBS=libzext.sl
+AIX_EXT_LIBS=libzext.so
+LibCfgFunc=any_configure
+UtilityExt=lrun_api
+ExtIncludeFiles=globals.h
+SecurityMode=On
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[Ftp]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=MicFtp.dll
+WIN95_EXT_LIBS=MicFtp.dll
+LibCfgFunc=MicFtp_configure
+UtilityExt=lrun_api,Socket
+ExtIncludeFiles=globals.h
+ExtCmdLineOverwrite=-WinInet No
+ExtCmdLineConc=-UsingWinInet No
+SecurityRequirementsFiles=ftp.asl
+SecurityMode=On
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[Pop3]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=MicPop3.dll
+WIN95_EXT_LIBS=MicPop3.dll
+LibCfgFunc=MicPop3_configure
+UtilityExt=lrun_api,Socket
+ExtIncludeFiles=globals.h
+ExtCmdLineOverwrite=-WinInet No
+ExtCmdLineConc=-UsingWinInet No
+SecurityRequirementsFiles=pop3.asl
+SecurityMode=On
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[Smtp]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=MicSmtp.dll
+WIN95_EXT_LIBS=MicSmtp.dll
+LibCfgFunc=MicSmtp_configure
+UtilityExt=lrun_api,Socket
+ExtIncludeFiles=globals.h
+ExtCmdLineOverwrite=-WinInet No
+ExtCmdLineConc=-UsingWinInet No
+SecurityRequirementsFiles=smtp.asl
+SecurityMode=On
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[Socket]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=MicSocket.dll
+WIN95_EXT_LIBS=MicSocket.dll
+LibCfgFunc=MicSocket_configure
+UtilityExt=lrun_api
+SecurityRequirementsFiles=socket.asl
+SecurityMode=On
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[Vb-Interpreter]
+ExtPriorityType=interpreter
+WINNT_EXT_LIBS=vbscriptext.dll
+WIN95_EXT_LIBS=vbscriptext.dll
+LibCfgFunc=vbscript_configure
+UtilityExt=
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[Js-Interpreter]
+ExtPriorityType=interpreter
+WINNT_EXT_LIBS=vbscriptext.dll
+WIN95_EXT_LIBS=vbscriptext.dll
+LibCfgFunc=vbscript_configure
+UtilityExt=
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[Vba-Interpreter]
+ExtPriorityType=interpreter
+WINNT_EXT_LIBS=vbascriptext.dll
+WIN95_EXT_LIBS=vbascriptext.dll
+LibCfgFunc=vbascript_configure
+UtilityExt=
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[General-Vbs]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LibCfgFunc=any_configure
+UtilityExt=lrun_api,QTWeb
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[General-Js]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LibCfgFunc=any_configure
+UtilityExt=lrun_api,QTWeb
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[General-Vba]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LibCfgFunc=any_configure
+UtilityExt=lrun_api,QTWeb
+
+[EJB-testing]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LibCfgFunc=any_configure
+UtilityExt=lrun_api
+ExtCmdLineConc=-tcpBdwn_singleVuser
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[VoiceXML]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LINUX_EXT_LIBS=libzext.so
+SOLARIS_EXT_LIBS=libzext.so
+HPUX_EXT_LIBS=libzext.sl
+AIX_EXT_LIBS=libzext.so
+LibCfgFunc=any_configure
+UtilityExt=lrun_api,QTWeb
+ActiveScriptDoc=Mercury.HTTPVUser
+ActiveScriptGlobals=Mercury.HTTPDriver
+
+[Trigger]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=trigger.dll
+WIN95_EXT_LIBS=trigger.dll
+LINUX_EXT_LIBS=libtrigger.so
+SOLARIS_EXT_LIBS=libtrigger.so
+HPUX_EXT_LIBS=libtrigger.sl
+AIX_EXT_LIBS=libtrigger.so
+LibCfgFunc=trigger_configure
+
+[Scheduler]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=scheduler.dll
+WIN95_EXT_LIBS=scheduler.dll
+LINUX_EXT_LIBS=libscheduler.so
+SOLARIS_EXT_LIBS=libscheduler.so
+HPUX_EXT_LIBS=libscheduler.sl
+AIX_EXT_LIBS=libscheduler.so
+LibCfgFunc=scheduler_configure
+UtilityExt=Trigger
+
+[Execution]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=execution.dll
+WIN95_EXT_LIBS=execution.dll
+LINUX_EXT_LIBS=libexecution.so
+SOLARIS_EXT_LIBS=libexecution.so
+HPUX_EXT_LIBS=libexecution.sl
+AIX_EXT_LIBS=libexecution.so
+LibCfgFunc=execution_configure
+UtilityExt=Trigger
+GetLoaderInterfaceFunc=get_exec_interface
+AddLoaderClientInterfaceFunc=add_task_extension
+Loader=1
+
+[TopazAgent]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=topaz_agent.dll
+WIN95_EXT_LIBS=topaz_agent.dll
+LINUX_EXT_LIBS=libtopaz_agent.so
+SOLARIS_EXT_LIBS=libtopaz_agent.so
+HPUX_EXT_LIBS=libtopaz_agent.sl
+AIX_EXT_LIBS=libtopaz_agent.so
+LibCfgFunc=topaz_agent_configure
+GetLoaderInterfaceFunc=get_agent_interface
+AddLoaderClientInterfaceFunc=add_task_extension
+Loader=1
+		 
+[TopazAgentController]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=commcenter.dll
+WIN95_EXT_LIBS=commcenter.dll
+LINUX_EXT_LIBS=libcommcenter.so
+SOLARIS_EXT_LIBS=libcommcenter.so
+HPUX_EXT_LIBS=libcommcenter.sl
+AIX_EXT_LIBS=libcommcenter.so
+LibCfgFunc=commcenter_configure
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[DCOM]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LibCfgFunc=any_configure
+ExtIncludeFiles=user.h,interfaces.h,recordsets.inf
+UtilityExt=lrun_api,lrcCReplay
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[IMap]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=MicImap.dll
+WIN95_EXT_LIBS=MicImap.dll
+LibCfgFunc=MicIMap_configure
+ExtIncludeFiles=globals.h
+UtilityExt=lrun_api,Socket
+ExtCmdLineOverwrite=-WinInet No
+ExtCmdLineConc=-UsingWinInet No
+SecurityRequirementsFiles=imap.asl
+SecurityMode=On
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[Mapi]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=MicMapi.dll
+WIN95_EXT_LIBS=MicMapi.dll
+LibCfgFunc=MicMapi_configure
+ExtIncludeFiles=globals.h
+UtilityExt=lrun_api
+ExtCmdLineOverwrite=-WinInet No
+ExtCmdLineConc=-UsingWinInet No
+SecurityRequirementsFiles=mapi.asl
+SecurityMode=On
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[WPLUS]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LibCfgFunc=any_configure
+UtilityExt=lrun_api
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[HTTP]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=lrwreplaymain.dll
+WIN95_EXT_LIBS=lrwreplaymain.dll
+LINUX_EXT_LIBS=libLrwReplayMain.so
+SOLARIS_EXT_LIBS=libLrwReplayMain.so
+HPUX_EXT_LIBS=libLrwReplayMain.sl
+AIX_EXT_LIBS=libLrwReplayMain.so
+LibCfgFunc=web_configure
+UtilityExt=lrun_api
+ActiveScriptDoc=Mercury.HTTPVUser.2
+ActiveScriptGlobals=Mercury.HTTPDriver.2
+ExtMessageQueue=0
+ExtCmdLineOverwrite=-WinInet RTS(WEB/WinInetReplay/0)
+ExtCmdLineConc=-UsingWinInet RTS(WEB/WinInetReplay/0)
+ExtIncludeFiles=globals.h
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[MMS]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=MicMms.dll
+WIN95_EXT_LIBS=MicMms.dll
+LibCfgFunc=MicMms_configure
+ExtIncludeFiles=globals.h
+UtilityExt=lrun_api
+SecurityRequirementsFiles=mms.asl
+SecurityMode=On
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[Dns]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LibCfgFunc=any_configure
+UtilityExt=lrun_api,Socket
+ExtCmdLineOverwrite=-WinInet No
+ExtCmdLineConc=-UsingWinInet No
+ExtIncludeFiles=globals.h
+SecurityRequirementsFiles=dns.asl
+SecurityMode=On
+
+[rm_mgr]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=rm_mgr.dll
+LibCfgFunc=rm_mgr_mext_config
+UtilityExt=Trigger
+
+[dc_net_ext]
+ExtPriorityType=communication
+WINNT_EXT_LIBS=dcnet_capi.dll
+WIN95_EXT_LIBS=dcnet_capi.dll
+LINUX_EXT_LIBS=dcnet_capi.so
+SOLARIS_EXT_LIBS=dcnet_capi.so
+HPUX_EXT_LIBS=dcnet_capi.sl
+AIX_EXT_LIBS=dcnet_capi.so
+LibCfgFunc=dc_net_ext_cfg
+UtilityExt=HttpEngine
+
+[faserver]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=faserver.dll
+WIN95_EXT_LIBS=faserver.dll
+LINUX_EXT_LIBS=libfaserver.so
+SOLARIS_EXT_LIBS=libfaserver.so
+HPUX_EXT_LIBS=libfaserver.sl
+AIX_EXT_LIBS=libfaserver.so
+LibCfgFunc=flying_attrib_server_configure
+ExtMessageQueue=0
+SecurityMode=On
+
+[faclient]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=faclient.dll
+WIN95_EXT_LIBS=faclient.dll
+LINUX_EXT_LIBS=libfaclient.so
+SOLARIS_EXT_LIBS=libfaclient.so
+HPUX_EXT_LIBS=libfaclient.sl
+AIX_EXT_LIBS=libfaclient.so
+LibCfgFunc=flying_attrib_client_configure
+ExtMessageQueue=0
+
+[DailyReport]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=SummaryReport.dll
+LibCfgFunc=SummaryReport_configure 
+UtilityExt=Scheduler
+
+[ApmAlertEngine]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=AlertMdrvExt.dll
+WIN95_EXT_LIBS=AlertMdrvExt.dll
+LINUX_EXT_LIBS=libAlertMdrvExt.so
+SOLARIS_EXT_LIBS=libAlertMdrvExt.so
+HPUX_EXT_LIBS=libAlertMdrvExt.sl
+AIX_EXT_LIBS=libAlertMdrvExt.so
+LibCfgFunc=ApmAlertEngine_configure
+
+[ca_probe_ext]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=ca_probe_ext.dll
+WIN95_EXT_LIBS=ca_probe_ext.dll
+LibCfgFunc=ca_probe_ext_configure
+
+[HPOV_Probe]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=hpov_probe.dll
+WIN95_EXT_LIBS=hpov_probe.dll
+LibCfgFunc=HPOVProbe_Config
+
+[NmmtProxy]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=nmmt_proxy.dll
+WIN95_EXT_LIBS=nmmt_proxy.dll
+LibCfgFunc=NMMT_configure
+UtilityExt=Transaction
+
+[CollatorExt]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=collatorextension.dll
+WIN95_EXT_LIBS=collatorextension.dll
+LibCfgFunc=configure_latecollator_svc
+UtilityExt=mft_client
+ExtMessageQueue=0
+
+[HttpEngine]
+ExtPriorityType=protocol_replay
+WINNT_EXT_LIBS=HTTPEngine.dll
+LINUX_EXT_LIBS=libHTTPEngine.so
+SOLARIS_EXT_LIBS=libHTTPEngine.so
+HPUX_EXT_LIBS=libHTTPEngine.sl
+AIX_EXT_LIBS=libHTTPEngine.so
+LibCfgFunc=httpeng_configure
+UtilityExt=lrun_api,QTWeb
+SecurityMode=On
+
+[Alarm_Client]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=AlarmClient.dll
+WIN95_EXT_LIBS=AlarmClient.dll
+LibCfgFunc=alarm_client_ps_configure
+
+[AlarmManager]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=AlarmManager.dll
+WIN95_EXT_LIBS=AlarmManager.dll
+LibCfgFunc=tst_ps_configure
+ExtCmdLine=-lnch_attachable AttachToAlarmManager
+
+[CompBDExt]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=CompBDExt.dll
+WIN95_EXT_LIBS=CompBDExt.dll
+LibCfgFunc=CompBDExtDll_Config
+UsingLoaders=Transaction:CompBDTransExtCfg
+
+[two_way_comm]
+ExtPriorityType=two_way_comm
+WINNT_EXT_LIBS=two_way_comm.dll
+WIN95_EXT_LIBS=two_way_comm.dll
+LINUX_EXT_LIBS=libtwo_way_comm.so
+SOLARIS_EXT_LIBS=libtwo_way_comm.so
+HPUX_EXT_LIBS=libtwo_way_comm.sl
+AIX_EXT_LIBS=libtwo_way_comm.so
+LibCfgFunc=two_way_comm_configure
+ExtMessageQueue=0
+SecurityMode=On
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[Siebel_Oracle]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=lrd32.dll
+WIN95_EXT_LIBS=lrd32.dll
+SOLARIS_EXT_LIBS=liblrdsol.so
+HPUX_EXT_LIBS=liblrdhp.sl
+AIX_EXT_LIBS=liblrdibm.a
+LibCfgFunc=lrd_configure
+UtilityExt=lrun_api
+SecurityRequirementsFiles=lrd.asl
+SecurityMode=On
+ExtIncludeFiles=globals.h
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[Siebel_MSSQL]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=lrd32.dll
+WIN95_EXT_LIBS=lrd32.dll
+LibCfgFunc=lrd_configure
+UtilityExt=lrun_api
+SecurityRequirementsFiles=lrd.asl
+SecurityMode=On
+ExtIncludeFiles=globals.h
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[Siebel_DB2 CLI]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=lrd32.dll
+WIN95_EXT_LIBS=lrd32.dll
+LibCfgFunc=lrd_configure
+UtilityExt=lrun_api
+SecurityRequirementsFiles=lrd.asl
+SecurityMode=On
+ExtIncludeFiles=globals.h
+
+[AppServerBreakDown]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=apptxbdext.dll
+WIN95_EXT_LIBS=apptxbdext.dll
+LibCfgFunc=app_txbdext_configure
+UsingLoaders=Transaction:app_txbd_transac_ext_configure
+
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[MLdap]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=MicMLdap.dll
+WIN95_EXT_LIBS=MicMLdap.dll
+LibCfgFunc=MicLdap_configure
+UtilityExt=lrun_api
+ExtIncludeFiles=globals.h
+SecurityRequirementsFiles=mldap.asl
+SecurityMode=On
+
+[NetView_Probe]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=netview_probe.dll
+WIN95_EXT_LIBS=netview_probe.dll
+LibCfgFunc=HPOVProbe_Config
+
+[EmsPublisher]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=EmsPublisher.dll
+WIN95_EXT_LIBS=EmsPublisher.dll
+LibCfgFunc=ems_publisher_ext_cfg
+
+[Vbreakdown]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=vbreakdown.dll
+WIN95_EXT_LIBS=vbreakdown.dll
+LINUX_EXT_LIBS=libvbreakdown.so
+SOLARIS_EXT_LIBS=libvbreakdown.so
+LibCfgFunc=breakdown_configure
+UsingLoaders=Transaction:breakdown_tx_configure
+
+[VcNet]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LibCfgFunc=any_configure
+UtilityExt=lrun_api
+
+[VbNet]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LibCfgFunc=any_configure
+UtilityExt=lrun_api
+
+[CsNet]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=zext.dll
+WIN95_EXT_LIBS=zext.dll
+LibCfgFunc=any_configure
+UtilityExt=lrun_api
+
+[VsNetCom]
+ExtPriorityType=interpreter
+WINNT_EXT_LIBS=vsnetext.dll
+WIN95_EXT_LIBS=vsnetext.dll
+LibCfgFunc=vsnet_configure
+UtilityExt=
+
+[BMC_Probe]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=bmc_probe.dll
+WIN95_EXT_LIBS=bmc_probe.dll
+LibCfgFunc=BMCProbe_Config
+
+[iwc]
+ExtPriorityType=user_defined0
+WINNT_EXT_LIBS=infra_wc.dll
+WIN95_EXT_LIBS=infra_wc.dll
+LINUX_EXT_LIBS=libinfra_wc.so
+SOLARIS_EXT_LIBS=libinfra_wc.so
+HPUX_EXT_LIBS=libinfra_wc.sl
+AIX_EXT_LIBS=libinfra_wc.so
+UsingLoaders=launcher:infra_wc_cfg
+SecurityMode=On
+
+[iwc_rr]
+ExtPriorityType=user_defined0
+WINNT_EXT_LIBS=infra_wc.dll
+WIN95_EXT_LIBS=infra_wc.dll
+LINUX_EXT_LIBS=libinfra_wc.so
+SOLARIS_EXT_LIBS=libinfra_wc.so
+HPUX_EXT_LIBS=libinfra_wc.sl
+AIX_EXT_LIBS=libinfra_wc.so
+UsingLoaders=launcher:infra_wc_rr_cfg
+SecurityMode=On
+
+[AltRecorder]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=MdrvLauncherImp.dll
+WIN95_EXT_LIBS=MdrvLauncherImp.dll
+LibCfgFunc=AltRecorder_configure
+ExtMessageQueue=0
+
+[MicLogger]
+ExtPriorityType=communication
+WINNT_EXT_LIBS=miclogger.dll
+WIN95_EXT_LIBS=miclogger.dll
+LINUX_EXT_LIBS=libmiclogger.so
+SOLARIS_EXT_LIBS=libmiclogger.so
+HPUX_EXT_LIBS=libmiclogger.sl
+AIX_EXT_LIBS=libmiclogger.so
+LibCfgFunc=miclogger_configure
+SecurityMode=On
+
+[tss_dispatcher]
+ExtPriorityType=protocol
+UtilityExt=MicLogger
+WINNT_EXT_LIBS=tss_dispatcher.dll
+LINUX_EXT_LIBS=libtss_dispatcher.so
+SOLARIS_EXT_LIBS=libtss_dispatcher.so
+HPUX_EXT_LIBS=libtss_dispatcher.sl
+AIX_EXT_LIBS=libtss_dispatcher.so
+LibCfgFunc=tss_dispatcher_mext_config
+
+[tss_monitor]
+ExtPriorityType=protocol
+UtilityExt=MicLogger
+WINNT_EXT_LIBS=tss_monitor.dll
+LINUX_EXT_LIBS=libtss_monitor.so
+SOLARIS_EXT_LIBS=libtss_monitor.so
+HPUX_EXT_LIBS=libtss_monitor.sl
+AIX_EXT_LIBS=libtss_monitor.so
+LibCfgFunc=tss_monitor_mext_config
+
+[nanny_ext]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=nanny.dll
+WIN95_EXT_LIBS=nanny.dll
+LINUX_EXT_LIBS=libnanny.so
+SOLARIS_EXT_LIBS=libnanny.so
+HPUX_EXT_LIBS=libnanny.sl
+AIX_EXT_LIBS=libnanny.so
+LibCfgFunc=nanny_cfg
+SecurityMode=On
+
+[nanny_client_ext]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=nanny_client.dll
+WIN95_EXT_LIBS=nanny_client.dll
+LINUX_EXT_LIBS=libnanny_client.so
+SOLARIS_EXT_LIBS=libnanny_client.so
+HPUX_EXT_LIBS=libnanny_client.sl
+AIX_EXT_LIBS=libnanny_client.so
+LibCfgFunc=nanny_client_cfg
+
+[dispatcher_ext]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=dispatcher_ext.dll
+WIN95_EXT_LIBS=dispatcher_ext.dll
+LibCfgFunc=dispatcher_ext_cfg
+SOLARIS_EXT_LIBS=libdispatcher_ext.so
+
+[AlertEventsListener]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=AlertEventsListener.dll
+LINUX_EXT_LIBS=libAlertEventsListener.so
+SOLARIS_EXT_LIBS=libAlertEventsListener.so
+HPUX_EXT_LIBS=libAlertEventsListener.sl
+AIX_EXT_LIBS=libAlertEventsListener.so
+LibCfgFunc=AlertEventListenerExt_configure
+
+[ScriptTask]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=sctask.dll
+WIN95_EXT_LIBS=sctask.dll
+LINUX_EXT_LIBS=libsctask.so
+SOLARIS_EXT_LIBS=libsctask.so
+HPUX_EXT_LIBS=libsctask.sl
+AIX_EXT_LIBS=libsctask.so
+UsingLoaders=topazagent:agent_task_configure,execution:execution_task_configure
+
+[WebtraceTask]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=wttask.dll
+WIN95_EXT_LIBS=wttask.dll
+LINUX_EXT_LIBS=libwttask.so
+SOLARIS_EXT_LIBS=libwttask.so
+HPUX_EXT_LIBS=libwttask.sl
+AIX_EXT_LIBS=libwttask.so
+LibCfgFunc=webtrace_task_configure
+UsingLoaders=topazagent:agent_task_configure,execution:execution_task_configure
+UtilityExt=netmon_client
+
+[TopazSandbox]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=sandbox.dll
+WIN95_EXT_LIBS=sandbox.dll
+LINUX_EXT_LIBS=libsandbox.so
+SOLARIS_EXT_LIBS=libsandbox.so
+HPUX_EXT_LIBS=libsandbox.sl
+AIX_EXT_LIBS=libsandbox.so
+LibCfgFunc=sandbox_configure
+
+[Vsandbox]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=vsandbox.dll
+WIN95_EXT_LIBS=vsandbox.dll
+LINUX_EXT_LIBS=libvsandbox.so
+SOLARIS_EXT_LIBS=libvsandbox.so
+HPUX_EXT_LIBS=libvsandbox.sl
+AIX_EXT_LIBS=libvsandbox.so
+LibCfgFunc=vsandbox_configure
+UtilityExt=miclogger
+UsingLoaders=Transaction:vsandbox_trans_configure
+
+[ScriptLauncher]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=slauncher.dll
+WIN95_EXT_LIBS=slauncher.dll
+LINUX_EXT_LIBS=libslauncher.so
+SOLARIS_EXT_LIBS=libslauncher.so
+HPUX_EXT_LIBS=libslauncher.sl
+AIX_EXT_LIBS=libslauncher.so
+LibCfgFunc=slauncher_configure
+
+[HttpSender]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=httpsender.dll
+WIN95_EXT_LIBS=httpsender.dll
+LINUX_EXT_LIBS=libhttpsender.so
+SOLARIS_EXT_LIBS=libhttpsender.so
+HPUX_EXT_LIBS=libhttpsender.sl
+AIX_EXT_LIBS=libhttpsender.so
+LibCfgFunc=http_sender_configure
+
+
+[DataDepot]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=data_depot.dll
+WIN95_EXT_LIBS=data_depot.dll
+LINUX_EXT_LIBS=libdata_depot.so
+SOLARIS_EXT_LIBS=libdata_depot.so
+HPUX_EXT_LIBS=libdata_depot.sl
+AIX_EXT_LIBS=libdata_depot.so
+LibCfgFunc=data_depot_configure
+GetLoaderInterfaceFunc=get_data_depot_interface
+AddLoaderClientInterfaceFunc=add_client_interface
+Loader=1
+
+[TransData]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=transdata.dll
+WIN95_EXT_LIBS=transdata.dll
+LINUX_EXT_LIBS=libtransdata.so
+SOLARIS_EXT_LIBS=libtransdata.so
+HPUX_EXT_LIBS=libtransdata.sl
+AIX_EXT_LIBS=libtransdata.so
+UsingLoaders=datadepot:transdata_dd_configure,topaz_trans_server:trans_data_configure
+
+[WebtraceData]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=wtdata.dll
+WIN95_EXT_LIBS=wtdata.dll
+LINUX_EXT_LIBS=libwtdata.so
+SOLARIS_EXT_LIBS=libwtdata.so
+HPUX_EXT_LIBS=libwtdata.sl
+AIX_EXT_LIBS=libwtdata.so
+UsingLoaders=datadepot:webtracedata_dd_configure,topaz_trans_server:webtrace_data_configure
+
+[SchedulerTest]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=tscheduler.dll
+WIN95_EXT_LIBS=tscheduler.dll
+LINUX_EXT_LIBS=libtscheduler.so
+SOLARIS_EXT_LIBS=libtscheduler.so
+HPUX_EXT_LIBS=libtscheduler.sl
+AIX_EXT_LIBS=libtscheduler.so
+LibCfgFunc=tscheduler_configure
+
+[sample_publisher]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=sample_publisher.dll
+WIN95_EXT_LIBS=libsample_publisher.dll
+LINUX_EXT_LIBS=libsample_publisher.so
+SOLARIS_EXT_LIBS=libsample_publisher.so
+HPUX_EXT_LIBS=libsample_publisher.sl
+AIX_EXT_LIBS=libsample_publisher.so
+LibCfgFunc=sample_publisher_cfg
+UtilityExt=interpreter_manager,CCI_SERVER,BINARY_SERVER,JAVA_SERVER
+ExtMessageQueue=0
+
+[sample_printer]
+ExtPriorityType=user_defined0
+WINNT_EXT_LIBS=sample_printer.dll
+WIN95_EXT_LIBS=libsample_printer.dll
+LINUX_EXT_LIBS=libsample_printer.so
+SOLARIS_EXT_LIBS=libsample_printer.so
+HPUX_EXT_LIBS=libsample_printer.sl
+AIX_EXT_LIBS=libsample_printer.so
+LibCfgFunc=my_configure
+ExtMessageQueue=0
+
+[Vagent]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=vagent.dll
+WIN95_EXT_LIBS=vagent.dll
+LINUX_EXT_LIBS=libvagent.so
+SOLARIS_EXT_LIBS=libvagent.so
+HPUX_EXT_LIBS=libvagent.sl
+AIX_EXT_LIBS=libvagent.so
+LibCfgFunc=vagent_configure
+UsingLoaders=Transaction:vagent_trans_configure
+
+[TriggerTest]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=ttrigger.dll
+WIN95_EXT_LIBS=ttrigger.dll
+LINUX_EXT_LIBS=libttrigger.so
+SOLARIS_EXT_LIBS=libttrigger.so
+HPUX_EXT_LIBS=libttrigger.sl
+AIX_EXT_LIBS=libttrigger.so
+LibCfgFunc=ttrigger_configure
+
+[AlertReportService]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=AlertReportService.dll
+WIN95_EXT_LIBS=AlertReportService.dll
+LibCfgFunc=AlertReportService_configure
+
+[TEC_Probe]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=tec_probe.dll
+WIN95_EXT_LIBS=tec_probe.dll
+LibCfgFunc=TECProbe_Config
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[PS8]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=lrwreplaymain.dll
+WIN95_EXT_LIBS=lrwreplaymain.dll
+LINUX_EXT_LIBS=libLrwReplayMain.so
+SOLARIS_EXT_LIBS=libLrwReplayMain.so
+HPUX_EXT_LIBS=libLrwReplayMain.sl
+AIX_EXT_LIBS=libLrwReplayMain.so
+LibCfgFunc=web_configure
+UtilityExt=lrun_api
+ActiveScriptDoc=Mercury.HTTPVUser.2
+ActiveScriptGlobals=Mercury.HTTPDriver.2
+ExtMessageQueue=0
+ExtCmdLineOverwrite=-WinInet RTS(WEB/WinInetReplay/0)
+ExtCmdLineConc=-UsingWinInet RTS(WEB/WinInetReplay/0)
+SecurityRequirementsFiles=lrw.asl
+SecurityMode=On
+
+[EmailReports]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=EmailReports.dll
+WIN95_EXT_LIBS=EmailReports.dll
+LINUX_EXT_LIBS=libEmailReports.so
+SOLARIS_EXT_LIBS=libEmailReports.so
+HPUX_EXT_LIBS=libEmailReports.sl
+AIX_EXT_LIBS=libEmailReports.so
+LibCfgFunc=EmailReports_configure
+UtilityExt=Scheduler
+
+; Valid only from Topaz 4.5
+[aes_topaz]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=aes.dll
+WIN95_EXT_LIBS=aes.dll
+LINUX_EXT_LIBS=libaes.so
+SOLARIS_EXT_LIBS=libaes.so
+HPUX_EXT_LIBS=libaes.sl
+AIX_EXT_LIBS=libaes.so
+WINNT_DLLS=aes_script_api.dll
+WIN95_DLLS=aes_script_api.dll
+SOLARIS_DLLS=libaes_script_api.so
+LINUX_DLLS=libaes_script_api.so
+HPUX_DLLS=libaes_script_api.sl
+AIX_DLLS=libaes_script_api.so
+LibCfgFunc=aes_configure
+UtilityExt=interpreter_manager,CCI_SERVER,BINARY_SERVER,MicLogger
+ExtIncludeFiles=aes_script_capi.h
+
+
+
+[aes]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=aes.dll
+WIN95_EXT_LIBS=aes.dll
+LINUX_EXT_LIBS=libaes.so
+SOLARIS_EXT_LIBS=libaes.so
+HPUX_EXT_LIBS=libaes.sl
+AIX_EXT_LIBS=libaes.so
+WINNT_DLLS=aes_script_api.dll
+WIN95_DLLS=aes_script_api.dll
+SOLARIS_DLLS=libaes_script_api.so
+LINUX_DLLS=libaes_script_api.so
+HPUX_DLLS=libaes_script_api.sl
+AIX_DLLS=libaes_script_api.so
+LibCfgFunc=aes_configure
+UtilityExt=interpreter_manager,CCI_SERVER,BINARY_SERVER,MicLogger
+ExtIncludeFiles=aes_script_capi.h
+SecurityMode=On
+
+[aes_perl_transformer]
+WINNT_EXT_LIBS=aes_perl_transformer.dll
+WIN95_EXT_LIBS=aes_perl_transformer.dll
+LINUX_EXT_LIBS=libaes_perl_transformer.so
+SOLARIS_EXT_LIBS=libaes_perl_transformer.so
+HPUX_EXT_LIBS=libaes_perl_transformer.sl
+AIX_EXT_LIBS=libaes_perl_transformer.so
+UsingLoaders=PERL_SERVER:aes_perl_config
+
+
+[ce_client]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=ce_client.dll
+LINUX_EXT_LIBS=libce_client.so
+SOLARIS_EXT_LIBS=libce_client.so
+AIX_EXT_LIBS=libce_client.so
+HPUX_EXT_LIBS=libce_client.sl
+LibCfgFunc=ce_client_configure
+
+[ce_bridge_server]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=ce_bridge_server.dll
+LINUX_EXT_LIBS=libce_bridge_server.so
+SOLARIS_EXT_LIBS=libce_bridge_server.so
+AIX_EXT_LIBS=libce_bridge_server.so
+HPUX_EXT_LIBS=libce_bridge_server.sl
+LibCfgFunc=ce_bridge_configure
+
+[web_driver]
+ExtPriorityType=loader
+WINNT_EXT_LIBS=mod_mdrv.dll
+WIN95_EXT_LIBS=mod_mdrv.dll
+LINUX_EXT_LIBS=mod_mdrv.so
+SOLARIS_EXT_LIBS=mod_mdrv.so
+HPUX_EXT_LIBS=mod_mdrv.sl
+AIX_EXT_LIBS=mod_mdrv.so
+LibCfgFunc=web_driver_configure
+GetLoaderInterfaceFunc=get_loader_interface
+AddLoaderClientInterfaceFunc=add_loader_client
+Loader=1
+ExtCmdLine=-lnch_lock_server4parent
+DynamicUpdateInterval=600000
+LogLevel=FATAL
+
+
+
+[ApmApiReportExt]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=ApmApiServer.dll
+WIN95_EXT_LIBS=ApmApiServer.dll
+LINUX_EXT_LIBS=libapmapiserver.so
+SOLARIS_EXT_LIBS=libapmapiserver.so
+HPUX_EXT_LIBS=libapmapiserver.sl
+AIX_EXT_LIBS=libapmapiserver.so
+LibCfgFunc=ApmApiReportExt_Cfg
+
+[ApmApiReportExt2]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=ApmApiServer.dll
+WIN95_EXT_LIBS=ApmApiServer.dll
+LINUX_EXT_LIBS=libapmapiserver.so
+SOLARIS_EXT_LIBS=libapmapiserver.so
+HPUX_EXT_LIBS=libapmapiserver.sl
+AIX_EXT_LIBS=libapmapiserver.so
+LibCfgFunc=ApmApiReportExt_Cfg
+UsingLoaders=web_driver:get_loader_client_interface
+
+[netmon_client]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=netmon_client.dll
+WIN95_EXT_LIBS=netmon_client.dll
+LINUX_EXT_LIBS=libnetmon_client.so
+SOLARIS_EXT_LIBS=libnetmon_client.so
+HPUX_EXT_LIBS=libnetmon_client.sl
+AIX_EXT_LIBS=libnetmon_client.so
+LibCfgFunc=configure_netmon_client
+SecurityMode=On
+
+[netmon_server]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=netmon_server.dll
+WIN95_EXT_LIBS=netmon_server.dll
+LINUX_EXT_LIBS=libnetmon_server.so
+SOLARIS_EXT_LIBS=libnetmon_server.so
+HPUX_EXT_LIBS=libnetmon_server.sl
+AIX_EXT_LIBS=libnetmon_server.so
+LibCfgFunc=configure_netmon_server
+UtilityExt=Transaction
+SecurityMode=On
+
+[mw_gate]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=mw_gate.dll
+WIN95_EXT_LIBS=mw_gate.dll
+LINUX_EXT_LIBS=libmw_gate.so
+SOLARIS_EXT_LIBS=libmw_gate.so
+HPUX_EXT_LIBS=libmw_gate.sl
+AIX_EXT_LIBS=libmw_gate.so
+LibCfgFunc=configure_mw_gate
+ExtMessageQueue=0
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[Siebel_Web]
+ExtPriorityType=protocol_replay
+WINNT_EXT_LIBS=lrwreplaymain.dll
+WIN95_EXT_LIBS=lrwreplaymain.dll
+LINUX_EXT_LIBS=libLrwReplayMain.so
+SOLARIS_EXT_LIBS=libLrwReplayMain.so
+HPUX_EXT_LIBS=libLrwReplayMain.sl
+AIX_EXT_LIBS=libLrwReplayMain.so
+LibCfgFunc=web_configure
+UtilityExt=lrun_api
+ActiveScriptDoc=Mercury.HTTPVUser.2
+ActiveScriptGlobals=Mercury.HTTPDriver.2
+ExtMessageQueue=0
+ExtCmdLineOverwrite=-WinInet RTS(WEB/WinInetReplay/0)
+ExtCmdLineConc=-UsingWinInet RTS(WEB/WinInetReplay/0)
+SecurityRequirementsFiles=lrw.asl
+SecurityMode=On
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[Citrix_ICA]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=CitrixClientImpl.dll
+WIN95_EXT_LIBS=CitrixClientImpl.dll
+LibCfgFunc=citrix_gui_configure
+UtilityExt=lrun_api,HttpEngine
+ExtCmdLineOverwrite=-WinInet No
+ExtCmdLineConc=-UsingWinInet No -InjectLrSocks wfica32.exe
+ExtIncludeFiles=globals.h
+SecurityRequirementsFiles=citrix.asl
+SecurityMode=On
+
+[HttpEngTest]
+ExtPriorityType=protocol_engine
+WINNT_EXT_LIBS=HTTPEngineTest.dll
+LibCfgFunc=HttpEngTest_configure
+UtilityExt=HttpEngine
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[LrXml]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=LrXml.dll
+LibCfgFunc=lr_xml_configure
+SecurityRequirementsFiles=lrxml.asl
+SecurityMode=On
+SOLARIS_EXT_LIBS=libLrXml.so
+LINUX_EXT_LIBS=libLrXml.so
+AIX_EXT_LIBS=libLrXml.so
+HPUX_EXT_LIBS=libLrXml.sl
+ExtMessageQueue=0
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[DB2_CLI]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=lrd32.dll
+WIN95_EXT_LIBS=lrd32.dll
+LibCfgFunc=lrd_configure
+UtilityExt=lrun_api
+SecurityRequirementsFiles=lrd.asl
+SecurityMode=On
+ExtIncludeFiles=globals.h
+
+[sample_dumper]
+ExtPriorityType=user_defined0
+WINNT_EXT_LIBS=sample_dumper.dll
+WIN95_EXT_LIBS=libsample_dumper.dll
+LINUX_EXT_LIBS=libsample_dumper.so
+SOLARIS_EXT_LIBS=libsample_dumper.so
+HPUX_EXT_LIBS=libsample_dumper.sl
+AIX_EXT_LIBS=libsample_dumper.so
+LibCfgFunc=my_configure
+ExtMessageQueue=0
+
+[run_time_context]
+ExtPriorityType=protocol_engine
+WINNT_EXT_LIBS=run_time_context.dll
+LINUX_EXT_LIBS=librun_time_context.so
+SOLARIS_EXT_LIBS=librun_time_context.so
+AIX_EXT_LIBS=librun_time_context.so
+HPUX_EXT_LIBS=librun_time_context.sl
+LibCfgFunc=run_time_context_configure
+ExtMessageQueue=0
+SecurityMode=On
+
+[LeaderElection]
+ExtPriorityType=launcher
+WINNT_EXT_LIBS=leader_election.dll
+WIN95_EXT_LIBS=leader_election.dll
+LINUX_EXT_LIBS=libleader_election.so
+SOLARIS_EXT_LIBS=libleader_election.so
+HPUX_EXT_LIBS=libleader_election.sl
+AIX_EXT_LIBS=libleader_election.so
+LibCfgFunc=leaderelection_configure
+ExtMessageQueue=0
+SecurityMode=On
+
+[Palm] 
+ExtPriorityType=protocol 
+WINNT_EXT_LIBS=wsrun32.dll 
+WIN95_EXT_LIBS=wsrun32.dll 
+LINUX_EXT_LIBS=liblrs.so 
+SOLARIS_EXT_LIBS=liblrs.so 
+HPUX_EXT_LIBS=liblrs.sl 
+AIX_EXT_LIBS=liblrs.so 
+LibCfgFunc=winsock_exten_conf 
+UtilityExt=lrun_api,QTweb 
+ExtMessageQueue=0 
+ExtCmdLineOverwrite=-WinInet RTS(WEB/WinInetReplay/0)
+ExtCmdLineConc=-UsingWinInet RTS(WEB/WinInetReplay/0)
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[Siebel_DB2_CLI]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=lrd32.dll
+WIN95_EXT_LIBS=lrd32.dll
+LibCfgFunc=lrd_configure
+UtilityExt=lrun_api
+SecurityRequirementsFiles=lrd.asl
+SecurityMode=On
+ExtIncludeFiles=globals.h
+
+[fl_server]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=fl_server.dll
+WIN95_EXT_LIBS=fl_server.dll
+LINUX_EXT_LIBS=libfl_server.so
+SOLARIS_EXT_LIBS=libfl_server.so
+HPUX_EXT_LIBS=libfl_server.sl
+AIX_EXT_LIBS=libfl_server.so
+LibCfgFunc=floating_license_server_configure
+UtilityExt=LeaderElection
+
+[fl_client]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=fl_client.dll
+WIN95_EXT_LIBS=fl_client.dll
+LINUX_EXT_LIBS=libfl_client.so
+SOLARIS_EXT_LIBS=libfl_client.so
+HPUX_EXT_LIBS=libfl_client.sl
+AIX_EXT_LIBS=libfl_client.so
+LibCfgFunc=floating_license_client_configure
+SecurityMode=On
+UtilityExt=fl_server
+ExtCmdLineOverwrite=-fls_type local
+
+[EventSink]
+ExtPriorityType=loader
+WINNT_EXT_LIBS=ems_event_sink.dll
+WIN95_EXT_LIBS=ems_event_sink.dll
+LibCfgFunc=event_sink_mdrv_handshake
+GetLoaderInterfaceFunc=eventSinkLoader
+AddLoaderClientInterfaceFunc=event_source_handshake
+Loader=1
+GetLoaderCommandLine=
+
+
+
+[SampleEventSource]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=event_source_sample.dll
+WIN95_EXT_LIBS=event_source_sample.dll
+LibCfgFunc=event_source_mdrv_handshake
+UsingLoaders=EventSink:gp_handshake
+UtilityExt=EventSink
+
+
+[HPOVOEventSource]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=hp_ovo_probe.dll
+WIN95_EXT_LIBS=hp_ovo_probe.dll
+LibCfgFunc=hp_ovo_probe_mdrv_handshake
+UsingLoaders=EventSink:event_sink_handshake
+UtilityExt=EventSink
+
+[Log_Probe]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=log_probe.dll
+WIN95_EXT_LIBS=log_probe.dll
+LibCfgFunc=log_probe_mdrv_handshake
+
+[ss_main_driver_ext]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=ss_main_driver_ext.dll
+LINUX_EXT_LIBS=libss_main_driver_ext.so
+SOLARIS_EXT_LIBS=libss_main_driver_ext.so 
+HPUX_EXT_LIBS=libss_main_driver_ext.sl
+AIX_EXT_LIBS=libss_main_driver_ext.so
+LibCfgFunc=ss_main_driver_ext_config
+
+[ss_opsecmon_ext]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=ss_opsecmon_ext.dll
+LINUX_EXT_LIBS=libss_opsecmon_ext.so
+SOLARIS_EXT_LIBS=libss_opsecmon_ext.so 
+HPUX_EXT_LIBS=libss_opsecmon_ext.sl
+AIX_EXT_LIBS=libss_opsecmon_ext.so
+LibCfgFunc=ss_opsecmon_ext_config
+
+[PerformanceMonitorExt]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=PerformanceMonitorExt.dll
+LINUX_EXT_LIBS=PerformanceMonitorExt.so
+SOLARIS_EXT_LIBS=PerformanceMonitorExt.so
+HPUX_EXT_LIBS=PerformanceMonitorExt.sl
+AIX_EXT_LIBS=PerformanceMonitorExt.so
+LibCfgFunc=ss_performance_monitor_config
+
+
+[TMCMdrvExt]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=TMCMdrvExt.dll
+WIN95_EXT_LIBS=TMCMdrvExt.dll
+SOLARIS_EXT_LIBS=libTMCMdrvExt.so
+LibCfgFunc=TMCMdrvExt_cfg
+GetLoaderInterfaceFunc=get_tmc_mdrvext_interface
+AddLoaderClientInterfaceFunc=add_client_interface
+Loader=1
+
+[httpchan]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=httpchan.dll
+WIN95_EXT_LIBS=httpchan.dll
+LINUX_EXT_LIBS=libhttpchan.so
+SOLARIS_EXT_LIBS=libhttpchan.so
+HPUX_EXT_LIBS=libhttpchan.sl
+AIX_EXT_LIBS=libhttpchan.so
+LibCfgFunc=httpchan_configure
+UsingLoaders=web_driver:get_httpchan_handlers
+
+[mshunra_ext]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=mshunra_ext.dll
+WIN95_EXT_LIBS=mshunra_ext.dll
+LINUX_EXT_LIBS=libmshunra_ext.so
+SOLARIS_EXT_LIBS=libmshunra_ext.so
+HPUX_EXT_LIBS=libmshunra_ext.sl
+AIX_EXT_LIBS=libmshunra_ext.so
+LibCfgFunc=mshunra_configure
+ExtMessageQueue=0
+SecurityMode=On
+
+[wan_emulation_ext]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=wan_emulation_ext.dll
+WIN95_EXT_LIBS=wan_emulation_ext.dll
+LibCfgFunc=wan_emulation_configure
+ExtMessageQueue=0
+SecurityMode=On
+
+[msg_viewer_loader]
+ExtPriorityType=loader
+WINNT_EXT_LIBS=msg_viewer.dll
+WIN95_EXT_LIBS=msg_viewer.dll
+LINUX_EXT_LIBS=libmsg_viewer.so
+SOLARIS_EXT_LIBS=libmsg_viewer.so
+HPUX_EXT_LIBS=libmsg_viewer.sl
+AIX_EXT_LIBS=libmsg_viewer.so
+LibCfgFunc=msg_viewer_config
+GetLoaderInterfaceFunc=get_msg_viewer_loader_interface
+AddLoaderClientInterfaceFunc=add_client_interface
+ExtMessageQueue=0
+UtilityExt=msg_viewer_string
+Loader=1
+
+[msg_viewer_string]
+ExtPriorityType=user_defined0
+WINNT_EXT_LIBS=msg_viewer_string.dll
+WIN95_EXT_LIBS=msg_viewer_string.dll
+LINUX_EXT_LIBS=libmsg_viewer_string.so
+SOLARIS_EXT_LIBS=libmsg_viewer_string.so
+HPUX_EXT_LIBS=libmsg_viewer_string.sl
+AIX_EXT_LIBS=libmsg_viewer_string.so
+UsingLoaders=msg_viewer_loader:msg_viewer_string_cfg
+
+[msg_viewer_samples]
+ExtPriorityType=user_defined0
+WINNT_EXT_LIBS=msg_viewer_samples.dll
+WIN95_EXT_LIBS=msg_viewer_samples.dll
+LINUX_EXT_LIBS=libmsg_viewer_samples.so
+SOLARIS_EXT_LIBS=libmsg_viewer_samples.so
+HPUX_EXT_LIBS=libmsg_viewer_samples.sl
+AIX_EXT_LIBS=libmsg_viewer_samples.so
+UsingLoaders=msg_viewer_loader:msg_viewer_sample_cfg
+
+[TopazAgent46]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=topaz_agent.dll
+WIN95_EXT_LIBS=topaz_agent.dll
+LINUX_EXT_LIBS=libtopaz_agent.so
+SOLARIS_EXT_LIBS=libtopaz_agent.so
+HPUX_EXT_LIBS=libtopaz_agent.sl
+AIX_EXT_LIBS=libtopaz_agent.so
+LibCfgFunc=topaz_agent_configure
+
+[RunLogicExt]
+ExtPriorityType=action_logic
+WINNT_EXT_LIBS=runlogic.dll
+WIN95_EXT_LIBS=runlogic.dll
+LINUX_EXT_LIBS=librunlogic.so
+SOLARIS_EXT_LIBS=librunlogic.so
+HPUX_EXT_LIBS=librunlogic.sl
+AIX_EXT_LIBS=librunlogic.so
+UsingLoaders=Transaction:runlogic_trans_ext_configure
+SecurityMode=On
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[WebJS]
+ExtPriorityType=protocol_engine
+WINNT_EXT_LIBS=lrwreplaymain.dll
+WIN95_EXT_LIBS=lrwreplaymain.dll
+LINUX_EXT_LIBS=libLrwReplayMain.so
+SOLARIS_EXT_LIBS=libLrwReplayMain.so
+HPUX_EXT_LIBS=libLrwReplayMain.sl
+AIX_EXT_LIBS=libLrwReplayMain.so
+LibCfgFunc=web_configure
+UtilityExt=lrun_api
+ActiveScriptDoc=Mercury.HTTPVUser.2
+ActiveScriptGlobals=Mercury.HTTPDriver.2
+ExtMessageQueue=0
+ExtCmdLineOverwrite=-WinInet RTS(WEB/WinInetReplay/0)
+ExtCmdLineConc=-UsingWinInet RTS(WEB/WinInetReplay/0)
+SecurityRequirementsFiles=lrw.asl
+SecurityMode=On
+ExtIncludeFiles=globals.h
+
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[PS8WebJS]
+ExtPriorityType=protocol_engine
+WINNT_EXT_LIBS=lrwreplaymain.dll
+WIN95_EXT_LIBS=lrwreplaymain.dll
+LINUX_EXT_LIBS=libLrwReplayMain.so
+SOLARIS_EXT_LIBS=libLrwReplayMain.so
+HPUX_EXT_LIBS=libLrwReplayMain.sl
+AIX_EXT_LIBS=libLrwReplayMain.so
+LibCfgFunc=web_configure
+UtilityExt=lrun_api
+ActiveScriptDoc=Mercury.HTTPVUser.2
+ActiveScriptGlobals=Mercury.HTTPDriver.2
+ExtMessageQueue=0
+ExtCmdLineOverwrite=-WinInet RTS(WEB/WinInetReplay/0)
+ExtCmdLineConc=-UsingWinInet RTS(WEB/WinInetReplay/0)
+SecurityRequirementsFiles=lrw.asl
+SecurityMode=On
+ExtIncludeFiles=globals.h
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[ComPlusMonClient]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=mon_cplus_clnt.dll
+WIN95_EXT_LIBS=mon_cplus_clnt.dll
+LibCfgFunc=ComPlus_configure
+ExtMessageQueue=0
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[ComPlusMonServer]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=mon_cplus_srvr.dll
+WIN95_EXT_LIBS=mon_cplus_srvr.dll
+LibCfgFunc=ComPlus_configure
+ExtMessageQueue=0
+SecurityMode=On
+
+[vslauncher]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=vslauncher.dll
+WIN95_EXT_LIBS=vslauncher.dll
+LINUX_EXT_LIBS=libvslauncher.so
+SOLARIS_EXT_LIBS=libvslauncher.so
+HPUX_EXT_LIBS=libvslauncher.sl
+AIX_EXT_LIBS=libvslauncher.so
+LibCfgFunc=vslauncher_configure
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[JamaicaColouringExt]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=jamaica_colouring_ext.dll
+WIN95_EXT_LIBS=jamaica_colouring_ext.dll
+LINUX_EXT_LIBS=libjamaica_colouring_ext.so
+SOLARIS_EXT_LIBS=libjamaica_colouring_ext.so
+HPUX_EXT_LIBS=libjamaica_colouring_ext.sl
+AIX_EXT_LIBS=libjamaica_colouring_ext.so
+LibCfgFunc=jamaica_colouring_configure
+ExtMessageQueue=0
+SecurityMode=On
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[jamaica_srv]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=jamaica_srv.dll
+WIN95_EXT_LIBS=jamaica_srv.dll
+LINUX_EXT_LIBS=libjamaica_srv.so
+SOLARIS_EXT_LIBS=libjamaica_srv.so
+HPUX_EXT_LIBS=libjamaica_srv.sl
+AIX_EXT_LIBS=libjamaica_srv.so
+LibCfgFunc=EXTENSION_CONFIGURE_FUNC
+ExtMessageQueue=0
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[jamaica_topaz_srv]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=jamaica_srv.dll
+WIN95_EXT_LIBS=jamaica_srv.dll
+LINUX_EXT_LIBS=libjamaica_srv.so
+SOLARIS_EXT_LIBS=libjamaica_srv.so
+HPUX_EXT_LIBS=libjamaica_srv.sl
+AIX_EXT_LIBS=libjamaica_srv.so
+LibCfgFunc=EXTENSION_CONFIGURE_FUNC
+ExtMessageQueue=0
+SecurityMode=On
+
+;; ***** DEPRECATED *****
+;; An updated version of this section may appear in one of the files in the directory dat\mdrv.
+;; Do not edit the section in this file if it appears in one of the files in dat\mdrv.
+[SAP_Web]
+ExtPriorityType=protocol_replay
+WINNT_EXT_LIBS=lrwreplaymain.dll
+WIN95_EXT_LIBS=lrwreplaymain.dll
+LINUX_EXT_LIBS=libLrwReplayMain.so
+SOLARIS_EXT_LIBS=libLrwReplayMain.so
+HPUX_EXT_LIBS=libLrwReplayMain.sl
+AIX_EXT_LIBS=libLrwReplayMain.so
+LibCfgFunc=web_configure
+UtilityExt=lrun_api
+ActiveScriptDoc=Mercury.HTTPVUser.2
+ActiveScriptGlobals=Mercury.HTTPDriver.2
+ExtMessageQueue=0
+ExtCmdLineOverwrite=-WinInet RTS(WEB/WinInetReplay/0)
+ExtCmdLineConc=-UsingWinInet RTS(WEB/WinInetReplay/0)
+SecurityRequirementsFiles=lrw.asl
+SecurityMode=On
+ExtIncludeFiles=globals.h
+
+[comm_meappext]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=comm_cntrlext.dll
+WIN95_EXT_LIBS=comm_cntrlext.dll
+LibCfgFunc=cntrl_comm_config
+
+
+[web_data_entry]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=web_data_entry.dll
+WIN95_EXT_LIBS=web_data_entry.dll
+LINUX_EXT_LIBS=libweb_data_entry.so
+SOLARIS_EXT_LIBS=libweb_data_entry.so
+HPUX_EXT_LIBS=libweb_data_entry.sl
+AIX_EXT_LIBS=libweb_data_entry.so
+LibCfgFunc=wde_configure
+UsingLoaders=web_driver:get_wde_interface
+DynamicUpdateInterval=600000
+
+[sample_listener]
+ExtPriorityType=user_defined0
+WINNT_EXT_LIBS=sample_listener.dll
+WIN95_EXT_LIBS=sample_listener.dll
+LINUX_EXT_LIBS=libsample_listener.so
+SOLARIS_EXT_LIBS=libsample_listener.so
+HPUX_EXT_LIBS=libsample_listener.sl
+AIX_EXT_LIBS=libsample_listener.so
+LibCfgFunc=data_listener_configure
+UtilityExt=interpreter_manager,CCI_SERVER,BINARY_SERVER,JAVA_SERVER
+
+[bus_services_client]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=bus_services_client.dll
+WIN95_EXT_LIBS=bus_services_client.dll
+LINUX_EXT_LIBS=libbus_services_client.so
+SOLARIS_EXT_LIBS=libbus_services_client.so
+HPUX_EXT_LIBS=libbus_services_client.sl
+AIX_EXT_LIBS=libbus_services_client.so
+LibCfgFunc=bus_services_configure
+UsingLoaders=web_driver:get_bus_services_client_interface
+
+[http_request_recorder]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=request_recorder.dll
+WIN95_EXT_LIBS=request_recorder.dll
+LINUX_EXT_LIBS=librequest_recorder.so
+SOLARIS_EXT_LIBS=librequest_recorder.so
+HPUX_EXT_LIBS=librequest_recorder.sl
+AIX_EXT_LIBS=librequest_recorder.so
+LibCfgFunc=request_recorder_configure
+UsingLoaders=web_driver:get_request_recorder_interface
+
+[rtc_client]
+ExtPriorityType=internal
+WINNT_EXT_LIBS=rtc_client.dll
+LINUX_EXT_LIBS=librtc_client.so
+SOLARIS_EXT_LIBS=librtc_client.so
+AIX_EXT_LIBS=librtc_client.so
+HPUX_EXT_LIBS=librtc_client.sl
+LibCfgFunc=rtc_client_configure
+ExtMessageQueue=0
+UtilityExt=ce_client
+
+[ss_dispatcher_ext]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=ss_dispatcher_ext.dll
+LibCfgFunc=ss_dispatcher_ext_config
+
+[ExtensionInfo]
+ExtPriorityType=protocol
+WINNT_EXT_LIBS=extension_info.dll
+WIN95_EXT_LIBS=extension_info.dll
+LINUX_EXT_LIBS=libextension_info.so
+SOLARIS_EXT_LIBS=libextension_info.so
+HPUX_EXT_LIBS=libextension_info.sl
+AIX_EXT_LIBS=libextension_info.so
+LibCfgFunc=any_configure
+

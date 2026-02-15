@@ -1,0 +1,13 @@
+[t8]
+FileName1=t8_JSFormSubmit.html
+URL1=http://127.0.0.1:1080/WebTours/JSFormSubmit.js
+Total=1
+ContentType=application/x-javascript
+SnapshotXmlFile=snapshot_8.xml
+RequestHeaderFile=t8_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t8_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb
+[AdditionalInfo]
+IsIgnorable=1

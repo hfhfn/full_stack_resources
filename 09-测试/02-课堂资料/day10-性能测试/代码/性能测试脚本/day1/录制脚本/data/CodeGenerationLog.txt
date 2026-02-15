@@ -1,0 +1,586 @@
+****** Start Log Message ******
+Web Recorder version : 11.0.0.8859 
+Recording Mode: HTML-based script
+Correlation is enabled system wide
+Not recording headers
+Not excluding content types
+Do not record this content types as a resource:
+	text/html
+	text/xml
+Reset context between actions
+Record non-HTML elements in current HTML function
+Protocol Type: Multi-QTWeb
+
+$$$$$$ End Log Message $$$$$$
+
+Code generation version: 11.0.0.8859
+
+****** Request Header For Transaction With Id 110 ******
+GET /WebTours/ HTTP/1.1
+Accept: */*
+Accept-Language: zh-cn
+User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E)
+Accept-Encoding: gzip, deflate
+Host: 127.0.0.1:1080
+Connection: Keep-Alive
+
+
+$$$$$$ Request Header For Transaction With Id 110 Ended $$$$$$
+
+****** Response Header For Transaction With Id 110 ******
+HTTP/1.1 200 Ok
+Server: Xitami
+Date: Tue, 21 May 2019 09:48:12 GMT
+Content-type: text/html
+Content-length: 312
+Last-modified: Tue, 08 May 2007 11:40:23 GMT
+
+
+$$$$$$ Response Header For Transaction With Id 110 Ended $$$$$$
+
+****** Response Body For Transaction With Id 110 ******
+<HTML>
+<HEAD>
+<title>Web Tours</title>
+<frameset rows = "65,*" border=1 bordercolor=#E0E7F1>
+<frame name="header" src=header.html scrolling=no noresize marginheight=2 marginwidth=2>
+<frame name="body" src=welcome.pl?signOff=true scrolling=auto noresize marginheight=2 marginwidth=2>
+</frameset>
+</head>
+</html>
+
+
+$$$$$$ Response Body For Transaction With Id 110 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+The Node has no URL
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Add Event For Transaction With Id 110 ****** (Location Flag : tFlagInsertEnd, Location ID : 110)
+	web_url("WebTours",
+		"URL=http://127.0.0.1:1080/WebTours/",
+		"Resource=0",
+		"RecContentType=text/html",
+		"Referer=",
+		"Snapshot=t8.inf",
+		"Mode=HTML",
+		LAST);
+
+
+$$$$$$ Add Event For Transaction With Id 110 Ended $$$$$$
+
+****** Request Header For Transaction With Id 111 ******
+GET /WebTours/header.html HTTP/1.1
+Accept: image/jpeg, application/x-ms-application, image/gif, application/xaml+xml, image/pjpeg, application/x-ms-xbap, application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint, */*
+Referer: http://127.0.0.1:1080/WebTours/
+Accept-Language: zh-CN
+User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E)
+Accept-Encoding: gzip, deflate
+Host: 127.0.0.1:1080
+Connection: Keep-Alive
+
+
+$$$$$$ Request Header For Transaction With Id 111 Ended $$$$$$
+
+****** Response Header For Transaction With Id 111 ******
+HTTP/1.1 200 Ok
+Server: Xitami
+Date: Tue, 21 May 2019 09:48:12 GMT
+Content-type: text/html
+Content-length: 692
+Last-modified: Tue, 08 May 2007 11:40:23 GMT
+
+
+$$$$$$ Response Header For Transaction With Id 111 Ended $$$$$$
+
+****** Response Body For Transaction With Id 111 ******
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML><HEAD></HEAD>
+<BODY bgcolor=#003366 leftmargin="0" marginheight="0" marginwidth="0" topmargin="0">
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+		<table width="100%" border="0" cellspacing="0" cellpadding="0">
+			<tr>
+				<td align="left" valign="middle" width="50%"><img src="images/hp_logo.png" alt="" height="45" width="69" align="absmiddle" border="0"><img src="images/webtours.png" alt="" height="45" width="130" align="absmiddle" border="0"></td>
+				<td align="right"></td>
+				<td></td>
+			</tr>
+		</table>
+	</BODY>
+
+$$$$$$ Response Body For Transaction With Id 111 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/WebTours/
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Request Header For Transaction With Id 114 ******
+GET /WebTours/images/hp_logo.png HTTP/1.1
+Accept: */*
+Referer: http://127.0.0.1:1080/WebTours/header.html
+Accept-Language: zh-CN
+User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E)
+Accept-Encoding: gzip, deflate
+Host: 127.0.0.1:1080
+Connection: Keep-Alive
+
+
+$$$$$$ Request Header For Transaction With Id 114 Ended $$$$$$
+
+****** Response Header For Transaction With Id 114 ******
+HTTP/1.1 200 Ok
+Server: Xitami
+Date: Tue, 21 May 2019 09:48:12 GMT
+Content-type: image/png
+Content-length: 601
+Last-modified: Mon, 08 Feb 2010 08:51:43 GMT
+
+
+$$$$$$ Response Header For Transaction With Id 114 Ended $$$$$$
+
+****** Response Body For Transaction With Id 114 ******
+âPNG
+\x1A
+\x00\x00\x00IHDR\x00\x00\x00E\x00\x00\x00-\x08\x03\x00\x00\x00œÙV,\x00\x00\x00\x04gAMA\x00\x00÷ÿ‘OX2\x00\x00\x00\x19tEXtSoftware\x00Adobe ImageReadyq…e<\x00\x00\x000PLTE\x01/c<b\x89\xFF\xFF\xFF\x15Cr_~\x9E\x7Fô≤ú∞ƒÚı˜Õ◊·¡Œ⁄±¿–Ÿ·Ë‚ÁÓÍÓÚÓÚ\xF5\x003fJQw \x00\x00\x00\x10tRNS\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x00\xE0#]\x19\x00\x00\x01ìIDATx⁄ÏV]o\xC3 \x0C\xC4\x18L\x08$\xFB\xFF\xFFv˛ÄuM2¢ΩL\xCA=–™\x8A/>s∂Î>\xFE\x02Óa˘ü,HÈà\x80\xB5\x1D'Ï—]≤ê?¢bÙ~√ê\xFC\x15\xE2%À~|å¿-|:\x04\x08TœÔ∏d9ºq\x01ÁÄ?ÉS`(\x07\x964¿B»°,≤†k@öf!\x8D+¢˛\x858…í5\x03\x11\x04\xEE'ö_Yí≈≤Ñ≈Ω!œ∞\x90\x15¢ä \xCD
+\x15ú]\x1Agi\xA9\x04˝æsùÅmÊSZ——8K∂ÙWÔ˜™w-±E\x8D\x06\xE3,v/\xC8?\x04+∞‹\x15nÍù2\xCC\x02˝BviÅ™\xD2 H3hÇS,Y™¨-@"rµ¢«Q\x16+Æj\xD1\x03w\x11‘ö!Ã±Dq\x7F\x14«p`\xC2 ->√bää(P«∞ñ’ÙÕ(“Ãª†\x04™Â\xAB\x19∆´K›˝Z÷ÿ∆ï5√¯Ms\x01\xC4\x1D\xCD"|M\x1BmÕE\x13Æ„P(ÀÇ|dÏ≠cÉf\xA2\x03¸Ço”†\x00√fEöô/ØŸÑ•∑¯ÙdË]›¸\x01˜¶\x14wPèî—{wb\xF23·€§∫;\xBD\x19+\x98 S7∫IN[ÕÁ VÕº÷∆\xB7\x1A],Q\xF5\x1D÷âãÎq£ÀäNU\x8E\x0B\xF08~˛K=,\x13\xF8\x14`\x00G2p	^»€u\x00\x00\x00\x00IENDÆB`\x82
+$$$$$$ Response Body For Transaction With Id 114 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/WebTours/
+	/WebTours/header.html
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Request Header For Transaction With Id 117 ******
+GET /WebTours/welcome.pl?signOff=true HTTP/1.1
+Accept: image/jpeg, application/x-ms-application, image/gif, application/xaml+xml, image/pjpeg, application/x-ms-xbap, application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint, */*
+Referer: http://127.0.0.1:1080/WebTours/
+Accept-Language: zh-CN
+User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E)
+Accept-Encoding: gzip, deflate
+Host: 127.0.0.1:1080
+Connection: Keep-Alive
+
+
+$$$$$$ Request Header For Transaction With Id 117 Ended $$$$$$
+
+****** Response Header For Transaction With Id 117 ******
+HTTP/1.1 200 Ok
+Server: Xitami
+Date: Tue, 21 May 2019 09:48:12 GMT
+Cache-control: no-cache
+Expires: 0
+Content-length: 630
+Content-type: text/html; charset=ISO-8859-1
+Date: Tue, 21 May 2019 09:48:12 GMT
+Set-cookie: MTUserInfo=; path=/; expires=Mon, 20-May-2019 09:48:12 GMT
+Set-cookie: MSO=SID&1558432092&MSO_JSFormSubmit1&on&MSO_ServerErrorsProb&50&MSO_ServerLoadProb&50; path=/
+
+
+$$$$$$ Response Header For Transaction With Id 117 Ended $$$$$$
+
+****** Response Body For Transaction With Id 117 ******
+<!-- 
+ A Session ID has been created and loaded into a cookie called MSO.
+ Also, the server options have been loaded into the cookie called
+ MSO as well.  The server options can be set via the Admin page.
+ --->
+
+<html>
+<title>Web Tours</title>
+   <!-- Frame Set -->
+   <frameset cols="160,*" border=1 frameborder=1>
+      <!-- Navigation Frame -->
+      <frame src=nav.pl?in=home name=navbar marginheight=2 marginwidth=2 
+            noresize scrolling=auto>
+      <!-- Home Frame -->
+      <frame src=/WebTours/home.html name=info marginheight=2 marginwidth=2 
+            noresize scrolling=auto>
+   </frameset>
+
+</body>
+</html>
+$$$$$$ Response Body For Transaction With Id 117 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/WebTours/
+	/WebTours/header.html
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Request Header For Transaction With Id 118 ******
+GET /WebTours/images/webtours.png HTTP/1.1
+Accept: */*
+Referer: http://127.0.0.1:1080/WebTours/header.html
+Accept-Language: zh-CN
+User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E)
+Accept-Encoding: gzip, deflate
+Host: 127.0.0.1:1080
+Connection: Keep-Alive
+
+
+$$$$$$ Request Header For Transaction With Id 118 Ended $$$$$$
+
+****** Response Header For Transaction With Id 118 ******
+HTTP/1.1 200 Ok
+Server: Xitami
+Date: Tue, 21 May 2019 09:48:12 GMT
+Content-type: image/png
+Content-length: 818
+Last-modified: Mon, 08 Feb 2010 08:51:43 GMT
+
+
+$$$$$$ Response Header For Transaction With Id 118 Ended $$$$$$
+
+****** Response Body For Transaction With Id 118 ******
+âPNG
+\x1A
+\x00\x00\x00IHDR\x00\x00\x00\x82\x00\x00\x00-\x08\x03\x00\x00\x00UóC\xF4\x00\x00\x00\x04gAMA\x00\x00÷ÿ‘OX2\x00\x00\x00\x19tEXtSoftware\x00Adobe ImageReadyq…e<\x00\x00\x000PLTE\xFF\xFF\xFFwí≠ª…÷Di\x8F\x11ApÓÒı›‰Î3\\ÖÃ÷‡ô≠¬fÖ£"Nz™ªÃà†∏Uw\x99\x003fßèL\xB5\x00\x00\x00\x10tRNS\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\xFF\x00\xE0#]\x19\x00\x00\x02lIDATx⁄Ïñ€í§ \x0C\x86\x03Ñ≥8\xEF\xFF∂õ\x10\x0EÍ∂„\tœVm¡Ö\x85(ÌG\xF2\xFFI√◊?\x1F\xB0\x10\x16¬BX\x08\x0B\xE1\x7FBH:}\x10\x01\x0FS\x7F∑KÅ˙ ÇÜq\xC0\x02É«BæE00Ü~\x0BÇÇÿßn\xD0\x18p˜QöÜÖ@◊Ú\x16\x84\x0Cvûn\x1B\xF1(\x0Fâ–`\xDE'G\xD7\x7F,Rds_Ûø\x890Nl]\xFFRæ‰·”\x08\x1E\x82\x18\x0FJn”É>~\x05°´\x7F£‡\x87>›Ÿ£E[\x1DMGHõkwG\x04T⁄ÖMdlî¨)%\x17•…1\x18Cà˛\x01!\xD6#"\x07?\xB5)+‘X\xD0\x04QW\x08AÉ”\x01Fx\x1AÇ∑`\xB5\x06\x08x\x88\x15@Ωê∂¬\x17íu6{í÷\x0BÑΩ\x1A°Ó\xAF\x1C≤‡≠Â}\x188"
+¨ÂO\x1A\xD73"\x08Y\x081\xD6\x0C^\x10h? ZV\x0FQ¿∫Er¿Ÿ†∞$ûô)M\x05\xED\x1Cæ[X\x10∂N¥Ò\x96\x0BB\x92\x14\xEE?\xE9\x11ú˙¶ƒƒˆ∞T%\xB1)S®‘\xA8\x18±ëU\x04\x1CŒ©\xDB/\x08^äçM?@`\x03(ÅÊ\x1Fı\wÁ∏\x0E\xAE\x1B\xD3\x11}V\x11Ã¨`\x0E˛Bh\x1DŒÇS¯Ñ¿±v\xAD?PD
+\xFF\x12ïh’«7\x08#…·\x0E\x81<„¿˘ßf\x1D ıH'àU\x15˛‘Çf\xA1(«D‰˘\x92(Fç˘D®Ÿ€û\x10HmΩC°µ\xA2\x02◊ãıæ≥Æ-∂«-Z"«Òí‚\x94(…ã\x805\x04y>Ñuã‡a\xF4*\xEE\x14J¬QΩN\x0E≠Bìs‡÷\xB3/\x08\xFD%rp\xAE	≈é\xD3\x10|\x15\xA3\x7F\x8E\x02\x9D&\xCE*—¸\x17IfèloN\x04uêDYx*MÙ∏$Eÿª\x08)(S\x80q\x1A\x02ïïh\x92;UÛ◊\x08Ò‡^€çF\x1F\xA4\x11[›ÛöÔ
+^
+t\xAA/i°∆\xC27¢Ω\x96\x08‰mg_æFáÚï&\x8D7G˙l^v&ziz\x0Eç…Wø]∑≠?\xF1\x0Ba!,ÑÖ\xB0\x10Ó∆\x1F\x01\x06\x00¿u5ÀV\xB3\x15Y\x00\x00\x00\x00IENDÆB`\x82
+$$$$$$ Response Body For Transaction With Id 118 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/WebTours/
+	/WebTours/header.html
+	/WebTours/welcome.pl?signOff=true
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Request Header For Transaction With Id 119 ******
+GET /WebTours/home.html HTTP/1.1
+Accept: image/jpeg, application/x-ms-application, image/gif, application/xaml+xml, image/pjpeg, application/x-ms-xbap, application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint, */*
+Referer: http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true
+Accept-Language: zh-CN
+User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E)
+Accept-Encoding: gzip, deflate
+Host: 127.0.0.1:1080
+Connection: Keep-Alive
+Cookie: MSO=SID&1558432092&MSO_JSFormSubmit1&on&MSO_ServerErrorsProb&50&MSO_ServerLoadProb&50
+
+
+$$$$$$ Request Header For Transaction With Id 119 Ended $$$$$$
+
+****** Response Header For Transaction With Id 119 ******
+HTTP/1.1 200 Ok
+Server: Xitami
+Date: Tue, 21 May 2019 09:48:13 GMT
+Content-type: text/html
+Content-length: 1322
+Last-modified: Tue, 08 May 2007 11:40:23 GMT
+
+
+$$$$$$ Response Header For Transaction With Id 119 Ended $$$$$$
+
+****** Response Body For Transaction With Id 119 ******
+<HTML>
+<HEAD>
+	<title>Web Tours</title>
+</head>
+<style>
+	blockquote {font-family: tahoma; font-size : 10pt}
+	H1 {font-family: tahoma; font-size : 22pt; color: #003366}
+	small {font-family: tahoma; font-size : 8pt}
+	H3{font-family: tahoma; font-size : 10pt; color: black}
+	A {FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: black; FONT-FAMILY: Tahoma; TEXT-DECORATION: none}
+	A:hover{ FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #993333; FONT-FAMILY: Tahoma;TEXT-DECORATION: underline}
+	TD {font-family: tahoma; font-size : 10pt; color: black}
+</style>
+<body bgcolor=#e0e7f1>
+<BR>
+<BR>
+<BR>
+<br >
+<table border=0>
+<tr><td></td></tr>
+<TR><TD></TD></TR>
+<TR><TD>
+<blockquote>
+<H1><b>Web Tours</b></H1>
+Welcome to the Web Tours site.
+<br>
+To make reservations,please enter your account information to the left.
+<br>
+If you haven't registered yet, <A href="login.pl?username=&amp;password=&amp;getInfo=true" ><B>sign up now</B></A> to get access to all our resources.
+<br>
+To configure the server options, use <A href="admin.pl" target=body ><b>administration</b></A> link.
+<br><br><br><br><br><br>
+<br><small>
+This product uses parts of the SMT Kernel, Copyright (c) 1991-99 <A href="http://www.imatix.com" target=new><B><small>iMatix Corporation</small></B></A> 
+</small>
+</blockquote></TD>
+<TD></TD></TR>
+</table>
+</body>
+</html>
+
+$$$$$$ Response Body For Transaction With Id 119 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/WebTours/
+	/WebTours/header.html
+	/WebTours/welcome.pl?signOff=true
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Request Header For Transaction With Id 120 ******
+GET /WebTours/nav.pl?in=home HTTP/1.1
+Accept: image/jpeg, application/x-ms-application, image/gif, application/xaml+xml, image/pjpeg, application/x-ms-xbap, application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint, */*
+Referer: http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true
+Accept-Language: zh-CN
+User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E)
+Accept-Encoding: gzip, deflate
+Host: 127.0.0.1:1080
+Connection: Keep-Alive
+Cookie: MSO=SID&1558432092&MSO_JSFormSubmit1&on&MSO_ServerErrorsProb&50&MSO_ServerLoadProb&50
+
+
+$$$$$$ Request Header For Transaction With Id 120 Ended $$$$$$
+
+****** Response Header For Transaction With Id 120 ******
+HTTP/1.1 200 Ok
+Server: Xitami
+Date: Tue, 21 May 2019 09:48:13 GMT
+Cache-control: no-cache
+Expires: 0
+Content-length: 1524
+Content-type: text/html; charset=ISO-8859-1
+Date: Tue, 21 May 2019 09:48:13 GMT
+Expires: Mon, 20 May 2019 09:48:13 GMT
+
+
+$$$$$$ Response Header For Transaction With Id 120 Ended $$$$$$
+
+****** Response Body For Transaction With Id 120 ******
+<!DOCTYPE html
+	PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+<head>
+<title>Web Tours Navigation Bar</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+</head>
+<body bgcolor="#E0E7F1">
+<script language=Javascript src=/WebTours/JSFormSubmit.js> <!--- 
+ //Form submit is ON 
+ --> </script>
+<style>
+blockquote {font-family: tahoma; font-size : 10pt}
+H1 {font-family: tahoma; font-size : 22pt; color: #993333}
+H3 {font-family: tahoma; font-size : 10pt; color: black}
+small {font-family: tahoma; font-size : 8pt}
+</style>
+<form method=post action=error.pl  onSubmit='doJSFormSubmit1(this)' target=body>
+<input type=hidden name=userSession value=126239.942648846ztQDtzHpAfDiQzApiAcD>
+<table border=0><tr><td>&nbsp;</td>
+<td>&nbsp;</td>
+<tr><td>&nbsp;</td>
+<td>&nbsp;</td></tr>
+<tr><td>&nbsp;</td>
+<td><small>&nbsp;Username</small></td></tr>
+<tr><td>&nbsp;</td>
+<td><input type=text name=username value='' size=14 maxlength=14></td></tr>
+<tr><td>&nbsp;</td>
+<td><small>&nbsp;Password</small></td>
+<tr><td>&nbsp;</td>
+<td><input type=password name=password value='' size=14 maxlength=14></td></tr>
+<tr><td>&nbsp;</td>
+<td>&nbsp;<tr><td>
+<tr><td>&nbsp;</td>
+<td><input type=image name=login value=Login alt=Login border=1 
+src='/WebTours/images/mer_login.gif'>
+<tr><td>&nbsp;</td>
+</table><input type=hidden name=JSFormSubmit value='off'>
+</form>
+
+</body>
+</html>
+
+$$$$$$ Response Body For Transaction With Id 120 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/WebTours/
+	/WebTours/header.html
+	/WebTours/welcome.pl?signOff=true
+		The Node is NULL
+		/WebTours/home.html
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Request Header For Transaction With Id 121 ******
+GET /WebTours/JSFormSubmit.js HTTP/1.1
+Accept: */*
+Referer: http://127.0.0.1:1080/WebTours/nav.pl?in=home
+Accept-Language: zh-CN
+User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E)
+Accept-Encoding: gzip, deflate
+Host: 127.0.0.1:1080
+Connection: Keep-Alive
+Cookie: MSO=SID&1558432092&MSO_JSFormSubmit1&on&MSO_ServerErrorsProb&50&MSO_ServerLoadProb&50
+
+
+$$$$$$ Request Header For Transaction With Id 121 Ended $$$$$$
+
+****** Response Header For Transaction With Id 121 ******
+HTTP/1.1 200 Ok
+Server: Xitami
+Date: Tue, 21 May 2019 09:48:13 GMT
+Content-type: application/x-javascript
+Content-length: 291
+Last-modified: Tue, 26 Oct 2004 08:18:07 GMT
+
+
+$$$$$$ Response Header For Transaction With Id 121 Ended $$$$$$
+
+****** Response Body For Transaction With Id 121 ******
+
+function doJSFormSubmit1(theForm) {
+
+	theForm.action = "login.pl";
+	theForm.JSFormSubmit.value = "on";
+	theForm.submit();
+
+	return false;
+}
+
+
+function doJSFormSubmit2(theForm) {
+
+	theForm.action = "reservations.pl";
+	theForm.JSFormSubmit.value = "on";
+	theForm.submit();
+
+	return false;
+}
+
+
+$$$$$$ Response Body For Transaction With Id 121 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/WebTours/
+	/WebTours/header.html
+	/WebTours/welcome.pl?signOff=true
+		/WebTours/nav.pl?in=home
+		Form: name= action=error.pl
+		/WebTours/home.html
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Request Header For Transaction With Id 122 ******
+GET /WebTours/images/mer_login.gif HTTP/1.1
+Accept: */*
+Referer: http://127.0.0.1:1080/WebTours/nav.pl?in=home
+Accept-Language: zh-CN
+User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E)
+Accept-Encoding: gzip, deflate
+Host: 127.0.0.1:1080
+Connection: Keep-Alive
+Cookie: MSO=SID&1558432092&MSO_JSFormSubmit1&on&MSO_ServerErrorsProb&50&MSO_ServerLoadProb&50
+
+
+$$$$$$ Request Header For Transaction With Id 122 Ended $$$$$$
+
+****** Response Header For Transaction With Id 122 ******
+HTTP/1.1 200 Ok
+Server: Xitami
+Date: Tue, 21 May 2019 09:48:13 GMT
+Content-type: image/gif
+Content-length: 679
+Last-modified: Mon, 08 Feb 2010 08:51:43 GMT
+
+
+$$$$$$ Response Header For Transaction With Id 122 Ended $$$$$$
+
+****** Response Body For Transaction With Id 122 ******
+GIF89a\\\x00\x13\x00\xC4\x1F\x00”⁄‰æƒŒÃ“€√ ‘ÅÜãORU˜˜˜€‹ﬁ» Õﬁ‰Ó$&'⁄·Î¿«—‹„ÌÿﬂÈﬁÊ…–ŸŒ’ﬂ‡ÁÒ∆Õ◊÷›Ê€‚Ì—ÿ‚±∑ø†£ß;=@fin•´≤º√Õ·ËÚìïô\xFF\xFF\xFF!\xF9\x04\x01\x00\x00\x1F\x00,\x00\x00\x00\x00\\\x00\x13\x00\x00\x05\xFF\xE0'\x1A\x01Êùh™ÆlÎæp|b\x9C!ﬁá¨Ô|\x0F\x1F\xB8\x13¬v+\x1Aè»§r…l\x16\x82\x13\xD0 ˝p8\x01\x06c0ò@\x04\x91\x08\x00@q,\x1AâÑ§√nªﬂ∏\xDC-I7\x16\x0E\xCA8,\x80L∏Z\x01W\x1F	'\x06\x08\x1E\x08VWY[]\x10\x10a\x16dfh\x0Fko\x04\x10ss\x18\x17úl\x12\x0F	wy\x00\x16a\x90\x7F\x03ÅW\x1C\x1FQ\x1C&$Æç\\^ëb\x94\x0B\x15	óp
+ü†p\x04\x1E√¢	\x15xz\x00©~\x80\x0CÇåT&\x1E\x1F“XY]^`\x11ìeºæòn¡p\x10¬m\x1C\x10\x14\x1C\x1DÍmêq» ¶®\x11}\x13\x7F—ÿ\x01\x1F)◊µ¥‹\xFA"ió•qm π—ê°@Üv\x1D\x18:,–°\x00\x81\x0E
+\x1Cf\xD0\x00\x07Y)=ˆA„Á\x0F\x05@F\xDA\x1E\xFF	\x10`·[%q¿–u¿êÅB\x07\x0F\x19nRÏ@\x80¢E\x8C\x17\x01(\x80ÿ∆„≤S\x16V>\xE3\x12\x80\xE4?~\x02U\x16\x04◊Î\xD7\x1BÖl4\\d\xA3\x00ÇV6\x17|^T\x885\xD4(z \xF9,m≈®‰âìX¢rõ˙\xD2*9ô_πN»ªA,Fae;\x18≠ßv\x15[,n≠Au4◊õAòWe“¥ÈÅ\xE2\x05\x05\x1B¬˙%+S®èß
+è¨\x95\x18\xAE-ï`\\Ü≥õPÅÎ\x8C<\x0B\x14\xD0\x00±ØÜ \x15\xC7\x02\xEE<\xEF(*•Ü£ëû·\x81\x16J\xC6\x04\x1DS\x85<ÏM_6\x0486˜úÃ∑hVMkQ„êhQ\\‰©UWE8ΩÉÖâ\x19\x02îÔ]Ô˜Z·É\xA2\x0C©¬H`æ‰cñ≥.œÜCÁcg\x1D’Ã=~\xE8\x03\x1F!Ü|êC$"D8·‡\x83\x10Fx\x03\x14Uà∞\xA0\x0F\x18f®·
+@<Å@5\x1B\x86(\xA2\x0B\x18\x0CqC\x08\x00;
+$$$$$$ Response Body For Transaction With Id 122 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/WebTours/
+	/WebTours/header.html
+	/WebTours/welcome.pl?signOff=true
+		/WebTours/nav.pl?in=home
+		Form: name= action=error.pl
+		/WebTours/home.html
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+
+****** Request Header For Transaction With Id 123 ******
+GET /favicon.ico HTTP/1.1
+Accept: */*
+Accept-Encoding: gzip, deflate
+User-Agent: Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.1; Trident/4.0; SLCC2; .NET CLR 2.0.50727; .NET CLR 3.5.30729; .NET CLR 3.0.30729; .NET4.0C; .NET4.0E)
+Host: 127.0.0.1:1080
+Connection: Keep-Alive
+Cookie: MSO=SID&1558432092&MSO_JSFormSubmit1&on&MSO_ServerErrorsProb&50&MSO_ServerLoadProb&50
+
+
+$$$$$$ Request Header For Transaction With Id 123 Ended $$$$$$
+
+****** Response Header For Transaction With Id 123 ******
+HTTP/1.1 404 Not found
+Server: Xitami
+Date: Tue, 21 May 2019 09:48:13 GMT
+Connection: Close
+Content-length: 114
+Content-type: text/html
+
+
+$$$$$$ Response Header For Transaction With Id 123 Ended $$$$$$
+
+****** Response Body For Transaction With Id 123 ******
+<HTML><TITLE>Error</TITLE><BODY><H1>
+
+The URL you asked for does not exist on this website
+
+</H1></BODY></HTML>
+
+$$$$$$ Response Body For Transaction With Id 123 Ended $$$$$$
+
+****** Start Log Message ******
+
+Start Frames Hierarchy Tree Dump
+/WebTours/
+	/WebTours/header.html
+	/WebTours/welcome.pl?signOff=true
+		/WebTours/nav.pl?in=home
+		Form: name= action=error.pl
+		/WebTours/home.html
+End Frames Hierarchy Tree Dump
+
+$$$$$$ End Log Message $$$$$$
+

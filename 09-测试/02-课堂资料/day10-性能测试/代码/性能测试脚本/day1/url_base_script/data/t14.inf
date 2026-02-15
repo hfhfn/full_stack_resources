@@ -1,0 +1,13 @@
+[t14]
+FileName1=t14_signoff.gif
+URL1=http://127.0.0.1:1080/WebTours/images/signoff.gif
+Total=1
+ContentType=image/gif
+SnapshotXmlFile=snapshot_14.xml
+RequestHeaderFile=t14_RequestHeader.txt
+RequestBodyFile=NONE
+ResponseHeaderFile=t14_ResponseHeader.txt
+[ProtocolInfo]
+ProtocolId=QTWeb
+[AdditionalInfo]
+IsIgnorable=1

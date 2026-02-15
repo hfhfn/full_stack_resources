@@ -625,3 +625,255 @@ A file with the name "《内容算法：把内容变成价值的效率系统》_
 2026-02-15 18:03:28,100 [INFO] [OK] Manifest generated with 2675 total files
 2026-02-15 18:03:28,100 [INFO] 
 [OK] All steps complete in 3.3s! Ready for git push.
+2026-02-15 20:13:00,845 [INFO] Scanning files (Threshold: 50MB)...
+2026-02-15 20:13:08,578 [INFO] Stats: 20 large files, 21711 small files
+2026-02-15 20:13:08,578 [INFO] Uploading 20 files to HuggingFace (hfhfn/full_stack_resources)...
+2026-02-15 20:13:11,123 [INFO] Logged in as: hfhfn
+2026-02-15 20:13:11,123 [INFO]    > Uploading: 03-python语言/爱家租房tornado版.zip (85.0 MB)
+2026-02-15 20:13:30,770 [INFO]    > Uploading: 06-运维/Python运维开发V1.0-王树森.zip (4229.8 MB)
+2026-02-15 20:16:08,494 [WARNING] '(MaxRetryError("HTTPSConnectionPool(host='hf-hub-lfs-us-east-1.s3-accelerate.amazonaws.com', port=443): Max retries exceeded with url: /repos/82/f8/82f833ebee7f3aa174fbab58ea2e48f3433a778a836482427ab6ebf610f5b24c/d1c15642dfc5788405fef3366c1f01680433781602fa7ab968204b29a77eae4f?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIA2JU7TKAQLC2QXPN7%2F20260215%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260215T121333Z&X-Amz-Expires=86400&X-Amz-Signature=3816751b3f8ad3542bf2094215c78b3d302104126ca9a2c2d7bee7994d6c955e&X-Amz-SignedHeaders=host&partNumber=23&uploadId=p2wXtX.cfOMHSDHwn3lc1e05W4EHpEBtxsHi76YtN7exm8ggSVOcUVr.ProsOxC8v7F2pAwir.8VIqdrtkq0rYjhU0sDykhir6l0zhXrJ9Ge1SZLbsEPGENaaPBn7ELH&x-id=UploadPart (Caused by SSLError(SSLEOFError(8, 'EOF occurred in violation of protocol (_ssl.c:2427)')))"), '(Request ID: 83ad4ae6-f32d-4fa1-b313-0fc57bf27afd)')' thrown while requesting PUT https://hf-hub-lfs-us-east-1.s3-accelerate.amazonaws.com/repos/82/f8/82f833ebee7f3aa174fbab58ea2e48f3433a778a836482427ab6ebf610f5b24c/d1c15642dfc5788405fef3366c1f01680433781602fa7ab968204b29a77eae4f?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIA2JU7TKAQLC2QXPN7%2F20260215%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20260215T121333Z&X-Amz-Expires=86400&X-Amz-Signature=3816751b3f8ad3542bf2094215c78b3d302104126ca9a2c2d7bee7994d6c955e&X-Amz-SignedHeaders=host&partNumber=23&uploadId=p2wXtX.cfOMHSDHwn3lc1e05W4EHpEBtxsHi76YtN7exm8ggSVOcUVr.ProsOxC8v7F2pAwir.8VIqdrtkq0rYjhU0sDykhir6l0zhXrJ9Ge1SZLbsEPGENaaPBn7ELH&x-id=UploadPart
+2026-02-15 20:16:08,494 [WARNING] Retrying in 1s [Retry 1/5].
+2026-02-15 20:28:44,843 [INFO]    > Uploading: 08-爬虫/02-Python爬虫开发.zip (1266.8 MB)
+2026-02-15 20:33:32,373 [INFO]    > Uploading: 08-爬虫/爬虫热点项目库、常见面试题V5.0.zip (89.7 MB)
+2026-02-15 20:33:51,614 [INFO]    > Uploading: 03-python语言/06-Django项目/Django Mis后台及项目部署V5.002-李智.zip (554.3 MB)
+2026-02-15 20:35:44,530 [INFO]    > Uploading: 03-python语言/06-Django项目/天天生鲜Django版.zip (3945.2 MB)
+2026-02-15 20:57:03,664 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/02-代码/cz-ui-pc-learning.zip (117.6 MB)
+2026-02-15 20:57:28,700 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/02-代码/cz-ui-pc-static-portal.zip (83.4 MB)
+2026-02-15 20:57:47,725 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/02-代码/cz-ui-pc-teach.zip (105.1 MB)
+2026-02-15 20:58:10,385 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/03-课堂资料/传智云课堂项目-第03天/1-教学资料/cz-ui-pc-teach.zip (103.9 MB)
+2026-02-15 20:58:37,851 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/03-课堂资料/传智云课堂项目-第09天/1-教学资料/cz-ui-pc-portal.zip (56.2 MB)
+2026-02-15 20:58:52,206 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/03-课堂资料/传智云课堂项目-第10天/1-教学资料/ffmpeg-20180227-fa0c9d6-win64-static.zip (52.9 MB)
+2026-02-15 20:59:04,542 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/03-课堂资料/传智云课堂项目-第10天/1-教学资料/lucene.avi (50.1 MB)
+2026-02-15 20:59:16,066 [INFO]    > Uploading: 03-python语言/07-Flask项目/律师在线资料/day04/03_资料/04_es资料/logstash-6.2.4/vendor/bundle/jruby/2.3.0/gems/logstash-filter-geoip-5.0.3-java/vendor/GeoLite2-City.mmdb (60.5 MB)
+2026-02-15 20:59:31,244 [INFO]    > Uploading: 08-爬虫/02-python爬虫开发/04-拓展软件&插件.zip (1169.4 MB)
+2026-02-15 21:03:30,393 [INFO]    > Uploading: 08-爬虫/02-python爬虫开发/02-拓展阅读/图解HTTP  黑白印刷 [（日）上野宣著][人民邮电出版社][2014.05][250页].pdf (73.7 MB)
+2026-02-15 21:03:46,882 [INFO]    > Uploading: 09-测试/01-课件/04-接口测试.zip (548.5 MB)
+2026-02-15 21:05:25,341 [INFO]    > Uploading: 09-测试/01-课件/测试书籍.zip (138.5 MB)
+2026-02-15 21:05:50,312 [INFO]    > Uploading: 09-测试/02-课堂资料/day14-性能测试/参考资料/LoadRunner性能测试巧匠训练营 赵强，邹伟伟，任健勇著 机械工业出版社][201.pdf (111.6 MB)
+2026-02-15 21:06:10,945 [INFO]    > Uploading: 09-测试/02-课堂资料/day19-移动测试/资料/jenkins-2.155.zip (117.5 MB)
+2026-02-15 21:06:35,430 [INFO] [OK] HF Upload complete
+2026-02-15 21:06:35,430 [INFO] Checking for redundant files on HuggingFace (hfhfn/full_stack_resources)...
+2026-02-15 21:06:35,781 [INFO] No redundant files found.
+2026-02-15 21:06:35,782 [INFO] Processing Git tracking & .gitignore...
+2026-02-15 21:06:36,656 [INFO] Updated .gitignore with 20 rules (new: 20, removed: 0)
+2026-02-15 21:06:36,656 [INFO] Generating full manifest (data/file_manifest.json)...
+2026-02-15 21:06:39,773 [INFO] [OK] Manifest generated with 21731 total files
+2026-02-15 21:06:39,780 [INFO] 
+[OK] All steps complete in 3218.9s! Ready for git push.
+2026-02-15 21:19:36,198 [INFO] Scanning files (Threshold: 50MB)...
+2026-02-15 21:19:44,076 [INFO] Stats: 20 large files, 21711 small files
+2026-02-15 21:19:44,077 [INFO] Uploading 20 files to HuggingFace (hfhfn/full_stack_resources)...
+2026-02-15 21:19:46,467 [INFO] Logged in as: hfhfn
+2026-02-15 21:19:46,468 [INFO]    > Uploading: 03-python语言/爱家租房tornado版.zip (85.0 MB)
+2026-02-15 21:19:47,177 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:19:47,464 [INFO]    > Uploading: 06-运维/Python运维开发V1.0-王树森.zip (4229.8 MB)
+2026-02-15 21:19:50,961 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:19:51,278 [INFO]    > Uploading: 08-爬虫/02-Python爬虫开发.zip (1266.8 MB)
+2026-02-15 21:19:52,711 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:19:53,111 [INFO]    > Uploading: 08-爬虫/爬虫热点项目库、常见面试题V5.0.zip (89.7 MB)
+2026-02-15 21:19:54,161 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:19:54,706 [INFO]    > Uploading: 03-python语言/06-Django项目/Django Mis后台及项目部署V5.002-李智.zip (554.3 MB)
+2026-02-15 21:19:55,772 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:19:56,084 [INFO]    > Uploading: 03-python语言/06-Django项目/天天生鲜Django版.zip (3945.2 MB)
+2026-02-15 21:19:59,283 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:19:59,570 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/02-代码/cz-ui-pc-learning.zip (117.6 MB)
+2026-02-15 21:20:00,285 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:20:00,572 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/02-代码/cz-ui-pc-static-portal.zip (83.4 MB)
+2026-02-15 21:20:01,353 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:20:01,709 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/02-代码/cz-ui-pc-teach.zip (105.1 MB)
+2026-02-15 21:20:02,747 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:20:03,503 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/03-课堂资料/传智云课堂项目-第03天/1-教学资料/cz-ui-pc-teach.zip (103.9 MB)
+2026-02-15 21:20:04,682 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:20:04,981 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/03-课堂资料/传智云课堂项目-第09天/1-教学资料/cz-ui-pc-portal.zip (56.2 MB)
+2026-02-15 21:20:05,706 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:20:06,073 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/03-课堂资料/传智云课堂项目-第10天/1-教学资料/ffmpeg-20180227-fa0c9d6-win64-static.zip (52.9 MB)
+2026-02-15 21:20:06,935 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:20:08,126 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/03-课堂资料/传智云课堂项目-第10天/1-教学资料/lucene.avi (50.1 MB)
+2026-02-15 21:20:08,973 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:20:09,306 [INFO]    > Uploading: 03-python语言/07-Flask项目/律师在线资料/day04/03_资料/04_es资料/logstash-6.2.4/vendor/bundle/jruby/2.3.0/gems/logstash-filter-geoip-5.0.3-java/vendor/GeoLite2-City.mmdb (60.5 MB)
+2026-02-15 21:20:10,315 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:20:10,605 [INFO]    > Uploading: 08-爬虫/02-python爬虫开发/04-拓展软件&插件.zip (1169.4 MB)
+2026-02-15 21:20:12,086 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:20:12,399 [INFO]    > Uploading: 08-爬虫/02-python爬虫开发/02-拓展阅读/图解HTTP  黑白印刷 [（日）上野宣著][人民邮电出版社][2014.05][250页].pdf (73.7 MB)
+2026-02-15 21:20:13,052 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:20:13,386 [INFO]    > Uploading: 09-测试/01-课件/04-接口测试.zip (548.5 MB)
+2026-02-15 21:20:14,779 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:20:15,083 [INFO]    > Uploading: 09-测试/01-课件/测试书籍.zip (138.5 MB)
+2026-02-15 21:20:15,947 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:20:16,366 [INFO]    > Uploading: 09-测试/02-课堂资料/day14-性能测试/参考资料/LoadRunner性能测试巧匠训练营 赵强，邹伟伟，任健勇著 机械工业出版社][201.pdf (111.6 MB)
+2026-02-15 21:20:17,102 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:20:17,398 [INFO]    > Uploading: 09-测试/02-课堂资料/day19-移动测试/资料/jenkins-2.155.zip (117.5 MB)
+2026-02-15 21:20:18,199 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:20:18,493 [INFO] [OK] HF Upload complete
+2026-02-15 21:20:18,493 [INFO] Checking for redundant files on HuggingFace (hfhfn/full_stack_resources)...
+2026-02-15 21:20:19,018 [INFO] No redundant files found.
+2026-02-15 21:20:19,018 [INFO] Processing Git tracking & .gitignore...
+2026-02-15 21:20:19,896 [INFO] Updated .gitignore with 20 rules (new: 20, removed: 0)
+2026-02-15 21:20:19,896 [INFO] Generating full manifest (data/file_manifest.json)...
+2026-02-15 21:20:21,798 [INFO]     (Timestamp preserved - no content changes)
+2026-02-15 21:20:22,010 [INFO] [OK] Manifest generated with 21731 total files
+2026-02-15 21:20:22,022 [INFO] 
+[OK] All steps complete in 45.8s! Ready for git push.
+2026-02-15 21:23:22,899 [INFO] Scanning files (Threshold: 50MB)...
+2026-02-15 21:23:30,562 [INFO] Stats: 20 large files, 21712 small files
+2026-02-15 21:23:30,562 [INFO] Uploading 20 files to HuggingFace (hfhfn/full_stack_resources)...
+2026-02-15 21:23:32,938 [INFO] Logged in as: hfhfn
+2026-02-15 21:23:32,938 [INFO]    > Uploading: 03-python语言/爱家租房tornado版.zip (85.0 MB)
+2026-02-15 21:23:33,694 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:23:33,994 [INFO]    > Uploading: 06-运维/Python运维开发V1.0-王树森.zip (4229.8 MB)
+2026-02-15 21:23:37,474 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:23:37,783 [INFO]    > Uploading: 08-爬虫/02-Python爬虫开发.zip (1266.8 MB)
+2026-02-15 21:23:39,420 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:23:39,757 [INFO]    > Uploading: 08-爬虫/爬虫热点项目库、常见面试题V5.0.zip (89.7 MB)
+2026-02-15 21:23:40,751 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:23:41,160 [INFO]    > Uploading: 03-python语言/06-Django项目/Django Mis后台及项目部署V5.002-李智.zip (554.3 MB)
+2026-02-15 21:23:42,727 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:23:43,068 [INFO]    > Uploading: 03-python语言/06-Django项目/天天生鲜Django版.zip (3945.2 MB)
+2026-02-15 21:23:46,584 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:23:47,044 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/02-代码/cz-ui-pc-learning.zip (117.6 MB)
+2026-02-15 21:23:47,919 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:23:48,233 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/02-代码/cz-ui-pc-static-portal.zip (83.4 MB)
+2026-02-15 21:23:49,210 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:23:54,455 [WARNING] (MaxRetryError("HTTPSConnectionPool(host='huggingface.co', port=443): Max retries exceeded with url: /api/datasets/hfhfn/full_stack_resources/revision/main (Caused by ProxyError('Unable to connect to proxy', RemoteDisconnected('Remote end closed connection without response')))"), '(Request ID: 98b5abd0-2e88-4ddf-8318-39b08e1409ca)'), Retrying in 5 seconds...
+2026-02-15 21:23:59,457 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/02-代码/cz-ui-pc-static-portal.zip (83.4 MB)
+2026-02-15 21:24:01,948 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:24:02,256 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/02-代码/cz-ui-pc-teach.zip (105.1 MB)
+2026-02-15 21:24:03,124 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:24:03,418 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/03-课堂资料/传智云课堂项目-第03天/1-教学资料/cz-ui-pc-teach.zip (103.9 MB)
+2026-02-15 21:24:04,099 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:24:04,611 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/03-课堂资料/传智云课堂项目-第09天/1-教学资料/cz-ui-pc-portal.zip (56.2 MB)
+2026-02-15 21:24:05,247 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:24:05,634 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/03-课堂资料/传智云课堂项目-第10天/1-教学资料/ffmpeg-20180227-fa0c9d6-win64-static.zip (52.9 MB)
+2026-02-15 21:24:06,352 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:24:06,725 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/03-课堂资料/传智云课堂项目-第10天/1-教学资料/lucene.avi (50.1 MB)
+2026-02-15 21:24:07,477 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:24:07,812 [INFO]    > Uploading: 03-python语言/07-Flask项目/律师在线资料/day04/03_资料/04_es资料/logstash-6.2.4/vendor/bundle/jruby/2.3.0/gems/logstash-filter-geoip-5.0.3-java/vendor/GeoLite2-City.mmdb (60.5 MB)
+2026-02-15 21:24:08,502 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:24:08,810 [INFO]    > Uploading: 08-爬虫/02-python爬虫开发/04-拓展软件&插件.zip (1169.4 MB)
+2026-02-15 21:24:10,273 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:24:10,569 [INFO]    > Uploading: 08-爬虫/02-python爬虫开发/02-拓展阅读/图解HTTP  黑白印刷 [（日）上野宣著][人民邮电出版社][2014.05][250页].pdf (73.7 MB)
+2026-02-15 21:24:11,369 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:24:11,660 [INFO]    > Uploading: 09-测试/01-课件/04-接口测试.zip (548.5 MB)
+2026-02-15 21:24:12,699 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:24:13,006 [INFO]    > Uploading: 09-测试/01-课件/测试书籍.zip (138.5 MB)
+2026-02-15 21:24:13,929 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:24:14,225 [INFO]    > Uploading: 09-测试/02-课堂资料/day14-性能测试/参考资料/LoadRunner性能测试巧匠训练营 赵强，邹伟伟，任健勇著 机械工业出版社][201.pdf (111.6 MB)
+2026-02-15 21:24:14,923 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:24:15,262 [INFO]    > Uploading: 09-测试/02-课堂资料/day19-移动测试/资料/jenkins-2.155.zip (117.5 MB)
+2026-02-15 21:24:15,978 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 21:24:16,266 [INFO] [OK] HF Upload complete
+2026-02-15 21:24:16,266 [INFO] Checking for redundant files on HuggingFace (hfhfn/full_stack_resources)...
+2026-02-15 21:24:16,641 [INFO] No redundant files found.
+2026-02-15 21:24:16,641 [INFO] Processing Git tracking & .gitignore...
+2026-02-15 21:24:17,525 [INFO] Updated .gitignore with 20 rules (new: 20, removed: 0)
+2026-02-15 21:24:17,525 [INFO] Generating full manifest (data/file_manifest.json)...
+2026-02-15 21:24:20,646 [INFO] [OK] Manifest generated with 21732 total files
+2026-02-15 21:24:20,663 [INFO] 
+[OK] All steps complete in 57.8s! Ready for git push.
+2026-02-15 22:00:50,178 [INFO] Scanning files (Threshold: 50MB)...
+2026-02-15 22:00:57,420 [INFO] Stats: 20 large files, 21711 small files
+2026-02-15 22:00:57,420 [INFO] Uploading 20 files to HuggingFace (hfhfn/full_stack_resources)...
+2026-02-15 22:00:59,166 [INFO] Logged in as: hfhfn
+2026-02-15 22:00:59,166 [INFO]    > Uploading: 03-python语言/爱家租房tornado版.zip (85.0 MB)
+2026-02-15 22:00:59,820 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:01:00,107 [INFO]    > Uploading: 06-运维/Python运维开发V1.0-王树森.zip (4229.8 MB)
+2026-02-15 22:01:03,674 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:01:03,979 [INFO]    > Uploading: 08-爬虫/02-Python爬虫开发.zip (1266.8 MB)
+2026-02-15 22:01:05,516 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:01:05,823 [INFO]    > Uploading: 08-爬虫/爬虫热点项目库、常见面试题V5.0.zip (89.7 MB)
+2026-02-15 22:01:06,527 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:01:06,827 [INFO]    > Uploading: 03-python语言/06-Django项目/Django Mis后台及项目部署V5.002-李智.zip (554.3 MB)
+2026-02-15 22:01:07,820 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:01:08,103 [INFO]    > Uploading: 03-python语言/06-Django项目/天天生鲜Django版.zip (3945.2 MB)
+2026-02-15 22:01:11,778 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:01:12,118 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/02-代码/cz-ui-pc-learning.zip (117.6 MB)
+2026-02-15 22:01:12,813 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:01:13,100 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/02-代码/cz-ui-pc-static-portal.zip (83.4 MB)
+2026-02-15 22:01:13,765 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:01:14,054 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/02-代码/cz-ui-pc-teach.zip (105.1 MB)
+2026-02-15 22:01:14,753 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:01:15,034 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/03-课堂资料/传智云课堂项目-第03天/1-教学资料/cz-ui-pc-teach.zip (103.9 MB)
+2026-02-15 22:01:15,709 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:01:16,011 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/03-课堂资料/传智云课堂项目-第09天/1-教学资料/cz-ui-pc-portal.zip (56.2 MB)
+2026-02-15 22:01:16,641 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:01:16,926 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/03-课堂资料/传智云课堂项目-第10天/1-教学资料/ffmpeg-20180227-fa0c9d6-win64-static.zip (52.9 MB)
+2026-02-15 22:01:17,545 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:01:17,841 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/03-课堂资料/传智云课堂项目-第10天/1-教学资料/lucene.avi (50.1 MB)
+2026-02-15 22:01:18,499 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:01:18,787 [INFO]    > Uploading: 03-python语言/07-Flask项目/律师在线资料/day04/03_资料/04_es资料/logstash-6.2.4/vendor/bundle/jruby/2.3.0/gems/logstash-filter-geoip-5.0.3-java/vendor/GeoLite2-City.mmdb (60.5 MB)
+2026-02-15 22:01:19,420 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:01:19,706 [INFO]    > Uploading: 08-爬虫/02-python爬虫开发/04-拓展软件&插件.zip (1169.4 MB)
+2026-02-15 22:01:21,272 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:01:21,557 [INFO]    > Uploading: 08-爬虫/02-python爬虫开发/02-拓展阅读/图解HTTP  黑白印刷 [（日）上野宣著][人民邮电出版社][2014.05][250页].pdf (73.7 MB)
+2026-02-15 22:01:22,200 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:01:22,485 [INFO]    > Uploading: 09-测试/01-课件/04-接口测试.zip (548.5 MB)
+2026-02-15 22:01:23,564 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:01:23,848 [INFO]    > Uploading: 09-测试/01-课件/测试书籍.zip (138.5 MB)
+2026-02-15 22:01:24,536 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:01:24,819 [INFO]    > Uploading: 09-测试/02-课堂资料/day14-性能测试/参考资料/LoadRunner性能测试巧匠训练营 赵强，邹伟伟，任健勇著 机械工业出版社][201.pdf (111.6 MB)
+2026-02-15 22:01:25,496 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:01:25,781 [INFO]    > Uploading: 09-测试/02-课堂资料/day19-移动测试/资料/jenkins-2.155.zip (117.5 MB)
+2026-02-15 22:01:26,452 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:01:26,739 [INFO] [OK] HF Upload complete
+2026-02-15 22:01:26,739 [INFO] Checking for redundant files on HuggingFace (hfhfn/full_stack_resources)...
+2026-02-15 22:01:27,078 [INFO] No redundant files found.
+2026-02-15 22:01:27,078 [INFO] Processing Git tracking & .gitignore...
+2026-02-15 22:01:28,025 [INFO] Updated .gitignore with 20 rules (new: 20, removed: 0)
+2026-02-15 22:01:28,027 [INFO] Generating full manifest (data/file_manifest.json)...
+2026-02-15 22:01:31,460 [INFO] [OK] Manifest generated with 21731 total files
+2026-02-15 22:01:31,476 [INFO] 
+[OK] All steps complete in 41.3s! Ready for git push.
+2026-02-15 22:05:29,838 [INFO] Scanning files (Threshold: 50MB)...
+2026-02-15 22:05:37,638 [INFO] Stats: 20 large files, 21711 small files
+2026-02-15 22:05:37,639 [INFO] Uploading 20 files to HuggingFace (hfhfn/full_stack_resources)...
+2026-02-15 22:05:40,443 [INFO] Logged in as: hfhfn
+2026-02-15 22:05:40,444 [INFO]    > Uploading: 03-python语言/爱家租房tornado版.zip (85.0 MB)
+2026-02-15 22:05:41,137 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:05:41,486 [INFO]    > Uploading: 06-运维/Python运维开发V1.0-王树森.zip (4229.8 MB)
+2026-02-15 22:05:45,482 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:05:45,837 [INFO]    > Uploading: 08-爬虫/02-Python爬虫开发.zip (1266.8 MB)
+2026-02-15 22:05:47,254 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:05:47,573 [INFO]    > Uploading: 08-爬虫/爬虫热点项目库、常见面试题V5.0.zip (89.7 MB)
+2026-02-15 22:05:48,203 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:05:48,482 [INFO]    > Uploading: 03-python语言/06-Django项目/Django Mis后台及项目部署V5.002-李智.zip (554.3 MB)
+2026-02-15 22:05:49,442 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:05:49,752 [INFO]    > Uploading: 03-python语言/06-Django项目/天天生鲜Django版.zip (3945.2 MB)
+2026-02-15 22:05:52,934 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:05:53,266 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/02-代码/cz-ui-pc-learning.zip (117.6 MB)
+2026-02-15 22:05:53,983 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:05:54,290 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/02-代码/cz-ui-pc-static-portal.zip (83.4 MB)
+2026-02-15 22:05:54,989 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:05:55,276 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/02-代码/cz-ui-pc-teach.zip (105.1 MB)
+2026-02-15 22:05:55,922 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:05:56,205 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/03-课堂资料/传智云课堂项目-第03天/1-教学资料/cz-ui-pc-teach.zip (103.9 MB)
+2026-02-15 22:05:56,864 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:05:57,153 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/03-课堂资料/传智云课堂项目-第09天/1-教学资料/cz-ui-pc-portal.zip (56.2 MB)
+2026-02-15 22:05:57,794 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:05:58,079 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/03-课堂资料/传智云课堂项目-第10天/1-教学资料/ffmpeg-20180227-fa0c9d6-win64-static.zip (52.9 MB)
+2026-02-15 22:05:58,706 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:05:58,989 [INFO]    > Uploading: 03-python语言/06-Django项目/02-传智云课堂(内容管理系统Django)/03-课堂资料/传智云课堂项目-第10天/1-教学资料/lucene.avi (50.1 MB)
+2026-02-15 22:05:59,591 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:05:59,877 [INFO]    > Uploading: 03-python语言/07-Flask项目/律师在线资料/day04/03_资料/04_es资料/logstash-6.2.4/vendor/bundle/jruby/2.3.0/gems/logstash-filter-geoip-5.0.3-java/vendor/GeoLite2-City.mmdb (60.5 MB)
+2026-02-15 22:06:00,493 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:06:00,779 [INFO]    > Uploading: 08-爬虫/02-python爬虫开发/04-拓展软件&插件.zip (1169.4 MB)
+2026-02-15 22:06:02,125 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:06:02,411 [INFO]    > Uploading: 08-爬虫/02-python爬虫开发/02-拓展阅读/图解HTTP  黑白印刷 [（日）上野宣著][人民邮电出版社][2014.05][250页].pdf (73.7 MB)
+2026-02-15 22:06:03,199 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:06:03,537 [INFO]    > Uploading: 09-测试/01-课件/04-接口测试.zip (548.5 MB)
+2026-02-15 22:06:04,530 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:06:04,837 [INFO]    > Uploading: 09-测试/01-课件/测试书籍.zip (138.5 MB)
+2026-02-15 22:06:05,517 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:06:05,855 [INFO]    > Uploading: 09-测试/02-课堂资料/day14-性能测试/参考资料/LoadRunner性能测试巧匠训练营 赵强，邹伟伟，任健勇著 机械工业出版社][201.pdf (111.6 MB)
+2026-02-15 22:06:06,502 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:06:06,786 [INFO]    > Uploading: 09-测试/02-课堂资料/day19-移动测试/资料/jenkins-2.155.zip (117.5 MB)
+2026-02-15 22:06:07,433 [WARNING] No files have been modified since last commit. Skipping to prevent empty commit.
+2026-02-15 22:06:07,724 [INFO] [OK] HF Upload complete
+2026-02-15 22:06:07,724 [INFO] Checking for redundant files on HuggingFace (hfhfn/full_stack_resources)...
+2026-02-15 22:06:08,043 [INFO] No redundant files found.
+2026-02-15 22:06:08,044 [INFO] Processing Git tracking & .gitignore...
+2026-02-15 22:06:09,107 [INFO] Updated .gitignore with 20 rules (new: 20, removed: 0)
+2026-02-15 22:06:09,107 [INFO] Generating full manifest (data/file_manifest.json)...
+2026-02-15 22:06:11,067 [INFO]     (Timestamp preserved - no content changes)
+2026-02-15 22:06:11,285 [INFO] [OK] Manifest generated with 21731 total files
+2026-02-15 22:06:11,296 [INFO] 
+[OK] All steps complete in 41.5s! Ready for git push.

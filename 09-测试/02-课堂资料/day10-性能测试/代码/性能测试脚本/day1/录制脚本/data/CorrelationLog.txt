@@ -1,0 +1,21 @@
+Debug Message:
+	Correlation engine instance created; using configuration Default
+
+Debug Message:
+	Rules could not be applied to http://127.0.0.1:1080/WebTours/
+
+Debug Message:
+	TaskID=110  URL=http://127.0.0.1:1080/WebTours/
+
+Debug Message:
+	TaskID=111  URL=http://127.0.0.1:1080/WebTours/header.html
+
+Debug Message:
+	TaskID=117  URL=http://127.0.0.1:1080/WebTours/welcome.pl?signOff=true
+
+Debug Message:
+	TaskID=119  URL=http://127.0.0.1:1080/WebTours/home.html
+
+Debug Message:
+	TaskID=120  URL=http://127.0.0.1:1080/WebTours/nav.pl?in=home
+

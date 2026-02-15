@@ -1,0 +1,109 @@
+[Network Analyzer ( 1f8: a3c)] ------------------------------------------------------------------------------------------
+[Network Analyzer ( 1f8: a3c)] Load Network Traffic Analyzers:
+[Network Analyzer ( 1f8: a3c)]     Analyzer Module: WPLUS (value=)
+[Network Analyzer ( 1f8: a3c)]     Analyzer Module: WebBase (value=GetHttpProtocolAnalyzer:api_http_filter.dll)
+[Network Analyzer ( 1f8: a3c)]     + Network Analyzer: api_http_filter.dll @ GetHttpProtocolAnalyzer Loaded!
+[Network Analyzer ( 1f8: a3c)]     + Interception Auditors: WinInetWplusInterceptionAudit:api_http_filter.dll
+[Network Analyzer ( 1f8: a3c)]     Analyzer Module: QTWeb (value=)
+[Network Analyzer ( 1f8: a3c)]     Analyzer Module: local_server (value=)
+[Network Analyzer ( 1f8: a3c)] ------------------------------------------------------------------------------------------
+[Network Analyzer ( 1f8: a40)] Address lookup for MS-20180413TOZN = 10.211.55.3
+[Network Analyzer ( 1f8: a30)] Address lookup for MS-20180413TOZN = 10.211.55.3
+[Network Analyzer ( 1f8: a30)] Request Connection: Remote Server @ 127.0.0.1:1080   (Service=)  (Sid=  1)  PROXIED!
+[Web Request      ( 1f8: a40)] "GET /WebTours/"   
+[Network Analyzer ( 1f8: a40)]   (Sid:  1) Client -> Server : 306 bytes (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  1) Server -> Client : 164 bytes  (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  1) Server -> Client : 312 bytes  (Service=HTTP)
+[Web Request      ( 1f8: a40)] "GET /WebTours/header.html"   
+[Network Analyzer ( 1f8: a40)]   (Sid:  1) Client -> Server : 547 bytes (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  1) Server -> Client : 856 bytes  (Service=HTTP)
+[Network Analyzer ( 1f8: a30)] Address lookup for MS-20180413TOZN = 10.211.55.3
+[Web Request      ( 1f8: a40)] "GET /WebTours/images/hp_logo.png"   
+[Network Analyzer ( 1f8: a40)]   (Sid:  1) Client -> Server : 377 bytes (Service=HTTP)
+[Network Analyzer ( 1f8: 390)] Address lookup for MS-20180413TOZN = 10.211.55.3
+[Network Analyzer ( 1f8: a40)]   (Sid:  1) Server -> Client : 765 bytes  (Service=HTTP)
+[Network Analyzer ( 1f8: a30)] Request Connection: Remote Server @ 127.0.0.1:1080   (Service=)  (Sid=  2)  PROXIED!
+[Web Request      ( 1f8: a40)] "GET /WebTours/welcome.pl?signOff=true"   
+[Network Analyzer ( 1f8: a40)]   (Sid:  2) Client -> Server : 559 bytes (Service=HTTP)
+[Network Analyzer ( 1f8: 390)] Request Connection: Remote Server @ 127.0.0.1:1080   (Service=)  (Sid=  3)  PROXIED!
+[Network Analyzer ( 1f8: a40)]   (Sid:  2) Server -> Client : 391 bytes  (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  2) Server -> Client : 630 bytes  (Service=HTTP)
+[Web Request      ( 1f8: a40)] "GET /WebTours/images/webtours.png"   
+[Network Analyzer ( 1f8: a40)]   (Sid:  3) Client -> Server : 378 bytes (Service=HTTP)
+[Web Request      ( 1f8: a40)] "GET /WebTours/nav.pl?in=home"   
+[Network Analyzer ( 1f8: a40)]   (Sid:  1) Client -> Server : 668 bytes (Service=HTTP)
+[Web Request      ( 1f8: a40)] "GET /WebTours/home.html"   
+[Network Analyzer ( 1f8: a40)]   (Sid:  2) Client -> Server : 663 bytes (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  3) Server -> Client : 982 bytes  (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  2) Server -> Client : 1487 bytes  (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  1) Server -> Client : 253 bytes  (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  1) Server -> Client : 1531 bytes  (Service=HTTP)
+[Web Request      ( 1f8: a40)] "GET /WebTours/JSFormSubmit.js"   
+[Network Analyzer ( 1f8: a40)]   (Sid:  3) Client -> Server : 472 bytes (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  3) Server -> Client : 179 bytes  (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  3) Server -> Client : 291 bytes  (Service=HTTP)
+[Web Request      ( 1f8: a40)] "GET /WebTours/images/mer_login.gif"   
+[Network Analyzer ( 1f8: a40)]   (Sid:  2) Client -> Server : 477 bytes (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  2) Server -> Client : 843 bytes  (Service=HTTP)
+[Web Request      ( 1f8: a40)] "GET /favicon.ico"   
+[Network Analyzer ( 1f8: a40)]   (Sid:  1) Client -> Server : 379 bytes (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  1) Server -> Client : 258 bytes  (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  1) Connection Terminated (by Server)
+[Network Analyzer ( 1f8: a40)]   (Sid:  2) Connection Terminated (by Client)
+[Network Analyzer ( 1f8: a40)]   (Sid:  3) Connection Terminated (by Client)
+[Network Analyzer ( 1f8: a30)] Address lookup for MS-20180413TOZN = 10.211.55.3
+[Network Analyzer ( 1f8: a30)] Request Connection: Remote Server @ 127.0.0.1:1080   (Service=)  (Sid=  4)  PROXIED!
+[Web Request      ( 1f8: a40)] "POST /WebTours/login.pl"   
+[Network Analyzer ( 1f8: a40)]   (Sid:  4) Client -> Server : 870 bytes (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  4) Server -> Client : 404 bytes  (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  4) Server -> Client : 437 bytes  (Service=HTTP)
+[Web Request      ( 1f8: a40)] "GET /WebTours/nav.pl?page=menu&in=home"   
+[Network Analyzer ( 1f8: a40)]   (Sid:  4) Client -> Server : 822 bytes (Service=HTTP)
+[Network Analyzer ( 1f8: a30)] Address lookup for MS-20180413TOZN = 10.211.55.3
+[Network Analyzer ( 1f8: a30)] Request Connection: Remote Server @ 127.0.0.1:1080   (Service=)  (Sid=  5)  PROXIED!
+[Network Analyzer ( 1f8: a40)]   (Sid:  4) Server -> Client : 253 bytes  (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  4) Server -> Client : 1446 bytes  (Service=HTTP)
+[Web Request      ( 1f8: a40)] "GET /WebTours/login.pl?intro=true"   
+[Network Analyzer ( 1f8: a40)]   (Sid:  5) Client -> Server : 817 bytes (Service=HTTP)
+[Network Analyzer ( 1f8: 390)] Address lookup for MS-20180413TOZN = 10.211.55.3
+[Web Request      ( 1f8: a40)] "GET /WebTours/images/flights.gif"   
+[Network Analyzer ( 1f8: a30)] Address lookup for MS-20180413TOZN = 10.211.55.3
+[Network Analyzer ( 1f8: a08)] Address lookup for MS-20180413TOZN = 10.211.55.3
+[Network Analyzer ( 1f8: a40)]   (Sid:  4) Client -> Server : 644 bytes (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  4) Server -> Client : 890 bytes  (Service=HTTP)
+[Network Analyzer ( 1f8: a08)] Request Connection: Remote Server @ 127.0.0.1:1080   (Service=)  (Sid=  6)  PROXIED!
+[Web Request      ( 1f8: a40)] "GET /WebTours/images/signoff.gif"   
+[Network Analyzer ( 1f8: a40)]   (Sid:  6) Client -> Server : 644 bytes (Service=HTTP)
+[Network Analyzer ( 1f8: 390)] Request Connection: Remote Server @ 127.0.0.1:1080   (Service=)  (Sid=  7)  PROXIED!
+[Network Analyzer ( 1f8: a40)]   (Sid:  6) Server -> Client : 915 bytes  (Service=HTTP)
+[Web Request      ( 1f8: a40)] "GET /WebTours/images/itinerary.gif"   
+[Network Analyzer ( 1f8: a40)]   (Sid:  7) Client -> Server : 646 bytes (Service=HTTP)
+[Network Analyzer ( 1f8: a30)] Request Connection: Remote Server @ 127.0.0.1:1080   (Service=)  (Sid=  8)  PROXIED!
+[Network Analyzer ( 1f8: a40)]   (Sid:  7) Server -> Client : 897 bytes  (Service=HTTP)
+[Web Request      ( 1f8: a40)] "GET /WebTours/images/in_home.gif"   
+[Network Analyzer ( 1f8: a40)]   (Sid:  8) Client -> Server : 644 bytes (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  8) Server -> Client : 164 bytes  (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  5) Server -> Client : 1137 bytes  (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  8) Server -> Client : 688 bytes  (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  4) Connection Terminated (by Client)
+[Network Analyzer ( 1f8: a40)]   (Sid:  5) Connection Terminated (by Client)
+[Network Analyzer ( 1f8: a40)]   (Sid:  6) Connection Terminated (by Client)
+[Network Analyzer ( 1f8: a40)]   (Sid:  7) Connection Terminated (by Client)
+[Network Analyzer ( 1f8: a40)]   (Sid:  8) Connection Terminated (by Client)
+[Network Analyzer ( 1f8: a30)] Address lookup for MS-20180413TOZN = 10.211.55.3
+[Network Analyzer ( 1f8: a30)] Request Connection: Remote Server @ 127.0.0.1:1080   (Service=)  (Sid=  9)  PROXIED!
+[Web Request      ( 1f8: a40)] "GET /WebTours/welcome.pl?signOff=1"   
+[Network Analyzer ( 1f8: a40)]   (Sid:  9) Client -> Server : 834 bytes (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  9) Server -> Client : 391 bytes  (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  9) Server -> Client : 630 bytes  (Service=HTTP)
+[Network Analyzer ( 1f8: a30)] Address lookup for MS-20180413TOZN = 10.211.55.3
+[Web Request      ( 1f8: a40)] "GET /WebTours/nav.pl?in=home"   
+[Network Analyzer ( 1f8: a40)]   (Sid:  9) Client -> Server : 665 bytes (Service=HTTP)
+[Network Analyzer ( 1f8: a30)] Request Connection: Remote Server @ 127.0.0.1:1080   (Service=)  (Sid= 10)  PROXIED!
+[Network Analyzer ( 1f8: a40)]   (Sid:  9) Server -> Client : 253 bytes  (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  9) Server -> Client : 1531 bytes  (Service=HTTP)
+[Web Request      ( 1f8: a40)] "GET /WebTours/home.html"   
+[Network Analyzer ( 1f8: a40)]   (Sid: 10) Client -> Server : 660 bytes (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid: 10) Server -> Client : 165 bytes  (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid: 10) Server -> Client : 1322 bytes  (Service=HTTP)
+[Network Analyzer ( 1f8: a40)]   (Sid:  9) Connection Terminated (by Client)

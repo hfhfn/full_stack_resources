@@ -1,0 +1,2 @@
+[Hosts]
+localhost=\\Mac\Home\Desktop\day4\∂©∆±20”√ªßΩ≈±æ\res\localhost_1.eve

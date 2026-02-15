@@ -1,0 +1,17 @@
+[parameter:random]
+Format="%08lu"
+ParamName="random"
+GenerateNewVal="EachOccurrence"
+Type="Random"
+MaxValue="100"
+OriginalValue=""
+MinValue="1"
+[parameter:time]
+Format="%c"
+ParamName="time"
+GenerateNewVal="EachOccurrence"
+Type="Time"
+OriginalValue=""
+OffsetUI="0"
+WorkingDaysOn="0"
+Offset=""

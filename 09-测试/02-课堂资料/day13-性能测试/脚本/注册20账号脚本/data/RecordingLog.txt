@@ -1,0 +1,73 @@
+[Network Analyzer ( 890: ae4)] ------------------------------------------------------------------------------------------
+[Network Analyzer ( 890: ae4)] Load Network Traffic Analyzers:
+[Network Analyzer ( 890: ae4)]     Analyzer Module: WPLUS (value=)
+[Network Analyzer ( 890: ae4)]     Analyzer Module: WebBase (value=GetHttpProtocolAnalyzer:api_http_filter.dll)
+[Network Analyzer ( 890: ae4)]     + Network Analyzer: api_http_filter.dll @ GetHttpProtocolAnalyzer Loaded!
+[Network Analyzer ( 890: ae4)]     + Interception Auditors: WinInetWplusInterceptionAudit:api_http_filter.dll
+[Network Analyzer ( 890: ae4)]     Analyzer Module: QTWeb (value=)
+[Network Analyzer ( 890: ae4)]     Analyzer Module: local_server (value=)
+[Network Analyzer ( 890: ae4)] ------------------------------------------------------------------------------------------
+[Network Analyzer ( 890: 9c4)] Address lookup for MS-20180413TOZN = 10.211.55.3
+[Network Analyzer ( 890: d14)] Address lookup for MS-20180413TOZN = 10.211.55.3
+[Network Analyzer ( 890: d14)] Request Connection: Remote Server @ 127.0.0.1:1080   (Service=)  (Sid=  1)  PROXIED!
+[Web Request      ( 890: 9c4)] "GET /WebTours/"   
+[Network Analyzer ( 890: 9c4)]   (Sid:  1) Client -> Server : 306 bytes (Service=HTTP)
+[Network Analyzer ( 890: 9c4)]   (Sid:  1) Server -> Client : 164 bytes  (Service=HTTP)
+[Network Analyzer ( 890: 9c4)]   (Sid:  1) Server -> Client : 312 bytes  (Service=HTTP)
+[Web Request      ( 890: 9c4)] "GET /WebTours/header.html"   
+[Network Analyzer ( 890: 9c4)]   (Sid:  1) Client -> Server : 547 bytes (Service=HTTP)
+[Network Analyzer ( 890: e3c)] Address lookup for MS-20180413TOZN = 10.211.55.3
+[Network Analyzer ( 890: 9c4)]   (Sid:  1) Server -> Client : 856 bytes  (Service=HTTP)
+[Web Request      ( 890: 9c4)] "GET /WebTours/images/hp_logo.png"   
+[Network Analyzer ( 890: 9c4)]   (Sid:  1) Client -> Server : 377 bytes (Service=HTTP)
+[Network Analyzer ( 890: d14)] Address lookup for MS-20180413TOZN = 10.211.55.3
+[Network Analyzer ( 890: 9c4)]   (Sid:  1) Server -> Client : 765 bytes  (Service=HTTP)
+[Network Analyzer ( 890: e3c)] Request Connection: Remote Server @ 127.0.0.1:1080   (Service=)  (Sid=  2)  PROXIED!
+[Web Request      ( 890: 9c4)] "GET /WebTours/welcome.pl?signOff=true"   
+[Network Analyzer ( 890: 9c4)]   (Sid:  2) Client -> Server : 559 bytes (Service=HTTP)
+[Network Analyzer ( 890: d14)] Request Connection: Remote Server @ 127.0.0.1:1080   (Service=)  (Sid=  3)  PROXIED!
+[Network Analyzer ( 890: 9c4)]   (Sid:  2) Server -> Client : 391 bytes  (Service=HTTP)
+[Network Analyzer ( 890: 9c4)]   (Sid:  2) Server -> Client : 630 bytes  (Service=HTTP)
+[Web Request      ( 890: 9c4)] "GET /WebTours/images/webtours.png"   
+[Network Analyzer ( 890: 9c4)]   (Sid:  3) Client -> Server : 378 bytes (Service=HTTP)
+[Web Request      ( 890: 9c4)] "GET /WebTours/nav.pl?in=home"   
+[Network Analyzer ( 890: 9c4)]   (Sid:  1) Client -> Server : 668 bytes (Service=HTTP)
+[Web Request      ( 890: 9c4)] "GET /WebTours/home.html"   
+[Network Analyzer ( 890: 9c4)]   (Sid:  2) Client -> Server : 663 bytes (Service=HTTP)
+[Network Analyzer ( 890: 9c4)]   (Sid:  3) Server -> Client : 982 bytes  (Service=HTTP)
+[Network Analyzer ( 890: 9c4)]   (Sid:  2) Server -> Client : 1487 bytes  (Service=HTTP)
+[Network Analyzer ( 890: 9c4)]   (Sid:  1) Server -> Client : 253 bytes  (Service=HTTP)
+[Network Analyzer ( 890: 9c4)]   (Sid:  1) Server -> Client : 1531 bytes  (Service=HTTP)
+[Web Request      ( 890: 9c4)] "GET /WebTours/JSFormSubmit.js"   
+[Network Analyzer ( 890: 9c4)]   (Sid:  3) Client -> Server : 472 bytes (Service=HTTP)
+[Network Analyzer ( 890: 9c4)]   (Sid:  3) Server -> Client : 179 bytes  (Service=HTTP)
+[Network Analyzer ( 890: 9c4)]   (Sid:  3) Server -> Client : 291 bytes  (Service=HTTP)
+[Web Request      ( 890: 9c4)] "GET /WebTours/images/mer_login.gif"   
+[Network Analyzer ( 890: 9c4)]   (Sid:  2) Client -> Server : 477 bytes (Service=HTTP)
+[Network Analyzer ( 890: 9c4)]   (Sid:  2) Server -> Client : 843 bytes  (Service=HTTP)
+[Web Request      ( 890: 9c4)] "GET /favicon.ico"   
+[Network Analyzer ( 890: 9c4)]   (Sid:  1) Client -> Server : 379 bytes (Service=HTTP)
+[Network Analyzer ( 890: 9c4)]   (Sid:  1) Server -> Client : 258 bytes  (Service=HTTP)
+[Network Analyzer ( 890: 9c4)]   (Sid:  1) Connection Terminated (by Server)
+[Network Analyzer ( 890: 9c4)]   (Sid:  3) Connection Terminated (by Client)
+[Network Analyzer ( 890: 9c4)]   (Sid:  2) Connection Terminated (by Client)
+[Network Analyzer ( 890: d14)] Address lookup for MS-20180413TOZN = 10.211.55.3
+[Network Analyzer ( 890: d14)] Request Connection: Remote Server @ 127.0.0.1:1080   (Service=)  (Sid=  4)  PROXIED!
+[Web Request      ( 890: 9c4)] "GET /WebTours/login.pl?username=&password=&getInfo=true"   
+[Network Analyzer ( 890: 9c4)]   (Sid:  4) Client -> Server : 681 bytes (Service=HTTP)
+[Network Analyzer ( 890: 9c4)]   (Sid:  4) Server -> Client : 2650 bytes  (Service=HTTP)
+[Web Request      ( 890: 9c4)] "GET /WebTours/profileValidate.js"   
+[Network Analyzer ( 890: 9c4)]   (Sid:  4) Client -> Server : 502 bytes (Service=HTTP)
+[Network Analyzer ( 890: 9c4)]   (Sid:  4) Server -> Client : 181 bytes  (Service=HTTP)
+[Network Analyzer ( 890: 9c4)]   (Sid:  4) Server -> Client : 11288 bytes  (Service=HTTP)
+[Web Request      ( 890: 9c4)] "GET /WebTours/images/button_next.gif"   
+[Network Analyzer ( 890: 9c4)]   (Sid:  4) Client -> Server : 506 bytes (Service=HTTP)
+[Network Analyzer ( 890: 9c4)]   (Sid:  4) Server -> Client : 922 bytes  (Service=HTTP)
+[Network Analyzer ( 890: 9c4)]   (Sid:  4) Connection Terminated (by Client)
+[Network Analyzer ( 890: d14)] Address lookup for MS-20180413TOZN = 10.211.55.3
+[Network Analyzer ( 890: d14)] Request Connection: Remote Server @ 127.0.0.1:1080   (Service=)  (Sid=  5)  PROXIED!
+[Web Request      ( 890: 9c4)] "POST /WebTours/login.pl"   
+[Network Analyzer ( 890: 9c4)]   (Sid:  5) Client -> Server : 905 bytes (Service=HTTP)
+[Network Analyzer ( 890: 9c4)]   (Sid:  5) Server -> Client : 346 bytes  (Service=HTTP)
+[Network Analyzer ( 890: 9c4)]   (Sid:  5) Server -> Client : 1075 bytes  (Service=HTTP)
+[Network Analyzer ( 890: 9c4)]   (Sid:  5) Connection Terminated (by Client)

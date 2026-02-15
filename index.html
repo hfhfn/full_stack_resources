@@ -266,7 +266,7 @@
             <div class="folder-header ${highlightClass}" onclick="toggleFolder(this)">
               <span class="toggle-icon ${state.currentSearch ? 'open' : ''}">▶</span>
               <span class="folder-icon">📁</span>
-              <span>${displayName}/</span>
+              <span>${displayName}</span>
             </div>
             <div class="folder-children ${state.currentSearch ? '' : 'collapsed'}">
               ${renderNode(node._dirs[dirName], forceShowAll || isDirMatch)}
